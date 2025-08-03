@@ -29,7 +29,7 @@ export default function SmallContent() {
   `;
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 gap-y-8 my-12 max-w-6xl mx-auto -mt-16">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 gap-y-8 my-12 max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto -mt-16">
       {features.map((feature, idx) => (
         <div key={idx} className="flex items-start gap-2">
           <div

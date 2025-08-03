@@ -78,7 +78,7 @@ export default function PricingSection() {
         height={400}
       />
       <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="lg:text-4xl text-xl mb-16 text-center font-bold">
+        <h1 className="lg:text-4xl text-xl lg:mb-16 mb-7 text-center font-bold">
           {t("pricingSection.choosePlan")}
         </h1>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16">

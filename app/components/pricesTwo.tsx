@@ -77,11 +77,11 @@ export default function PricingTwoSection() {
         width={400}
         height={400}
       />
-      <div className="container mx-auto px-4 max-w-6xl">
-        <h1 className="lg:text-4xl text-xl mb-16 text-center font-bold">
+      <div className="container mx-auto px-4  max-w-sm  sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
+        <h1 className="lg:text-4xl text-xl lg:mb-16 mb-7 text-center font-bold">
           {t("pricingSection.choosePlan")}
         </h1>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-16 xl:gap-16 lg:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}

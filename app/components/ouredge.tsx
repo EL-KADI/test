@@ -23,8 +23,8 @@ export default function OurEdge() {
                   className={`w-[60px]  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformanceDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformanceDesc")}</p>
             </Card>
             <Card className="text-center p-8">
               <div className="mb-6">
@@ -36,8 +36,8 @@ export default function OurEdge() {
                  className={`w-[65px]  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigationDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigationDesc")}</p>
             </Card>
             <Card className="text-center p-8">
               <div className="mb-6">
@@ -49,8 +49,8 @@ export default function OurEdge() {
                    className={`w-12  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtectionDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtectionDesc")}</p>
             </Card>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:px-28 max-w-7xl mx-auto" dir="ltr">
@@ -64,8 +64,8 @@ export default function OurEdge() {
                   className={`w-12 h-[75px]  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformanceDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformanceDesc")}</p>
             </Card>
             <Card className="text-center p-8">
               <div className="mb-6">
@@ -77,8 +77,8 @@ export default function OurEdge() {
                    className={`w-18 h-18  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigationDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigationDesc")}</p>
             </Card>
             <Card className="text-center p-8">
               <div className="mb-6">
@@ -90,8 +90,8 @@ export default function OurEdge() {
                   className={`w-[54px]  ${isRTL ? "ms-auto " : "me-auto"}`}
                 />
               </div>
-              <h3 className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>
-              <p className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtectionDesc")}</p>
+              <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>
+              <p dir={isRTL ? "rtl" : "ltr"} className={`lg:text-sm text-xs text-gray-600 leading-relaxed ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtectionDesc")}</p>
             </Card>
           </div>
         </div>

@@ -10,7 +10,7 @@ import Footer from "../../components/footer";
 import { useLanguage } from "../../contexts/language-context";
 import BgSection from "../components/bg-section";
 import NISTComplianceSection from "../components/nist";
-export default function sharedHosting() {
+export default function SharedHosting() {
   const { t } = useLanguage();
   const styles = `
 

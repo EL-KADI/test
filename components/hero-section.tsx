@@ -232,7 +232,7 @@ export default function HeroSection() {
                       >
                         <div className="grid grid-cols-2 gap-3">
                           <Link
-                            href="/people"
+                            href="/shared-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -256,7 +256,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/hosting/wordpress"
+                            href="/wordpress-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -280,7 +280,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/hosting/email"
+                            href="/mail-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -292,7 +292,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/hosting/business"
+                            href="/business-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -304,7 +304,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/hosting/developer"
+                            href="/programers-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -316,7 +316,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/hosting/tamoor"
+                            href="/nomoar-hosting"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -325,6 +325,18 @@ export default function HeroSection() {
                             </h4>
                             <p className="text-xs text-gray-600">
                               {t("hosting.tamoor.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/hosting/windows"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("hosting.windows")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("hosting.windows.description")}
                             </p>
                           </Link>
                         </div>
@@ -911,7 +923,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/hosting/wordpress"
+                        href="/wordpress-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -926,7 +938,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/hosting/developer"
+                        href="/programers-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -941,7 +953,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/hosting/email"
+                        href="/mail-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -956,7 +968,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/hosting/business"
+                        href="/business-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -970,6 +982,53 @@ export default function HeroSection() {
                           </p>
                         </div>
                       </Link>
+                      {/* <Link
+                        href="/programers-hosting"
+                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <div
+                          className={`${isRTL ? "text-right" : "text-left"}`}
+                        >
+                          <h3 className="font-bold text-lg mb-2 text-gray-900">
+                            {t("hosting.developer")}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {t("hosting.developer.desc")}
+                          </p>
+                        </div>
+                      </Link> */}
+                  
+                      <Link
+                    href="/nomoar-hosting"
+                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <div
+                          className={`${isRTL ? "text-right" : "text-left"}`}
+                        >
+                          <h3 className="font-bold text-lg mb-2 text-gray-900">
+                           {t("hosting.tamoor")}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {t("hosting.tamoor.desc")}
+                          </p>
+                        </div>
+                      </Link>
+                      <Link
+                    href="/hosting/windows"
+                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <div
+                          className={`${isRTL ? "text-right" : "text-left"}`}
+                        >
+                          <h3 className="font-bold text-lg mb-2 text-gray-900">
+                           {t("hosting.windows")}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {t("hosting.windows.description")}
+                          </p>
+                        </div>
+                      </Link>
+                 
                     </div>
                   </div>
                 </div>

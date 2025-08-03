@@ -13,7 +13,7 @@ export function SystemSucuri() {
   ];
 
   return (
-    <section className="mt-32 container max-w-6xl mx-auto">
+    <section className="mt-32 container max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="lg:text-4xl text-xl mb-6 text-center font-semibold">{t("systemSucuri.title")}</h1>
       <p className="mt-8 text-center mb-8 lg:w-1/2 mx-auto">{t("systemSucuri.description")}</p>
       <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 gap-8">

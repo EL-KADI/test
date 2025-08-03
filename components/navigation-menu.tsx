@@ -234,7 +234,7 @@ export default function NavigationBar({
                   >
                     <div className="grid grid-cols-2 gap-3">
                       <Link
-                        href="/people"
+                        href="/shared-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -258,7 +258,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/wordpress"
+                        href="/wordpress-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -282,7 +282,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/email"
+                        href="/mail-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -294,7 +294,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/business"
+                        href="/business-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -306,7 +306,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/developer"
+                        href="/programers-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -318,7 +318,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/tamoor"
+                        href="/nomoar-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -329,6 +329,19 @@ export default function NavigationBar({
                           {t("hosting.tamoor.desc")}
                         </p>
                       </Link>
+                      <Link
+                        href="/hosting/windows"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("hosting.windows")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("hosting.windows.description")}
+                        </p>
+                      </Link>
+                 
                     </div>
                   </div>
                 </div>
@@ -446,56 +459,80 @@ export default function NavigationBar({
                       isRTL ? "pr-4" : "pl-4"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
-                      <Link
-                        href="/vps"
-                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                          {t("servers.vps")}
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          {t("servers.vps.desc")}
-                        </p>
-                      </Link>
-                      <Link
-                        href="/cloud-servers"
-                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                          {t("servers.cloud")}
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          {t("servers.cloud.desc")}
-                        </p>
-                      </Link>
-                      <Link
-                        href="/server-management"
-                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                          {t("servers.dedicated")}
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          {t("servers.dedicated.desc")}
-                        </p>
-                      </Link>
-                      <Link
-                        href="/server-licenses"
-                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                          {t("servers.licenses")}
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          {t("servers.licenses.desc")}
-                        </p>
-                      </Link>
-                    </div>
+                        <div className="grid grid-cols-2 gap-3">
+                          <Link
+                            href="/vps"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.vps")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.vps.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/cloud-servers"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.cloud")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.cloud.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/server-management"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.dedicated")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.dedicated.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/server-licenses"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.licenses")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.licenses.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/server-management"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.support")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.support.desc")}
+                            </p>
+                          </Link>
+                          <Link
+                            href="/backups"
+                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                              {t("servers.backup")}
+                            </h4>
+                            <p className="text-xs text-gray-600">
+                              {t("servers.backup.desc")}
+                            </p>
+                          </Link>
+                        </div>
                   </div>
                 </div>
               </div>
@@ -832,7 +869,6 @@ export default function NavigationBar({
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <div className="relative flex items-center justify-center z-50 bg-contain bg-bottom xl:bg-cover bg-no-repeat">
-          {/* الصورة الجديدة فوق الأعمدة - فيها كل العناصر */}
 
           {/* Desktop Dropdown Menus */}
           {/* Hosting Dropdown Menu */}
@@ -871,7 +907,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/hosting/wordpress"
+                    href="/wordpress-hosting"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -884,7 +920,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/hosting/developer"
+                    href="/programers-hosting"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -897,7 +933,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/hosting/email"
+                    href="/mail-hosting"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -910,7 +946,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/hosting/business"
+                    href="/business-hosting"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -922,6 +958,49 @@ export default function NavigationBar({
                       </p>
                     </div>
                   </Link>
+                    {/* <Link
+                        href="/programers-hosting"
+                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <div
+                          className={`${isRTL ? "text-right" : "text-left"}`}
+                        >
+                          <h3 className="font-bold text-lg mb-2 text-gray-900">
+                            {t("hosting.developer")}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {t("hosting.developer.desc")}
+                          </p>
+                        </div>
+                      </Link> */}
+                  <Link
+                      href="/nomoar-hosting"
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                  >
+                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900">
+                        {t("hosting.tamoor")}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.tamoor.desc")}
+                      </p>
+                    </div>
+                  </Link>
+                  <Link
+                    href="/hosting/windows"
+                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                      >
+                        <div
+                          className={`${isRTL ? "text-right" : "text-left"}`}
+                        >
+                          <h3 className="font-bold text-lg mb-2 text-gray-900">
+                           {t("hosting.windows")}
+                          </h3>
+                          <p className="text-gray-600 leading-relaxed text-sm">
+                            {t("hosting.windows.description")}
+                          </p>
+                        </div>
+                      </Link>
                 </div>
               </div>
             </div>

@@ -21,7 +21,7 @@ const Footer = () => {
             <img
               src="/logoFooter.svg"
               alt="Logo"
-              className={`mb-4 2xl:translate-x-8 max-w-[350px] lg:w-full ${
+              className={`mb-4 max-w-[350px] lg:w-full ${
                 isRTL ? "2xl:translate-x-8" : "2xl:-translate-x-8"
               }`}
             />

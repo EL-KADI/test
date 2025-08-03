@@ -6,7 +6,7 @@ export default function CTA() {
   const { t } = useLanguage();
 
   return (
-    <div className="container mt-64 max-w-6xl mx-auto">
+    <div className="container mt-64 max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <div className="relative bg-[#403562] py-16 text-white text-center rounded-lg">
         <Image
           className="absolute right-0 bottom-0"

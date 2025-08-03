@@ -47,7 +47,7 @@ export default function WhyChooseTigers() {
         alt="Left Background"
         src="/Lbg.svg"
       />
-      <div className="container max-w-6xl mx-auto">
+      <div className="container max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <h1 className="lg:text-4xl text-xl mb-6 text-center">
           {t("whyChooseTigers.title")}
         </h1>

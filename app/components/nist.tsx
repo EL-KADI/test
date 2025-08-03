@@ -28,7 +28,7 @@ export default function NISTComplianceSection() {
   ];
 
   return (
-    <div className="container my-36 max-w-6xl mx-auto">
+    <div className="container my-36 max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="lg:text-4xl text-xl mb-12 text-center">{t("nistCompliance.title")}</h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12">
         <p>{t("nistCompliance.description")}</p>

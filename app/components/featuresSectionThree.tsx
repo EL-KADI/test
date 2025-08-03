@@ -60,7 +60,7 @@ export default function FeaturesSectionThree() {
       />
       <h1 className="lg:text-4xl text-xl mb-6 text-center">{t("featuresSectionThree.title")}</h1>
       <p className="mt-4 text-center">{t("featuresSectionThree.description")}</p>
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-sm  sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-12">
           {features.map((feature, index) => (
             <div

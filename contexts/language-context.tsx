@@ -17,19 +17,103 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 type TranslationKeys =
+| "windowsHosting.title"
+| "windowsHosting.description"
+| "tigersHosting.title"
+| "tigersHosting.description"
+| "cloudInfrastructure.title"
+| "cloudInfrastructure.description"
+| "cloudInfrastructure.tools"
+| "cloudInfrastructure.resources"
+| "cloudInfrastructure.loadMetrics"
+| "cloudInfrastructure.loadMetricsAlt"
+| "cloudInfrastructure.networking"
+| "cloudInfrastructure.networkingAlt"
+| "cloudInfrastructure.storageSizes"
+| "cloudInfrastructure.storageSizesAlt"
+| "cloudInfrastructure.virtualServers"
+| "cloudInfrastructure.virtualServersAlt"
+| "cloudInfrastructure.backgroundAlt"
+| "whyChooseTigers.title"
+| "whyChooseTigers.blockUnauthorizedEmail"
+| "whyChooseTigers.blockUnauthorizedEmailDesc"
+| "whyChooseTigers.blockUnauthorizedEmailAlt"
+| "whyChooseTigers.preventEmailSpoofing"
+| "whyChooseTigers.preventEmailSpoofingDesc"
+| "whyChooseTigers.preventEmailSpoofingAlt"
+| "whyChooseTigers.enhanceEmailSecurity"
+| "whyChooseTigers.enhanceEmailSecurityDesc"
+| "whyChooseTigers.enhanceEmailSecurityAlt"
+| "whyChooseTigers.verifyEmail"
+| "whyChooseTigers.verifyEmailDesc"
+| "whyChooseTigers.verifyEmailAlt"
+| "whyChooseTigers.backgroundRightAlt"
+| "whyChooseTigers.backgroundLeftAlt"
+  | "websiteBuilder.title"
+  | "websiteBuilder.chooseTemplate"
+  | "websiteBuilder.chooseTemplateDesc"
+  | "websiteBuilder.enhanceFunctionality"
+  | "websiteBuilder.enhanceFunctionalityDesc"
+  | "websiteBuilder.previewSite"
+  | "websiteBuilder.previewSiteDesc"
+  | "websiteBuilder.publishSave"
+  | "websiteBuilder.publishSaveDesc"
+  | "websiteBuilder.chooseTemplateAlt"
+  | "websiteBuilder.websiteBuilderAlt"
+  | "featuresNine.title"
+  | "featuresNine.description"
+  | "featuresNine.multilingualSites"
+  | "featuresNine.languageSupport"
+  | "featuresNine.responsiveDesign"
+  | "featuresNine.easyTool"
+  | "featuresNine.videoTutorials"
+  | "featuresNine.plugins"
+  | "featuresNine.millionTemplates"
+  | "featuresNine.siteMigration"
+  | "featuresNine.iconAlt"
+  | "featuresNine.rightImageAlt"
+  | "featuresNine.leftImageAlt"
+  | "wordpressHosting.title"
+  | "wordpressHosting.description"
+  | "wordpressHosting.startNow"
+  | "kubernetes.title"
+  | "kubernetes.description"
+  | "kubernetes.orderNow"
+  | "services.titletwo"
+  | "services.reliableHosting"
+  | "services.reliableHostingDesc"
+  | "services.scalableStorage"
+  | "services.scalableStorageDesc"
+  | "services.enterpriseHosting"
+  | "services.enterpriseHostingDesc"
+  | "services.reliableHostingAlt"
+  | "services.scalableStorageAlt"
+  | "services.enterpriseHostingAlt"
+  | "services.backgroundDecorationAlt"
+  | "oneClickApps.title"
+  | "oneClickApps.description"
+  | "oneClickApps.helmCharts"
+  | "oneClickApps.certManager"
+  | "oneClickApps.linkerd"
+  | "oneClickApps.operators"
+  | "oneClickApps.imageAlt"
+  | "templates.million"
+  | "templates.title"
+  | "templates.description"
+  | "templates.viewMore"
   | "serverManagement.title"
   | "serverManagement.description"
   | "sharedHosting.title"
-| "sharedHosting.description"
-| "sharedHosting.startNow"
-| "smallContent.feature.backupRecovery"
-| "smallContent.feature.malwareProtection"
-| "smallContent.feature.deviceProtection"
-| "smallContent.feature.threatDetection"
-| "smallContent.feature.emailProtection"
-| "smallContent.feature.disasterRecovery"
-| "smallContent.feature.centralManagement"
-| "smallContent.checkIconAlt"
+  | "sharedHosting.description"
+  | "sharedHosting.startNow"
+  | "smallContent.feature.backupRecovery"
+  | "smallContent.feature.malwareProtection"
+  | "smallContent.feature.deviceProtection"
+  | "smallContent.feature.threatDetection"
+  | "smallContent.feature.emailProtection"
+  | "smallContent.feature.disasterRecovery"
+  | "smallContent.feature.centralManagement"
+  | "smallContent.checkIconAlt"
   | "serverManagement.signUpNow"
   | "pricingSection.choosePlan"
   | "pricingSection.planName"
@@ -518,23 +602,381 @@ type TranslationKeys =
   | "featuresSectionThree.feature.windowsServerSupportAlt"
   | "featuresSectionThree.rightImageAlt"
   | "featuresSectionThree.leftImageAlt"
-  | "payment.titletwo";
+  | "payment.titletwo"
+  | "hosting.windows"
+  | "hosting.windows.description"
+  | "hostingProgrammers.title"
+  | "hostingProgrammers.description"
+  | "hostingProgrammers.startNow"
+  | "servicesTwo.title"
+  | "servicesTwo.description"
+  | "services.scalableStorageTwo"
+  | "services.scalableStorageDescTwo"
+  | "services.scalableStorageAltTwo"
+  | "services.enterpriseHostingTwo"
+  | "services.enterpriseHostingDescTwo"
+  | "services.enterpriseHostingAltTwo"
+  | "services.reliableHostingTwo"
+  | "services.reliableHostingDescTwo"
+  | "services.reliableHostingAltTwo"
+  | "services.backgroundDecorationAltTwo"
+  | "imglist.contactUs"
+  | "imglist.partnerLogoAlt"
+  | "sslSection.title"
+  | "sslSection.description"
+  | "sslSection.buildTrust"
+  | "sslSection.buildTrustDesc"
+  | "sslSection.buildTrustAlt"
+  | "sslSection.seoRanking"
+  | "sslSection.seoRankingDesc"
+  | "sslSection.seoRankingAlt"
+  | "sslSection.browserCompatibility"
+  | "sslSection.browserCompatibilityDesc"
+  | "sslSection.browserCompatibilityAlt"
+  | "whois.title"
+  | "whois.description"
+  | "emailHosting.title"
+  | "emailHosting.description"
+  | "businessNeeds.title"
+  | "businessNeeds.brandAwareness"
+  | "businessNeeds.brandAwarenessDesc"
+  | "businessNeeds.brandAwarenessAlt"
+  | "businessNeeds.security"
+  | "businessNeeds.securityDesc"
+  | "businessNeeds.securityAlt"
+  | "businessNeeds.accessCollaboration"
+  | "businessNeeds.accessCollaborationDesc"
+  | "businessNeeds.accessCollaborationAlt"
+  | "emailSecurity.title"
+  | "emailSecurity.description"
+  | "emailSecurity.backupRestore"
+  | "emailSecurity.backupRestoreAlt"
+  | "emailSecurity.antiSpamPhishing"
+  | "emailSecurity.antiSpamPhishingAlt"
+  | "emailSecurity.documentProtection"
+  | "emailSecurity.documentProtectionAlt"
+  | "emailSecurity.encryption"
+  | "emailSecurity.encryptionAlt"
+  | "emailSecurity.backgroundAlt"
+  | "keyFeaturesTwo.title"
+  | "keyFeatures.description"
+  | "keyFeatures.mailStorage"
+  | "keyFeatures.mailStorageAlt"
+  | "keyFeatures.reliableEmail"
+  | "keyFeatures.reliableEmailAlt"
+  | "keyFeatures.customEmail"
+  | "keyFeatures.customEmailAlt"
+  | "keyFeatures.calendarSharing"
+  | "keyFeatures.calendarSharingAlt"
+  | "keyFeatures.spamProtection"
+  | "keyFeatures.spamProtectionAlt"
+  | "callToAction.title"
+  | "callToAction.description"
+  | "callToAction.startNow"
+  | "callToAction.settingsAlt"
+  | "businessHosting.title"
+  | "businessHosting.description"
+  | "servicesThree.title"
+  | "servicesThree.reliableStaticHosting"
+  | "servicesThree.reliableStaticHostingDesc"
+  | "servicesThree.reliableStaticHostingAlt"
+  | "servicesThree.scalableCloudStorage"
+  | "servicesThree.scalableCloudStorageDesc"
+  | "servicesThree.scalableCloudStorageAlt"
+  | "servicesThree.enterpriseStaticHosting"
+  | "servicesThree.enterpriseStaticHostingDesc"
+  | "servicesThree.enterpriseStaticHostingAlt"
+  | "mainFeatures.title"
+  | "mainFeatures.description"
+  | "mainFeatures.crossPlatform"
+  | "mainFeatures.crossPlatformAlt"
+  | "mainFeatures.ddosMitigation"
+  | "mainFeatures.ddosMitigationAlt"
+  | "mainFeatures.malwareDetection"
+  | "mainFeatures.malwareDetectionAlt"
+  | "mainFeatures.sslCertificate"
+  | "mainFeatures.sslCertificateAlt"
+  | "mainFeatures.securityMonitoring"
+  | "mainFeatures.securityMonitoringAlt"
+  | "mainFeatures.performanceOptimization"
+  | "mainFeatures.performanceOptimizationAlt"
+  | "mainFeatures.backgroundRightAlt"
+  | "mainFeatures.backgroundLeftAlt"
+  | "support.title"
+| "support.description"
+| "support.successMessage"
+| "support.cta"
+| "support.settingsChanges"
+| "support.settingsChangesAlt"
+| "support.training"
+| "support.trainingAlt"
+| "support.technicalSupport"
+| "support.technicalSupportAlt"
+| "support.settingsCustomization"
+| "support.settingsCustomizationAlt"
+| "support.dataUserMigration"
+| "support.dataUserMigrationAlt"
+| "support.sharePointMigration"
+| "support.sharePointMigrationAlt"
+  ;
 
 type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
+    "windowsHosting.title": "استضافة ويندوز",
+"windowsHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
+    "support.title": "لست متأكدًا من أين تبدأ؟ لا تقلق، نحن هنا لمساعدتك",
+"support.description": "شركة ليبيا سبايدر، كمزود رسمي لحلول السحابة من مايكروسوفت، جاهزة لمساعدة مؤسستك في اعتماد حل الإنتاجية السحابي “Microsoft 365” ودمجه بالكامل مع سير العمل الخاص بك.",
+"support.successMessage": "نحن فخورون بأننا قدمنا خدماتنا للعديد من الشركات في رحلتهم للانتقال الناجح إلى خدمات Microsoft 365 – ونحن سعداء بمساعدتك أيضًا!",
+"support.cta": "اطلب الان!",
+"support.settingsChanges": "تغييرات الإعدادات",
+"support.settingsChangesAlt": "أيقونة تغييرات الإعدادات",
+"support.training": "التدريب",
+"support.trainingAlt": "أيقونة التدريب",
+"support.technicalSupport": "الدعم الفني",
+"support.technicalSupportAlt": "أيقونة الدعم الفني",
+"support.settingsCustomization": "ضبط الإعدادات والتخصيص",
+"support.settingsCustomizationAlt": "أيقونة ضبط الإعدادات والتخصيص",
+"support.dataUserMigration": "نقل البيانات والمستخدمين",
+"support.dataUserMigrationAlt": "أيقونة نقل البيانات والمستخدمين",
+"support.sharePointMigration": "ترحيل SharePoint Online",
+"support.sharePointMigrationAlt": "أيقونة ترحيل SharePoint Online",
+    "tigersHosting.title": "استضافة نمور",
+"tigersHosting.description": "البنية التحتية السحابية سهلة الإدارة وفعّالة من حيث التكلفة",
+"cloudInfrastructure.title": "بنية تحتية مرنة، سهلة الإدارة وقابلة للتوسّع.",
+"cloudInfrastructure.description": "يجمع LS Cloud بين موارد الحوسبة والتخزين والشبكات بالإضافة إلى التحليلات المتقدمة وأدوات المراقبة في منصة سحابية واحدة سهلة الاستخدام.",
+"cloudInfrastructure.tools": "أدوات في منصة سحابية واحدة سهلة الاستخدام.",
+"cloudInfrastructure.resources": "موارد سحابية يمكن تثبيتها في دقائق",
+"cloudInfrastructure.loadMetrics": "مقاييس التحميل",
+"cloudInfrastructure.loadMetricsAlt": "أيقونة مقاييس التحميل",
+"cloudInfrastructure.networking": "الشبكات",
+"cloudInfrastructure.networkingAlt": "أيقونة الشبكات",
+"cloudInfrastructure.storageSizes": "أحجام التخزين",
+"cloudInfrastructure.storageSizesAlt": "أيقونة أحجام التخزين",
+"cloudInfrastructure.virtualServers": "الخوادم الافتراضية",
+"cloudInfrastructure.virtualServersAlt": "أيقونة الخوادم الافتراضية",
+"cloudInfrastructure.backgroundAlt": "خلفية سحابية",
+"whyChooseTigers.blockUnauthorizedEmail": "حظر البريد الإلكتروني غير المصرح به",
+"whyChooseTigers.blockUnauthorizedEmailDesc": "عند استخدامك لـ PowerDMARC، لا تقوم فقط بالقضاء على انتحال البريد الإلكتروني، بل يمكنك أيضًا استخدام التقارير التفصيلية لتغيير استراتيجية المحتوى الخاصة بك فورًا. لا تترك مجالًا للصدفة.",
+"whyChooseTigers.blockUnauthorizedEmailAlt": "أيقونة حظر البريد الإلكتروني غير المصرح به",
+"whyChooseTigers.preventEmailSpoofing": "منع انتحال البريد الإلكتروني",
+"whyChooseTigers.preventEmailSpoofingDesc": "احمِ نطاقك من انتحال البريد الإلكتروني وهجمات التصيد الاحتيالي باستخدام بروتوكولات المصادقة المتقدمة. تأكد من أن المرسلين المعتمدين فقط يمكنهم استخدام نطاقك.",
+"whyChooseTigers.preventEmailSpoofingAlt": "أيقونة منع انتحال البريد الإلكتروني",
+"whyChooseTigers.enhanceEmailSecurity": "تعزيز أمان البريد الإلكتروني",
+"whyChooseTigers.enhanceEmailSecurityDesc": "احصل على رؤية كاملة لحركة البريد الإلكتروني لديك واكتشف الأنشطة غير المصرح بها في الوقت الفعلي. حافظ على أمان اتصالك والتزامه بالمعايير.",
+"whyChooseTigers.enhanceEmailSecurityAlt": "أيقونة تعزيز أمان البريد الإلكتروني",
+"whyChooseTigers.verifyEmail": "تحقق من كل بريد إلكتروني",
+"whyChooseTigers.verifyEmailDesc": "استخدم DMARC وSPF وDKIM للتحقق من صحة رسائلك الإلكترونية ومنع المجرمين الإلكترونيين من انتحال نطاقك. عزز الثقة مع المستلمين.",
+"whyChooseTigers.verifyEmailAlt": "أيقونة تحقق من كل بريد إلكتروني",
+"whyChooseTigers.backgroundRightAlt": "خلفية يمين",
+"whyChooseTigers.backgroundLeftAlt": "خلفية يسار",
+
+    "businessHosting.title": "استضافة الأعمال",
+"businessHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
+"servicesThree.title": "انطلق بسرعة ونمي أعمالك",
+"servicesThree.reliableStaticHosting": "استضافة ثابتة موثوقة",
+"servicesThree.reliableStaticHostingDesc": "استضف مواقعك الثابتة بوقت تحميل فائق السرعة واستقرار لا مثيل له. استمتع بنشر سلس مع شبكة CDN موزعة عالميًا.",
+"servicesThree.reliableStaticHostingAlt": "أيقونة استضافة ثابتة موثوقة",
+"servicesThree.scalableCloudStorage": "تخزين سحابي قابل للتطوير",
+"servicesThree.scalableCloudStorageDesc": "قم بتخزين بياناتك والوصول إليها بأمان مع تخزين سحابي عالي الأداء. قم بالتوسع بسهولة مع نمو عملك بفضل التكرار المحسن.",
+"servicesThree.scalableCloudStorageAlt": "أيقونة تخزين سحابي قابل للتطوير",
+"servicesThree.enterpriseStaticHosting": "استضافة ثابتة بمستوى الشركات",
+"servicesThree.enterpriseStaticHostingDesc": "قم بتقديم تطبيقاتك الثابتة بأمان وأداء عاليين. استفد من التحديثات الفورية، والوصول العالمي، وعدم الحاجة إلى الصيانة.",
+"servicesThree.enterpriseStaticHostingAlt": "أيقونة استضافة ثابتة بمستوى الشركات",
+"mainFeatures.title": "مزايا رئيسية",
+"mainFeatures.description": "قم بامتلاك مُخدّمك المخصص مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
+"mainFeatures.crossPlatform": "يعمل عبر منصات متعددة",
+"mainFeatures.crossPlatformAlt": "أيقونة يعمل عبر منصات متعددة",
+"mainFeatures.ddosMitigation": "تخفيف هجمات حجب الخدمة (DDoS)",
+"mainFeatures.ddosMitigationAlt": "أيقونة تخفيف هجمات حجب الخدمة",
+"mainFeatures.malwareDetection": "اكتشاف وإزالة البرامج الضارة",
+"mainFeatures.malwareDetectionAlt": "أيقونة اكتشاف وإزالة البرامج الضارة",
+"mainFeatures.sslCertificate": "شهادة أمان SSL",
+"mainFeatures.sslCertificateAlt": "أيقونة شهادة أمان SSL",
+"mainFeatures.securityMonitoring": "مراقبة الأمان",
+"mainFeatures.securityMonitoringAlt": "أيقونة مراقبة الأمان",
+"mainFeatures.performanceOptimization": "تحسين الأداء",
+"mainFeatures.performanceOptimizationAlt": "أيقونة تحسين الأداء",
+"mainFeatures.backgroundRightAlt": "صورة خلفية يمين",
+"mainFeatures.backgroundLeftAlt": "صورة خلفية يسار",
+    "emailHosting.title": "استضافة البريد الإلكتروني",
+    "emailHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
+    "businessNeeds.title": "كل ما تحتاجه لعملك",
+    "businessNeeds.brandAwareness": "زيادة الوعي بالعلامة التجارية",
+    "businessNeeds.brandAwarenessDesc":
+      "قم بربط اسم نطاق شركتك لتعزيز الوعي بالعلامة التجارية وتقديم صورة أكثر احترافية باستخدام بريد إلكتروني مخصص",
+    "businessNeeds.brandAwarenessAlt": "أيقونة زيادة الوعي بالعلامة التجارية",
+    "businessNeeds.security": "الأمان",
+    "businessNeeds.securityDesc":
+      "باستخدام الذكاء الاصطناعي وبرمجيات الحماية الذكية للبريد الإلكتروني، تعمل LS Suite على حماية صندوق الوارد لديك من البريد العشوائي والفيروسات والبرمجيات الضارة وفيروسات الفدية وهجمات التصيد الاحتيالي.",
+    "businessNeeds.securityAlt": "أيقونة الأمان",
+    "businessNeeds.accessCollaboration": "سهولة الوصول والعمل المشترك",
+    "businessNeeds.accessCollaborationDesc":
+      "يمكنك الوصول إلى بريدك الإلكتروني والتقويم وجهات الاتصال والملفات من أي مكان وعلى أي جهاز، والتعاون مع فريقك في الوقت نفسه، مع حفظ جميع التغييرات تلقائيًا.",
+    "businessNeeds.accessCollaborationAlt":
+      "أيقونة سهولة الوصول والعمل المشترك",
+    "emailSecurity.title": "أمان قوي لحماية البريد الإلكتروني",
+    "emailSecurity.description":
+      "احمِ بريدك الإلكتروني المهني بأمان مدعوم بالذكاء الاصطناعي ضد البريد العشوائي والتصيد الاحتيالي والبرامج الضارة.",
+    "emailSecurity.backupRestore":
+      "النسخ الاحتياطي والاستعادة للبيئات الفعلية والافتراضية والسحابية.",
+    "emailSecurity.backupRestoreAlt": "أيقونة النسخ الاحتياطي والاستعادة",
+    "emailSecurity.antiSpamPhishing":
+      "أدوات متقدمة مدمجة لمكافحة البريد العشوائي والفيروسات والتصيد الاحتيالي.",
+    "emailSecurity.antiSpamPhishingAlt":
+      "أيقونة أدوات مكافحة البريد العشوائي والتصيد",
+    "emailSecurity.documentProtection":
+      "حماية المستندات المشتركة بكلمة مرور وقيود زمنية.",
+    "emailSecurity.documentProtectionAlt": "أيقونة حماية المستندات",
+    "emailSecurity.encryption":
+      "تشفير البريد الإلكتروني والملفات بسهولة لحماية المعلومات الحساسة.",
+    "emailSecurity.encryptionAlt": "أيقونة تشفير البريد والملفات",
+    "emailSecurity.backgroundAlt": "صورة خلفية",
+    "keyFeaturesTwo.title": "مزايا رئيسية",
+    "keyFeatures.description":
+      "امتلك خادمًا مخصصًا خاصًا بك مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
+    "keyFeatures.mailStorage": "سعة تخزين البريد",
+    "keyFeatures.mailStorageAlt": "أيقونة سعة تخزين البريد",
+    "keyFeatures.reliableEmail":
+      "بريد إلكتروني موثوق مع ضمان وقت تشغيل بنسبة 99.9٪",
+    "keyFeatures.reliableEmailAlt": "أيقونة بريد إلكتروني موثوق",
+    "keyFeatures.customEmail": "بريد إلكتروني مخصص وآمن للأعمال",
+    "keyFeatures.customEmailAlt": "أيقونة بريد إلكتروني مخصص",
+    "keyFeatures.calendarSharing": "مشاركة التقويم وجهات الاتصال والمهام",
+    "keyFeatures.calendarSharingAlt": "أيقونة مشاركة التقويم",
+    "keyFeatures.spamProtection": "تصفية البريد العشوائي وحماية من الفيروسات",
+    "keyFeatures.spamProtectionAlt": "أيقونة حماية من البريد العشوائي",
+    "callToAction.title": "ابدأ انتقالك السهل معنا",
+    "callToAction.description":
+      "قم بترقية بريدك الإلكتروني إلى LS Suite بسهولة وسرعة وأمان بمساعدة شركة العنكبوت الليبي. وابدأ رحلتك لتحسين الإنتاجية وتعزيز أمان بريدك الإلكتروني بدعمنا الكامل، بحيث لا يكون هناك أي انقطاع أو توقف أو فقدان للبيانات من أي نوع.",
+    "callToAction.startNow": "ابدأ الآن!",
+    "callToAction.settingsAlt": "إعدادات",
+
+    "hostingProgrammers.title": "استضافة للمبرمجين",
+    "hostingProgrammers.description":
+      "خوادم سحابية عالية الأداء والثبات تصل إلى 100% مع مواقع جغرافية متعددة",
+    "hostingProgrammers.startNow": "ابدأ الآن",
+    "servicesTwo.title": "لماذا تختار النمور؟",
+    "servicesTwo.description": "حلول وخدمات متطوّرة وشاملة، للأفراد والمؤسسات",
+    "services.scalableStorageTwo": "تخزين قابل للتوسع",
+    "services.scalableStorageDescTwo":
+      "تخزين سحابي مرن يتكيف مع احتياجاتك المتزايدة.",
+    "services.scalableStorageAltTwo": "أيقونة التخزين القابل للتوسع",
+    "services.enterpriseHostingTwo": "استضافة للمؤسسات",
+    "services.enterpriseHostingDescTwo":
+      "حلول استضافة متقدمة مصممة للشركات الكبرى.",
+    "services.enterpriseHostingAltTwo": "أيقونة استضافة المؤسسات",
+    "services.reliableHostingTwo": "استضافة موثوقة",
+    "services.reliableHostingDescTwo":
+      "استضافة مستقرة بأداء عالٍ وتوقيت تشغيل مضمون.",
+    "services.reliableHostingAltTwo": "أيقونة الاستضافة الموثوقة",
+    "services.backgroundDecorationAltTwo": "صورة زخرفية خلفية",
+    "imglist.contactUs":
+      "هل أنت مهتم بمعرفة كيف يمكننا مساعدة عملك على النجاح؟ اتصل بنا",
+    "imglist.partnerLogoAlt": "شعار الشريك",
+    "sslSection.title": "اكثر من مجرد موضوع آمان",
+    "sslSection.description":
+      "يعدّ امتلاك شهادة SSL للمواقع ضرورة ملحّة، ليس فقط من ناحية الأمان.",
+    "sslSection.buildTrust": "بناء ثقة العملاء",
+    "sslSection.buildTrustDesc":
+      "أظهر لعملائك أن عملك التجاري على الإنترنت مُؤمّن ومُصادَق عبر معرفتهم وتأكّدهم بأن بياناتهم الحسّاسة ومدفوعاتهم الإلكترونيّة محميّة بالكامل.",
+    "sslSection.buildTrustAlt": "أيقونة بناء ثقة العملاء",
+    "sslSection.seoRanking": "رفع تصنيف موقعك في محركات البحث SEO",
+    "sslSection.seoRankingDesc":
+      "المواقع المؤمّنة لها الأفضليّة في الحصول على ترتيب أعلى في نتائج محرّكات البحث، حيث أن الأمان هو عامل أساسي في عمليّة التصنيف.",
+    "sslSection.seoRankingAlt": "أيقونة رفع تصنيف SEO",
+    "sslSection.browserCompatibility":
+      "حافظ على ظهور موقعك عبر المتصفّحات المختلفة",
+    "sslSection.browserCompatibilityDesc":
+      "إذا كان موقعك لا يحتوي على شهادة SSL، فستقوم معظم متصفحات الويب المشهورة عالميًا بوضع علامة عليه على أنه 'غير آمن' مع إظهار علامة تحذير، وبعض المتصفحات ستصل إلى حد حظره تمامًا من المستخدم.",
+    "sslSection.browserCompatibilityAlt": "أيقونة توافق المتصفحات",
+    "whois.title": "ما هي أداة WHOIS؟",
+    "whois.description":
+      "أداة WHOIS هي خدمة توفر معلومات حول أسماء النطاقات، بما في ذلك مالك النطاق وتفاصيل التسجيل وتاريخ الانتهاء ومعلومات الاتصال المرتبطة به. تساعد المستخدمين على التحقق من ملكية النطاق، وفحص توفر النطاق، والتحقق من شرعية المواقع الإلكترونية. يستخدم العديد من مسجلي النطاقات والمتخصصين في الأمن السيبراني أداة WHOIS لأغراض البحث والأمن السيبراني والامتثال.",
+
+    "websiteBuilder.title": "ابني موقعك بسهولة مع منشئ المواقع الخاص بنا",
+    "websiteBuilder.chooseTemplate": "اختر القالب الخاص بك",
+    "websiteBuilder.chooseTemplateDesc":
+      "اختر من بين 200 قالب رائع لبدء بناء موقعك.",
+    "websiteBuilder.enhanceFunctionality": "تعزيز وظائف موقعك",
+    "websiteBuilder.enhanceFunctionalityDesc":
+      "احصل على العديد من الإضافات والأدوات والوظائف التي تحتاجها لتحسين موقعك. بما في ذلك الأساسيات مثل معرض الصور الخاص بك، ووسائل الإعلام، ومنصات التواصل الاجتماعي، والمزيد.",
+    "websiteBuilder.previewSite": "معاينة الموقع",
+    "websiteBuilder.previewSiteDesc":
+      "اطلع على موقعك باستخدام القالب المحدد، قبل نشره علنًا.",
+    "websiteBuilder.publishSave": "انشر أو احفظ موقعك – بنقرة واحدة",
+    "websiteBuilder.publishSaveDesc":
+      "يمكنك نشر موقعك على الإنترنت، أو حفظ مسودة لموقعك دون نشره.",
+    "websiteBuilder.chooseTemplateAlt": "أيقونة اختيار القالب",
+    "websiteBuilder.websiteBuilderAlt": "أيقونة منشئ المواقع",
+    "featuresNine.title": "المزايا",
+    "featuresNine.description": "المزايا الأساسية في جميع خططنا",
+    "featuresNine.multilingualSites": "مواقع متعددة اللغات",
+    "featuresNine.languageSupport": "دعم 50 لغة",
+    "featuresNine.responsiveDesign": "تصميم متجاوب على مختلف الأجهزة",
+    "featuresNine.easyTool": "أداة سهلة الاستخدام",
+    "featuresNine.videoTutorials": "دروس فيديو حول كيفية الاستخدام",
+    "featuresNine.plugins": "الإضافات",
+    "featuresNine.millionTemplates": "أكثر من مليون قالب",
+    "featuresNine.siteMigration": "إمكانية نقل المواقع من أدوات بناء أخرى",
+    "featuresNine.iconAlt": "أيقونة",
+    "featuresNine.rightImageAlt": "صورة زخرفية يمينية",
+    "featuresNine.leftImageAlt": "صورة زخرفية يسارية",
+    "wordpressHosting.title": "استضافة وورد بريس",
+    "wordpressHosting.description": "بيئة محسّنة لنمو موقعك باستخدام ووردبريس",
+    "wordpressHosting.startNow": "ابدا الان!",
+    "kubernetes.title": "قم ببناء مجموعات Kubernetes في دقائق معدودة",
+    "kubernetes.description":
+      "توقف عن إضاعة الوقت والجهد في إدارة مجموعات Kubernetes. باستخدام محرك Kubernetes المُدار بالكامل، يمكنك بسهولة إطلاق الموارد المُدارة للحاويات الخاصة بتطبيقك وإدارتها وتوسيع نطاقها في دقائق بدلاً من أيام.",
+    "kubernetes.orderNow": "اطلب الان!",
+    "services.titletwo": "انطلق بسرعة ونمي أعمالك",
+    "services.reliableHosting": "استضافة ثابتة موثوقة",
+    "services.reliableHostingDesc":
+      "استضف مواقعك الثابتة بوقت تحميل فائق السرعة واستقرار لا مثيل له. استمتع بنشر سلس مع شبكة CDN موزعة عالميًا.",
+    "services.scalableStorage": "تخزين سحابي قابل للتطوير",
+    "services.scalableStorageDesc":
+      "قم بتخزين بياناتك والوصول إليها بأمان مع تخزين سحابي عالي الأداء. قم بالتوسع بسهولة مع نمو عملك بفضل التكرار المحسن.",
+    "services.enterpriseHosting": "استضافة ثابتة بمستوى الشركات",
+    "services.enterpriseHostingDesc":
+      "قم بتقديم تطبيقاتك الثابتة بأمان وأداء عاليين. استفد من التحديثات الفورية، والوصول العالمي، وعدم الحاجة إلى الصيانة.",
+    "services.reliableHostingAlt": "أيقونة استضافة ثابتة موثوقة",
+    "services.scalableStorageAlt": "أيقونة تخزين سحابي قابل للتطوير",
+    "services.enterpriseHostingAlt": "أيقونة استضافة ثابتة بمستوى الشركات",
+    "services.backgroundDecorationAlt": "زخرفة خلفية",
+    "oneClickApps.title": "ابدأ بسرعة مع التطبيقات بنقرة واحدة",
+    "oneClickApps.description":
+      "يدعم محرك Kubernetes التكامل مع أدوات Kubernetes الشائعة، مما يسمح لك بإنشاء مجموعات تشغل برامج مفتوحة المصدر مُعدة مسبقًا بنقرة واحدة.",
+    "oneClickApps.helmCharts": "Helm Charts",
+    "oneClickApps.certManager": "مدير الشهادات",
+    "oneClickApps.linkerd": "Linkerd",
+    "oneClickApps.operators": "المشغلون",
+    "oneClickApps.imageAlt": "تطبيقات بنقرة واحدة",
+    "templates.million": "1000000+",
+    "templates.title": "أكثر من 1,000,000 قالب جاهز لجميع الأغراض",
+    "templates.description":
+      "لجميع أنواع الأنشطة التجارية والشخصية، يوفر لك منشئ مواقع الويب لدينا أكثر من 1,000,000 قالب رائع جاهز للاستخدام مع تصميم قابل للتخصيص والتعديل بالكامل.",
+    "templates.viewMore": "عرض المزيد",
+
+    "hosting.windows": "استضافة ويندوز",
+    "hosting.windows.description":
+      "استضافة تعتمد على نظام ويندوز مع دعم لـ .NET وغيرها من تقنيات مايكروسوفت.",
     "sharedHosting.title": "الاستضافات المشتركة",
-"sharedHosting.description": "خوادم سحابية عالية الأداء والثبات تصل إلى 100% مع مواقع جغرافية متعددة",
-"sharedHosting.startNow": "ابدا الان!",
-"smallContent.feature.backupRecovery": "النسخ الاحتياطي والاسترداد للبيئات المادية والافتراضية والسحابية.",
-"smallContent.feature.malwareProtection": "الحماية من البرامج الضارة ومكافحة برامج الفدية.",
-"smallContent.feature.deviceProtection": "حماية الأجهزة الطرفية وإدارتها.",
-"smallContent.feature.threatDetection": "اكتشاف التهديدات المتقدمة والاستجابة لها.",
-"smallContent.feature.emailProtection": "حماية البريد الإلكتروني والأرشفة.",
-"smallContent.feature.disasterRecovery": "التعافي من الكوارث المستند إلى السحابة.",
-"smallContent.feature.centralManagement": "إدارة ومراقبة مركزية.",
-"smallContent.checkIconAlt": "أيقونة التحقق",
+    "sharedHosting.description":
+      "خوادم سحابية عالية الأداء والثبات تصل إلى 100% مع مواقع جغرافية متعددة",
+    "sharedHosting.startNow": "ابدا الان!",
+    "smallContent.feature.backupRecovery":
+      "النسخ الاحتياطي والاسترداد للبيئات المادية والافتراضية والسحابية.",
+    "smallContent.feature.malwareProtection":
+      "الحماية من البرامج الضارة ومكافحة برامج الفدية.",
+    "smallContent.feature.deviceProtection": "حماية الأجهزة الطرفية وإدارتها.",
+    "smallContent.feature.threatDetection":
+      "اكتشاف التهديدات المتقدمة والاستجابة لها.",
+    "smallContent.feature.emailProtection": "حماية البريد الإلكتروني والأرشفة.",
+    "smallContent.feature.disasterRecovery":
+      "التعافي من الكوارث المستند إلى السحابة.",
+    "smallContent.feature.centralManagement": "إدارة ومراقبة مركزية.",
+    "smallContent.checkIconAlt": "أيقونة التحقق",
     "nistCompliance.title": "متوافق مع إطار عمل NIST",
     "payment.titletwo":
       "لا توجد رسوم مخفية، يتم تجديد الاشتراك بنفس سعر الاشتراك .",
@@ -1147,17 +1589,263 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
+    "windowsHosting.title": "Windows Hosting",
+"windowsHosting.description": "One of the best, fastest, and easiest hosting services",
+    "support.title": "Not sure where to start? Don’t worry, we’re here to help",
+"support.description": "Libya Spider, as an official Microsoft cloud solutions provider, is ready to assist your organization in adopting and fully integrating the Microsoft 365 cloud productivity solution into your workflow.",
+"support.successMessage": "We are proud to have supported numerous companies in their successful transition to Microsoft 365 services – and we’re excited to help you too!",
+"support.cta": "Request Now!",
+"support.settingsChanges": "Settings Changes",
+"support.settingsChangesAlt": "Settings Changes Icon",
+"support.training": "Training",
+"support.trainingAlt": "Training Icon",
+"support.technicalSupport": "Technical Support",
+"support.technicalSupportAlt": "Technical Support Icon",
+"support.settingsCustomization": "Settings and Customization",
+"support.settingsCustomizationAlt": "Settings and Customization Icon",
+"support.dataUserMigration": "Data and User Migration",
+"support.dataUserMigrationAlt": "Data and User Migration Icon",
+"support.sharePointMigration": "SharePoint Online Migration",
+"support.sharePointMigrationAlt": "SharePoint Online Migration Icon",
+    "tigersHosting.title": "Nomoar Hosting",
+"tigersHosting.description": "Easy-to-manage and cost-effective cloud infrastructure",
+"cloudInfrastructure.title": "Flexible, Easy-to-Manage, and Scalable Infrastructure",
+"cloudInfrastructure.description": "LS Cloud combines compute, storage, and networking resources along with advanced analytics and monitoring tools in a single, user-friendly cloud platform.",
+"cloudInfrastructure.tools": "Tools in a single, user-friendly cloud platform.",
+"cloudInfrastructure.resources": "Cloud resources deployable in minutes",
+"cloudInfrastructure.loadMetrics": "Load Metrics",
+"cloudInfrastructure.loadMetricsAlt": "Load Metrics Icon",
+"cloudInfrastructure.networking": "Networking",
+"cloudInfrastructure.networkingAlt": "Networking Icon",
+"cloudInfrastructure.storageSizes": "Storage Sizes",
+"cloudInfrastructure.storageSizesAlt": "Storage Sizes Icon",
+"cloudInfrastructure.virtualServers": "Virtual Servers",
+"cloudInfrastructure.virtualServersAlt": "Virtual Servers Icon",
+"cloudInfrastructure.backgroundAlt": "Cloud Background",
+"whyChooseTigers.blockUnauthorizedEmail": "Block Unauthorized Email",
+"whyChooseTigers.blockUnauthorizedEmailDesc": "With PowerDMARC, you not only eliminate email spoofing but also leverage detailed reports to adjust your content strategy instantly. Leave nothing to chance.",
+"whyChooseTigers.blockUnauthorizedEmailAlt": "Block Unauthorized Email Icon",
+"whyChooseTigers.preventEmailSpoofing": "Prevent Email Spoofing",
+"whyChooseTigers.preventEmailSpoofingDesc": "Protect your domain from email spoofing and phishing attacks using advanced authentication protocols. Ensure only authorized senders can use your domain.",
+"whyChooseTigers.preventEmailSpoofingAlt": "Prevent Email Spoofing Icon",
+"whyChooseTigers.enhanceEmailSecurity": "Enhance Email Security",
+"whyChooseTigers.enhanceEmailSecurityDesc": "Gain full visibility into your email traffic and detect unauthorized activities in real-time. Keep your communication secure and compliant.",
+"whyChooseTigers.enhanceEmailSecurityAlt": "Enhance Email Security Icon",
+"whyChooseTigers.verifyEmail": "Verify Every Email",
+"whyChooseTigers.verifyEmailDesc": "Use DMARC, SPF, and DKIM to validate your emails and prevent cybercriminals from spoofing your domain. Build trust with recipients.",
+"whyChooseTigers.verifyEmailAlt": "Verify Every Email Icon",
+"whyChooseTigers.backgroundRightAlt": "Right Background",
+"whyChooseTigers.backgroundLeftAlt": "Left Background",
+
+    "businessHosting.title": "Business Hosting",
+"businessHosting.description": "One of the best, fastest, and easiest hosting services",
+"servicesThree.title": "Launch Fast and Grow Your Business",
+"servicesThree.reliableStaticHosting": "Reliable Static Hosting",
+"servicesThree.reliableStaticHostingDesc": "Host your static websites with lightning-fast load times and unmatched stability. Enjoy seamless deployment with a globally distributed CDN.",
+"servicesThree.reliableStaticHostingAlt": "Reliable Static Hosting Icon",
+"servicesThree.scalableCloudStorage": "Scalable Cloud Storage",
+"servicesThree.scalableCloudStorageDesc": "Store and access your data securely with high-performance cloud storage. Scale effortlessly as your business grows with enhanced redundancy.",
+"servicesThree.scalableCloudStorageAlt": "Scalable Cloud Storage Icon",
+"servicesThree.enterpriseStaticHosting": "Enterprise-Level Static Hosting",
+"servicesThree.enterpriseStaticHostingDesc": "Deliver your static applications with security and high performance. Benefit from instant updates, global access, and zero maintenance.",
+"servicesThree.enterpriseStaticHostingAlt": "Enterprise Static Hosting Icon",
+"mainFeatures.title": "Key Features",
+"mainFeatures.description": "Own your dedicated server with your preferred operating system and pre-installed applications.",
+"mainFeatures.crossPlatform": "Works Across Multiple Platforms",
+"mainFeatures.crossPlatformAlt": "Cross-Platform Icon",
+"mainFeatures.ddosMitigation": "DDoS Attack Mitigation",
+"mainFeatures.ddosMitigationAlt": "DDoS Mitigation Icon",
+"mainFeatures.malwareDetection": "Malware Detection and Removal",
+"mainFeatures.malwareDetectionAlt": "Malware Detection Icon",
+"mainFeatures.sslCertificate": "SSL Security Certificate",
+"mainFeatures.sslCertificateAlt": "SSL Certificate Icon",
+"mainFeatures.securityMonitoring": "Security Monitoring",
+"mainFeatures.securityMonitoringAlt": "Security Monitoring Icon",
+"mainFeatures.performanceOptimization": "Performance Optimization",
+"mainFeatures.performanceOptimizationAlt": "Performance Optimization Icon",
+"mainFeatures.backgroundRightAlt": "Right Background Image",
+"mainFeatures.backgroundLeftAlt": "Left Background Image",
+
+    "emailHosting.title": "Email Hosting",
+    "emailHosting.description":
+      "One of the best, fastest, and easiest hosting services",
+    "businessNeeds.title": "Everything Your Business Needs",
+    "businessNeeds.brandAwareness": "Increase Brand Awareness",
+    "businessNeeds.brandAwarenessDesc":
+      "Link your company's domain name to enhance brand awareness and present a more professional image using a custom email",
+    "businessNeeds.brandAwarenessAlt": "Brand Awareness Icon",
+    "businessNeeds.security": "Security",
+    "businessNeeds.securityDesc":
+      "Using AI and smart email protection software, LS Suite protects your inbox from spam, viruses, malware, ransomware, and phishing attacks.",
+    "businessNeeds.securityAlt": "Security Icon",
+    "businessNeeds.accessCollaboration": "Easy Access and Collaboration",
+    "businessNeeds.accessCollaborationDesc":
+      "Access your email, calendar, contacts, and files from anywhere on any device, and collaborate with your team in real-time, with all changes saved automatically.",
+    "businessNeeds.accessCollaborationAlt": "Access and Collaboration Icon",
+    "emailSecurity.title": "Strong Security for Email Protection",
+    "emailSecurity.description":
+      "Protect your professional email with AI-powered security against spam, phishing, and malware.",
+    "emailSecurity.backupRestore":
+      "Backup and restore for physical, virtual, and cloud environments.",
+    "emailSecurity.backupRestoreAlt": "Backup and Restore Icon",
+    "emailSecurity.antiSpamPhishing":
+      "Advanced integrated tools to combat spam, viruses, and phishing.",
+    "emailSecurity.antiSpamPhishingAlt": "Anti-Spam and Phishing Tools Icon",
+    "emailSecurity.documentProtection":
+      "Protect shared documents with passwords and time restrictions.",
+    "emailSecurity.documentProtectionAlt": "Document Protection Icon",
+    "emailSecurity.encryption":
+      "Easily encrypt emails and files to protect sensitive information.",
+    "emailSecurity.encryptionAlt": "Email and File Encryption Icon",
+    "emailSecurity.backgroundAlt": "Background Image",
+    "keyFeaturesTwo.title": "Key Features",
+    "keyFeatures.description":
+      "Own your dedicated server with your preferred operating system and pre-installed applications.",
+    "keyFeatures.mailStorage": "Email Storage Capacity",
+    "keyFeatures.mailStorageAlt": "Email Storage Icon",
+    "keyFeatures.reliableEmail": "Reliable Email with 99.9% Uptime Guarantee",
+    "keyFeatures.reliableEmailAlt": "Reliable Email Icon",
+    "keyFeatures.customEmail": "Custom and Secure Business Email",
+    "keyFeatures.customEmailAlt": "Custom Email Icon",
+    "keyFeatures.calendarSharing": "Calendar, Contacts, and Tasks Sharing",
+    "keyFeatures.calendarSharingAlt": "Calendar Sharing Icon",
+    "keyFeatures.spamProtection": "Spam Filtering and Virus Protection",
+    "keyFeatures.spamProtectionAlt": "Spam Protection Icon",
+    "callToAction.title": "Start Your Easy Transition with Us",
+    "callToAction.description":
+      "Upgrade your email to LS Suite easily, quickly, and securely with the help of Libyan Spider. Begin your journey to improve productivity and enhance email security with our full support, ensuring no interruptions, downtime, or data loss of any kind.",
+    "callToAction.startNow": "Start Now!",
+    "callToAction.settingsAlt": "Settings",
+
+    "hostingProgrammers.title": "Hosting Programmers",
+    "hostingProgrammers.description":
+      "High-performance and 100% stable cloud servers with multiple geographic locations",
+    "hostingProgrammers.startNow": "Start Now",
+    "servicesTwo.title": "Why Choose Al-Namur?",
+    "servicesTwo.description":
+      "Advanced and comprehensive solutions and services for individuals and organizations",
+    "services.scalableStorageTwo": "Scalable Storage",
+    "services.scalableStorageDescTwo":
+      "Flexible cloud storage that adapts to your growing needs.",
+    "services.scalableStorageAltTwo": "Scalable Storage Icon",
+    "services.enterpriseHostingTwo": "Enterprise Hosting",
+    "services.enterpriseHostingDescTwo":
+      "Advanced hosting solutions tailored for large businesses.",
+    "services.enterpriseHostingAltTwo": "Enterprise Hosting Icon",
+    "services.reliableHostingTwo": "Reliable Hosting",
+    "services.reliableHostingDescTwo":
+      "Stable hosting with high performance and guaranteed uptime.",
+    "services.reliableHostingAltTwo": "Reliable Hosting Icon",
+    "services.backgroundDecorationAltTwo": "Background Decorative Image",
+    "imglist.contactUs":
+      "Interested in learning how we can help your business succeed? Contact us",
+    "imglist.partnerLogoAlt": "Partner Logo",
+    "sslSection.title": "More Than Just a Security Matter",
+    "sslSection.description":
+      "Having an SSL certificate for websites is an urgent necessity, not just from a security perspective.",
+    "sslSection.buildTrust": "Build Customer Trust",
+    "sslSection.buildTrustDesc":
+      "Show your customers that your online business is secure and authenticated, ensuring their sensitive data and electronic payments are fully protected.",
+    "sslSection.buildTrustAlt": "Build Customer Trust Icon",
+    "sslSection.seoRanking": "Boost Your Site’s SEO Ranking",
+    "sslSection.seoRankingDesc":
+      "Secured websites have an advantage in achieving higher rankings in search engine results, as security is a key factor in the ranking process.",
+    "sslSection.seoRankingAlt": "SEO Ranking Icon",
+    "sslSection.browserCompatibility":
+      "Ensure Your Site’s Visibility Across Browsers",
+    "sslSection.browserCompatibilityDesc":
+      "If your site lacks an SSL certificate, most globally popular web browsers will mark it as 'not secure' with a warning sign, and some browsers may even block it entirely from users.",
+    "sslSection.browserCompatibilityAlt": "Browser Compatibility Icon",
+    "whois.title": "What is the WHOIS Tool?",
+    "whois.description":
+      "The WHOIS tool is a service that provides information about domain names, including the domain owner, registration details, expiration date, and associated contact information. It helps users verify domain ownership, check domain availability, and validate the legitimacy of websites. Many domain registrars and cybersecurity professionals use the WHOIS tool for research, cybersecurity, and compliance purposes.",
+
+    "websiteBuilder.title":
+      "Build Your Website Easily with Our Website Builder",
+    "websiteBuilder.chooseTemplate": "Choose Your Template",
+    "websiteBuilder.chooseTemplateDesc":
+      "Choose from 200 stunning templates to start building your site.",
+    "websiteBuilder.enhanceFunctionality": "Enhance Your Site’s Functionality",
+    "websiteBuilder.enhanceFunctionalityDesc":
+      "Get numerous plugins, tools, and features you need to improve your site, including essentials like your photo gallery, media, social media platforms, and more.",
+    "websiteBuilder.previewSite": "Preview Your Site",
+    "websiteBuilder.previewSiteDesc":
+      "View your site with the selected template before publishing it publicly.",
+    "websiteBuilder.publishSave": "Publish or Save Your Site – One Click",
+    "websiteBuilder.publishSaveDesc":
+      "You can publish your site online or save a draft of your site without publishing it.",
+    "websiteBuilder.chooseTemplateAlt": "Choose Template Icon",
+    "websiteBuilder.websiteBuilderAlt": "Website Builder Icon",
+    "featuresNine.title": "Features",
+    "featuresNine.description": "Core features in all our plans",
+    "featuresNine.multilingualSites": "Multilingual Websites",
+    "featuresNine.languageSupport": "Support for 50 Languages",
+    "featuresNine.responsiveDesign": "Responsive Design Across Devices",
+    "featuresNine.easyTool": "Easy-to-Use Tool",
+    "featuresNine.videoTutorials": "Video Tutorials on Usage",
+    "featuresNine.plugins": "Plugins",
+    "featuresNine.millionTemplates": "Over a Million Templates",
+    "featuresNine.siteMigration":
+      "Ability to Migrate Sites from Other Builders",
+    "featuresNine.iconAlt": "Icon",
+    "featuresNine.rightImageAlt": "Right Decorative Image",
+    "featuresNine.leftImageAlt": "Left Decorative Image",
+    "wordpressHosting.title": "WordPress Hosting",
+    "wordpressHosting.description":
+      "An optimized environment for growing your site using WordPress",
+    "wordpressHosting.startNow": "Start Now!",
+    "kubernetes.title": "Build Kubernetes Clusters in Minutes",
+    "kubernetes.description":
+      "Stop wasting time and effort managing Kubernetes clusters. With our fully managed Kubernetes engine, you can easily deploy, manage, and scale your application's containerized resources in minutes instead of days.",
+    "kubernetes.orderNow": "Order Now!",
+    "services.titletwo": "Launch Fast and Grow Your Business",
+    "services.reliableHosting": "Reliable Static Hosting",
+    "services.reliableHostingDesc":
+      "Host your static sites with lightning-fast load times and unmatched stability. Enjoy seamless deployment with a globally distributed CDN.",
+    "services.scalableStorage": "Scalable Cloud Storage",
+    "services.scalableStorageDesc":
+      "Store and access your data securely with high-performance cloud storage. Scale effortlessly as your business grows with enhanced redundancy.",
+    "services.enterpriseHosting": "Enterprise-Grade Static Hosting",
+    "services.enterpriseHostingDesc":
+      "Deliver your static applications securely with high performance. Benefit from instant updates, global access, and zero maintenance.",
+    "services.reliableHostingAlt": "Reliable Static Hosting Icon",
+    "services.scalableStorageAlt": "Scalable Cloud Storage Icon",
+    "services.enterpriseHostingAlt": "Enterprise-Grade Static Hosting Icon",
+    "services.backgroundDecorationAlt": "Background Decoration",
+    "oneClickApps.title": "Get Started Quickly with One-Click Apps",
+    "oneClickApps.description":
+      "Our Kubernetes engine supports integration with popular Kubernetes tools, allowing you to create clusters running pre-configured open-source software with a single click.",
+    "oneClickApps.helmCharts": "Helm Charts",
+    "oneClickApps.certManager": "Certificate Manager",
+    "oneClickApps.linkerd": "Linkerd",
+    "oneClickApps.operators": "Operators",
+    "oneClickApps.imageAlt": "One-Click Applications",
+    "templates.million": "1,000,000+",
+    "templates.title": "Over 1,000,000 Ready-to-Use Templates for All Purposes",
+    "templates.description":
+      "For all types of business and personal activities, our website builder provides over 1,000,000 stunning ready-to-use templates with fully customizable and editable designs.",
+    "templates.viewMore": "View More",
+
+    "hosting.windows": "Windows Hosting",
+    "hosting.windows.description":
+      "Windows-based hosting with support for .NET and other Microsoft technologies.",
     "sharedHosting.title": "Shared Hosting",
-"sharedHosting.description": "High-performance and 100% stable cloud servers with multiple geographic locations",
-"sharedHosting.startNow": "Start Now!",
-"smallContent.feature.backupRecovery": "Backup and recovery for physical, virtual, and cloud environments.",
-"smallContent.feature.malwareProtection": "Malware protection and anti-ransomware.",
-"smallContent.feature.deviceProtection": "Endpoint protection and management.",
-"smallContent.feature.threatDetection": "Advanced threat detection and response.",
-"smallContent.feature.emailProtection": "Email protection and archiving.",
-"smallContent.feature.disasterRecovery": "Cloud-based disaster recovery.",
-"smallContent.feature.centralManagement": "Centralized management and monitoring.",
-"smallContent.checkIconAlt": "Check Icon",
+    "sharedHosting.description":
+      "High-performance and 100% stable cloud servers with multiple geographic locations",
+    "sharedHosting.startNow": "Start Now!",
+    "smallContent.feature.backupRecovery":
+      "Backup and recovery for physical, virtual, and cloud environments.",
+    "smallContent.feature.malwareProtection":
+      "Malware protection and anti-ransomware.",
+    "smallContent.feature.deviceProtection":
+      "Endpoint protection and management.",
+    "smallContent.feature.threatDetection":
+      "Advanced threat detection and response.",
+    "smallContent.feature.emailProtection": "Email protection and archiving.",
+    "smallContent.feature.disasterRecovery": "Cloud-based disaster recovery.",
+    "smallContent.feature.centralManagement":
+      "Centralized management and monitoring.",
+    "smallContent.checkIconAlt": "Check Icon",
 
     "payment.titletwo":
       "No hidden fees, subscription renews at the same price.",
@@ -1789,17 +2477,277 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
+    "windowsHosting.title": "Hébergement Windows",
+"windowsHosting.description": "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
+    "support.title": "Vous ne savez pas par où commencer ? Ne vous inquiétez pas, nous sommes là pour vous aider",
+"support.description": "Libya Spider, en tant que fournisseur officiel de solutions cloud Microsoft, est prêt à aider votre organisation à adopter et intégrer pleinement la solution de productivité cloud Microsoft 365 dans votre flux de travail.",
+"support.successMessage": "Nous sommes fiers d’avoir accompagné de nombreuses entreprises dans leur transition réussie vers les services Microsoft 365 – et nous sommes ravis de vous aider aussi !",
+"support.cta": "Demandez maintenant !",
+"support.settingsChanges": "Modifications des paramètres",
+"support.settingsChangesAlt": "Icône de modifications des paramètres",
+"support.training": "Formation",
+"support.trainingAlt": "Icône de formation",
+"support.technicalSupport": "Support technique",
+"support.technicalSupportAlt": "Icône de support technique",
+"support.settingsCustomization": "Paramètres et personnalisation",
+"support.settingsCustomizationAlt": "Icône de paramètres et personnalisation",
+"support.dataUserMigration": "Migration des données et des utilisateurs",
+"support.dataUserMigrationAlt": "Icône de migration des données et des utilisateurs",
+"support.sharePointMigration": "Migration SharePoint Online",
+"support.sharePointMigrationAlt": "Icône de migration SharePoint Online",
+    "tigersHosting.title": "Hébergement Nomoar",
+"tigersHosting.description": "Infrastructure cloud facile à gérer et économique",
+"cloudInfrastructure.title": "Infrastructure flexible, facile à gérer et évolutive",
+"cloudInfrastructure.description": "LS Cloud combine des ressources de calcul, de stockage et de réseau avec des analyses avancées et des outils de surveillance dans une plateforme cloud unique et conviviale.",
+"cloudInfrastructure.tools": "Outils dans une plateforme cloud unique et conviviale.",
+"cloudInfrastructure.resources": "Ressources cloud déployables en quelques minutes",
+"cloudInfrastructure.loadMetrics": "Métriques de charge",
+"cloudInfrastructure.loadMetricsAlt": "Icône de métriques de charge",
+"cloudInfrastructure.networking": "Réseautage",
+"cloudInfrastructure.networkingAlt": "Icône de réseautage",
+"cloudInfrastructure.storageSizes": "Tailles de stockage",
+"cloudInfrastructure.storageSizesAlt": "Icône de tailles de stockage",
+"cloudInfrastructure.virtualServers": "Serveurs virtuels",
+"cloudInfrastructure.virtualServersAlt": "Icône de serveurs virtuels",
+"cloudInfrastructure.backgroundAlt": "Arrière-plan cloud",
+"whyChooseTigers.blockUnauthorizedEmail": "Bloquer les emails non autorisés",
+"whyChooseTigers.blockUnauthorizedEmailDesc": "Avec PowerDMARC, vous éliminez non seulement l'usurpation d'emails, mais vous pouvez également utiliser des rapports détaillés pour ajuster votre stratégie de contenu immédiatement. Ne laissez rien au hasard.",
+"whyChooseTigers.blockUnauthorizedEmailAlt": "Icône de blocage des emails non autorisés",
+"whyChooseTigers.preventEmailSpoofing": "Prévenir l'usurpation d'email",
+"whyChooseTigers.preventEmailSpoofingDesc": "Protégez votre domaine contre l'usurpation d'emails et les attaques de phishing à l'aide de protocoles d'authentification avancés. Assurez-vous que seuls les expéditeurs autorisés peuvent utiliser votre domaine.",
+"whyChooseTigers.preventEmailSpoofingAlt": "Icône de prévention de l'usurpation d'email",
+"whyChooseTigers.enhanceEmailSecurity": "Renforcer la sécurité des emails",
+"whyChooseTigers.enhanceEmailSecurityDesc": "Obtenez une visibilité complète sur le trafic de vos emails et détectez les activités non autorisées en temps réel. Maintenez vos communications sécurisées et conformes.",
+"whyChooseTigers.enhanceEmailSecurityAlt": "Icône de renforcement de la sécurité des emails",
+"whyChooseTigers.verifyEmail": "Vérifier chaque email",
+"whyChooseTigers.verifyEmailDesc": "Utilisez DMARC, SPF et DKIM pour valider vos emails et empêcher les cybercriminels d'usurper votre domaine. Renforcez la confiance avec les destinataires.",
+"whyChooseTigers.verifyEmailAlt": "Icône de vérification de chaque email",
+"whyChooseTigers.backgroundRightAlt": "Arrière-plan droit",
+"whyChooseTigers.backgroundLeftAlt": "Arrière-plan gauche",
+
+    "businessHosting.title": "Hébergement d'entreprise",
+"businessHosting.description": "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
+"servicesThree.title": "Démarrez rapidement et développez votre entreprise",
+"servicesThree.reliableStaticHosting": "Hébergement statique fiable",
+"servicesThree.reliableStaticHostingDesc": "Hébergez vos sites statiques avec des temps de chargement ultra-rapides et une stabilité inégalée. Profitez d'un déploiement fluide avec un CDN distribué à l'échelle mondiale.",
+"servicesThree.reliableStaticHostingAlt": "Icône d'hébergement statique fiable",
+"servicesThree.scalableCloudStorage": "Stockage cloud évolutif",
+"servicesThree.scalableCloudStorageDesc": "Stockez et accédez à vos données en toute sécurité avec un stockage cloud haute performance. Évoluez facilement à mesure que votre entreprise grandit grâce à une redondance améliorée.",
+"servicesThree.scalableCloudStorageAlt": "Icône de stockage cloud évolutif",
+"servicesThree.enterpriseStaticHosting": "Hébergement statique de niveau entreprise",
+"servicesThree.enterpriseStaticHostingDesc": "Diffusez vos applications statiques avec sécurité et haute performance. Bénéficiez de mises à jour instantanées, d'un accès mondial et d'aucune maintenance.",
+"servicesThree.enterpriseStaticHostingAlt": "Icône d'hébergement statique de niveau entreprise",
+"mainFeatures.title": "Fonctionnalités clés",
+"mainFeatures.description": "Possédez votre serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
+"mainFeatures.crossPlatform": "Fonctionne sur plusieurs plateformes",
+"mainFeatures.crossPlatformAlt": "Icône multi-plateforme",
+"mainFeatures.ddosMitigation": "Atténuation des attaques DDoS",
+"mainFeatures.ddosMitigationAlt": "Icône d'atténuation DDoS",
+"mainFeatures.malwareDetection": "Détection et suppression des malwares",
+"mainFeatures.malwareDetectionAlt": "Icône de détection de malwares",
+"mainFeatures.sslCertificate": "Certificat de sécurité SSL",
+"mainFeatures.sslCertificateAlt": "Icône de certificat SSL",
+"mainFeatures.securityMonitoring": "Surveillance de la sécurité",
+"mainFeatures.securityMonitoringAlt": "Icône de surveillance de la sécurité",
+"mainFeatures.performanceOptimization": "Optimisation des performances",
+"mainFeatures.performanceOptimizationAlt": "Icône d'optimisation des performances",
+"mainFeatures.backgroundRightAlt": "Image de fond droite",
+"mainFeatures.backgroundLeftAlt": "Image de fond gauche",
+
+    "emailHosting.title": "Hébergement d'email",
+    "emailHosting.description":
+      "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
+    "businessNeeds.title": "Tout ce dont votre entreprise a besoin",
+    "businessNeeds.brandAwareness": "Augmenter la notoriété de la marque",
+    "businessNeeds.brandAwarenessDesc":
+      "Associez le nom de domaine de votre entreprise pour renforcer la notoriété de la marque et présenter une image plus professionnelle avec un email personnalisé",
+    "businessNeeds.brandAwarenessAlt": "Icône de notoriété de la marque",
+    "businessNeeds.security": "Sécurité",
+    "businessNeeds.securityDesc":
+      "Grâce à l'intelligence artificielle et à des logiciels de protection intelligente des emails, LS Suite protège votre boîte de réception contre le spam, les virus, les malwares, les ransomwares et les attaques de phishing.",
+    "businessNeeds.securityAlt": "Icône de sécurité",
+    "businessNeeds.accessCollaboration": "Accès facile et collaboration",
+    "businessNeeds.accessCollaborationDesc":
+      "Accédez à vos emails, calendrier, contacts et fichiers depuis n'importe où sur n'importe quel appareil, et collaborez avec votre équipe en temps réel, avec toutes les modifications enregistrées automatiquement.",
+    "businessNeeds.accessCollaborationAlt": "Icône d'accès et de collaboration",
+    "emailSecurity.title": "Sécurité renforcée pour la protection des emails",
+    "emailSecurity.description":
+      "Protégez votre email professionnel avec une sécurité alimentée par l'IA contre le spam, le phishing et les malwares.",
+    "emailSecurity.backupRestore":
+      "Sauvegarde et restauration pour les environnements physiques, virtuels et cloud.",
+    "emailSecurity.backupRestoreAlt": "Icône de sauvegarde et restauration",
+    "emailSecurity.antiSpamPhishing":
+      "Outils avancés intégrés pour lutter contre le spam, les virus et le phishing.",
+    "emailSecurity.antiSpamPhishingAlt":
+      "Icône d'outils anti-spam et anti-phishing",
+    "emailSecurity.documentProtection":
+      "Protégez les documents partagés avec des mots de passe et des restrictions temporelles.",
+    "emailSecurity.documentProtectionAlt": "Icône de protection des documents",
+    "emailSecurity.encryption":
+      "Chiffrez facilement les emails et les fichiers pour protéger les informations sensibles.",
+    "emailSecurity.encryptionAlt":
+      "Icône de chiffrement des emails et fichiers",
+    "emailSecurity.backgroundAlt": "Image de fond",
+    "keyFeaturesTwo.title": "Fonctionnalités clés",
+    "keyFeatures.description":
+      "Possédez votre serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
+    "keyFeatures.mailStorage": "Capacité de stockage des emails",
+    "keyFeatures.mailStorageAlt": "Icône de stockage des emails",
+    "keyFeatures.reliableEmail":
+      "Email fiable avec une garantie de disponibilité de 99,9 %",
+    "keyFeatures.reliableEmailAlt": "Icône d'email fiable",
+    "keyFeatures.customEmail": "Email professionnel personnalisé et sécurisé",
+    "keyFeatures.customEmailAlt": "Icône d'email personnalisé",
+    "keyFeatures.calendarSharing": "Partage de calendrier, contacts et tâches",
+    "keyFeatures.calendarSharingAlt": "Icône de partage de calendrier",
+    "keyFeatures.spamProtection":
+      "Filtrage des spams et protection contre les virus",
+    "keyFeatures.spamProtectionAlt": "Icône de protection contre les spams",
+    "callToAction.title": "Commencez votre transition facile avec nous",
+    "callToAction.description":
+      "Passez à LS Suite pour vos emails facilement, rapidement et en toute sécurité avec l'aide de Libyan Spider. Commencez votre voyage pour améliorer la productivité et renforcer la sécurité de vos emails avec notre soutien complet, garantissant aucune interruption, aucun temps d'arrêt ni aucune perte de données de quelque nature que ce soit.",
+    "callToAction.startNow": "Commencez maintenant !",
+    "callToAction.settingsAlt": "Paramètres",
+
+    "hostingProgrammers.title": "Hébergement pour programmeurs",
+    "hostingProgrammers.description":
+      "Serveurs cloud haute performance et 100% stables avec plusieurs emplacements géographiques",
+    "hostingProgrammers.startNow": "Commencer maintenant",
+    "servicesTwo.title": "Pourquoi choisir Al-Namur ?",
+    "servicesTwo.description":
+      "Solutions et services avancés et complets pour les particuliers et les organisations",
+    "services.scalableStorageTwo": "Stockage évolutif",
+    "services.scalableStorageDescTwo":
+      "Stockage cloud flexible qui s'adapte à vos besoins croissants.",
+    "services.scalableStorageAltTwo": "Icône de stockage évolutif",
+    "services.enterpriseHostingTwo": "Hébergement d'entreprise",
+    "services.enterpriseHostingDescTwo":
+      "Solutions d'hébergement avancées conçues pour les grandes entreprises.",
+    "services.enterpriseHostingAltTwo": "Icône d'hébergement d'entreprise",
+    "services.reliableHostingTwo": "Hébergement fiable",
+    "services.reliableHostingDescTwo":
+      "Hébergement stable avec des performances élevées et un temps de disponibilité garanti.",
+    "services.reliableHostingAltTwo": "Icône d'hébergement fiable",
+    "services.backgroundDecorationAltTwo": "Image décorative de fond",
+    "imglist.contactUs":
+      "Intéressé à découvrir comment nous pouvons aider votre entreprise à réussir ? Contactez-nous",
+    "imglist.partnerLogoAlt": "Logo du partenaire",
+    "sslSection.title": "Plus qu'une simple question de sécurité",
+    "sslSection.description":
+      "Posséder un certificat SSL pour les sites web est une nécessité urgente, pas seulement du point de vue de la sécurité.",
+    "sslSection.buildTrust": "Gagner la confiance des clients",
+    "sslSection.buildTrustDesc":
+      "Montrez à vos clients que votre entreprise en ligne est sécurisée et authentifiée, garantissant que leurs données sensibles et paiements électroniques sont entièrement protégés.",
+    "sslSection.buildTrustAlt": "Icône de confiance des clients",
+    "sslSection.seoRanking": "Améliorer le classement SEO de votre site",
+    "sslSection.seoRankingDesc":
+      "Les sites sécurisés ont un avantage pour obtenir un meilleur classement dans les résultats des moteurs de recherche, la sécurité étant un facteur clé dans le processus de classement.",
+    "sslSection.seoRankingAlt": "Icône de classement SEO",
+    "sslSection.browserCompatibility":
+      "Assurer la visibilité de votre site sur différents navigateurs",
+    "sslSection.browserCompatibilityDesc":
+      "Si votre site n'a pas de certificat SSL, la plupart des navigateurs web populaires dans le monde le marqueront comme 'non sécurisé' avec un avertissement, et certains navigateurs pourraient même le bloquer complètement pour les utilisateurs.",
+    "sslSection.browserCompatibilityAlt":
+      "Icône de compatibilité des navigateurs",
+    "whois.title": "Qu'est-ce que l'outil WHOIS ?",
+    "whois.description":
+      "L'outil WHOIS est un service qui fournit des informations sur les noms de domaine, y compris le propriétaire du domaine, les détails d'enregistrement, la date d'expiration et les informations de contact associées. Il aide les utilisateurs à vérifier la propriété des domaines, à vérifier la disponibilité des domaines et à valider la légitimité des sites web. De nombreux registraires de domaines et professionnels de la cybersécurité utilisent l'outil WHOIS à des fins de recherche, de cybersécurité et de conformité.",
+
+    "websiteBuilder.title":
+      "Construisez votre site web facilement avec notre constructeur de sites",
+    "websiteBuilder.chooseTemplate": "Choisissez votre modèle",
+    "websiteBuilder.chooseTemplateDesc":
+      "Choisissez parmi 200 modèles magnifiques pour commencer à construire votre site.",
+    "websiteBuilder.enhanceFunctionality":
+      "Améliorez les fonctionnalités de votre site",
+    "websiteBuilder.enhanceFunctionalityDesc":
+      "Obtenez de nombreux plugins, outils et fonctionnalités nécessaires pour améliorer votre site, y compris les essentiels comme votre galerie de photos, les médias, les plateformes de réseaux sociaux, et plus encore.",
+    "websiteBuilder.previewSite": "Prévisualisez votre site",
+    "websiteBuilder.previewSiteDesc":
+      "Visualisez votre site avec le modèle sélectionné avant de le publier publiquement.",
+    "websiteBuilder.publishSave":
+      "Publiez ou sauvegardez votre site – en un clic",
+    "websiteBuilder.publishSaveDesc":
+      "Vous pouvez publier votre site en ligne ou enregistrer un brouillon de votre site sans le publier.",
+    "websiteBuilder.chooseTemplateAlt": "Icône de choix de modèle",
+    "websiteBuilder.websiteBuilderAlt": "Icône de constructeur de sites",
+    "featuresNine.title": "Fonctionnalités",
+    "featuresNine.description":
+      "Fonctionnalités principales dans tous nos plans",
+    "featuresNine.multilingualSites": "Sites web multilingues",
+    "featuresNine.languageSupport": "Prise en charge de 50 langues",
+    "featuresNine.responsiveDesign": "Design adaptatif pour tous les appareils",
+    "featuresNine.easyTool": "Outil facile à utiliser",
+    "featuresNine.videoTutorials": "Tutoriels vidéo sur l’utilisation",
+    "featuresNine.plugins": "Plugins",
+    "featuresNine.millionTemplates": "Plus d’un million de modèles",
+    "featuresNine.siteMigration":
+      "Possibilité de migrer des sites depuis d’autres constructeurs",
+    "featuresNine.iconAlt": "Icône",
+    "featuresNine.rightImageAlt": "Image décorative droite",
+    "featuresNine.leftImageAlt": "Image décorative gauche",
+    "wordpressHosting.title": "Hébergement WordPress",
+    "wordpressHosting.description":
+      "Un environnement optimisé pour développer votre site avec WordPress",
+    "wordpressHosting.startNow": "Commencez maintenant !",
+    "kubernetes.title":
+      "Construisez des clusters Kubernetes en quelques minutes",
+    "kubernetes.description":
+      "Cessez de perdre du temps et des efforts à gérer des clusters Kubernetes. Avec notre moteur Kubernetes entièrement géré, vous pouvez facilement déployer, gérer et mettre à l'échelle les ressources conteneurisées de votre application en quelques minutes au lieu de jours.",
+    "kubernetes.orderNow": "Commandez maintenant !",
+    "services.titletwo": "Lancez rapidement et développez votre entreprise",
+    "services.reliableHosting": "Hébergement statique fiable",
+    "services.reliableHostingDesc":
+      "Hébergez vos sites statiques avec des temps de chargement ultra-rapides et une stabilité inégalée. Profitez d'un déploiement fluide avec un CDN distribué mondialement.",
+    "services.scalableStorage": "Stockage cloud évolutif",
+    "services.scalableStorageDesc":
+      "Stockez et accédez à vos données en toute sécurité avec un stockage cloud haute performance. Évoluez facilement à mesure que votre entreprise grandit grâce à une redondance améliorée.",
+    "services.enterpriseHosting": "Hébergement statique de niveau entreprise",
+    "services.enterpriseHostingDesc":
+      "Déployez vos applications statiques en toute sécurité avec des performances élevées. Bénéficiez de mises à jour instantanées, d'un accès mondial et d'aucune maintenance.",
+    "services.reliableHostingAlt": "Icône d'hébergement statique fiable",
+    "services.scalableStorageAlt": "Icône de stockage cloud évolutif",
+    "services.enterpriseHostingAlt":
+      "Icône d'hébergement statique de niveau entreprise",
+    "services.backgroundDecorationAlt": "Décoration d'arrière-plan",
+    "oneClickApps.title":
+      "Démarrez rapidement avec les applications en un clic",
+    "oneClickApps.description":
+      "Notre moteur Kubernetes prend en charge l'intégration avec les outils Kubernetes populaires, vous permettant de créer des clusters exécutant des logiciels open-source préconfigurés en un seul clic.",
+    "oneClickApps.helmCharts": "Helm Charts",
+    "oneClickApps.certManager": "Gestionnaire de certificats",
+    "oneClickApps.linkerd": "Linkerd",
+    "oneClickApps.operators": "Opérateurs",
+    "oneClickApps.imageAlt": "Applications en un clic",
+    "templates.million": "1 000 000+",
+    "templates.title":
+      "Plus de 1 000 000 de modèles prêts à l’emploi pour tous les usages",
+    "templates.description":
+      "Pour tous types d’activités commerciales et personnelles, notre constructeur de sites web propose plus de 1 000 000 de modèles magnifiques prêts à l’emploi avec des designs entièrement personnalisables et modifiables.",
+    "templates.viewMore": "Voir plus",
+
+    "hosting.windows": "Hébergement Windows",
+    "hosting.windows.description":
+      "Hébergement basé sur Windows avec prise en charge de .NET et d'autres technologies Microsoft.",
     "sharedHosting.title": "Hébergement partagé",
-"sharedHosting.description": "Serveurs cloud haute performance et stables à 100 % avec plusieurs emplacements géographiques",
-"sharedHosting.startNow": "Commencez maintenant !",
-"smallContent.feature.backupRecovery": "Sauvegarde et récupération pour les environnements physiques, virtuels et cloud.",
-"smallContent.feature.malwareProtection": "Protection contre les malwares et anti-rançongiciels.",
-"smallContent.feature.deviceProtection": "Protection et gestion des appareils terminaux.",
-"smallContent.feature.threatDetection": "Détection et réponse aux menaces avancées.",
-"smallContent.feature.emailProtection": "Protection et archivage des e-mails.",
-"smallContent.feature.disasterRecovery": "Récupération après sinistre basée sur le cloud.",
-"smallContent.feature.centralManagement": "Gestion et surveillance centralisées.",
-"smallContent.checkIconAlt": "Icône de vérification",
+    "sharedHosting.description":
+      "Serveurs cloud haute performance et stables à 100 % avec plusieurs emplacements géographiques",
+    "sharedHosting.startNow": "Commencez maintenant !",
+    "smallContent.feature.backupRecovery":
+      "Sauvegarde et récupération pour les environnements physiques, virtuels et cloud.",
+    "smallContent.feature.malwareProtection":
+      "Protection contre les malwares et anti-rançongiciels.",
+    "smallContent.feature.deviceProtection":
+      "Protection et gestion des appareils terminaux.",
+    "smallContent.feature.threatDetection":
+      "Détection et réponse aux menaces avancées.",
+    "smallContent.feature.emailProtection":
+      "Protection et archivage des e-mails.",
+    "smallContent.feature.disasterRecovery":
+      "Récupération après sinistre basée sur le cloud.",
+    "smallContent.feature.centralManagement":
+      "Gestion et surveillance centralisées.",
+    "smallContent.checkIconAlt": "Icône de vérification",
     "payment.titletwo":
       "Aucun frais caché, l'abonnement est renouvelé au même prix.",
     "nistCompliance.title": "Conforme au cadre NIST",
@@ -2471,17 +3419,274 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
+    "windowsHosting.title": "Windows-Hosting",
+"windowsHosting.description": "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
+    "support.title": "Nicht sicher, wo Sie anfangen sollen? Keine Sorge, wir sind hier, um Ihnen zu helfen",
+"support.description": "Libya Spider, als offizieller Anbieter von Microsoft-Cloud-Lösungen, ist bereit, Ihre Organisation bei der Einführung und vollständigen Integration der Microsoft 365 Cloud-Produktivitätslösung in Ihren Arbeitsablauf zu unterstützen.",
+"support.successMessage": "Wir sind stolz darauf, zahlreiche Unternehmen bei ihrem erfolgreichen Übergang zu Microsoft 365-Diensten unterstützt zu haben – und freuen uns, auch Ihnen zu helfen!",
+"support.cta": "Jetzt anfragen!",
+"support.settingsChanges": "Einstellungsänderungen",
+"support.settingsChangesAlt": "Symbol für Einstellungsänderungen",
+"support.training": "Schulung",
+"support.trainingAlt": "Symbol für Schulung",
+"support.technicalSupport": "Technischer Support",
+"support.technicalSupportAlt": "Symbol für technischen Support",
+"support.settingsCustomization": "Einstellungen und Anpassung",
+"support.settingsCustomizationAlt": "Symbol für Einstellungen und Anpassung",
+"support.dataUserMigration": "Daten- und Benutzermigration",
+"support.dataUserMigrationAlt": "Symbol für Daten- und Benutzermigration",
+"support.sharePointMigration": "SharePoint Online-Migration",
+"support.sharePointMigrationAlt": "Symbol für SharePoint Online-Migration",
+    "tigersHosting.title": "Nomoar Hosting",
+"tigersHosting.description": "Einfach zu verwaltende und kosteneffiziente Cloud-Infrastruktur",
+"cloudInfrastructure.title": "Flexible, leicht zu verwaltende und skalierbare Infrastruktur",
+"cloudInfrastructure.description": "LS Cloud kombiniert Rechen-, Speicher- und Netzwerkressourcen mit fortschrittlichen Analysen und Überwachungstools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
+"cloudInfrastructure.tools": "Tools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
+"cloudInfrastructure.resources": "Cloud-Ressourcen, die in Minuten bereitgestellt werden können",
+"cloudInfrastructure.loadMetrics": "Lastmetriken",
+"cloudInfrastructure.loadMetricsAlt": "Symbol für Lastmetriken",
+"cloudInfrastructure.networking": "Netzwerk",
+"cloudInfrastructure.networkingAlt": "Symbol für Netzwerk",
+"cloudInfrastructure.storageSizes": "Speichergrößen",
+"cloudInfrastructure.storageSizesAlt": "Symbol für Speichergrößen",
+"cloudInfrastructure.virtualServers": "Virtuelle Server",
+"cloudInfrastructure.virtualServersAlt": "Symbol für virtuelle Server",
+"cloudInfrastructure.backgroundAlt": "Cloud-Hintergrund",
+"whyChooseTigers.blockUnauthorizedEmail": "Unbefugte E-Mails blockieren",
+"whyChooseTigers.blockUnauthorizedEmailDesc": "Mit PowerDMARC eliminieren Sie nicht nur E-Mail-Spoofing, sondern können auch detaillierte Berichte nutzen, um Ihre Content-Strategie sofort anzupassen. Lassen Sie nichts dem Zufall über.",
+"whyChooseTigers.blockUnauthorizedEmailAlt": "Symbol für das Blockieren unbefugter E-Mails",
+"whyChooseTigers.preventEmailSpoofing": "E-Mail-Spoofing verhindern",
+"whyChooseTigers.preventEmailSpoofingDesc": "Schützen Sie Ihre Domain vor E-Mail-Spoofing und Phishing-Angriffen mit fortschrittlichen Authentifizierungsprotokollen. Stellen Sie sicher, dass nur autorisierte Absender Ihre Domain verwenden können.",
+"whyChooseTigers.preventEmailSpoofingAlt": "Symbol für die Verhinderung von E-Mail-Spoofing",
+"whyChooseTigers.enhanceEmailSecurity": "E-Mail-Sicherheit verbessern",
+"whyChooseTigers.enhanceEmailSecurityDesc": "Erhalten Sie vollständige Einblicke in Ihren E-Mail-Verkehr und erkennen Sie unbefugte Aktivitäten in Echtzeit. Halten Sie Ihre Kommunikation sicher und konform.",
+"whyChooseTigers.enhanceEmailSecurityAlt": "Symbol für die Verbesserung der E-Mail-Sicherheit",
+"whyChooseTigers.verifyEmail": "Jede E-Mail verifizieren",
+"whyChooseTigers.verifyEmailDesc": "Verwenden Sie DMARC, SPF und DKIM, um Ihre E-Mails zu validieren und Cyberkriminelle daran zu hindern, Ihre Domain zu spoofen. Bauen Sie Vertrauen bei den Empfängern auf.",
+"whyChooseTigers.verifyEmailAlt": "Symbol für die Verifizierung jeder E-Mail",
+"whyChooseTigers.backgroundRightAlt": "Rechter Hintergrund",
+"whyChooseTigers.backgroundLeftAlt": "Linker Hintergrund",
+
+    "businessHosting.title": "Business-Hosting",
+"businessHosting.description": "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
+"servicesThree.title": "Schnell starten und Ihr Unternehmen ausbauen",
+"servicesThree.reliableStaticHosting": "Zuverlässiges statisches Hosting",
+"servicesThree.reliableStaticHostingDesc": "Hosten Sie Ihre statischen Websites mit blitzschnellen Ladezeiten und unübertroffener Stabilität. Genießen Sie nahtlosen Einsatz mit einem global verteilten CDN.",
+"servicesThree.reliableStaticHostingAlt": "Symbol für zuverlässiges statisches Hosting",
+"servicesThree.scalableCloudStorage": "Skalierbarer Cloud-Speicher",
+"servicesThree.scalableCloudStorageDesc": "Speichern und greifen Sie sicher auf Ihre Daten mit hochleistungsfähigem Cloud-Speicher zu. Skalieren Sie mühelos, während Ihr Unternehmen wächst, mit verbesserter Redundanz.",
+"servicesThree.scalableCloudStorageAlt": "Symbol für skalierbaren Cloud-Speicher",
+"servicesThree.enterpriseStaticHosting": "Statisches Hosting auf Unternehmensebene",
+"servicesThree.enterpriseStaticHostingDesc": "Liefern Sie Ihre statischen Anwendungen mit Sicherheit und hoher Leistung. Profitieren Sie von sofortigen Updates, globalem Zugriff und keiner Wartung.",
+"servicesThree.enterpriseStaticHostingAlt": "Symbol für statisches Hosting auf Unternehmensebene",
+"mainFeatures.title": "Hauptfunktionen",
+"mainFeatures.description": "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
+"mainFeatures.crossPlatform": "Funktioniert auf mehreren Plattformen",
+"mainFeatures.crossPlatformAlt": "Symbol für Multiplattform",
+"mainFeatures.ddosMitigation": "Abwehr von DDoS-Angriffen",
+"mainFeatures.ddosMitigationAlt": "Symbol für DDoS-Abwehr",
+"mainFeatures.malwareDetection": "Erkennung und Entfernung von Malware",
+"mainFeatures.malwareDetectionAlt": "Symbol für Malware-Erkennung",
+"mainFeatures.sslCertificate": "SSL-Sicherheitszertifikat",
+"mainFeatures.sslCertificateAlt": "Symbol für SSL-Zertifikat",
+"mainFeatures.securityMonitoring": "Sicherheitsüberwachung",
+"mainFeatures.securityMonitoringAlt": "Symbol für Sicherheitsüberwachung",
+"mainFeatures.performanceOptimization": "Leistungsoptimierung",
+"mainFeatures.performanceOptimizationAlt": "Symbol für Leistungsoptimierung",
+"mainFeatures.backgroundRightAlt": "Rechtes Hintergrundbild",
+"mainFeatures.backgroundLeftAlt": "Linkes Hintergrundbild",
+
+    "emailHosting.title": "E-Mail-Hosting",
+    "emailHosting.description":
+      "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
+    "businessNeeds.title": "Alles, was Ihr Unternehmen braucht",
+    "businessNeeds.brandAwareness": "Markenbekanntheit steigern",
+    "businessNeeds.brandAwarenessDesc":
+      "Verknüpfen Sie den Domainnamen Ihres Unternehmens, um die Markenbekanntheit zu steigern und ein professionelleres Image mit einer benutzerdefinierten E-Mail zu präsentieren",
+    "businessNeeds.brandAwarenessAlt": "Symbol für Markenbekanntheit",
+    "businessNeeds.security": "Sicherheit",
+    "businessNeeds.securityDesc":
+      "Mit KI und intelligenter E-Mail-Schutzsoftware schützt LS Suite Ihren Posteingang vor Spam, Viren, Malware, Ransomware und Phishing-Angriffen.",
+    "businessNeeds.securityAlt": "Symbol für Sicherheit",
+    "businessNeeds.accessCollaboration": "Einfacher Zugriff und Zusammenarbeit",
+    "businessNeeds.accessCollaborationDesc":
+      "Greifen Sie von überall und auf jedem Gerät auf Ihre E-Mails, Kalender, Kontakte und Dateien zu und arbeiten Sie in Echtzeit mit Ihrem Team zusammen, wobei alle Änderungen automatisch gespeichert werden.",
+    "businessNeeds.accessCollaborationAlt":
+      "Symbol für Zugriff und Zusammenarbeit",
+    "emailSecurity.title": "Starke Sicherheit für E-Mail-Schutz",
+    "emailSecurity.description":
+      "Schützen Sie Ihre professionelle E-Mail mit KI-gestützter Sicherheit gegen Spam, Phishing und Malware.",
+    "emailSecurity.backupRestore":
+      "Sicherung und Wiederherstellung für physische, virtuelle und Cloud-Umgebungen.",
+    "emailSecurity.backupRestoreAlt":
+      "Symbol für Sicherung und Wiederherstellung",
+    "emailSecurity.antiSpamPhishing":
+      "Fortschrittliche integrierte Tools zur Bekämpfung von Spam, Viren und Phishing.",
+    "emailSecurity.antiSpamPhishingAlt":
+      "Symbol für Anti-Spam- und Phishing-Tools",
+    "emailSecurity.documentProtection":
+      "Schützen Sie freigegebene Dokumente mit Passwörtern und zeitlichen Beschränkungen.",
+    "emailSecurity.documentProtectionAlt": "Symbol für Dokumentschutz",
+    "emailSecurity.encryption":
+      "Verschlüsseln Sie E-Mails und Dateien einfach, um sensible Informationen zu schützen.",
+    "emailSecurity.encryptionAlt":
+      "Symbol für E-Mail- und Dateiverschlüsselung",
+    "emailSecurity.backgroundAlt": "Hintergrundbild",
+    "keyFeaturesTwo.title": "Hauptfunktionen",
+    "keyFeatures.description":
+      "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
+    "keyFeatures.mailStorage": "E-Mail-Speicherkapazität",
+    "keyFeatures.mailStorageAlt": "Symbol für E-Mail-Speicher",
+    "keyFeatures.reliableEmail":
+      "Zuverlässige E-Mail mit 99,9% Verfügbarkeitsgarantie",
+    "keyFeatures.reliableEmailAlt": "Symbol für zuverlässige E-Mail",
+    "keyFeatures.customEmail": "Individuelle und sichere Geschäfts-E-Mail",
+    "keyFeatures.customEmailAlt": "Symbol für individuelle E-Mail",
+    "keyFeatures.calendarSharing":
+      "Teilen von Kalender, Kontakten und Aufgaben",
+    "keyFeatures.calendarSharingAlt": "Symbol für Kalenderfreigabe",
+    "keyFeatures.spamProtection": "Spam-Filterung und Virenschutz",
+    "keyFeatures.spamProtectionAlt": "Symbol für Spamschutz",
+    "callToAction.title": "Starten Sie Ihren einfachen Übergang mit uns",
+    "callToAction.description":
+      "Upgraden Sie Ihre E-Mail auf LS Suite einfach, schnell und sicher mit der Hilfe von Libyan Spider. Beginnen Sie Ihre Reise, um die Produktivität zu steigern und die E-Mail-Sicherheit mit unserer vollen Unterstützung zu verbessern, ohne Unterbrechungen, Ausfallzeiten oder Datenverluste jeglicher Art.",
+    "callToAction.startNow": "Jetzt starten!",
+    "callToAction.settingsAlt": "Einstellungen",
+
+    "hostingProgrammers.title": "Hosting für Programmierer",
+    "hostingProgrammers.description":
+      "Hochleistungs- und 100% stabile Cloud-Server mit mehreren geografischen Standorten",
+    "hostingProgrammers.startNow": "Jetzt starten",
+    "servicesTwo.title": "Warum Al-Namur wählen?",
+    "servicesTwo.description":
+      "Fortschrittliche und umfassende Lösungen und Dienstleistungen für Einzelpersonen und Organisationen",
+    "services.scalableStorageTwo": "Skalierbarer Speicher",
+    "services.scalableStorageDescTwo":
+      "Flexibler Cloud-Speicher, der sich an Ihre wachsenden Bedürfnisse anpasst.",
+    "services.scalableStorageAltTwo": "Symbol für skalierbaren Speicher",
+    "services.enterpriseHostingTwo": "Unternehmenshosting",
+    "services.enterpriseHostingDescTwo":
+      "Fortschrittliche Hosting-Lösungen, die für große Unternehmen entwickelt wurden.",
+    "services.enterpriseHostingAltTwo": "Symbol für Unternehmenshosting",
+    "services.reliableHostingTwo": "Zuverlässiges Hosting",
+    "services.reliableHostingDescTwo":
+      "Stabiles Hosting mit hoher Leistung und garantierter Verfügbarkeit.",
+    "services.reliableHostingAltTwo": "Symbol für zuverlässiges Hosting",
+    "services.backgroundDecorationAltTwo": "Dekoratives Hintergrundbild",
+    "imglist.contactUs":
+      "Möchten Sie erfahren, wie wir Ihrem Unternehmen zum Erfolg verhelfen können? Kontaktieren Sie uns",
+    "imglist.partnerLogoAlt": "Partner-Logo",
+    "sslSection.title": "Mehr als nur eine Sicherheitsfrage",
+    "sslSection.description":
+      "Ein SSL-Zertifikat für Websites ist eine dringende Notwendigkeit, nicht nur aus Sicherheitsgründen.",
+    "sslSection.buildTrust": "Kundenvertrauen aufbauen",
+    "sslSection.buildTrustDesc":
+      "Zeigen Sie Ihren Kunden, dass Ihr Online-Geschäft sicher und authentifiziert ist, und stellen Sie sicher, dass ihre sensiblen Daten und elektronischen Zahlungen vollständig geschützt sind.",
+    "sslSection.buildTrustAlt": "Symbol für Kundenvertrauen",
+    "sslSection.seoRanking": "Verbessern Sie das SEO-Ranking Ihrer Website",
+    "sslSection.seoRankingDesc":
+      "Gesicherte Websites haben einen Vorteil, um ein höheres Ranking in den Suchmaschinenergebnissen zu erzielen, da Sicherheit ein Schlüsselfaktor im Ranking-Prozess ist.",
+    "sslSection.seoRankingAlt": "Symbol für SEO-Ranking",
+    "sslSection.browserCompatibility":
+      "Sichern Sie die Sichtbarkeit Ihrer Website in verschiedenen Browsern",
+    "sslSection.browserCompatibilityDesc":
+      "Wenn Ihre Website kein SSL-Zertifikat hat, markieren die meisten weltweit beliebten Webbrowser sie als 'unsicher' mit einer Warnung, und einige Browser könnten sie sogar vollständig für Benutzer blockieren.",
+    "sslSection.browserCompatibilityAlt": "Symbol für Browser-Kompatibilität",
+    "whois.title": "Was ist das WHOIS-Tool?",
+    "whois.description":
+      "Das WHOIS-Tool ist ein Dienst, der Informationen über Domainnamen liefert, einschließlich des Domaininhabers, Registrierungsdetails, Ablaufdatum und zugehöriger Kontaktinformationen. Es hilft Nutzern, die Eigentümerschaft von Domains zu überprüfen, die Verfügbarkeit von Domains zu prüfen und die Legitimität von Websites zu validieren. Viele Domain-Registrare und Cybersicherheitsexperten nutzen das WHOIS-Tool für Forschung, Cybersicherheit und Compliance-Zwecke.",
+
+    "websiteBuilder.title":
+      "Erstellen Sie Ihre Website einfach mit unserem Website-Builder",
+    "websiteBuilder.chooseTemplate": "Wählen Sie Ihre Vorlage",
+    "websiteBuilder.chooseTemplateDesc":
+      "Wählen Sie aus 200 atemberaubenden Vorlagen, um mit dem Erstellen Ihrer Website zu beginnen.",
+    "websiteBuilder.enhanceFunctionality":
+      "Erweitern Sie die Funktionalität Ihrer Website",
+    "websiteBuilder.enhanceFunctionalityDesc":
+      "Erhalten Sie zahlreiche Plugins, Tools und Funktionen, die Sie benötigen, um Ihre Website zu verbessern, einschließlich grundlegender Funktionen wie Ihre Fotogalerie, Medien, Social-Media-Plattformen und mehr.",
+    "websiteBuilder.previewSite": "Vorschau Ihrer Website",
+    "websiteBuilder.previewSiteDesc":
+      "Sehen Sie sich Ihre Website mit der ausgewählten Vorlage an, bevor Sie sie öffentlich veröffentlichen.",
+    "websiteBuilder.publishSave":
+      "Veröffentlichen oder speichern Sie Ihre Website – mit einem Klick",
+    "websiteBuilder.publishSaveDesc":
+      "Sie können Ihre Website online veröffentlichen oder einen Entwurf Ihrer Website speichern, ohne sie zu veröffentlichen.",
+    "websiteBuilder.chooseTemplateAlt": "Symbol für Vorlagenauswahl",
+    "websiteBuilder.websiteBuilderAlt": "Symbol für Website-Builder",
+    "featuresNine.title": "Funktionen",
+    "featuresNine.description": "Kernfunktionen in allen unseren Plänen",
+    "featuresNine.multilingualSites": "Mehrsprachige Websites",
+    "featuresNine.languageSupport": "Unterstützung für 50 Sprachen",
+    "featuresNine.responsiveDesign": "Responsives Design für alle Geräte",
+    "featuresNine.easyTool": "Einfach zu bedienendes Tool",
+    "featuresNine.videoTutorials": "Video-Tutorials zur Nutzung",
+    "featuresNine.plugins": "Plugins",
+    "featuresNine.millionTemplates": "Über eine Million Vorlagen",
+    "featuresNine.siteMigration":
+      "Möglichkeit, Websites von anderen Baukästen zu migrieren",
+    "featuresNine.iconAlt": "Symbol",
+    "featuresNine.rightImageAlt": "Rechtes dekoratives Bild",
+    "featuresNine.leftImageAlt": "Linkes dekoratives Bild",
+    "wordpressHosting.title": "WordPress-Hosting",
+    "wordpressHosting.description":
+      "Eine optimierte Umgebung für das Wachstum Ihrer Website mit WordPress",
+    "wordpressHosting.startNow": "Jetzt starten!",
+    "kubernetes.title": "Kubernetes-Cluster in Minuten erstellen",
+    "kubernetes.description":
+      "Hören Sie auf, Zeit und Mühe mit der Verwaltung von Kubernetes-Clustern zu verschwenden. Mit unserer vollständig verwalteten Kubernetes-Engine können Sie die containerisierten Ressourcen Ihrer Anwendung in Minuten statt Tagen einfach bereitstellen, verwalten und skalieren.",
+    "kubernetes.orderNow": "Jetzt bestellen!",
+    "services.titletwo": "Schnell starten und Ihr Unternehmen ausbauen",
+    "services.reliableHosting": "Zuverlässiges statisches Hosting",
+    "services.reliableHostingDesc":
+      "Hosten Sie Ihre statischen Websites mit blitzschnellen Ladezeiten und unübertroffener Stabilität. Genießen Sie nahtlosen Einsatz mit einem global verteilten CDN.",
+    "services.scalableStorage": "Skalierbarer Cloud-Speicher",
+    "services.scalableStorageDesc":
+      "Speichern und greifen Sie sicher auf Ihre Daten mit hochleistungsfähigem Cloud-Speicher zu. Skalieren Sie mühelos, während Ihr Unternehmen wächst, mit verbesserter Redundanz.",
+    "services.enterpriseHosting": "Statisches Hosting auf Unternehmensebene",
+    "services.enterpriseHostingDesc":
+      "Stellen Sie Ihre statischen Anwendungen sicher und mit hoher Leistung bereit. Profitieren Sie von sofortigen Updates, globalem Zugriff und keiner Wartung.",
+    "services.reliableHostingAlt":
+      "Symbol für zuverlässiges statisches Hosting",
+    "services.scalableStorageAlt": "Symbol für skalierbaren Cloud-Speicher",
+    "services.enterpriseHostingAlt":
+      "Symbol für statisches Hosting auf Unternehmensebene",
+    "services.backgroundDecorationAlt": "Hintergrunddekoration",
+    "oneClickApps.title": "Schnell starten mit Ein-Klick-Apps",
+    "oneClickApps.description":
+      "Unsere Kubernetes-Engine unterstützt die Integration mit beliebten Kubernetes-Tools, sodass Sie Cluster mit vorkonfigurierten Open-Source-Software mit einem einzigen Klick erstellen können.",
+    "oneClickApps.helmCharts": "Helm Charts",
+    "oneClickApps.certManager": "Zertifikatsmanager",
+    "oneClickApps.linkerd": "Linkerd",
+    "oneClickApps.operators": "Operatoren",
+    "oneClickApps.imageAlt": "Ein-Klick-Anwendungen",
+    "templates.million": "1.000.000+",
+    "templates.title": "Über 1.000.000 vorgefertigte Vorlagen für alle Zwecke",
+    "templates.description":
+      "Für alle Arten von geschäftlichen und persönlichen Aktivitäten bietet unser Website-Builder über 1.000.000 atemberaubende, sofort einsatzbereite Vorlagen mit vollständig anpassbaren und bearbeitbaren Designs.",
+    "templates.viewMore": "Mehr anzeigen",
+
+    "hosting.windows": "Windows-Hosting",
+    "hosting.windows.description":
+      "Windows-basiertes Hosting mit Unterstützung für .NET und andere Microsoft-Technologien.",
     "sharedHosting.title": "Shared Hosting",
-"sharedHosting.description": "Hochleistungs- und 100% stabile Cloud-Server mit mehreren geografischen Standorten",
-"sharedHosting.startNow": "Jetzt starten!",
-"smallContent.feature.backupRecovery": "Sicherung und Wiederherstellung für physische, virtuelle und Cloud-Umgebungen.",
-"smallContent.feature.malwareProtection": "Schutz vor Malware und Anti-Ransomware.",
-"smallContent.feature.deviceProtection": "Schutz und Verwaltung von Endgeräten.",
-"smallContent.feature.threatDetection": "Erweiterte Bedrohungserkennung und -reaktion.",
-"smallContent.feature.emailProtection": "E-Mail-Schutz und Archivierung.",
-"smallContent.feature.disasterRecovery": "Cloud-basierte Notfallwiederherstellung.",
-"smallContent.feature.centralManagement": "Zentralisierte Verwaltung und Überwachung.",
-"smallContent.checkIconAlt": "Häkchen-Symbol",
+    "sharedHosting.description":
+      "Hochleistungs- und 100% stabile Cloud-Server mit mehreren geografischen Standorten",
+    "sharedHosting.startNow": "Jetzt starten!",
+    "smallContent.feature.backupRecovery":
+      "Sicherung und Wiederherstellung für physische, virtuelle und Cloud-Umgebungen.",
+    "smallContent.feature.malwareProtection":
+      "Schutz vor Malware und Anti-Ransomware.",
+    "smallContent.feature.deviceProtection":
+      "Schutz und Verwaltung von Endgeräten.",
+    "smallContent.feature.threatDetection":
+      "Erweiterte Bedrohungserkennung und -reaktion.",
+    "smallContent.feature.emailProtection": "E-Mail-Schutz und Archivierung.",
+    "smallContent.feature.disasterRecovery":
+      "Cloud-basierte Notfallwiederherstellung.",
+    "smallContent.feature.centralManagement":
+      "Zentralisierte Verwaltung und Überwachung.",
+    "smallContent.checkIconAlt": "Häkchen-Symbol",
     "payment.titletwo":
       "Keine versteckten Gebühren, das Abonnement wird zum gleichen Preis verlängert.",
     "nistCompliance.title": "Konform mit dem NIST-Framework",
@@ -3140,17 +4345,263 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
+    "windowsHosting.title": "Windows Barındırma",
+"windowsHosting.description": "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
+    "support.title": "Nereden başlayacağınızı bilmiyor musunuz? Endişelenmeyin, size yardımcı olmak için buradayız",
+"support.description": "Resmi bir Microsoft bulut çözümleri sağlayıcısı olan Libya Spider, kuruluşunuzun Microsoft 365 bulut üretkenlik çözümünü benimsemesine ve iş akışınıza tam olarak entegre etmesine yardımcı olmaya hazır.",
+"support.successMessage": "Çok sayıda şirketin Microsoft 365 hizmetlerine başarılı geçişlerinde destek olmaktan gurur duyuyoruz – ve size de yardım etmekten mutluluk duyarız!",
+"support.cta": "Şimdi Talep Edin!",
+"support.settingsChanges": "Ayar Değişiklikleri",
+"support.settingsChangesAlt": "Ayar Değişiklikleri İkonu",
+"support.training": "Eğitim",
+"support.trainingAlt": "Eğitim İkonu",
+"support.technicalSupport": "Teknik Destek",
+"support.technicalSupportAlt": "Teknik Destek İkonu",
+"support.settingsCustomization": "Ayarlar ve Özelleştirme",
+"support.settingsCustomizationAlt": "Ayarlar ve Özelleştirme İkonu",
+"support.dataUserMigration": "Veri ve Kullanıcı Göçü",
+"support.dataUserMigrationAlt": "Veri ve Kullanıcı Göçü İkonu",
+"support.sharePointMigration": "SharePoint Online Göçü",
+"support.sharePointMigrationAlt": "SharePoint Online Göçü İkonu",
+    "tigersHosting.title": "Nomoar Barındırma",
+"tigersHosting.description": "Yönetimi kolay ve uygun maliyetli bulut altyapısı",
+"cloudInfrastructure.title": "Esnek, Yönetimi Kolay ve Ölçeklenebilir Altyapı",
+"cloudInfrastructure.description": "LS Cloud, bilgi işlem, depolama ve ağ kaynaklarını gelişmiş analizler ve izleme araçlarıyla tek bir kullanıcı dostu bulut platformunda birleştirir.",
+"cloudInfrastructure.tools": "Tek bir kullanıcı dostu bulut platformunda araçlar.",
+"cloudInfrastructure.resources": "Dakikalar içinde dağıtılabilen bulut kaynakları",
+"cloudInfrastructure.loadMetrics": "Yük Metrikleri",
+"cloudInfrastructure.loadMetricsAlt": "Yük Metrikleri İkonu",
+"cloudInfrastructure.networking": "Ağ",
+"cloudInfrastructure.networkingAlt": "Ağ İkonu",
+"cloudInfrastructure.storageSizes": "Depolama Boyutları",
+"cloudInfrastructure.storageSizesAlt": "Depolama Boyutları İkonu",
+"cloudInfrastructure.virtualServers": "Sanal Sunucular",
+"cloudInfrastructure.virtualServersAlt": "Sanal Sunucular İkonu",
+"cloudInfrastructure.backgroundAlt": "Bulut Arka Planı",
+"whyChooseTigers.blockUnauthorizedEmail": "Yetkisiz E-postaları Engelle",
+"whyChooseTigers.blockUnauthorizedEmailDesc": "PowerDMARC ile sadece e-posta sahteciliğini ortadan kaldırmakla kalmaz, aynı zamanda ayrıntılı raporları kullanarak içerik stratejinizi anında ayarlayabilirsiniz. Şansa yer bırakmayın.",
+"whyChooseTigers.blockUnauthorizedEmailAlt": "Yetkisiz E-posta Engelleme İkonu",
+"whyChooseTigers.preventEmailSpoofing": "E-posta Sahteciliğini Önle",
+"whyChooseTigers.preventEmailSpoofingDesc": "Gelişmiş kimlik doğrulama protokolleri kullanarak alan adınızı e-posta sahteciliği ve kimlik avı saldırılarına karşı koruyun. Yalnızca yetkili göndericilerin alan adınızı kullanabileceğinden emin olun.",
+"whyChooseTigers.preventEmailSpoofingAlt": "E-posta Sahteciliğini Önleme İkonu",
+"whyChooseTigers.enhanceEmailSecurity": "E-posta Güvenliğini Artır",
+"whyChooseTigers.enhanceEmailSecurityDesc": "E-posta trafiğinize tam görünürlük kazanın ve yetkisiz etkinlikleri gerçek zamanlı olarak tespit edin. İletişiminizi güvenli ve uyumlu tutun.",
+"whyChooseTigers.enhanceEmailSecurityAlt": "E-posta Güvenliğini Artırma İkonu",
+"whyChooseTigers.verifyEmail": "Her E-postayı Doğrula",
+"whyChooseTigers.verifyEmailDesc": "DMARC, SPF ve DKIM kullanarak e-postalarınızı doğrulayın ve siber suçluların alan adınızı sahtecilikle kullanmasını engelleyin. Alıcılarla güven oluşturun.",
+"whyChooseTigers.verifyEmailAlt": "Her E-postayı Doğrulama İkonu",
+"whyChooseTigers.backgroundRightAlt": "Sağ Arka Plan",
+"whyChooseTigers.backgroundLeftAlt": "Sol Arka Plan",
+    "businessHosting.title": "İş Barındırma",
+"businessHosting.description": "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
+"servicesThree.title": "Hızla Başlayın ve İşinizi Büyütün",
+"servicesThree.reliableStaticHosting": "Güvenilir Statik Barındırma",
+"servicesThree.reliableStaticHostingDesc": "Statik web sitelerinizi yıldırım hızında yükleme süreleri ve eşsiz stabilite ile barındırın. Küresel olarak dağıtılmış bir CDN ile sorunsuz dağıtımın keyfini çıkarın.",
+"servicesThree.reliableStaticHostingAlt": "Güvenilir Statik Barındırma İkonu",
+"servicesThree.scalableCloudStorage": "Ölçeklenebilir Bulut Depolama",
+"servicesThree.scalableCloudStorageDesc": "Verilerinizi yüksek performanslı bulut depolama ile güvenli bir şekilde saklayın ve erişin. İşletmeniz büyüdükçe gelişmiş yedeklilik ile kolayca ölçeklendirin.",
+"servicesThree.scalableCloudStorageAlt": "Ölçeklenebilir Bulut Depolama İkonu",
+"servicesThree.enterpriseStaticHosting": "Kurumsal Düzeyde Statik Barındırma",
+"servicesThree.enterpriseStaticHostingDesc": "Statik uygulamalarınızı güvenlik ve yüksek performansla sunun. Anlık güncellemeler, küresel erişim ve sıfır bakım avantajlarından yararlanın.",
+"servicesThree.enterpriseStaticHostingAlt": "Kurumsal Statik Barındırma İkonu",
+"mainFeatures.title": "Ana Özellikler",
+"mainFeatures.description": "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla kendi özel sunucunuza sahip olun.",
+"mainFeatures.crossPlatform": "Birden Fazla Platformda Çalışır",
+"mainFeatures.crossPlatformAlt": "Çoklu Platform İkonu",
+"mainFeatures.ddosMitigation": "DDoS Saldırılarını Hafifletme",
+"mainFeatures.ddosMitigationAlt": "DDoS Hafifletme İkonu",
+"mainFeatures.malwareDetection": "Kötü Amaçlı Yazılım Tespiti ve Kaldırma",
+"mainFeatures.malwareDetectionAlt": "Kötü Amaçlı Yazılım Tespiti İkonu",
+"mainFeatures.sslCertificate": "SSL Güvenlik Sertifikası",
+"mainFeatures.sslCertificateAlt": "SSL Sertifikası İkonu",
+"mainFeatures.securityMonitoring": "Güvenlik İzleme",
+"mainFeatures.securityMonitoringAlt": "Güvenlik İzleme İkonu",
+"mainFeatures.performanceOptimization": "Performans Optimizasyonu",
+"mainFeatures.performanceOptimizationAlt": "Performans Optimizasyonu İkonu",
+"mainFeatures.backgroundRightAlt": "Sağ Arka Plan Resmi",
+"mainFeatures.backgroundLeftAlt": "Sol Arka Plan Resmi",
+
+    "emailHosting.title": "E-posta Barındırma",
+    "emailHosting.description":
+      "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
+    "businessNeeds.title": "İşletmeniz İçin İhtiyacınız Olan Her Şey",
+    "businessNeeds.brandAwareness": "Marka Bilinirliğini Artırın",
+    "businessNeeds.brandAwarenessDesc":
+      "Şirketinizin alan adını bağlayarak marka bilinirliğini artırın ve özel bir e-posta ile daha profesyonel bir imaj sunun",
+    "businessNeeds.brandAwarenessAlt": "Marka Bilinirliği İkonu",
+    "businessNeeds.security": "Güvenlik",
+    "businessNeeds.securityDesc":
+      "Yapay zeka ve akıllı e-posta koruma yazılımları kullanarak LS Suite, gelen kutunuzu spam, virüs, kötü amaçlı yazılım, fidye yazılımı ve kimlik avı saldırılarına karşı korur.",
+    "businessNeeds.securityAlt": "Güvenlik İkonu",
+    "businessNeeds.accessCollaboration": "Kolay Erişim ve İşbirliği",
+    "businessNeeds.accessCollaborationDesc":
+      "E-postalarınıza, takviminize, kişilerize ve dosyalarınıza her yerden ve herhangi bir cihazdan erişin ve ekibinizle gerçek zamanlı olarak işbirliği yapın, tüm değişiklikler otomatik olarak kaydedilir.",
+    "businessNeeds.accessCollaborationAlt": "Erişim ve İşbirliği İkonu",
+    "emailSecurity.title": "E-posta Koruması için Güçlü Güvenlik",
+    "emailSecurity.description":
+      "Profesyonel e-postanızı spam, kimlik avı ve kötü amaçlı yazılımlara karşı yapay zeka destekli güvenlikle koruyun.",
+    "emailSecurity.backupRestore":
+      "Fiziksel, sanal ve bulut ortamları için yedekleme ve geri yükleme.",
+    "emailSecurity.backupRestoreAlt": "Yedekleme ve Geri Yükleme İkonu",
+    "emailSecurity.antiSpamPhishing":
+      "Spam, virüs ve kimlik avına karşı mücadele için gelişmiş entegre araçlar.",
+    "emailSecurity.antiSpamPhishingAlt":
+      "Anti-Spam ve Kimlik Avı Araçları İkonu",
+    "emailSecurity.documentProtection":
+      "Paylaşılan belgeleri parolalar ve zaman kısıtlamaları ile koruyun.",
+    "emailSecurity.documentProtectionAlt": "Doküman Koruması İkonu",
+    "emailSecurity.encryption":
+      "Hassas bilgileri korumak için e-postaları ve dosyaları kolayca şifreleyin.",
+    "emailSecurity.encryptionAlt": "E-posta ve Dosya Şifreleme İkonu",
+    "emailSecurity.backgroundAlt": "Arka Plan Resmi",
+    "keyFeaturesTwo.title": "Ana Özellikler",
+    "keyFeatures.description":
+      "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla kendi özel sunucunuza sahip olun.",
+    "keyFeatures.mailStorage": "E-posta Depolama Kapasitesi",
+    "keyFeatures.mailStorageAlt": "E-posta Depolama İkonu",
+    "keyFeatures.reliableEmail":
+      "%99,9 Çalışma Süresi Garantisi ile Güvenilir E-posta",
+    "keyFeatures.reliableEmailAlt": "Güvenilir E-posta İkonu",
+    "keyFeatures.customEmail": "Özel ve Güvenli İş E-postası",
+    "keyFeatures.customEmailAlt": "Özel E-posta İkonu",
+    "keyFeatures.calendarSharing": "Takvim, Kişiler ve Görev Paylaşımı",
+    "keyFeatures.calendarSharingAlt": "Takvim Paylaşımı İkonu",
+    "keyFeatures.spamProtection": "Spam Filtreleme ve Virüs Koruması",
+    "keyFeatures.spamProtectionAlt": "Spam Koruması İkonu",
+    "callToAction.title": "Bizimle Kolay Geçişinize Başlayın",
+    "callToAction.description":
+      "Libyan Spider'ın yardımıyla e-postanızı LS Suite'e kolayca, hızlı ve güvenli bir şekilde yükseltin. Üretkenliği artırmak ve e-posta güvenliğini tam desteğimizle geliştirmek için yolculuğunuza başlayın, hiçbir kesinti, duraklama veya herhangi bir veri kaybı olmadan.",
+    "callToAction.startNow": "Şimdi Başla!",
+    "callToAction.settingsAlt": "Ayarlar",
+    "hostingProgrammers.title": "Programcılar için Hosting",
+    "hostingProgrammers.description":
+      "Yüksek performanslı ve %100 kararlı bulut sunucuları, birden fazla coğrafi konumla",
+    "hostingProgrammers.startNow": "Şimdi Başla",
+    "servicesTwo.title": "Neden Al-Namur'u Seçmelisiniz?",
+    "servicesTwo.description":
+      "Bireyler ve kuruluşlar için gelişmiş ve kapsamlı çözümler ve hizmetler",
+    "services.scalableStorageTwo": "Ölçeklenebilir Depolama",
+    "services.scalableStorageDescTwo":
+      "Büyüyen ihtiyaçlarınıza uyum sağlayan esnek bulut depolama.",
+    "services.scalableStorageAltTwo": "Ölçeklenebilir Depolama İkonu",
+    "services.enterpriseHostingTwo": "Kurumsal Barındırma",
+    "services.enterpriseHostingDescTwo":
+      "Büyük işletmeler için tasarlanmış gelişmiş barındırma çözümleri.",
+    "services.enterpriseHostingAltTwo": "Kurumsal Barındırma İkonu",
+    "services.reliableHostingTwo": "Güvenilir Barındırma",
+    "services.reliableHostingDescTwo":
+      "Yüksek performans ve garantili çalışma süresi ile sabit barındırma.",
+    "services.reliableHostingAltTwo": "Güvenilir Barındırma İkonu",
+    "services.backgroundDecorationAlt": "Arka Plan Dekoratif Resmi",
+    "imglist.contactUs":
+      "İşletmenizin başarısına nasıl yardımcı olabileceğimizi öğrenmek ister misiniz? Bize ulaşın",
+    "imglist.partnerLogoAlt": "Ortak Logosu",
+    "sslSection.title": "Sadece Bir Güvenlik Meselesi Değil",
+    "sslSection.description":
+      "Web siteleri için SSL sertifikasına sahip olmak, sadece güvenlik açısından değil, acil bir gerekliliktir.",
+    "sslSection.buildTrust": "Müşteri Güveni Oluşturun",
+    "sslSection.buildTrustDesc":
+      "Müşterilerinize çevrimiçi işletmenizin güvenli ve doğrulanmış olduğunu gösterin, hassas verilerinin ve elektronik ödemelerinin tamamen korunduğunu sağlayın.",
+    "sslSection.buildTrustAlt": "Müşteri Güveni İkonu",
+    "sslSection.seoRanking": "Sitenizin SEO Sıralamasını Yükseltin",
+    "sslSection.seoRankingDesc":
+      "Güvenli web siteleri, arama motoru sonuçlarında daha yüksek sıralamalar elde etme avantajına sahiptir, çünkü güvenlik sıralama sürecinde temel bir faktördür.",
+    "sslSection.seoRankingAlt": "SEO Sıralama İkonu",
+    "sslSection.browserCompatibility":
+      "Sitenizin Farklı Tarayıcılarda Görünürlüğünü Sağlayın",
+    "sslSection.browserCompatibilityDesc":
+      "Eğer sitenizde SSL sertifikası yoksa, dünya çapında popüler olan çoğu web tarayıcısı onu 'güvensiz' olarak işaretleyecek ve bir uyarı gösterecek, bazı tarayıcılar ise kullanıcılar için tamamen engelleyebilir.",
+    "sslSection.browserCompatibilityAlt": "Tarayıcı Uyumluluğu İkonu",
+    "whois.title": "WHOIS Aracı Nedir?",
+    "whois.description":
+      "WHOIS aracı, alan adları hakkında bilgi sağlayan bir hizmettir; bu bilgiler arasında alan adı sahibi, kayıt detayları, son kullanma tarihi ve ilgili iletişim bilgileri yer alır. Kullanıcıların alan adı sahipliğini doğrulamasına, alan adı kullanılabilirliğini kontrol etmesine ve web sitelerinin meşruiyetini doğrulamasına yardımcı olur. Birçok alan adı kayıt kuruluşu ve siber güvenlik uzmanı, WHOIS aracını araştırma, siber güvenlik ve uyumluluk amaçları için kullanır.",
+
+    "websiteBuilder.title":
+      "Web Sitenizi Kolayca Web Sitemiz Oluşturucusu ile Oluşturun",
+    "websiteBuilder.chooseTemplate": "Şablonunuzu Seçin",
+    "websiteBuilder.chooseTemplateDesc":
+      "Sitenizi oluşturmaya başlamak için 200 muhteşem şablon arasından seçim yapın.",
+    "websiteBuilder.enhanceFunctionality":
+      "Sitenizin İşlevselliğini Geliştirin",
+    "websiteBuilder.enhanceFunctionalityDesc":
+      "Sitenizi geliştirmek için ihtiyaç duyduğunuz çok sayıda eklenti, araç ve özelliği edinin; fotoğraf galeriniz, medya, sosyal medya platformları ve daha fazlası gibi temel özellikler dahil.",
+    "websiteBuilder.previewSite": "Sitenizi Önizleyin",
+    "websiteBuilder.previewSiteDesc":
+      "Seçilen şablonla sitenizi halka açık olarak yayınlamadan önce görüntüleyin.",
+    "websiteBuilder.publishSave":
+      "Sitenizi Yayınlayın veya Kaydedin – Tek Tıkla",
+    "websiteBuilder.publishSaveDesc":
+      "Sitenizi çevrimiçi yayınlayabilir veya yayınlamadan sitenizin taslağını kaydedebilirsiniz.",
+    "websiteBuilder.chooseTemplateAlt": "Şablon Seçme İkonu",
+    "websiteBuilder.websiteBuilderAlt": "Web Sitesi Oluşturucu İkonu",
+    "featuresNine.title": "Özellikler",
+    "featuresNine.description": "Tüm planlarımızdaki temel özellikler",
+    "featuresNine.multilingualSites": "Çok Dilli Web Siteleri",
+    "featuresNine.languageSupport": "50 Dil Desteği",
+    "featuresNine.responsiveDesign": "Farklı Cihazlara Uyumlu Tasarım",
+    "featuresNine.easyTool": "Kullanıcı Dostu Araç",
+    "featuresNine.videoTutorials": "Kullanım için Video Eğitimleri",
+    "featuresNine.plugins": "Eklentiler",
+    "featuresNine.millionTemplates": "Bir Milyondan Fazla Şablon",
+    "featuresNine.siteMigration": "Diğer Oluşturuculardan Site Taşıma İmkanı",
+    "featuresNine.iconAlt": "İkon",
+    "featuresNine.rightImageAlt": "Sağ Dekoratif Resim",
+    "featuresNine.leftImageAlt": "Sol Dekoratif Resim",
+    "wordpressHosting.title": "WordPress Barındırma",
+    "wordpressHosting.description":
+      "WordPress ile sitenizin büyümesi için optimize edilmiş bir ortam",
+    "wordpressHosting.startNow": "Şimdi Başla!",
+    "kubernetes.title": "Kubernetes Kümelerini Dakikalar İçinde Oluşturun",
+    "kubernetes.description":
+      "Kubernetes kümelerini yönetmek için zaman ve çaba harcamayı bırakın. Tamamen yönetilen Kubernetes motorumuzla, uygulamanızın konteynerli kaynaklarını dakikalar içinde kolayca dağıtabilir, yönetebilir ve ölçeklendirebilirsiniz.",
+    "kubernetes.orderNow": "Şimdi Sipariş Ver!",
+    "services.titletwo": "Hızlı Başlayın ve İşinizi Büyütün",
+    "services.reliableHosting": "Güvenilir Statik Barındırma",
+    "services.reliableHostingDesc":
+      "Statik sitelerinizi yıldırım hızında yükleme süreleri ve eşsiz kararlılıkla barındırın. Küresel olarak dağıtılmış bir CDN ile sorunsuz dağıtımın keyfini çıkarın.",
+    "services.scalableStorage": "Ölçeklenebilir Bulut Depolama",
+    "services.scalableStorageDesc":
+      "Verilerinizi yüksek performanslı bulut depolama ile güvenli bir şekilde depolayın ve erişin. Geliştirilmiş yedeklilikle işiniz büyüdükçe kolayca ölçeklendirin.",
+    "services.enterpriseHosting": "Kurumsal Seviyede Statik Barındırma",
+    "services.enterpriseHostingDesc":
+      "Statik uygulamalarınızı güvenli ve yüksek performansla sunun. Anında güncellemeler, küresel erişim ve sıfır bakım avantajlarından faydalanın.",
+    "services.reliableHostingAlt": "Güvenilir Statik Barındırma İkonu",
+    "services.scalableStorageAlt": "Ölçeklenebilir Bulut Depolama İkonu",
+    "services.enterpriseHostingAlt":
+      "Kurumsal Seviyede Statik Barındırma İkonu",
+    "services.backgroundDecorationAltTwo": "Arka Plan Dekorasyonu",
+    "oneClickApps.title": "Tek Tıkla Uygulamalarla Hızlı Başlayın",
+    "oneClickApps.description":
+      "Kubernetes motorumuz, popüler Kubernetes araçlarıyla entegrasyonu destekler ve tek bir tıklamayla önceden yapılandırılmış açık kaynak yazılımları çalıştıran kümeler oluşturmanıza olanak tanır.",
+    "oneClickApps.helmCharts": "Helm Charts",
+    "oneClickApps.certManager": "Sertifika Yöneticisi",
+    "oneClickApps.linkerd": "Linkerd",
+    "oneClickApps.operators": "Operatörler",
+    "oneClickApps.imageAlt": "Tek Tıkla Uygulamalar",
+    "templates.million": "1.000.000+",
+    "templates.title": "Her Amaç için 1.000.000’den Fazla Hazır Şablon",
+    "templates.description":
+      "Her türlü iş ve kişisel faaliyet için web sitesi oluşturucumuz, tamamen özelleştirilebilir ve düzenlenebilir tasarımlarla 1.000.000’den fazla harika hazır şablon sunar.",
+    "templates.viewMore": "Daha Fazla Göster",
+
+    "hosting.windows": "Windows Barındırma",
+    "hosting.windows.description":
+      ".NET ve diğer Microsoft teknolojilerini destekleyen Windows tabanlı barındırma.",
     "sharedHosting.title": "Paylaşımlı Barındırma",
-"sharedHosting.description": "Yüksek performanslı ve %100 kararlı bulut sunucuları, birden fazla coğrafi konumla",
-"sharedHosting.startNow": "Şimdi Başla!",
-"smallContent.feature.backupRecovery": "Fiziksel, sanal ve bulut ortamlar için yedekleme ve kurtarma.",
-"smallContent.feature.malwareProtection": "Kötü amaçlı yazılım koruması ve fidye yazılımına karşı koruma.",
-"smallContent.feature.deviceProtection": "Uç cihaz koruması ve yönetimi.",
-"smallContent.feature.threatDetection": "Gelişmiş tehdit algılama ve yanıt.",
-"smallContent.feature.emailProtection": "E-posta koruması ve arşivleme.",
-"smallContent.feature.disasterRecovery": "Bulut tabanlı felaket kurtarma.",
-"smallContent.feature.centralManagement": "Merkezi yönetim ve izleme.",
-"smallContent.checkIconAlt": "Onay İkonu",
+    "sharedHosting.description":
+      "Yüksek performanslı ve %100 kararlı bulut sunucuları, birden fazla coğrafi konumla",
+    "sharedHosting.startNow": "Şimdi Başla!",
+    "smallContent.feature.backupRecovery":
+      "Fiziksel, sanal ve bulut ortamlar için yedekleme ve kurtarma.",
+    "smallContent.feature.malwareProtection":
+      "Kötü amaçlı yazılım koruması ve fidye yazılımına karşı koruma.",
+    "smallContent.feature.deviceProtection": "Uç cihaz koruması ve yönetimi.",
+    "smallContent.feature.threatDetection":
+      "Gelişmiş tehdit algılama ve yanıt.",
+    "smallContent.feature.emailProtection": "E-posta koruması ve arşivleme.",
+    "smallContent.feature.disasterRecovery": "Bulut tabanlı felaket kurtarma.",
+    "smallContent.feature.centralManagement": "Merkezi yönetim ve izleme.",
+    "smallContent.checkIconAlt": "Onay İkonu",
     "payment.titletwo": "Gizli ücret yok, abonelik aynı fiyattan yenilenir.",
     "nistCompliance.title": "NIST Çerçevesine Uygun",
     "nistCompliance.description":

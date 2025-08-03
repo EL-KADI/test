@@ -14,7 +14,7 @@ export default function PaymentsSection() {
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Payment Methods Section */}
         <section className="text-center mb-20">
-          <h1 className="text-black text-4xl font-bold mb-6 mt-28">
+          <h1 className="text-[#372b77] text-2xl font-bold  mb-6 mt-28">
             {t("payment.titletwo")}
           </h1>
           <div className="bg-white mt-4 rounded-md shadow-[0_0_20px_0_rgba(0,0,0,0.08)] relative flex items-center justify-center flex-wrap gap-2 py-8">

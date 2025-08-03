@@ -11,6 +11,7 @@ import OurEdge from "../components/ouredge";
 import Questions from "../components/questions";
 import Footer from "../../components/footer";
 import { useLanguage } from "../../contexts/language-context";
+import FeaturesSectionTen from "../components/features-SectionTen";
 export default function Vps() {
   const styles = `
   .draw-line {
@@ -668,6 +669,7 @@ export default function Vps() {
         </section>
       </div>
       <HostingPlans />
+      <FeaturesSectionTen />
       <FeaturesSection />
       <Dashboard />
       <WorldDaljm />
