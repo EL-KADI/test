@@ -5,7 +5,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import Logo from "../public/logo.svg";
-import AnimatedOnScroll from "../components/AnimatedOnScroll";
+import AnimatedOnScroll from "./animated-on-scroll";
 import LanguageSelector from "./language-selector";
 
 interface NavigationBarProps {
@@ -229,7 +229,7 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                     <div className="grid grid-cols-2 gap-3">
@@ -267,6 +267,18 @@ export default function NavigationBar({
                         </h4>
                         <p className="text-xs text-gray-600">
                           {t("hosting.wordpress.desc")}
+                        </p>
+                      </Link>
+                     <Link
+                        href="/apps-hosting"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                        {t('softaculousSection.title')}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                       {t('softaculousSection.description')}
                         </p>
                       </Link>
                       <Link
@@ -330,7 +342,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/hosting/windows"
+                        href="/windows-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -373,12 +385,12 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                     <div className="grid grid-cols-2 gap-3">
                       <Link
-                        href="/reseller/basic"
+                        href="/distributor-basic"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -390,7 +402,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/reseller/plus"
+                        href="/distributor-plus"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -402,7 +414,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/reseller/ultra"
+                        href="/distributor-ultra"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -414,7 +426,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/reseller/program"
+                        href="/distributors-program"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -456,7 +468,7 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                         <div className="grid grid-cols-2 gap-3">
@@ -563,7 +575,7 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                     <div className="grid grid-cols-2 gap-3">
@@ -670,12 +682,12 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                     <div className="grid grid-cols-2 gap-3">
                       <Link
-                        href="/company/about"
+                        href="/about"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -723,7 +735,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/company/reseller"
+                        href="/distributors-program"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -777,7 +789,7 @@ export default function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                      isRTL ? "pr-4" : "pl-4"
+                       isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
                     <div className="grid grid-cols-2 gap-3">
@@ -919,6 +931,20 @@ export default function NavigationBar({
                       </p>
                     </div>
                   </Link>
+          
+                  <Link
+                    href="/apps-hosting"
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                  >
+                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900">
+                         {t('softaculousSection.title')}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                       {t('softaculousSection.description')}
+                      </p>
+                    </div>
+                  </Link>
                   <Link
                     href="/programers-hosting"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
@@ -987,7 +1013,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/hosting/windows"
+                    href="/windows-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1016,7 +1042,7 @@ export default function NavigationBar({
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-8">
                 <div className="grid grid-cols-2 gap-6">
                   <Link
-                    href="/reseller/basic"
+                    href="/distributor-basic"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1029,7 +1055,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/reseller/plus"
+                    href="/distributor-plus"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1042,7 +1068,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/reseller/ultra"
+                    href="/distributor-ultra"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1055,7 +1081,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/reseller/program"
+                    href="/distributors-program"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1266,7 +1292,7 @@ export default function NavigationBar({
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
-                    href="/company/about"
+                    href="/about"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1318,7 +1344,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/company/reseller"
+                    href="/distributors-program"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>

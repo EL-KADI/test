@@ -376,7 +376,7 @@ export default function LanguageSelector() {
       {isOpen && (
         <div
           className={`absolute ${
-            isRTL ? "left-0" : "right-0"
+            isRTL ? "-left-3" : "-right-10"
           } mt-2 w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50 max-h-64 overflow-y-auto`}
         >
           <div

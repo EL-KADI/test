@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useLanguage } from "../contexts/language-context";
-import AnimatedOnScroll from "./AnimatedOnScroll";
+import AnimatedOnScroll from "./animated-on-scroll";
 
 export default function PartnersSection() {
   const { t, isRTL } = useLanguage();

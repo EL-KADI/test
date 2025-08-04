@@ -5,7 +5,7 @@ import paymentimage from "../public/payments.svg"
 import topleft from "../public/topleft.svg"
 import btr from "../public/br.svg"
 import { useLanguage } from "../contexts/language-context"
-import AnimatedOnScroll from "./AnimatedOnScroll"
+import AnimatedOnScroll from "./animated-on-scroll"
 
 export default function Payments() {
   const { t, isRTL } = useLanguage()

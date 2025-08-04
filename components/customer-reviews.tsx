@@ -6,7 +6,7 @@ import Jobs from "../public/JobsIcon.svg";
 import Subscriber from "../public/SubscriberIcon.svg";
 import DataCenters from "../public/DataCentersIcon.svg";
 import { useLanguage } from "../contexts/language-context";
-import AnimatedOnScroll from "./AnimatedOnScroll";
+import AnimatedOnScroll from "./animated-on-scroll";
 
 export default function CustomerReviewsSection() {
   const { t, isRTL } = useLanguage();

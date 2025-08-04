@@ -20,6 +20,7 @@ const AnimatedOnScroll = ({
   className = "",
 }: AnimatedOnScrollProps) => {
   return (
+    <div>
     <motion.div
       initial={initial}
       whileInView={whileInView}
@@ -29,6 +30,7 @@ const AnimatedOnScroll = ({
     >
       {children}
     </motion.div>
+    </div>
   );
 };
 

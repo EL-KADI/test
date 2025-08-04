@@ -5,7 +5,6 @@ import Prices from "../components/pricesTwo";
 import Questions from "../components/questions";
 import Footer from "../../components/footer";
 import { useLanguage } from "../../contexts/language-context";
-import NISTComplianceSection from "../components/nist";
 import Kubernetes from "../components/kubernetes";
 import ServicesCompnent from "../components/services-component";
 import OneClickAppsSection from "../components/one-click-apps-section";

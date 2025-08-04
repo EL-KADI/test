@@ -4,7 +4,7 @@ import { useState } from "react"
 import { Minus, Plus } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "../contexts/language-context"
-import AnimatedOnScroll from "./AnimatedOnScroll"
+import AnimatedOnScroll from "./animated-on-scroll"
 
 interface AccordionItem {
   id: number

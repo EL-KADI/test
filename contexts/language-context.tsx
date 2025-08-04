@@ -17,38 +17,163 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 type TranslationKeys =
-| "windowsHosting.title"
-| "windowsHosting.description"
-| "tigersHosting.title"
-| "tigersHosting.description"
-| "cloudInfrastructure.title"
-| "cloudInfrastructure.description"
-| "cloudInfrastructure.tools"
-| "cloudInfrastructure.resources"
-| "cloudInfrastructure.loadMetrics"
-| "cloudInfrastructure.loadMetricsAlt"
-| "cloudInfrastructure.networking"
-| "cloudInfrastructure.networkingAlt"
-| "cloudInfrastructure.storageSizes"
-| "cloudInfrastructure.storageSizesAlt"
-| "cloudInfrastructure.virtualServers"
-| "cloudInfrastructure.virtualServersAlt"
-| "cloudInfrastructure.backgroundAlt"
-| "whyChooseTigers.title"
-| "whyChooseTigers.blockUnauthorizedEmail"
-| "whyChooseTigers.blockUnauthorizedEmailDesc"
-| "whyChooseTigers.blockUnauthorizedEmailAlt"
-| "whyChooseTigers.preventEmailSpoofing"
-| "whyChooseTigers.preventEmailSpoofingDesc"
-| "whyChooseTigers.preventEmailSpoofingAlt"
-| "whyChooseTigers.enhanceEmailSecurity"
-| "whyChooseTigers.enhanceEmailSecurityDesc"
-| "whyChooseTigers.enhanceEmailSecurityAlt"
-| "whyChooseTigers.verifyEmail"
-| "whyChooseTigers.verifyEmailDesc"
-| "whyChooseTigers.verifyEmailAlt"
-| "whyChooseTigers.backgroundRightAlt"
-| "whyChooseTigers.backgroundLeftAlt"
+  | "supportParagraph.description"
+  | "supportSectionTwo.helpCenter"
+  | "supportSectionTwo.serverStatus"
+  | "supportSectionTwo.subscriberServices"
+  | "supportSectionTwo.helpCenterAlt"
+  | "supportSectionTwo.serverStatusAlt"
+  | "supportSectionTwo.subscriberServicesAlt"
+  | "supportSectionTwo.emailService"
+  | "supportSectionTwo.phone"
+  | "supportSectionTwo.location"
+  | "supportSectionTwo.emailServiceAlt"
+  | "supportSectionTwo.phoneAlt"
+  | "supportSectionTwo.locationAlt"
+  | "supportSectionTwo.mapTitle"
+  | "supportSectionTwo.locationValue"
+  | "contactForm.title"
+  | "contactForm.description"
+  | "contactForm.salesTab"
+  | "contactForm.customizationTab"
+  | "contactForm.trendsTab"
+  | "contactForm.pricesTab"
+  | "contactForm.fullNameLabel"
+  | "contactForm.usernameLabel"
+  | "contactForm.messageLabel"
+  | "contactForm.languageLabel"
+  | "contactForm.languagePlaceholder"
+  | "contactForm.languageArabic"
+  | "contactForm.languageEnglish"
+  | "contactForm.languageSpanish"
+  | "contactForm.submitButton"
+  | "contactForm.contactAlternative"
+  | "loginSection.logoAlt"
+  | "loginSection.emailIconAlt"
+  | "loginSection.passwordIconAlt"
+  | "loginSection.footerLogoAlt"
+  | "loginSection.title"
+  | "loginSection.emailPlaceholder"
+  | "loginSection.passwordPlaceholder"
+  | "loginSection.forgotPassword"
+  | "loginSection.loginButton"
+  | "loginSection.noAccount"
+  | "loginSection.createAccount"
+  | "softaculousSection.title"
+  | "softaculousSection.description"
+  | "appHostingSection.title"
+  | "appHostingSection.description"
+  | "appHostingSection.viewPricing"
+  | "appHostingSection.createAccount"
+  | "ecommerceSection.title"
+  | "ecommerceSection.cyclosName"
+  | "ecommerceSection.magentoName"
+  | "ecommerceSection.magentoClusterName"
+  | "ecommerceSection.maianCartName"
+  | "ecommerceSection.openCartName"
+  | "ecommerceSection.prestaShopName"
+  | "ecommerceSection.cyclosDescription"
+  | "ecommerceSection.magentoDescription"
+  | "ecommerceSection.magentoClusterDescription"
+  | "ecommerceSection.maianCartDescription"
+  | "ecommerceSection.openCartDescription"
+  | "ecommerceSection.prestaShopDescription"
+  | "ecommerceSection.cyclosLogoAlt"
+  | "ecommerceSection.magentoLogoAlt"
+  | "ecommerceSection.maianCartLogoAlt"
+  | "ecommerceSection.openCartLogoAlt"
+  | "ecommerceSection.prestaShopLogoAlt"
+  | "ecommerceSection.launchNow"
+  | "statsSectionTwo.dataCenters"
+  | "statsSectionTwo.uptime"
+  | "statsSectionTwo.hostedSites"
+  | "statsSectionTwo.guaranteedAvailability"
+  | "statsSectionTwo.customerSatisfaction"
+  | "statsSectionTwo.dataCentersAlt"
+  | "statsSectionTwo.uptimeAlt"
+  | "statsSectionTwo.hostedSitesAlt"
+  | "statsSectionTwo.guaranteedAvailabilityAlt"
+  | "statsSectionTwo.customerSatisfactionAlt"
+  | "achievementsSectionTwo.title"
+  | "achievementsSectionTwo.description"
+  | "contactSection.description"
+  | "contactSection.helpTitle"
+  | "contactSection.helpDescription"
+  | "contactSection.contactButton"
+  | "contactSection.microsoftLogoAlt"
+  | "contactSection.partner1LogoAlt"
+  | "contactSection.partner2LogoAlt"
+  | "contactSection.partner3LogoAlt"
+  | "contactSection.partner4LogoAlt"
+  | "tigersSection.title"
+  | "tigersSection.description"
+  | "featuresSection.title"
+  | "featuresSection.multilingualSites"
+  | "featuresSection.fiftyLanguages"
+  | "featuresSection.responsiveDesign"
+  | "featuresSection.easyTool"
+  | "featuresSection.videoTutorials"
+  | "featuresSection.plugins"
+  | "featuresSection.templates"
+  | "featuresSection.siteMigration"
+  | "featuresSection.multilingualSitesAlt"
+  | "featuresSection.fiftyLanguagesAlt"
+  | "featuresSection.responsiveDesignAlt"
+  | "featuresSection.easyToolAlt"
+  | "featuresSection.videoTutorialsAlt"
+  | "featuresSection.pluginsAlt"
+  | "featuresSection.templatesAlt"
+  | "featuresSection.siteMigrationAlt"
+  | "featuresSection.rightImgAlt"
+  | "featuresSection.leftImgAlt"
+  | "oneClickApps.helmChartsAlt"
+  | "oneClickApps.certManagerAlt"
+  | "oneClickApps.linkerdAlt"
+  | "oneClickApps.operatorsAlt"
+  | "oneClickApps.illustrationAlt"
+  | "distributorBasicNeed.title"
+  | "distributorBasicNeed.subtitle"
+  | "distributorBasicNeed.registerButton"
+  | "distributorBasicNeed.distributorsButton"
+  | "distributorBasicNeed.settingsIllustrationAlt"
+  | "kubernetes.title"
+  | "resellerHosting.title"
+  | "resellerHostingPlus.title"
+  | "resellerHostingUltra.title"
+  | "resellerHostingProgram.title"
+  | "resellerHosting.description"
+  | "windowsHosting.title"
+  | "windowsHosting.description"
+  | "tigersHosting.title"
+  | "tigersHosting.description"
+  | "cloudInfrastructure.title"
+  | "cloudInfrastructure.description"
+  | "cloudInfrastructure.tools"
+  | "cloudInfrastructure.resources"
+  | "cloudInfrastructure.loadMetrics"
+  | "cloudInfrastructure.loadMetricsAlt"
+  | "cloudInfrastructure.networking"
+  | "cloudInfrastructure.networkingAlt"
+  | "cloudInfrastructure.storageSizes"
+  | "cloudInfrastructure.storageSizesAlt"
+  | "cloudInfrastructure.virtualServers"
+  | "cloudInfrastructure.virtualServersAlt"
+  | "cloudInfrastructure.backgroundAlt"
+  | "whyChooseTigers.title"
+  | "whyChooseTigers.blockUnauthorizedEmail"
+  | "whyChooseTigers.blockUnauthorizedEmailDesc"
+  | "whyChooseTigers.blockUnauthorizedEmailAlt"
+  | "whyChooseTigers.preventEmailSpoofing"
+  | "whyChooseTigers.preventEmailSpoofingDesc"
+  | "whyChooseTigers.preventEmailSpoofingAlt"
+  | "whyChooseTigers.enhanceEmailSecurity"
+  | "whyChooseTigers.enhanceEmailSecurityDesc"
+  | "whyChooseTigers.enhanceEmailSecurityAlt"
+  | "whyChooseTigers.verifyEmail"
+  | "whyChooseTigers.verifyEmailDesc"
+  | "whyChooseTigers.verifyEmailAlt"
+  | "whyChooseTigers.backgroundRightAlt"
+  | "whyChooseTigers.backgroundLeftAlt"
   | "websiteBuilder.title"
   | "websiteBuilder.chooseTemplate"
   | "websiteBuilder.chooseTemplateDesc"
@@ -76,7 +201,6 @@ type TranslationKeys =
   | "wordpressHosting.title"
   | "wordpressHosting.description"
   | "wordpressHosting.startNow"
-  | "kubernetes.title"
   | "kubernetes.description"
   | "kubernetes.orderNow"
   | "services.titletwo"
@@ -703,103 +827,283 @@ type TranslationKeys =
   | "mainFeatures.backgroundRightAlt"
   | "mainFeatures.backgroundLeftAlt"
   | "support.title"
-| "support.description"
-| "support.successMessage"
-| "support.cta"
-| "support.settingsChanges"
-| "support.settingsChangesAlt"
-| "support.training"
-| "support.trainingAlt"
-| "support.technicalSupport"
-| "support.technicalSupportAlt"
-| "support.settingsCustomization"
-| "support.settingsCustomizationAlt"
-| "support.dataUserMigration"
-| "support.dataUserMigrationAlt"
-| "support.sharePointMigration"
-| "support.sharePointMigrationAlt"
-  ;
+  | "support.description"
+  | "support.successMessage"
+  | "support.cta"
+  | "support.settingsChanges"
+  | "support.settingsChangesAlt"
+  | "support.training"
+  | "support.trainingAlt"
+  | "support.technicalSupport"
+  | "support.technicalSupportAlt"
+  | "support.settingsCustomization"
+  | "support.settingsCustomizationAlt"
+  | "support.dataUserMigration"
+  | "support.dataUserMigrationAlt"
+  | "support.sharePointMigration"
+  | "support.sharePointMigrationAlt"
+  | "statsSection.dataCenters"
+  | "statsSection.uptime"
+  | "statsSection.hostedSites"
+  | "statsSection.guaranteedAvailability"
+  | "statsSection.customerSatisfaction"
+  | "statsSection.dataCentersAlt"
+  | "statsSection.uptimeAlt"
+  | "statsSection.hostedSitesAlt"
+  | "statsSection.guaranteedAvailabilityAlt"
+  | "statsSection.customerSatisfactionAlt";
 
 type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
+    "supportParagraph.description":
+      "إذا كنت أحد عملاء الشركة، يمكنك التواصل معنا بسهولة عبر حسابك للوصول إلى فريق الدعم الفني أو المبيعات . نحن ملتزمون بتقديم أفضل خدمة وحلول سريعة تناسب احتياجاتك.",
+    "supportSectionTwo.helpCenter": "مركز المساعدة",
+    "supportSectionTwo.serverStatus": "حالة السيرفر",
+    "supportSectionTwo.subscriberServices": "خدمات المشتركين",
+    "supportSectionTwo.helpCenterAlt": "أيقونة مركز المساعدة",
+    "supportSectionTwo.serverStatusAlt": "أيقونة حالة السيرفر",
+    "supportSectionTwo.subscriberServicesAlt": "أيقونة خدمات المشتركين",
+    "supportSectionTwo.emailService": "خدمة البريد الإلكتروني",
+    "supportSectionTwo.phone": "الهاتف",
+    "supportSectionTwo.location": "الموقع",
+    "supportSectionTwo.emailServiceAlt": "أيقونة البريد الإلكتروني",
+    "supportSectionTwo.phoneAlt": "أيقونة الهاتف",
+    "supportSectionTwo.locationAlt": "أيقونة الموقع",
+    "supportSectionTwo.mapTitle": "موقعنا على الخريطة",
+    "supportSectionTwo.locationValue": "الرياض، عليا، السعودية",
+
+    "contactForm.title": "لم تجد إجابتك بعد؟ احصل على الدعم الفني الآن.",
+    "contactForm.description":
+      "مع العديد من الحلول الفريدة يمكنك بسهولة بناء صفحة دون الحاجة إلى البرمجة. قم ببناء موقعك الاستشاري التالي في غضون دقائق قليلة.",
+    "contactForm.salesTab": "المبيعات",
+    "contactForm.customizationTab": "التخصيص",
+    "contactForm.trendsTab": "الصيحات",
+    "contactForm.pricesTab": "الاسعار",
+    "contactForm.fullNameLabel": "الاسم بالكامل",
+    "contactForm.usernameLabel": "معرف المستخدم",
+    "contactForm.messageLabel": "رسالتك",
+    "contactForm.languageLabel": "بأي لغه تتواصل معنا؟",
+    "contactForm.languagePlaceholder": "اختر لغة",
+    "contactForm.languageArabic": "العربية",
+    "contactForm.languageEnglish": "English",
+    "contactForm.languageSpanish": "Español",
+    "contactForm.submitButton": "إرسال",
+    "contactForm.contactAlternative": "او اتصل بنا علي",
+
+    "loginSection.logoAlt": "شعار",
+    "loginSection.emailIconAlt": "أيقونة البريد الإلكتروني",
+    "loginSection.passwordIconAlt": "أيقونة القفل",
+    "loginSection.footerLogoAlt": "شعار التذييل",
+    "loginSection.title": "الدخول",
+    "loginSection.emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "loginSection.passwordPlaceholder": "أدخل كلمة المرور",
+    "loginSection.forgotPassword": "فقدت بيانات الدخول؟",
+    "loginSection.loginButton": "الدخول",
+    "loginSection.noAccount": "ليس لديك حساب؟",
+    "loginSection.createAccount": "إنشاء حساب جديد",
+    "softaculousSection.title": "استضافة سوفت كلاوز",
+    "softaculousSection.description":
+      "تثبيت بنقرة واحدة لأكثر من 400 تطبيق باستخدام سوفت كلاوز",
+    "appHostingSection.title": "استضافة التطبيقات",
+    "appHostingSection.description":
+      "كلام و وصف للاستضافات المشتركة كلام و وصف للاستضافات المشتركة كلام و وصف للاستضافات كلام و المشتركة كلام و وصف للاستضافات المشتركة",
+    "appHostingSection.viewPricing": "عرض الأسعار",
+    "appHostingSection.createAccount": "انشاء حساب",
+    "ecommerceSection.title": "التجارة الإلكترونية",
+    "ecommerceSection.cyclosName": "سايكلوس 4 برو",
+    "ecommerceSection.magentoName": "ماجنتو",
+    "ecommerceSection.magentoClusterName": "ماجنتو كلاستر",
+    "ecommerceSection.maianCartName": "مايان كارت",
+    "ecommerceSection.openCartName": "أوبن كارت",
+    "ecommerceSection.prestaShopName": "بريستاشوب",
+    "ecommerceSection.cyclosDescription":
+      "سايكلوس 4 برو هي منصة دفع للشركات والمؤسسات الكبيرة",
+    "ecommerceSection.magentoDescription":
+      "ماجنتو هي برمجية ومنصة تجارة إلكترونية موثوقة من أفضل العلامات التجارية في العالم. نمي عملك عبر الإنترنت مع ماجنتو",
+    "ecommerceSection.magentoClusterDescription":
+      "توسع آلي وتوافرية عالية لمجموعة ماجنتو مع موازنة التحميل، تكرار البيانات، تخزين المحتوى المؤقت وتخزين جلسات المستخدم",
+    "ecommerceSection.maianCartDescription":
+      "مايان كارت هي منصة تجارة إلكترونية سريعة وقوية ومجانية مبنية باستخدام PHP وMySQL، تحتوي على جميع الميزات التي تحتاجها لتشغيل متجرك الإلكتروني",
+    "ecommerceSection.openCartDescription":
+      "أوبن كارت هو نظام تسوق عبر الإنترنت مفتوح المصدر مبني على PHP",
+    "ecommerceSection.prestaShopDescription":
+      "بريستاشوب هي حل مفتوح المصدر وقابل للتخصيص بالكامل لبيع المنتجات عبر الإنترنت، وهو فعال وسريع وسهل الاستخدام",
+    "ecommerceSection.cyclosLogoAlt": "شعار سايكلوس 4 برو",
+    "ecommerceSection.magentoLogoAlt": "شعار ماجنتو",
+    "ecommerceSection.maianCartLogoAlt": "أيقونة عربة التسوق مايان كارت",
+    "ecommerceSection.openCartLogoAlt": "شعار أوبن كارت",
+    "ecommerceSection.prestaShopLogoAlt": "شعار بريستاشوب",
+    "ecommerceSection.launchNow": "ابدأ الآن",
+    "statsSection.dataCenters": "مراكز المعلومات",
+    "statsSection.uptime": "الاستقلالية",
+    "statsSection.hostedSites": "المواقع المستضافة",
+    "statsSection.guaranteedAvailability": "الوقت المتاح مضمون",
+    "statsSection.customerSatisfaction": "رضا العملاء",
+    "statsSection.dataCentersAlt": "أيقونة مراكز المعلومات",
+    "statsSection.uptimeAlt": "أيقونة الاستقلالية",
+    "statsSection.hostedSitesAlt": "أيقونة المواقع المستضافة",
+    "statsSection.guaranteedAvailabilityAlt": "أيقونة الوقت المتاح مضمون",
+    "statsSection.customerSatisfactionAlt": "أيقونة رضا العملاء",
+
+    "contactSection.description":
+      "هل أنت مهتم بمعرفة كيف يمكننا مساعدة عملك على النجاح؟ . اتصل بنا .",
+    "contactSection.helpTitle": "هل تحتاج مساعدة؟",
+    "contactSection.helpDescription": "تواصل معنا واحصل على مساعدة",
+    "contactSection.contactButton": "اتصل الان",
+    "contactSection.microsoftLogoAlt": "شعار مايكروسوفت",
+    "contactSection.partner1LogoAlt": "شعار شريك 1",
+    "contactSection.partner2LogoAlt": "شعار شريك 2",
+    "contactSection.partner3LogoAlt": "شعار شريك 3",
+    "contactSection.partner4LogoAlt": "شعار شريك 4",
+
+    "statsSectionTwo.dataCenters": "مراكز المعلومات",
+    "statsSectionTwo.uptime": "الاستقلالية",
+    "statsSectionTwo.hostedSites": "المواقع المستضافة",
+    "statsSectionTwo.guaranteedAvailability": "الوقت المتاح مضمون",
+    "statsSectionTwo.customerSatisfaction": "رضا العملاء",
+    "statsSectionTwo.dataCentersAlt": "أيقونة مراكز المعلومات",
+    "statsSectionTwo.uptimeAlt": "أيقونة الاستقلالية",
+    "statsSectionTwo.hostedSitesAlt": "أيقونة المواقع المستضافة",
+    "statsSectionTwo.guaranteedAvailabilityAlt": "أيقونة الوقت المتاح مضمون",
+    "statsSectionTwo.customerSatisfactionAlt": "أيقونة رضا العملاء",
+    "achievementsSectionTwo.title": "إنجازاتنا",
+    "achievementsSectionTwo.description":
+      "تأسست على يد علي المنسي ويحيى حسن وبدأت عملها متخصصة في خدمات الاستضافة بفريق مكون من 3 أفراد فقط.",
+    "tigersSection.title": "عن النمور",
+    "tigersSection.description":
+      "النمور هو المزود الرائد لخدمات السحابة في المملكة العربية السعودية، ويعمل على دعم وحماية البنية التحتية التقنية للمؤسسات من جميع الأحجام.",
+    "featuresSection.title": "المزايا",
+    "featuresSection.multilingualSites": "مواقع متعددة اللغات",
+    "featuresSection.fiftyLanguages": "دعم 50 لغة",
+    "featuresSection.responsiveDesign": "تصميم متجاوب على مختلف الأجهزة",
+    "featuresSection.easyTool": "أداة سهلة الاستخدام",
+    "featuresSection.videoTutorials": "دروس فيديو حول كيفية الاستخدام",
+    "featuresSection.plugins": "الإضافات",
+    "featuresSection.templates": "أكثر من مليون قالب",
+    "featuresSection.siteMigration": "إمكانية نقل المواقع من أدوات بناء أخرى",
+    "featuresSection.multilingualSitesAlt": "أيقونة مواقع متعددة اللغات",
+    "featuresSection.fiftyLanguagesAlt": "أيقونة دعم 50 لغة",
+    "featuresSection.responsiveDesignAlt": "أيقونة تصميم متجاوب",
+    "featuresSection.easyToolAlt": "أيقونة أداة سهلة الاستخدام",
+    "featuresSection.videoTutorialsAlt": "أيقونة دروس فيديو",
+    "featuresSection.pluginsAlt": "أيقونة الإضافات",
+    "featuresSection.templatesAlt": "أيقونة قوالب",
+    "featuresSection.siteMigrationAlt": "أيقونة نقل المواقع",
+    "featuresSection.rightImgAlt": "صورة خلفية يمنى",
+    "featuresSection.leftImgAlt": "صورة خلفية يسرى",
+    "oneClickApps.helmChartsAlt": "أيقونة Helm Charts",
+    "oneClickApps.certManagerAlt": "أيقونة مدير الشهادات",
+    "oneClickApps.linkerdAlt": "أيقونة Linkerd",
+    "oneClickApps.operatorsAlt": "أيقونة المشغلون",
+    "oneClickApps.illustrationAlt": "صورة توضيحية للتطبيقات بنقرة واحدة",
+    "distributorBasicNeed.title": "هل تحتاج تراخيص لتتشغيل الخادم الخاص بك؟",
+    "distributorBasicNeed.subtitle": "نحن نوفرها لك باقل تكلفة",
+    "distributorBasicNeed.registerButton": "نموذج التسجيل",
+    "distributorBasicNeed.distributorsButton": "الموزعون",
+    "distributorBasicNeed.settingsIllustrationAlt": "إعدادات",
+
+    "kubernetes.title": "قم ببناء مجموعات Kubernetes في دقائق معدودة",
+    "resellerHosting.title": "استضافة الموزعين",
+    "resellerHostingPlus.title": "الموزع بلاس",
+    "resellerHostingUltra.title": "الموزع الترا",
+    "resellerHostingProgram.title": "برنامج الموزعين",
+    "resellerHosting.description": "حقق الأرباح ووسع خدماتك.",
     "windowsHosting.title": "استضافة ويندوز",
-"windowsHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
+    "windowsHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
     "support.title": "لست متأكدًا من أين تبدأ؟ لا تقلق، نحن هنا لمساعدتك",
-"support.description": "شركة ليبيا سبايدر، كمزود رسمي لحلول السحابة من مايكروسوفت، جاهزة لمساعدة مؤسستك في اعتماد حل الإنتاجية السحابي “Microsoft 365” ودمجه بالكامل مع سير العمل الخاص بك.",
-"support.successMessage": "نحن فخورون بأننا قدمنا خدماتنا للعديد من الشركات في رحلتهم للانتقال الناجح إلى خدمات Microsoft 365 – ونحن سعداء بمساعدتك أيضًا!",
-"support.cta": "اطلب الان!",
-"support.settingsChanges": "تغييرات الإعدادات",
-"support.settingsChangesAlt": "أيقونة تغييرات الإعدادات",
-"support.training": "التدريب",
-"support.trainingAlt": "أيقونة التدريب",
-"support.technicalSupport": "الدعم الفني",
-"support.technicalSupportAlt": "أيقونة الدعم الفني",
-"support.settingsCustomization": "ضبط الإعدادات والتخصيص",
-"support.settingsCustomizationAlt": "أيقونة ضبط الإعدادات والتخصيص",
-"support.dataUserMigration": "نقل البيانات والمستخدمين",
-"support.dataUserMigrationAlt": "أيقونة نقل البيانات والمستخدمين",
-"support.sharePointMigration": "ترحيل SharePoint Online",
-"support.sharePointMigrationAlt": "أيقونة ترحيل SharePoint Online",
+    "support.description":
+      "شركة ليبيا سبايدر، كمزود رسمي لحلول السحابة من مايكروسوفت، جاهزة لمساعدة مؤسستك في اعتماد حل الإنتاجية السحابي “Microsoft 365” ودمجه بالكامل مع سير العمل الخاص بك.",
+    "support.successMessage":
+      "نحن فخورون بأننا قدمنا خدماتنا للعديد من الشركات في رحلتهم للانتقال الناجح إلى خدمات Microsoft 365 – ونحن سعداء بمساعدتك أيضًا!",
+    "support.cta": "اطلب الان!",
+    "support.settingsChanges": "تغييرات الإعدادات",
+    "support.settingsChangesAlt": "أيقونة تغييرات الإعدادات",
+    "support.training": "التدريب",
+    "support.trainingAlt": "أيقونة التدريب",
+    "support.technicalSupport": "الدعم الفني",
+    "support.technicalSupportAlt": "أيقونة الدعم الفني",
+    "support.settingsCustomization": "ضبط الإعدادات والتخصيص",
+    "support.settingsCustomizationAlt": "أيقونة ضبط الإعدادات والتخصيص",
+    "support.dataUserMigration": "نقل البيانات والمستخدمين",
+    "support.dataUserMigrationAlt": "أيقونة نقل البيانات والمستخدمين",
+    "support.sharePointMigration": "ترحيل SharePoint Online",
+    "support.sharePointMigrationAlt": "أيقونة ترحيل SharePoint Online",
     "tigersHosting.title": "استضافة نمور",
-"tigersHosting.description": "البنية التحتية السحابية سهلة الإدارة وفعّالة من حيث التكلفة",
-"cloudInfrastructure.title": "بنية تحتية مرنة، سهلة الإدارة وقابلة للتوسّع.",
-"cloudInfrastructure.description": "يجمع LS Cloud بين موارد الحوسبة والتخزين والشبكات بالإضافة إلى التحليلات المتقدمة وأدوات المراقبة في منصة سحابية واحدة سهلة الاستخدام.",
-"cloudInfrastructure.tools": "أدوات في منصة سحابية واحدة سهلة الاستخدام.",
-"cloudInfrastructure.resources": "موارد سحابية يمكن تثبيتها في دقائق",
-"cloudInfrastructure.loadMetrics": "مقاييس التحميل",
-"cloudInfrastructure.loadMetricsAlt": "أيقونة مقاييس التحميل",
-"cloudInfrastructure.networking": "الشبكات",
-"cloudInfrastructure.networkingAlt": "أيقونة الشبكات",
-"cloudInfrastructure.storageSizes": "أحجام التخزين",
-"cloudInfrastructure.storageSizesAlt": "أيقونة أحجام التخزين",
-"cloudInfrastructure.virtualServers": "الخوادم الافتراضية",
-"cloudInfrastructure.virtualServersAlt": "أيقونة الخوادم الافتراضية",
-"cloudInfrastructure.backgroundAlt": "خلفية سحابية",
-"whyChooseTigers.blockUnauthorizedEmail": "حظر البريد الإلكتروني غير المصرح به",
-"whyChooseTigers.blockUnauthorizedEmailDesc": "عند استخدامك لـ PowerDMARC، لا تقوم فقط بالقضاء على انتحال البريد الإلكتروني، بل يمكنك أيضًا استخدام التقارير التفصيلية لتغيير استراتيجية المحتوى الخاصة بك فورًا. لا تترك مجالًا للصدفة.",
-"whyChooseTigers.blockUnauthorizedEmailAlt": "أيقونة حظر البريد الإلكتروني غير المصرح به",
-"whyChooseTigers.preventEmailSpoofing": "منع انتحال البريد الإلكتروني",
-"whyChooseTigers.preventEmailSpoofingDesc": "احمِ نطاقك من انتحال البريد الإلكتروني وهجمات التصيد الاحتيالي باستخدام بروتوكولات المصادقة المتقدمة. تأكد من أن المرسلين المعتمدين فقط يمكنهم استخدام نطاقك.",
-"whyChooseTigers.preventEmailSpoofingAlt": "أيقونة منع انتحال البريد الإلكتروني",
-"whyChooseTigers.enhanceEmailSecurity": "تعزيز أمان البريد الإلكتروني",
-"whyChooseTigers.enhanceEmailSecurityDesc": "احصل على رؤية كاملة لحركة البريد الإلكتروني لديك واكتشف الأنشطة غير المصرح بها في الوقت الفعلي. حافظ على أمان اتصالك والتزامه بالمعايير.",
-"whyChooseTigers.enhanceEmailSecurityAlt": "أيقونة تعزيز أمان البريد الإلكتروني",
-"whyChooseTigers.verifyEmail": "تحقق من كل بريد إلكتروني",
-"whyChooseTigers.verifyEmailDesc": "استخدم DMARC وSPF وDKIM للتحقق من صحة رسائلك الإلكترونية ومنع المجرمين الإلكترونيين من انتحال نطاقك. عزز الثقة مع المستلمين.",
-"whyChooseTigers.verifyEmailAlt": "أيقونة تحقق من كل بريد إلكتروني",
-"whyChooseTigers.backgroundRightAlt": "خلفية يمين",
-"whyChooseTigers.backgroundLeftAlt": "خلفية يسار",
+    "tigersHosting.description":
+      "البنية التحتية السحابية سهلة الإدارة وفعّالة من حيث التكلفة",
+    "cloudInfrastructure.title":
+      "بنية تحتية مرنة، سهلة الإدارة وقابلة للتوسّع.",
+    "cloudInfrastructure.description":
+      "يجمع LS Cloud بين موارد الحوسبة والتخزين والشبكات بالإضافة إلى التحليلات المتقدمة وأدوات المراقبة في منصة سحابية واحدة سهلة الاستخدام.",
+    "cloudInfrastructure.tools": "أدوات في منصة سحابية واحدة سهلة الاستخدام.",
+    "cloudInfrastructure.resources": "موارد سحابية يمكن تثبيتها في دقائق",
+    "cloudInfrastructure.loadMetrics": "مقاييس التحميل",
+    "cloudInfrastructure.loadMetricsAlt": "أيقونة مقاييس التحميل",
+    "cloudInfrastructure.networking": "الشبكات",
+    "cloudInfrastructure.networkingAlt": "أيقونة الشبكات",
+    "cloudInfrastructure.storageSizes": "أحجام التخزين",
+    "cloudInfrastructure.storageSizesAlt": "أيقونة أحجام التخزين",
+    "cloudInfrastructure.virtualServers": "الخوادم الافتراضية",
+    "cloudInfrastructure.virtualServersAlt": "أيقونة الخوادم الافتراضية",
+    "cloudInfrastructure.backgroundAlt": "خلفية سحابية",
+    "whyChooseTigers.blockUnauthorizedEmail":
+      "حظر البريد الإلكتروني غير المصرح به",
+    "whyChooseTigers.blockUnauthorizedEmailDesc":
+      "عند استخدامك لـ PowerDMARC، لا تقوم فقط بالقضاء على انتحال البريد الإلكتروني، بل يمكنك أيضًا استخدام التقارير التفصيلية لتغيير استراتيجية المحتوى الخاصة بك فورًا. لا تترك مجالًا للصدفة.",
+    "whyChooseTigers.blockUnauthorizedEmailAlt":
+      "أيقونة حظر البريد الإلكتروني غير المصرح به",
+    "whyChooseTigers.preventEmailSpoofing": "منع انتحال البريد الإلكتروني",
+    "whyChooseTigers.preventEmailSpoofingDesc":
+      "احمِ نطاقك من انتحال البريد الإلكتروني وهجمات التصيد الاحتيالي باستخدام بروتوكولات المصادقة المتقدمة. تأكد من أن المرسلين المعتمدين فقط يمكنهم استخدام نطاقك.",
+    "whyChooseTigers.preventEmailSpoofingAlt":
+      "أيقونة منع انتحال البريد الإلكتروني",
+    "whyChooseTigers.enhanceEmailSecurity": "تعزيز أمان البريد الإلكتروني",
+    "whyChooseTigers.enhanceEmailSecurityDesc":
+      "احصل على رؤية كاملة لحركة البريد الإلكتروني لديك واكتشف الأنشطة غير المصرح بها في الوقت الفعلي. حافظ على أمان اتصالك والتزامه بالمعايير.",
+    "whyChooseTigers.enhanceEmailSecurityAlt":
+      "أيقونة تعزيز أمان البريد الإلكتروني",
+    "whyChooseTigers.verifyEmail": "تحقق من كل بريد إلكتروني",
+    "whyChooseTigers.verifyEmailDesc":
+      "استخدم DMARC وSPF وDKIM للتحقق من صحة رسائلك الإلكترونية ومنع المجرمين الإلكترونيين من انتحال نطاقك. عزز الثقة مع المستلمين.",
+    "whyChooseTigers.verifyEmailAlt": "أيقونة تحقق من كل بريد إلكتروني",
+    "whyChooseTigers.backgroundRightAlt": "خلفية يمين",
+    "whyChooseTigers.backgroundLeftAlt": "خلفية يسار",
 
     "businessHosting.title": "استضافة الأعمال",
-"businessHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
-"servicesThree.title": "انطلق بسرعة ونمي أعمالك",
-"servicesThree.reliableStaticHosting": "استضافة ثابتة موثوقة",
-"servicesThree.reliableStaticHostingDesc": "استضف مواقعك الثابتة بوقت تحميل فائق السرعة واستقرار لا مثيل له. استمتع بنشر سلس مع شبكة CDN موزعة عالميًا.",
-"servicesThree.reliableStaticHostingAlt": "أيقونة استضافة ثابتة موثوقة",
-"servicesThree.scalableCloudStorage": "تخزين سحابي قابل للتطوير",
-"servicesThree.scalableCloudStorageDesc": "قم بتخزين بياناتك والوصول إليها بأمان مع تخزين سحابي عالي الأداء. قم بالتوسع بسهولة مع نمو عملك بفضل التكرار المحسن.",
-"servicesThree.scalableCloudStorageAlt": "أيقونة تخزين سحابي قابل للتطوير",
-"servicesThree.enterpriseStaticHosting": "استضافة ثابتة بمستوى الشركات",
-"servicesThree.enterpriseStaticHostingDesc": "قم بتقديم تطبيقاتك الثابتة بأمان وأداء عاليين. استفد من التحديثات الفورية، والوصول العالمي، وعدم الحاجة إلى الصيانة.",
-"servicesThree.enterpriseStaticHostingAlt": "أيقونة استضافة ثابتة بمستوى الشركات",
-"mainFeatures.title": "مزايا رئيسية",
-"mainFeatures.description": "قم بامتلاك مُخدّمك المخصص مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
-"mainFeatures.crossPlatform": "يعمل عبر منصات متعددة",
-"mainFeatures.crossPlatformAlt": "أيقونة يعمل عبر منصات متعددة",
-"mainFeatures.ddosMitigation": "تخفيف هجمات حجب الخدمة (DDoS)",
-"mainFeatures.ddosMitigationAlt": "أيقونة تخفيف هجمات حجب الخدمة",
-"mainFeatures.malwareDetection": "اكتشاف وإزالة البرامج الضارة",
-"mainFeatures.malwareDetectionAlt": "أيقونة اكتشاف وإزالة البرامج الضارة",
-"mainFeatures.sslCertificate": "شهادة أمان SSL",
-"mainFeatures.sslCertificateAlt": "أيقونة شهادة أمان SSL",
-"mainFeatures.securityMonitoring": "مراقبة الأمان",
-"mainFeatures.securityMonitoringAlt": "أيقونة مراقبة الأمان",
-"mainFeatures.performanceOptimization": "تحسين الأداء",
-"mainFeatures.performanceOptimizationAlt": "أيقونة تحسين الأداء",
-"mainFeatures.backgroundRightAlt": "صورة خلفية يمين",
-"mainFeatures.backgroundLeftAlt": "صورة خلفية يسار",
+    "businessHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
+    "servicesThree.title": "انطلق بسرعة ونمي أعمالك",
+    "servicesThree.reliableStaticHosting": "استضافة ثابتة موثوقة",
+    "servicesThree.reliableStaticHostingDesc":
+      "استضف مواقعك الثابتة بوقت تحميل فائق السرعة واستقرار لا مثيل له. استمتع بنشر سلس مع شبكة CDN موزعة عالميًا.",
+    "servicesThree.reliableStaticHostingAlt": "أيقونة استضافة ثابتة موثوقة",
+    "servicesThree.scalableCloudStorage": "تخزين سحابي قابل للتطوير",
+    "servicesThree.scalableCloudStorageDesc":
+      "قم بتخزين بياناتك والوصول إليها بأمان مع تخزين سحابي عالي الأداء. قم بالتوسع بسهولة مع نمو عملك بفضل التكرار المحسن.",
+    "servicesThree.scalableCloudStorageAlt": "أيقونة تخزين سحابي قابل للتطوير",
+    "servicesThree.enterpriseStaticHosting": "استضافة ثابتة بمستوى الشركات",
+    "servicesThree.enterpriseStaticHostingDesc":
+      "قم بتقديم تطبيقاتك الثابتة بأمان وأداء عاليين. استفد من التحديثات الفورية، والوصول العالمي، وعدم الحاجة إلى الصيانة.",
+    "servicesThree.enterpriseStaticHostingAlt":
+      "أيقونة استضافة ثابتة بمستوى الشركات",
+    "mainFeatures.title": "مزايا رئيسية",
+    "mainFeatures.description":
+      "قم بامتلاك مُخدّمك المخصص مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
+    "mainFeatures.crossPlatform": "يعمل عبر منصات متعددة",
+    "mainFeatures.crossPlatformAlt": "أيقونة يعمل عبر منصات متعددة",
+    "mainFeatures.ddosMitigation": "تخفيف هجمات حجب الخدمة (DDoS)",
+    "mainFeatures.ddosMitigationAlt": "أيقونة تخفيف هجمات حجب الخدمة",
+    "mainFeatures.malwareDetection": "اكتشاف وإزالة البرامج الضارة",
+    "mainFeatures.malwareDetectionAlt": "أيقونة اكتشاف وإزالة البرامج الضارة",
+    "mainFeatures.sslCertificate": "شهادة أمان SSL",
+    "mainFeatures.sslCertificateAlt": "أيقونة شهادة أمان SSL",
+    "mainFeatures.securityMonitoring": "مراقبة الأمان",
+    "mainFeatures.securityMonitoringAlt": "أيقونة مراقبة الأمان",
+    "mainFeatures.performanceOptimization": "تحسين الأداء",
+    "mainFeatures.performanceOptimizationAlt": "أيقونة تحسين الأداء",
+    "mainFeatures.backgroundRightAlt": "صورة خلفية يمين",
+    "mainFeatures.backgroundLeftAlt": "صورة خلفية يسار",
     "emailHosting.title": "استضافة البريد الإلكتروني",
     "emailHosting.description": "واحدة من أفضل وأسرع وأسهل خدمات الاستضافة",
     "businessNeeds.title": "كل ما تحتاجه لعملك",
@@ -926,7 +1230,6 @@ const translations: Record<Language, Translations> = {
     "wordpressHosting.title": "استضافة وورد بريس",
     "wordpressHosting.description": "بيئة محسّنة لنمو موقعك باستخدام ووردبريس",
     "wordpressHosting.startNow": "ابدا الان!",
-    "kubernetes.title": "قم ببناء مجموعات Kubernetes في دقائق معدودة",
     "kubernetes.description":
       "توقف عن إضاعة الوقت والجهد في إدارة مجموعات Kubernetes. باستخدام محرك Kubernetes المُدار بالكامل، يمكنك بسهولة إطلاق الموارد المُدارة للحاويات الخاصة بتطبيقك وإدارتها وتوسيع نطاقها في دقائق بدلاً من أيام.",
     "kubernetes.orderNow": "اطلب الان!",
@@ -1362,7 +1665,7 @@ const translations: Record<Language, Translations> = {
       "استضافة سحابية آمنة وعالية الأداء لتطبيقات المؤسسات",
 
     "reseller.basic": "الموزع العادي",
-    "reseller.basic.desc": "خطة استضافة أساسية للموزعين لبدء عملائهم",
+    "reseller.basic.desc": "خطة استضافة أساسية للموزعين لبدء عملياتهم",
     "reseller.plus": "الموزع بلاس",
     "reseller.plus.desc": "ميزات محسنة لشبكات الموزعين المتنامية",
     "reseller.ultra": "الموزع الترا",
@@ -1589,82 +1892,262 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
+    "supportParagraph.description":
+      "If you are a company customer, you can easily contact us through your account to reach our technical support or sales team. We are committed to providing the best service and fast solutions tailored to your needs.",
+    "supportSectionTwo.helpCenter": "Help Center",
+    "supportSectionTwo.serverStatus": "Server Status",
+    "supportSectionTwo.subscriberServices": "Subscriber Services",
+    "supportSectionTwo.helpCenterAlt": "Help Center Icon",
+    "supportSectionTwo.serverStatusAlt": "Server Status Icon",
+    "supportSectionTwo.subscriberServicesAlt": "Subscriber Services Icon",
+    "supportSectionTwo.emailService": "Email Service",
+    "supportSectionTwo.phone": "Phone",
+    "supportSectionTwo.location": "Location",
+    "supportSectionTwo.emailServiceAlt": "Email Icon",
+    "supportSectionTwo.phoneAlt": "Phone Icon",
+    "supportSectionTwo.locationAlt": "Location Icon",
+    "supportSectionTwo.mapTitle": "Our Location on the Map",
+    "supportSectionTwo.locationValue": "Riyadh, Olaya, Saudi Arabia",
+
+    "contactForm.title":
+      "Haven't found your answer yet? Get technical support now.",
+    "contactForm.description":
+      "With many unique solutions, you can easily build a page without the need for coding. Build your next consulting website in just a few minutes.",
+    "contactForm.salesTab": "Sales",
+    "contactForm.customizationTab": "Customization",
+    "contactForm.trendsTab": "Trends",
+    "contactForm.pricesTab": "Prices",
+    "contactForm.fullNameLabel": "Full Name",
+    "contactForm.usernameLabel": "Username",
+    "contactForm.messageLabel": "Your Message",
+    "contactForm.languageLabel":
+      "Which language would you like to communicate in?",
+    "contactForm.languagePlaceholder": "Select a language",
+    "contactForm.languageArabic": "Arabic",
+    "contactForm.languageEnglish": "English",
+    "contactForm.languageSpanish": "Spanish",
+    "contactForm.submitButton": "Submit",
+    "contactForm.contactAlternative": "Or contact us at",
+
+    "loginSection.logoAlt": "Logo",
+    "loginSection.emailIconAlt": "Email Icon",
+    "loginSection.passwordIconAlt": "Lock Icon",
+    "loginSection.footerLogoAlt": "Footer Logo",
+    "loginSection.title": "Login",
+    "loginSection.emailPlaceholder": "Enter your email",
+    "loginSection.passwordPlaceholder": "Enter the password",
+    "loginSection.forgotPassword": "Forgot your login details?",
+    "loginSection.loginButton": "Login",
+    "loginSection.noAccount": "Don't have an account?",
+    "loginSection.createAccount": "Create a new account",
+
+    "softaculousSection.title": "Softaculous Hosting",
+    "softaculousSection.description":
+      "One-click installs for over 400 applications using Softaculous.",
+
+    "appHostingSection.title": "Application Hosting",
+    "appHostingSection.description":
+      "Description and details about shared hosting services, designed to provide reliable and scalable solutions for your applications",
+    "appHostingSection.viewPricing": "View Pricing",
+    "appHostingSection.createAccount": "Create Account",
+    "ecommerceSection.title": "E-commerce – electronic commerce",
+    "ecommerceSection.cyclosName": "Cyclos 4 Pro",
+    "ecommerceSection.magentoName": "Magento",
+    "ecommerceSection.magentoClusterName": "Magento Cluster",
+    "ecommerceSection.maianCartName": "Maian Cart",
+    "ecommerceSection.openCartName": "OpenCart",
+    "ecommerceSection.prestaShopName": "PrestaShop",
+    "ecommerceSection.cyclosDescription":
+      "Cyclos 4 PRO is a payment platform for large companies and institutions",
+    "ecommerceSection.magentoDescription":
+      "Magento is an e-commerce software and platform trusted by the world's leading brands. Grow your online business with Magento",
+    "ecommerceSection.magentoClusterDescription":
+      "Automated scalability and high availability Magento cluster with load balancing, data replication, content caching and user session storage.",
+    "ecommerceSection.maianCartDescription":
+      "Maian Cart is a fast, powerful and free e-commerce platform built with PHP and MySQL that has all the features you need to run your online store",
+    "ecommerceSection.openCartDescription":
+      "OpenCart is an open source online shopping system based on PHP",
+    "ecommerceSection.prestaShopDescription":
+      "PrestaShop is an open source and fully customizable solution for selling products online, which is efficient, fast and easy to use",
+    "ecommerceSection.cyclosLogoAlt": "Cyclos 4 Pro logo",
+    "ecommerceSection.magentoLogoAlt": "Magento logo",
+    "ecommerceSection.maianCartLogoAlt": "Maian Cart shopping cart icon",
+    "ecommerceSection.openCartLogoAlt": "OpenCart logo",
+    "ecommerceSection.prestaShopLogoAlt": "PrestaShop logo",
+    "ecommerceSection.launchNow": "Launch now",
+    "statsSection.dataCenters": "Data Centers",
+    "statsSection.uptime": "Uptime",
+    "statsSection.hostedSites": "Hosted Sites",
+    "statsSection.guaranteedAvailability": "Guaranteed Availability",
+    "statsSection.customerSatisfaction": "Customer Satisfaction",
+    "statsSection.dataCentersAlt": "Data Centers Icon",
+    "statsSection.uptimeAlt": "Uptime Icon",
+    "statsSection.hostedSitesAlt": "Hosted Sites Icon",
+    "statsSection.guaranteedAvailabilityAlt": "Guaranteed Availability Icon",
+    "statsSection.customerSatisfactionAlt": "Customer Satisfaction Icon",
+
+    "statsSectionTwo.dataCenters": "Data Centers",
+    "statsSectionTwo.uptime": "Uptime",
+    "statsSectionTwo.hostedSites": "Hosted Sites",
+    "statsSectionTwo.guaranteedAvailability": "Guaranteed Availability",
+    "statsSectionTwo.customerSatisfaction": "Customer Satisfaction",
+    "statsSectionTwo.dataCentersAlt": "Data Centers Icon",
+    "statsSectionTwo.uptimeAlt": "Uptime Icon",
+    "statsSectionTwo.hostedSitesAlt": "Hosted Sites Icon",
+    "statsSectionTwo.guaranteedAvailabilityAlt": "Guaranteed Availability Icon",
+    "statsSectionTwo.customerSatisfactionAlt": "Customer Satisfaction Icon",
+    "achievementsSectionTwo.title": "Our Achievements",
+    "achievementsSectionTwo.description":
+      "Founded by Ali Al-Mansi and Yahya Hassan, it began operations specializing in hosting services with a team of just 3 individuals.",
+
+    "contactSection.description":
+      "Are you interested in learning how we can help your business succeed? Contact us.",
+    "contactSection.helpTitle": "Need Help?",
+    "contactSection.helpDescription":
+      "Get in touch with us and receive assistance",
+    "contactSection.contactButton": "Contact Now",
+    "contactSection.microsoftLogoAlt": "Microsoft Logo",
+    "contactSection.partner1LogoAlt": "Partner 1 Logo",
+    "contactSection.partner2LogoAlt": "Partner 2 Logo",
+    "contactSection.partner3LogoAlt": "Partner 3 Logo",
+    "contactSection.partner4LogoAlt": "Partner 4 Logo",
+
+    "tigersSection.title": "About Nomoar",
+    "tigersSection.description":
+      "Nomoar is the leading provider of cloud services in Saudi Arabia, dedicated to supporting and protecting the technical infrastructure of organizations of all sizes.",
+    "featuresSection.title": "Features",
+    "featuresSection.multilingualSites": "Multilingual Websites",
+    "featuresSection.fiftyLanguages": "Support for 50 Languages",
+    "featuresSection.responsiveDesign": "Responsive Design for All Devices",
+    "featuresSection.easyTool": "User-Friendly Tool",
+    "featuresSection.videoTutorials": "Video Tutorials on How to Use",
+    "featuresSection.plugins": "Plugins",
+    "featuresSection.templates": "Over a Million Templates",
+    "featuresSection.siteMigration":
+      "Ability to Migrate Sites from Other Builders",
+    "featuresSection.multilingualSitesAlt": "Multilingual Websites Icon",
+    "featuresSection.fiftyLanguagesAlt": "50 Languages Support Icon",
+    "featuresSection.responsiveDesignAlt": "Responsive Design Icon",
+    "featuresSection.easyToolAlt": "User-Friendly Tool Icon",
+    "featuresSection.videoTutorialsAlt": "Video Tutorials Icon",
+    "featuresSection.pluginsAlt": "Plugins Icon",
+    "featuresSection.templatesAlt": "Templates Icon",
+    "featuresSection.siteMigrationAlt": "Site Migration Icon",
+    "featuresSection.rightImgAlt": "Right Background Image",
+    "featuresSection.leftImgAlt": "Left Background Image",
+    "oneClickApps.helmChartsAlt": "Helm Charts Icon",
+    "oneClickApps.certManagerAlt": "Certificate Manager Icon",
+    "oneClickApps.linkerdAlt": "Linkerd Icon",
+    "oneClickApps.operatorsAlt": "Operators Icon",
+    "oneClickApps.illustrationAlt": "One-Click Apps Illustration",
+    "distributorBasicNeed.title":
+      "Do you need licenses to operate your server?",
+    "distributorBasicNeed.subtitle": "We provide them at the lowest cost",
+    "distributorBasicNeed.registerButton": "Registration Form",
+    "distributorBasicNeed.distributorsButton": "Distributors",
+    "distributorBasicNeed.settingsIllustrationAlt": "Settings",
+
+    "kubernetes.title": "Build Kubernetes Clusters in Minutes",
+    "resellerHosting.title": "Reseller Hosting",
+    "resellerHostingPlus.title": "Distributor Plus",
+    "resellerHostingUltra.title": "Distributor Ultra",
+    "resellerHostingProgram.title": "Reseller Program",
+    "resellerHosting.description": "Generate profits and expand your services.",
+
     "windowsHosting.title": "Windows Hosting",
-"windowsHosting.description": "One of the best, fastest, and easiest hosting services",
+    "windowsHosting.description":
+      "One of the best, fastest, and easiest hosting services",
     "support.title": "Not sure where to start? Don’t worry, we’re here to help",
-"support.description": "Libya Spider, as an official Microsoft cloud solutions provider, is ready to assist your organization in adopting and fully integrating the Microsoft 365 cloud productivity solution into your workflow.",
-"support.successMessage": "We are proud to have supported numerous companies in their successful transition to Microsoft 365 services – and we’re excited to help you too!",
-"support.cta": "Request Now!",
-"support.settingsChanges": "Settings Changes",
-"support.settingsChangesAlt": "Settings Changes Icon",
-"support.training": "Training",
-"support.trainingAlt": "Training Icon",
-"support.technicalSupport": "Technical Support",
-"support.technicalSupportAlt": "Technical Support Icon",
-"support.settingsCustomization": "Settings and Customization",
-"support.settingsCustomizationAlt": "Settings and Customization Icon",
-"support.dataUserMigration": "Data and User Migration",
-"support.dataUserMigrationAlt": "Data and User Migration Icon",
-"support.sharePointMigration": "SharePoint Online Migration",
-"support.sharePointMigrationAlt": "SharePoint Online Migration Icon",
+    "support.description":
+      "Libya Spider, as an official Microsoft cloud solutions provider, is ready to assist your organization in adopting and fully integrating the Microsoft 365 cloud productivity solution into your workflow.",
+    "support.successMessage":
+      "We are proud to have supported numerous companies in their successful transition to Microsoft 365 services – and we’re excited to help you too!",
+    "support.cta": "Request Now!",
+    "support.settingsChanges": "Settings Changes",
+    "support.settingsChangesAlt": "Settings Changes Icon",
+    "support.training": "Training",
+    "support.trainingAlt": "Training Icon",
+    "support.technicalSupport": "Technical Support",
+    "support.technicalSupportAlt": "Technical Support Icon",
+    "support.settingsCustomization": "Settings and Customization",
+    "support.settingsCustomizationAlt": "Settings and Customization Icon",
+    "support.dataUserMigration": "Data and User Migration",
+    "support.dataUserMigrationAlt": "Data and User Migration Icon",
+    "support.sharePointMigration": "SharePoint Online Migration",
+    "support.sharePointMigrationAlt": "SharePoint Online Migration Icon",
     "tigersHosting.title": "Nomoar Hosting",
-"tigersHosting.description": "Easy-to-manage and cost-effective cloud infrastructure",
-"cloudInfrastructure.title": "Flexible, Easy-to-Manage, and Scalable Infrastructure",
-"cloudInfrastructure.description": "LS Cloud combines compute, storage, and networking resources along with advanced analytics and monitoring tools in a single, user-friendly cloud platform.",
-"cloudInfrastructure.tools": "Tools in a single, user-friendly cloud platform.",
-"cloudInfrastructure.resources": "Cloud resources deployable in minutes",
-"cloudInfrastructure.loadMetrics": "Load Metrics",
-"cloudInfrastructure.loadMetricsAlt": "Load Metrics Icon",
-"cloudInfrastructure.networking": "Networking",
-"cloudInfrastructure.networkingAlt": "Networking Icon",
-"cloudInfrastructure.storageSizes": "Storage Sizes",
-"cloudInfrastructure.storageSizesAlt": "Storage Sizes Icon",
-"cloudInfrastructure.virtualServers": "Virtual Servers",
-"cloudInfrastructure.virtualServersAlt": "Virtual Servers Icon",
-"cloudInfrastructure.backgroundAlt": "Cloud Background",
-"whyChooseTigers.blockUnauthorizedEmail": "Block Unauthorized Email",
-"whyChooseTigers.blockUnauthorizedEmailDesc": "With PowerDMARC, you not only eliminate email spoofing but also leverage detailed reports to adjust your content strategy instantly. Leave nothing to chance.",
-"whyChooseTigers.blockUnauthorizedEmailAlt": "Block Unauthorized Email Icon",
-"whyChooseTigers.preventEmailSpoofing": "Prevent Email Spoofing",
-"whyChooseTigers.preventEmailSpoofingDesc": "Protect your domain from email spoofing and phishing attacks using advanced authentication protocols. Ensure only authorized senders can use your domain.",
-"whyChooseTigers.preventEmailSpoofingAlt": "Prevent Email Spoofing Icon",
-"whyChooseTigers.enhanceEmailSecurity": "Enhance Email Security",
-"whyChooseTigers.enhanceEmailSecurityDesc": "Gain full visibility into your email traffic and detect unauthorized activities in real-time. Keep your communication secure and compliant.",
-"whyChooseTigers.enhanceEmailSecurityAlt": "Enhance Email Security Icon",
-"whyChooseTigers.verifyEmail": "Verify Every Email",
-"whyChooseTigers.verifyEmailDesc": "Use DMARC, SPF, and DKIM to validate your emails and prevent cybercriminals from spoofing your domain. Build trust with recipients.",
-"whyChooseTigers.verifyEmailAlt": "Verify Every Email Icon",
-"whyChooseTigers.backgroundRightAlt": "Right Background",
-"whyChooseTigers.backgroundLeftAlt": "Left Background",
+    "tigersHosting.description":
+      "Easy-to-manage and cost-effective cloud infrastructure",
+    "cloudInfrastructure.title":
+      "Flexible, Easy-to-Manage, and Scalable Infrastructure",
+    "cloudInfrastructure.description":
+      "LS Cloud combines compute, storage, and networking resources along with advanced analytics and monitoring tools in a single, user-friendly cloud platform.",
+    "cloudInfrastructure.tools":
+      "Tools in a single, user-friendly cloud platform.",
+    "cloudInfrastructure.resources": "Cloud resources deployable in minutes",
+    "cloudInfrastructure.loadMetrics": "Load Metrics",
+    "cloudInfrastructure.loadMetricsAlt": "Load Metrics Icon",
+    "cloudInfrastructure.networking": "Networking",
+    "cloudInfrastructure.networkingAlt": "Networking Icon",
+    "cloudInfrastructure.storageSizes": "Storage Sizes",
+    "cloudInfrastructure.storageSizesAlt": "Storage Sizes Icon",
+    "cloudInfrastructure.virtualServers": "Virtual Servers",
+    "cloudInfrastructure.virtualServersAlt": "Virtual Servers Icon",
+    "cloudInfrastructure.backgroundAlt": "Cloud Background",
+    "whyChooseTigers.blockUnauthorizedEmail": "Block Unauthorized Email",
+    "whyChooseTigers.blockUnauthorizedEmailDesc":
+      "With PowerDMARC, you not only eliminate email spoofing but also leverage detailed reports to adjust your content strategy instantly. Leave nothing to chance.",
+    "whyChooseTigers.blockUnauthorizedEmailAlt":
+      "Block Unauthorized Email Icon",
+    "whyChooseTigers.preventEmailSpoofing": "Prevent Email Spoofing",
+    "whyChooseTigers.preventEmailSpoofingDesc":
+      "Protect your domain from email spoofing and phishing attacks using advanced authentication protocols. Ensure only authorized senders can use your domain.",
+    "whyChooseTigers.preventEmailSpoofingAlt": "Prevent Email Spoofing Icon",
+    "whyChooseTigers.enhanceEmailSecurity": "Enhance Email Security",
+    "whyChooseTigers.enhanceEmailSecurityDesc":
+      "Gain full visibility into your email traffic and detect unauthorized activities in real-time. Keep your communication secure and compliant.",
+    "whyChooseTigers.enhanceEmailSecurityAlt": "Enhance Email Security Icon",
+    "whyChooseTigers.verifyEmail": "Verify Every Email",
+    "whyChooseTigers.verifyEmailDesc":
+      "Use DMARC, SPF, and DKIM to validate your emails and prevent cybercriminals from spoofing your domain. Build trust with recipients.",
+    "whyChooseTigers.verifyEmailAlt": "Verify Every Email Icon",
+    "whyChooseTigers.backgroundRightAlt": "Right Background",
+    "whyChooseTigers.backgroundLeftAlt": "Left Background",
 
     "businessHosting.title": "Business Hosting",
-"businessHosting.description": "One of the best, fastest, and easiest hosting services",
-"servicesThree.title": "Launch Fast and Grow Your Business",
-"servicesThree.reliableStaticHosting": "Reliable Static Hosting",
-"servicesThree.reliableStaticHostingDesc": "Host your static websites with lightning-fast load times and unmatched stability. Enjoy seamless deployment with a globally distributed CDN.",
-"servicesThree.reliableStaticHostingAlt": "Reliable Static Hosting Icon",
-"servicesThree.scalableCloudStorage": "Scalable Cloud Storage",
-"servicesThree.scalableCloudStorageDesc": "Store and access your data securely with high-performance cloud storage. Scale effortlessly as your business grows with enhanced redundancy.",
-"servicesThree.scalableCloudStorageAlt": "Scalable Cloud Storage Icon",
-"servicesThree.enterpriseStaticHosting": "Enterprise-Level Static Hosting",
-"servicesThree.enterpriseStaticHostingDesc": "Deliver your static applications with security and high performance. Benefit from instant updates, global access, and zero maintenance.",
-"servicesThree.enterpriseStaticHostingAlt": "Enterprise Static Hosting Icon",
-"mainFeatures.title": "Key Features",
-"mainFeatures.description": "Own your dedicated server with your preferred operating system and pre-installed applications.",
-"mainFeatures.crossPlatform": "Works Across Multiple Platforms",
-"mainFeatures.crossPlatformAlt": "Cross-Platform Icon",
-"mainFeatures.ddosMitigation": "DDoS Attack Mitigation",
-"mainFeatures.ddosMitigationAlt": "DDoS Mitigation Icon",
-"mainFeatures.malwareDetection": "Malware Detection and Removal",
-"mainFeatures.malwareDetectionAlt": "Malware Detection Icon",
-"mainFeatures.sslCertificate": "SSL Security Certificate",
-"mainFeatures.sslCertificateAlt": "SSL Certificate Icon",
-"mainFeatures.securityMonitoring": "Security Monitoring",
-"mainFeatures.securityMonitoringAlt": "Security Monitoring Icon",
-"mainFeatures.performanceOptimization": "Performance Optimization",
-"mainFeatures.performanceOptimizationAlt": "Performance Optimization Icon",
-"mainFeatures.backgroundRightAlt": "Right Background Image",
-"mainFeatures.backgroundLeftAlt": "Left Background Image",
+    "businessHosting.description":
+      "One of the best, fastest, and easiest hosting services",
+    "servicesThree.title": "Launch Fast and Grow Your Business",
+    "servicesThree.reliableStaticHosting": "Reliable Static Hosting",
+    "servicesThree.reliableStaticHostingDesc":
+      "Host your static websites with lightning-fast load times and unmatched stability. Enjoy seamless deployment with a globally distributed CDN.",
+    "servicesThree.reliableStaticHostingAlt": "Reliable Static Hosting Icon",
+    "servicesThree.scalableCloudStorage": "Scalable Cloud Storage",
+    "servicesThree.scalableCloudStorageDesc":
+      "Store and access your data securely with high-performance cloud storage. Scale effortlessly as your business grows with enhanced redundancy.",
+    "servicesThree.scalableCloudStorageAlt": "Scalable Cloud Storage Icon",
+    "servicesThree.enterpriseStaticHosting": "Enterprise-Level Static Hosting",
+    "servicesThree.enterpriseStaticHostingDesc":
+      "Deliver your static applications with security and high performance. Benefit from instant updates, global access, and zero maintenance.",
+    "servicesThree.enterpriseStaticHostingAlt":
+      "Enterprise Static Hosting Icon",
+    "mainFeatures.title": "Key Features",
+    "mainFeatures.description":
+      "Own your dedicated server with your preferred operating system and pre-installed applications.",
+    "mainFeatures.crossPlatform": "Works Across Multiple Platforms",
+    "mainFeatures.crossPlatformAlt": "Cross-Platform Icon",
+    "mainFeatures.ddosMitigation": "DDoS Attack Mitigation",
+    "mainFeatures.ddosMitigationAlt": "DDoS Mitigation Icon",
+    "mainFeatures.malwareDetection": "Malware Detection and Removal",
+    "mainFeatures.malwareDetectionAlt": "Malware Detection Icon",
+    "mainFeatures.sslCertificate": "SSL Security Certificate",
+    "mainFeatures.sslCertificateAlt": "SSL Certificate Icon",
+    "mainFeatures.securityMonitoring": "Security Monitoring",
+    "mainFeatures.securityMonitoringAlt": "Security Monitoring Icon",
+    "mainFeatures.performanceOptimization": "Performance Optimization",
+    "mainFeatures.performanceOptimizationAlt": "Performance Optimization Icon",
+    "mainFeatures.backgroundRightAlt": "Right Background Image",
+    "mainFeatures.backgroundLeftAlt": "Left Background Image",
 
     "emailHosting.title": "Email Hosting",
     "emailHosting.description":
@@ -1794,7 +2277,6 @@ const translations: Record<Language, Translations> = {
     "wordpressHosting.description":
       "An optimized environment for growing your site using WordPress",
     "wordpressHosting.startNow": "Start Now!",
-    "kubernetes.title": "Build Kubernetes Clusters in Minutes",
     "kubernetes.description":
       "Stop wasting time and effort managing Kubernetes clusters. With our fully managed Kubernetes engine, you can easily deploy, manage, and scale your application's containerized resources in minutes instead of days.",
     "kubernetes.orderNow": "Order Now!",
@@ -2006,7 +2488,7 @@ const translations: Record<Language, Translations> = {
     "featuresSectionFive.feature.spfDkimComplianceAlt": "Security Lock Icon",
     "featuresSectionFive.feature.powerDmarcComplianceAlt":
       "Security Shield with Checkmark Icon",
-    "whyChooseTigers.title": "Why Choose Tigers",
+    "whyChooseTigers.title": "Why Choose Nomoar",
     "whyChooseTigers.feature.emailBlocking": "Block Unauthorized Emails",
     "whyChooseTigers.feature.emailBlockingDesc":
       "When using PowerDMARC, you not only eliminate email spoofing but can also use detailed reports to instantly adjust your content strategy. Leave nothing to chance.",
@@ -2477,82 +2959,275 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
+    "supportParagraph.description":
+      "Si vous êtes client de l'entreprise, vous pouvez facilement nous contacter via votre compte pour joindre notre équipe de support technique ou de vente. Nous nous engageons à fournir le meilleur service et des solutions rapides adaptées à vos besoins.",
+
+    "supportSectionTwo.helpCenter": "Centre d'aide",
+    "supportSectionTwo.serverStatus": "État du serveur",
+    "supportSectionTwo.subscriberServices": "Services aux abonnés",
+    "supportSectionTwo.helpCenterAlt": "Icône du centre d'aide",
+    "supportSectionTwo.serverStatusAlt": "Icône de l'état du serveur",
+    "supportSectionTwo.subscriberServicesAlt": "Icône des services aux abonnés",
+    "supportSectionTwo.emailService": "Service email",
+    "supportSectionTwo.phone": "Téléphone",
+    "supportSectionTwo.location": "Emplacement",
+    "supportSectionTwo.emailServiceAlt": "Icône email",
+    "supportSectionTwo.phoneAlt": "Icône téléphone",
+    "supportSectionTwo.locationAlt": "Icône emplacement",
+    "supportSectionTwo.mapTitle": "Notre emplacement sur la carte",
+    "supportSectionTwo.locationValue": "Riyad, Olaya, Arabie Saoudite",
+
+    "contactForm.title":
+      "Vous n'avez pas encore trouvé votre réponse ? Obtenez un support technique maintenant.",
+    "contactForm.description":
+      "Avec de nombreuses solutions uniques, vous pouvez facilement créer une page sans avoir besoin de coder. Créez votre prochain site de conseil en quelques minutes.",
+    "contactForm.salesTab": "Ventes",
+    "contactForm.customizationTab": "Personnalisation",
+    "contactForm.trendsTab": "Tendances",
+    "contactForm.pricesTab": "Prix",
+    "contactForm.fullNameLabel": "Nom complet",
+    "contactForm.usernameLabel": "Nom d'utilisateur",
+    "contactForm.messageLabel": "Votre message",
+    "contactForm.languageLabel":
+      "Dans quelle langue souhaitez-vous communiquer ?",
+    "contactForm.languagePlaceholder": "Choisir une langue",
+    "contactForm.languageArabic": "Arabe",
+    "contactForm.languageEnglish": "Anglais",
+    "contactForm.languageSpanish": "Espagnol",
+    "contactForm.submitButton": "Envoyer",
+    "contactForm.contactAlternative": "Ou contactez-nous au",
+
+    "loginSection.logoAlt": "Logo",
+    "loginSection.emailIconAlt": "Icône email",
+    "loginSection.passwordIconAlt": "Icône de verrou",
+    "loginSection.footerLogoAlt": "Logo de pied de page",
+    "loginSection.title": "Connexion",
+    "loginSection.emailPlaceholder": "Entrez votre email",
+    "loginSection.passwordPlaceholder": "Entrez le mot de passe",
+    "loginSection.forgotPassword": "Oublié vos identifiants ?",
+    "loginSection.loginButton": "Connexion",
+    "loginSection.noAccount": "Vous n'avez pas de compte ?",
+    "loginSection.createAccount": "Créer un nouveau compte",
+    "softaculousSection.title": "Hébergement Softaculous",
+    "softaculousSection.description":
+      "Installation en un clic pour plus de 400 applications avec Softaculous",
+
+    "appHostingSection.title": "Hébergement d'applications",
+    "appHostingSection.description":
+      "Description et détails sur les services d'hébergement partagé, conçus pour offrir des solutions fiables et évolutives pour vos applications",
+    "appHostingSection.viewPricing": "Voir les tarifs",
+    "appHostingSection.createAccount": "Créer un compte",
+    "ecommerceSection.title": "Commerce électronique",
+    "ecommerceSection.cyclosName": "Cyclos 4 Pro",
+    "ecommerceSection.magentoName": "Magento",
+    "ecommerceSection.magentoClusterName": "Cluster Magento",
+    "ecommerceSection.maianCartName": "Maian Cart",
+    "ecommerceSection.openCartName": "OpenCart",
+    "ecommerceSection.prestaShopName": "PrestaShop",
+    "ecommerceSection.cyclosDescription":
+      "Cyclos 4 PRO est une plateforme de paiement pour les grandes entreprises et institutions",
+    "ecommerceSection.magentoDescription":
+      "Magento est un logiciel et une plateforme de commerce électronique approuvés par les plus grandes marques mondiales. Développez votre entreprise en ligne avec Magento",
+    "ecommerceSection.magentoClusterDescription":
+      "Évolutivité automatisée et haute disponibilité pour le cluster Magento avec équilibrage de charge, réplication des données, mise en cache du contenu et stockage des sessions utilisateur",
+    "ecommerceSection.maianCartDescription":
+      "Maian Cart est une plateforme de commerce électronique rapide, puissante et gratuite, construite avec PHP et MySQL, qui dispose de toutes les fonctionnalités nécessaires pour gérer votre boutique en ligne",
+    "ecommerceSection.openCartDescription":
+      "OpenCart est un système de shopping en ligne open source basé sur PHP",
+    "ecommerceSection.prestaShopDescription":
+      "PrestaShop est une solution open source et entièrement personnalisable pour vendre des produits en ligne, efficace, rapide et facile à utiliser",
+    "ecommerceSection.cyclosLogoAlt": "Logo Cyclos 4 Pro",
+    "ecommerceSection.magentoLogoAlt": "Logo Magento",
+    "ecommerceSection.maianCartLogoAlt": "Icône de panier d'achat Maian Cart",
+    "ecommerceSection.openCartLogoAlt": "Logo OpenCart",
+    "ecommerceSection.prestaShopLogoAlt": "Logo PrestaShop",
+    "ecommerceSection.launchNow": "Lancer maintenant",
+    "statsSection.dataCenters": "Centres de données",
+    "statsSection.uptime": "Disponibilité",
+    "statsSection.hostedSites": "Sites hébergés",
+    "statsSection.guaranteedAvailability": "Disponibilité garantie",
+    "statsSection.customerSatisfaction": "Satisfaction client",
+    "statsSection.dataCentersAlt": "Icône des centres de données",
+    "statsSection.uptimeAlt": "Icône de disponibilité",
+    "statsSection.hostedSitesAlt": "Icône des sites hébergés",
+    "statsSection.guaranteedAvailabilityAlt": "Icône de disponibilité garantie",
+    "statsSection.customerSatisfactionAlt": "Icône de satisfaction client",
+
+    "statsSectionTwo.dataCenters": "Centres de données",
+    "statsSectionTwo.uptime": "Disponibilité",
+    "statsSectionTwo.hostedSites": "Sites hébergés",
+    "statsSectionTwo.guaranteedAvailability": "Disponibilité garantie",
+    "statsSectionTwo.customerSatisfaction": "Satisfaction client",
+    "statsSectionTwo.dataCentersAlt": "Icône des centres de données",
+    "statsSectionTwo.uptimeAlt": "Icône de disponibilité",
+    "statsSectionTwo.hostedSitesAlt": "Icône des sites hébergés",
+    "statsSectionTwo.guaranteedAvailabilityAlt":
+      "Icône de disponibilité garantie",
+    "statsSectionTwo.customerSatisfactionAlt": "Icône de satisfaction client",
+
+    "achievementsSectionTwo.title": "Nos réalisations",
+    "achievementsSectionTwo.description":
+      "Fondée par Ali Al-Mansi et Yahya Hassan, elle a commencé ses activités en se spécialisant dans les services d'hébergement avec une équipe de seulement 3 personnes.",
+
+    "contactSection.description":
+      "Vous souhaitez savoir comment nous pouvons aider votre entreprise à réussir ? Contactez-nous.",
+    "contactSection.helpTitle": "Besoin d'aide ?",
+    "contactSection.helpDescription": "Contactez-nous et obtenez de l'aide",
+    "contactSection.contactButton": "Contactez maintenant",
+    "contactSection.microsoftLogoAlt": "Logo Microsoft",
+    "contactSection.partner1LogoAlt": "Logo Partenaire 1",
+    "contactSection.partner2LogoAlt": "Logo Partenaire 2",
+    "contactSection.partner3LogoAlt": "Logo Partenaire 3",
+    "contactSection.partner4LogoAlt": "Logo Partenaire 4",
+
+    "tigersSection.title": "À propos de Nomoar",
+    "tigersSection.description":
+      "Nomoar est le principal fournisseur de services cloud en Arabie Saoudite, dédié au soutien et à la protection de l'infrastructure technique des organisations de toutes tailles.",
+    "featuresSection.title": "Fonctionnalités",
+    "featuresSection.multilingualSites": "Sites multilingues",
+    "featuresSection.fiftyLanguages": "Support pour 50 langues",
+    "featuresSection.responsiveDesign":
+      "Design adaptatif pour tous les appareils",
+    "featuresSection.easyTool": "Outil facile à utiliser",
+    "featuresSection.videoTutorials": "Tutoriels vidéo sur l'utilisation",
+    "featuresSection.plugins": "Extensions",
+    "featuresSection.templates": "Plus d'un million de modèles",
+    "featuresSection.siteMigration":
+      "Possibilité de migrer des sites depuis d'autres constructeurs",
+    "featuresSection.multilingualSitesAlt": "Icône de sites multilingues",
+    "featuresSection.fiftyLanguagesAlt": "Icône de support pour 50 langues",
+    "featuresSection.responsiveDesignAlt": "Icône de design adaptatif",
+    "featuresSection.easyToolAlt": "Icône d'outil facile à utiliser",
+    "featuresSection.videoTutorialsAlt": "Icône de tutoriels vidéo",
+    "featuresSection.pluginsAlt": "Icône d'extensions",
+    "featuresSection.templatesAlt": "Icône de modèles",
+    "featuresSection.siteMigrationAlt": "Icône de migration de sites",
+    "featuresSection.rightImgAlt": "Image de fond droite",
+    "featuresSection.leftImgAlt": "Image de fond gauche",
+    "oneClickApps.helmChartsAlt": "Icône Helm Charts",
+    "oneClickApps.certManagerAlt": "Icône Gestionnaire de certificats",
+    "oneClickApps.linkerdAlt": "Icône Linkerd",
+    "oneClickApps.operatorsAlt": "Icône Opérateurs",
+    "oneClickApps.illustrationAlt": "Illustration des applications en un clic",
+    "distributorBasicNeed.title":
+      "Avez-vous besoin de licences pour exploiter votre serveur ?",
+    "distributorBasicNeed.subtitle": "Nous les fournissons au moindre coût",
+    "distributorBasicNeed.registerButton": "Formulaire d'inscription",
+    "distributorBasicNeed.distributorsButton": "Distributeurs",
+    "distributorBasicNeed.settingsIllustrationAlt": "Paramètres",
+    "kubernetes.title":
+      "Construisez des clusters Kubernetes en quelques minutes",
+    "resellerHosting.title": "Hébergement pour revendeurs",
+    "resellerHostingPlus.title": "Distributeur Plus",
+    "resellerHostingUltra.title": "Distributeur Ultra",
+    "resellerHostingProgram.title": "Programme Revendeur",
+    "resellerHosting.description":
+      "Générez des profits et élargissez vos services.",
     "windowsHosting.title": "Hébergement Windows",
-"windowsHosting.description": "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
-    "support.title": "Vous ne savez pas par où commencer ? Ne vous inquiétez pas, nous sommes là pour vous aider",
-"support.description": "Libya Spider, en tant que fournisseur officiel de solutions cloud Microsoft, est prêt à aider votre organisation à adopter et intégrer pleinement la solution de productivité cloud Microsoft 365 dans votre flux de travail.",
-"support.successMessage": "Nous sommes fiers d’avoir accompagné de nombreuses entreprises dans leur transition réussie vers les services Microsoft 365 – et nous sommes ravis de vous aider aussi !",
-"support.cta": "Demandez maintenant !",
-"support.settingsChanges": "Modifications des paramètres",
-"support.settingsChangesAlt": "Icône de modifications des paramètres",
-"support.training": "Formation",
-"support.trainingAlt": "Icône de formation",
-"support.technicalSupport": "Support technique",
-"support.technicalSupportAlt": "Icône de support technique",
-"support.settingsCustomization": "Paramètres et personnalisation",
-"support.settingsCustomizationAlt": "Icône de paramètres et personnalisation",
-"support.dataUserMigration": "Migration des données et des utilisateurs",
-"support.dataUserMigrationAlt": "Icône de migration des données et des utilisateurs",
-"support.sharePointMigration": "Migration SharePoint Online",
-"support.sharePointMigrationAlt": "Icône de migration SharePoint Online",
+    "windowsHosting.description":
+      "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
+    "support.title":
+      "Vous ne savez pas par où commencer ? Ne vous inquiétez pas, nous sommes là pour vous aider",
+    "support.description":
+      "Libya Spider, en tant que fournisseur officiel de solutions cloud Microsoft, est prêt à aider votre organisation à adopter et intégrer pleinement la solution de productivité cloud Microsoft 365 dans votre flux de travail.",
+    "support.successMessage":
+      "Nous sommes fiers d’avoir accompagné de nombreuses entreprises dans leur transition réussie vers les services Microsoft 365 – et nous sommes ravis de vous aider aussi !",
+    "support.cta": "Demandez maintenant !",
+    "support.settingsChanges": "Modifications des paramètres",
+    "support.settingsChangesAlt": "Icône de modifications des paramètres",
+    "support.training": "Formation",
+    "support.trainingAlt": "Icône de formation",
+    "support.technicalSupport": "Support technique",
+    "support.technicalSupportAlt": "Icône de support technique",
+    "support.settingsCustomization": "Paramètres et personnalisation",
+    "support.settingsCustomizationAlt":
+      "Icône de paramètres et personnalisation",
+    "support.dataUserMigration": "Migration des données et des utilisateurs",
+    "support.dataUserMigrationAlt":
+      "Icône de migration des données et des utilisateurs",
+    "support.sharePointMigration": "Migration SharePoint Online",
+    "support.sharePointMigrationAlt": "Icône de migration SharePoint Online",
     "tigersHosting.title": "Hébergement Nomoar",
-"tigersHosting.description": "Infrastructure cloud facile à gérer et économique",
-"cloudInfrastructure.title": "Infrastructure flexible, facile à gérer et évolutive",
-"cloudInfrastructure.description": "LS Cloud combine des ressources de calcul, de stockage et de réseau avec des analyses avancées et des outils de surveillance dans une plateforme cloud unique et conviviale.",
-"cloudInfrastructure.tools": "Outils dans une plateforme cloud unique et conviviale.",
-"cloudInfrastructure.resources": "Ressources cloud déployables en quelques minutes",
-"cloudInfrastructure.loadMetrics": "Métriques de charge",
-"cloudInfrastructure.loadMetricsAlt": "Icône de métriques de charge",
-"cloudInfrastructure.networking": "Réseautage",
-"cloudInfrastructure.networkingAlt": "Icône de réseautage",
-"cloudInfrastructure.storageSizes": "Tailles de stockage",
-"cloudInfrastructure.storageSizesAlt": "Icône de tailles de stockage",
-"cloudInfrastructure.virtualServers": "Serveurs virtuels",
-"cloudInfrastructure.virtualServersAlt": "Icône de serveurs virtuels",
-"cloudInfrastructure.backgroundAlt": "Arrière-plan cloud",
-"whyChooseTigers.blockUnauthorizedEmail": "Bloquer les emails non autorisés",
-"whyChooseTigers.blockUnauthorizedEmailDesc": "Avec PowerDMARC, vous éliminez non seulement l'usurpation d'emails, mais vous pouvez également utiliser des rapports détaillés pour ajuster votre stratégie de contenu immédiatement. Ne laissez rien au hasard.",
-"whyChooseTigers.blockUnauthorizedEmailAlt": "Icône de blocage des emails non autorisés",
-"whyChooseTigers.preventEmailSpoofing": "Prévenir l'usurpation d'email",
-"whyChooseTigers.preventEmailSpoofingDesc": "Protégez votre domaine contre l'usurpation d'emails et les attaques de phishing à l'aide de protocoles d'authentification avancés. Assurez-vous que seuls les expéditeurs autorisés peuvent utiliser votre domaine.",
-"whyChooseTigers.preventEmailSpoofingAlt": "Icône de prévention de l'usurpation d'email",
-"whyChooseTigers.enhanceEmailSecurity": "Renforcer la sécurité des emails",
-"whyChooseTigers.enhanceEmailSecurityDesc": "Obtenez une visibilité complète sur le trafic de vos emails et détectez les activités non autorisées en temps réel. Maintenez vos communications sécurisées et conformes.",
-"whyChooseTigers.enhanceEmailSecurityAlt": "Icône de renforcement de la sécurité des emails",
-"whyChooseTigers.verifyEmail": "Vérifier chaque email",
-"whyChooseTigers.verifyEmailDesc": "Utilisez DMARC, SPF et DKIM pour valider vos emails et empêcher les cybercriminels d'usurper votre domaine. Renforcez la confiance avec les destinataires.",
-"whyChooseTigers.verifyEmailAlt": "Icône de vérification de chaque email",
-"whyChooseTigers.backgroundRightAlt": "Arrière-plan droit",
-"whyChooseTigers.backgroundLeftAlt": "Arrière-plan gauche",
+    "tigersHosting.description":
+      "Infrastructure cloud facile à gérer et économique",
+    "cloudInfrastructure.title":
+      "Infrastructure flexible, facile à gérer et évolutive",
+    "cloudInfrastructure.description":
+      "LS Cloud combine des ressources de calcul, de stockage et de réseau avec des analyses avancées et des outils de surveillance dans une plateforme cloud unique et conviviale.",
+    "cloudInfrastructure.tools":
+      "Outils dans une plateforme cloud unique et conviviale.",
+    "cloudInfrastructure.resources":
+      "Ressources cloud déployables en quelques minutes",
+    "cloudInfrastructure.loadMetrics": "Métriques de charge",
+    "cloudInfrastructure.loadMetricsAlt": "Icône de métriques de charge",
+    "cloudInfrastructure.networking": "Réseautage",
+    "cloudInfrastructure.networkingAlt": "Icône de réseautage",
+    "cloudInfrastructure.storageSizes": "Tailles de stockage",
+    "cloudInfrastructure.storageSizesAlt": "Icône de tailles de stockage",
+    "cloudInfrastructure.virtualServers": "Serveurs virtuels",
+    "cloudInfrastructure.virtualServersAlt": "Icône de serveurs virtuels",
+    "cloudInfrastructure.backgroundAlt": "Arrière-plan cloud",
+    "whyChooseTigers.blockUnauthorizedEmail":
+      "Bloquer les emails non autorisés",
+    "whyChooseTigers.blockUnauthorizedEmailDesc":
+      "Avec PowerDMARC, vous éliminez non seulement l'usurpation d'emails, mais vous pouvez également utiliser des rapports détaillés pour ajuster votre stratégie de contenu immédiatement. Ne laissez rien au hasard.",
+    "whyChooseTigers.blockUnauthorizedEmailAlt":
+      "Icône de blocage des emails non autorisés",
+    "whyChooseTigers.preventEmailSpoofing": "Prévenir l'usurpation d'email",
+    "whyChooseTigers.preventEmailSpoofingDesc":
+      "Protégez votre domaine contre l'usurpation d'emails et les attaques de phishing à l'aide de protocoles d'authentification avancés. Assurez-vous que seuls les expéditeurs autorisés peuvent utiliser votre domaine.",
+    "whyChooseTigers.preventEmailSpoofingAlt":
+      "Icône de prévention de l'usurpation d'email",
+    "whyChooseTigers.enhanceEmailSecurity": "Renforcer la sécurité des emails",
+    "whyChooseTigers.enhanceEmailSecurityDesc":
+      "Obtenez une visibilité complète sur le trafic de vos emails et détectez les activités non autorisées en temps réel. Maintenez vos communications sécurisées et conformes.",
+    "whyChooseTigers.enhanceEmailSecurityAlt":
+      "Icône de renforcement de la sécurité des emails",
+    "whyChooseTigers.verifyEmail": "Vérifier chaque email",
+    "whyChooseTigers.verifyEmailDesc":
+      "Utilisez DMARC, SPF et DKIM pour valider vos emails et empêcher les cybercriminels d'usurper votre domaine. Renforcez la confiance avec les destinataires.",
+    "whyChooseTigers.verifyEmailAlt": "Icône de vérification de chaque email",
+    "whyChooseTigers.backgroundRightAlt": "Arrière-plan droit",
+    "whyChooseTigers.backgroundLeftAlt": "Arrière-plan gauche",
 
     "businessHosting.title": "Hébergement d'entreprise",
-"businessHosting.description": "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
-"servicesThree.title": "Démarrez rapidement et développez votre entreprise",
-"servicesThree.reliableStaticHosting": "Hébergement statique fiable",
-"servicesThree.reliableStaticHostingDesc": "Hébergez vos sites statiques avec des temps de chargement ultra-rapides et une stabilité inégalée. Profitez d'un déploiement fluide avec un CDN distribué à l'échelle mondiale.",
-"servicesThree.reliableStaticHostingAlt": "Icône d'hébergement statique fiable",
-"servicesThree.scalableCloudStorage": "Stockage cloud évolutif",
-"servicesThree.scalableCloudStorageDesc": "Stockez et accédez à vos données en toute sécurité avec un stockage cloud haute performance. Évoluez facilement à mesure que votre entreprise grandit grâce à une redondance améliorée.",
-"servicesThree.scalableCloudStorageAlt": "Icône de stockage cloud évolutif",
-"servicesThree.enterpriseStaticHosting": "Hébergement statique de niveau entreprise",
-"servicesThree.enterpriseStaticHostingDesc": "Diffusez vos applications statiques avec sécurité et haute performance. Bénéficiez de mises à jour instantanées, d'un accès mondial et d'aucune maintenance.",
-"servicesThree.enterpriseStaticHostingAlt": "Icône d'hébergement statique de niveau entreprise",
-"mainFeatures.title": "Fonctionnalités clés",
-"mainFeatures.description": "Possédez votre serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
-"mainFeatures.crossPlatform": "Fonctionne sur plusieurs plateformes",
-"mainFeatures.crossPlatformAlt": "Icône multi-plateforme",
-"mainFeatures.ddosMitigation": "Atténuation des attaques DDoS",
-"mainFeatures.ddosMitigationAlt": "Icône d'atténuation DDoS",
-"mainFeatures.malwareDetection": "Détection et suppression des malwares",
-"mainFeatures.malwareDetectionAlt": "Icône de détection de malwares",
-"mainFeatures.sslCertificate": "Certificat de sécurité SSL",
-"mainFeatures.sslCertificateAlt": "Icône de certificat SSL",
-"mainFeatures.securityMonitoring": "Surveillance de la sécurité",
-"mainFeatures.securityMonitoringAlt": "Icône de surveillance de la sécurité",
-"mainFeatures.performanceOptimization": "Optimisation des performances",
-"mainFeatures.performanceOptimizationAlt": "Icône d'optimisation des performances",
-"mainFeatures.backgroundRightAlt": "Image de fond droite",
-"mainFeatures.backgroundLeftAlt": "Image de fond gauche",
+    "businessHosting.description":
+      "L'un des services d'hébergement les meilleurs, les plus rapides et les plus faciles",
+    "servicesThree.title": "Démarrez rapidement et développez votre entreprise",
+    "servicesThree.reliableStaticHosting": "Hébergement statique fiable",
+    "servicesThree.reliableStaticHostingDesc":
+      "Hébergez vos sites statiques avec des temps de chargement ultra-rapides et une stabilité inégalée. Profitez d'un déploiement fluide avec un CDN distribué à l'échelle mondiale.",
+    "servicesThree.reliableStaticHostingAlt":
+      "Icône d'hébergement statique fiable",
+    "servicesThree.scalableCloudStorage": "Stockage cloud évolutif",
+    "servicesThree.scalableCloudStorageDesc":
+      "Stockez et accédez à vos données en toute sécurité avec un stockage cloud haute performance. Évoluez facilement à mesure que votre entreprise grandit grâce à une redondance améliorée.",
+    "servicesThree.scalableCloudStorageAlt": "Icône de stockage cloud évolutif",
+    "servicesThree.enterpriseStaticHosting":
+      "Hébergement statique de niveau entreprise",
+    "servicesThree.enterpriseStaticHostingDesc":
+      "Diffusez vos applications statiques avec sécurité et haute performance. Bénéficiez de mises à jour instantanées, d'un accès mondial et d'aucune maintenance.",
+    "servicesThree.enterpriseStaticHostingAlt":
+      "Icône d'hébergement statique de niveau entreprise",
+    "mainFeatures.title": "Fonctionnalités clés",
+    "mainFeatures.description":
+      "Possédez votre serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
+    "mainFeatures.crossPlatform": "Fonctionne sur plusieurs plateformes",
+    "mainFeatures.crossPlatformAlt": "Icône multi-plateforme",
+    "mainFeatures.ddosMitigation": "Atténuation des attaques DDoS",
+    "mainFeatures.ddosMitigationAlt": "Icône d'atténuation DDoS",
+    "mainFeatures.malwareDetection": "Détection et suppression des malwares",
+    "mainFeatures.malwareDetectionAlt": "Icône de détection de malwares",
+    "mainFeatures.sslCertificate": "Certificat de sécurité SSL",
+    "mainFeatures.sslCertificateAlt": "Icône de certificat SSL",
+    "mainFeatures.securityMonitoring": "Surveillance de la sécurité",
+    "mainFeatures.securityMonitoringAlt":
+      "Icône de surveillance de la sécurité",
+    "mainFeatures.performanceOptimization": "Optimisation des performances",
+    "mainFeatures.performanceOptimizationAlt":
+      "Icône d'optimisation des performances",
+    "mainFeatures.backgroundRightAlt": "Image de fond droite",
+    "mainFeatures.backgroundLeftAlt": "Image de fond gauche",
 
     "emailHosting.title": "Hébergement d'email",
     "emailHosting.description":
@@ -2690,8 +3365,7 @@ const translations: Record<Language, Translations> = {
     "wordpressHosting.description":
       "Un environnement optimisé pour développer votre site avec WordPress",
     "wordpressHosting.startNow": "Commencez maintenant !",
-    "kubernetes.title":
-      "Construisez des clusters Kubernetes en quelques minutes",
+
     "kubernetes.description":
       "Cessez de perdre du temps et des efforts à gérer des clusters Kubernetes. Avec notre moteur Kubernetes entièrement géré, vous pouvez facilement déployer, gérer et mettre à l'échelle les ressources conteneurisées de votre application en quelques minutes au lieu de jours.",
     "kubernetes.orderNow": "Commandez maintenant !",
@@ -2920,7 +3594,7 @@ const translations: Record<Language, Translations> = {
       "Icône de verrou de sécurité",
     "featuresSectionFive.feature.powerDmarcComplianceAlt":
       "Icône de bouclier de sécurité avec coche",
-    "whyChooseTigers.title": "Pourquoi choisir Tigers",
+    "whyChooseTigers.title": "Pourquoi choisir Nomoar",
     "whyChooseTigers.feature.emailBlocking":
       "Blocage des e-mails non autorisés",
     "whyChooseTigers.feature.emailBlockingDesc":
@@ -3419,82 +4093,277 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
+    "supportParagraph.description":
+      "Wenn Sie Kunde des Unternehmens sind, können Sie uns einfach über Ihr Konto kontaktieren, um unser technisches Support- oder Vertriebsteam zu erreichen. Wir sind bestrebt, den besten Service und schnelle Lösungen zu bieten, die auf Ihre Bedürfnisse zugeschnitten sind.",
+
+    "supportSectionTwo.helpCenter": "Hilfezentrum",
+    "supportSectionTwo.serverStatus": "Serverstatus",
+    "supportSectionTwo.subscriberServices": "Abonnentendienste",
+    "supportSectionTwo.helpCenterAlt": "Symbol des Hilfezentrums",
+    "supportSectionTwo.serverStatusAlt": "Symbol des Serverstatus",
+    "supportSectionTwo.subscriberServicesAlt": "Symbol der Abonnentendienste",
+    "supportSectionTwo.emailService": "E-Mail-Service",
+    "supportSectionTwo.phone": "Telefon",
+    "supportSectionTwo.location": "Standort",
+    "supportSectionTwo.emailServiceAlt": "E-Mail-Symbol",
+    "supportSectionTwo.phoneAlt": "Telefon-Symbol",
+    "supportSectionTwo.locationAlt": "Standort-Symbol",
+    "supportSectionTwo.mapTitle": "Unser Standort auf der Karte",
+    "supportSectionTwo.locationValue": "Riad, Olaya, Saudi-Arabien",
+
+    "contactForm.title":
+      "Haben Sie Ihre Antwort noch nicht gefunden? Holen Sie sich jetzt technischen Support.",
+    "contactForm.description":
+      "Mit vielen einzigartigen Lösungen können Sie problemlos eine Seite ohne Programmierkenntnisse erstellen. Erstellen Sie Ihre nächste Beratungswebsite in wenigen Minuten.",
+    "contactForm.salesTab": "Vertrieb",
+    "contactForm.customizationTab": "Anpassung",
+    "contactForm.trendsTab": "Trends",
+    "contactForm.pricesTab": "Preise",
+    "contactForm.fullNameLabel": "Vollständiger Name",
+    "contactForm.usernameLabel": "Benutzername",
+    "contactForm.messageLabel": "Ihre Nachricht",
+    "contactForm.languageLabel":
+      "In welcher Sprache möchten Sie kommunizieren?",
+    "contactForm.languagePlaceholder": "Sprache auswählen",
+    "contactForm.languageArabic": "Arabisch",
+    "contactForm.languageEnglish": "Englisch",
+    "contactForm.languageSpanish": "Spanisch",
+    "contactForm.submitButton": "Senden",
+    "contactForm.contactAlternative": "Oder kontaktieren Sie uns unter",
+
+    "loginSection.logoAlt": "Logo",
+    "loginSection.emailIconAlt": "E-Mail-Symbol",
+    "loginSection.passwordIconAlt": "Schloss-Symbol",
+    "loginSection.footerLogoAlt": "Fußzeilen-Logo",
+    "loginSection.title": "Anmeldung",
+    "loginSection.emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+    "loginSection.passwordPlaceholder": "Geben Sie das Passwort ein",
+    "loginSection.forgotPassword": "Anmeldedaten vergessen?",
+    "loginSection.loginButton": "Anmelden",
+    "loginSection.noAccount": "Haben Sie kein Konto?",
+    "loginSection.createAccount": "Neues Konto erstellen",
+
+    "softaculousSection.title": "Softaculous Hosting",
+    "softaculousSection.description":
+      "Ein-Klick-Installation für über 400 Anwendungen mit Softaculous",
+
+    "appHostingSection.title": "Anwendungs-Hosting",
+    "appHostingSection.description":
+      "Beschreibung und Details zu Shared-Hosting-Diensten, die entwickelt wurden, um zuverlässige und skalierbare Lösungen für Ihre Anwendungen bereitzustellen",
+    "appHostingSection.viewPricing": "Preise anzeigen",
+    "appHostingSection.createAccount": "Konto erstellen",
+    "ecommerceSection.title": "E-Commerce – Elektronischer Handel",
+    "ecommerceSection.cyclosName": "Cyclos 4 Pro",
+    "ecommerceSection.magentoName": "Magento",
+    "ecommerceSection.magentoClusterName": "Magento Cluster",
+    "ecommerceSection.maianCartName": "Maian Cart",
+    "ecommerceSection.openCartName": "OpenCart",
+    "ecommerceSection.prestaShopName": "PrestaShop",
+    "ecommerceSection.cyclosDescription":
+      "Cyclos 4 PRO ist eine Zahlungsplattform für große Unternehmen und Institutionen",
+    "ecommerceSection.magentoDescription":
+      "Magento ist eine E-Commerce-Software und -Plattform, der weltweit führende Marken vertrauen. Wachsen Sie mit Magento Ihr Online-Geschäft",
+    "ecommerceSection.magentoClusterDescription":
+      "Automatisierte Skalierbarkeit und hohe Verfügbarkeit für Magento-Cluster mit Lastverteilung, Datenreplikation, Inhaltscaching und Speicherung von Benutzersitzungen",
+    "ecommerceSection.maianCartDescription":
+      "Maian Cart ist eine schnelle, leistungsstarke und kostenlose E-Commerce-Plattform, die mit PHP und MySQL entwickelt wurde und alle Funktionen bietet, die Sie für Ihren Online-Shop benötigen",
+    "ecommerceSection.openCartDescription":
+      "OpenCart ist ein Open-Source-Online-Shopping-System basierend auf PHP",
+    "ecommerceSection.prestaShopDescription":
+      "PrestaShop ist eine Open-Source- und vollständig anpassbare Lösung für den Online-Verkauf von Produkten, die effizient, schnell und einfach zu bedienen ist",
+    "ecommerceSection.cyclosLogoAlt": "Cyclos 4 Pro Logo",
+    "ecommerceSection.magentoLogoAlt": "Magento Logo",
+    "ecommerceSection.maianCartLogoAlt": "Maian Cart Einkaufswagen-Symbol",
+    "ecommerceSection.openCartLogoAlt": "OpenCart Logo",
+    "ecommerceSection.prestaShopLogoAlt": "PrestaShop Logo",
+    "ecommerceSection.launchNow": "Jetzt starten",
+    "statsSection.dataCenters": "Rechenzentren",
+    "statsSection.uptime": "Betriebszeit",
+    "statsSection.hostedSites": "Gehostete Websites",
+    "statsSection.guaranteedAvailability": "Garantierte Verfügbarkeit",
+    "statsSection.customerSatisfaction": "Kundenzufriedenheit",
+    "statsSection.dataCentersAlt": "Symbol für Rechenzentren",
+    "statsSection.uptimeAlt": "Symbol für Betriebszeit",
+    "statsSection.hostedSitesAlt": "Symbol für gehostete Websites",
+    "statsSection.guaranteedAvailabilityAlt":
+      "Symbol für garantierte Verfügbarkeit",
+    "statsSection.customerSatisfactionAlt": "Symbol für Kundenzufriedenheit",
+
+    "statsSectionTwo.dataCenters": "Rechenzentren",
+    "statsSectionTwo.uptime": "Betriebszeit",
+    "statsSectionTwo.hostedSites": "Gehostete Websites",
+    "statsSectionTwo.guaranteedAvailability": "Garantierte Verfügbarkeit",
+    "statsSectionTwo.customerSatisfaction": "Kundenzufriedenheit",
+    "statsSectionTwo.dataCentersAlt": "Symbol für Rechenzentren",
+    "statsSectionTwo.uptimeAlt": "Symbol für Betriebszeit",
+    "statsSectionTwo.hostedSitesAlt": "Symbol für gehostete Websites",
+    "statsSectionTwo.guaranteedAvailabilityAlt":
+      "Symbol für garantierte Verfügbarkeit",
+    "statsSectionTwo.customerSatisfactionAlt": "Symbol für Kundenzufriedenheit",
+
+    "achievementsSectionTwo.title": "Unsere Erfolge",
+    "achievementsSectionTwo.description":
+      "Gegründet von Ali Al-Mansi und Yahya Hassan, begann es seine Tätigkeit mit der Spezialisierung auf Hosting-Dienste mit einem Team von nur 3 Personen.",
+
+    "contactSection.description":
+      "Möchten Sie erfahren, wie wir Ihrem Unternehmen zum Erfolg verhelfen können? Kontaktieren Sie uns.",
+    "contactSection.helpTitle": "Brauchen Sie Hilfe?",
+    "contactSection.helpDescription":
+      "Nehmen Sie Kontakt mit uns auf und erhalten Sie Unterstützung",
+    "contactSection.contactButton": "Jetzt kontaktieren",
+    "contactSection.microsoftLogoAlt": "Microsoft-Logo",
+    "contactSection.partner1LogoAlt": "Partner 1 Logo",
+    "contactSection.partner2LogoAlt": "Partner 2 Logo",
+    "contactSection.partner3LogoAlt": "Partner 3 Logo",
+    "contactSection.partner4LogoAlt": "Partner 4 Logo",
+
+    "tigersSection.title": "Über Nomoar",
+    "tigersSection.description":
+      "Nomoar ist der führende Anbieter von Cloud-Diensten in Saudi-Arabien und widmet sich der Unterstützung und dem Schutz der technischen Infrastruktur von Organisationen jeder Größe.",
+    "featuresSection.title": "Funktionen",
+    "featuresSection.multilingualSites": "Mehrsprachige Websites",
+    "featuresSection.fiftyLanguages": "Unterstützung für 50 Sprachen",
+    "featuresSection.responsiveDesign": "Responsives Design für alle Geräte",
+    "featuresSection.easyTool": "Benutzerfreundliches Tool",
+    "featuresSection.videoTutorials": "Video-Tutorials zur Nutzung",
+    "featuresSection.plugins": "Plugins",
+    "featuresSection.templates": "Über eine Million Vorlagen",
+    "featuresSection.siteMigration":
+      "Möglichkeit zur Migration von Websites aus anderen Baukästen",
+    "featuresSection.multilingualSitesAlt": "Symbol für mehrsprachige Websites",
+    "featuresSection.fiftyLanguagesAlt":
+      "Symbol für Unterstützung von 50 Sprachen",
+    "featuresSection.responsiveDesignAlt": "Symbol für responsives Design",
+    "featuresSection.easyToolAlt": "Symbol für benutzerfreundliches Tool",
+    "featuresSection.videoTutorialsAlt": "Symbol für Video-Tutorials",
+    "featuresSection.pluginsAlt": "Symbol für Plugins",
+    "featuresSection.templatesAlt": "Symbol für Vorlagen",
+    "featuresSection.siteMigrationAlt": "Symbol für Website-Migration",
+    "featuresSection.rightImgAlt": "Rechtes Hintergrundbild",
+    "featuresSection.leftImgAlt": "Linkes Hintergrundbild",
+    "oneClickApps.helmChartsAlt": "Helm Charts Symbol",
+    "oneClickApps.certManagerAlt": "Zertifikatsmanager Symbol",
+    "oneClickApps.linkerdAlt": "Linkerd Symbol",
+    "oneClickApps.operatorsAlt": "Operatoren Symbol",
+    "oneClickApps.illustrationAlt": "Illustration der One-Click-Apps",
+    "distributorBasicNeed.title":
+      "Benötigen Sie Lizenzen, um Ihren Server zu betreiben?",
+    "distributorBasicNeed.subtitle":
+      "Wir bieten sie Ihnen zum niedrigsten Preis an",
+    "distributorBasicNeed.registerButton": "Registrierungsformular",
+    "distributorBasicNeed.distributorsButton": "Händler",
+    "distributorBasicNeed.settingsIllustrationAlt": "Einstellungen",
+    "kubernetes.title": "Erstellen Sie Kubernetes-Cluster in wenigen Minuten",
+    "resellerHosting.title": "Reseller-Hosting",
+    "resellerHostingPlus.title": "Verteiler Plus",
+    "resellerHostingUltra.title": "Verteiler Ultra",
+    "resellerHostingProgram.title": "Partnerprogramm für Wiederverkäufer",
+    "resellerHosting.description":
+      "Erzielen Sie Gewinne und erweitern Sie Ihre Dienstleistungen.",
     "windowsHosting.title": "Windows-Hosting",
-"windowsHosting.description": "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
-    "support.title": "Nicht sicher, wo Sie anfangen sollen? Keine Sorge, wir sind hier, um Ihnen zu helfen",
-"support.description": "Libya Spider, als offizieller Anbieter von Microsoft-Cloud-Lösungen, ist bereit, Ihre Organisation bei der Einführung und vollständigen Integration der Microsoft 365 Cloud-Produktivitätslösung in Ihren Arbeitsablauf zu unterstützen.",
-"support.successMessage": "Wir sind stolz darauf, zahlreiche Unternehmen bei ihrem erfolgreichen Übergang zu Microsoft 365-Diensten unterstützt zu haben – und freuen uns, auch Ihnen zu helfen!",
-"support.cta": "Jetzt anfragen!",
-"support.settingsChanges": "Einstellungsänderungen",
-"support.settingsChangesAlt": "Symbol für Einstellungsänderungen",
-"support.training": "Schulung",
-"support.trainingAlt": "Symbol für Schulung",
-"support.technicalSupport": "Technischer Support",
-"support.technicalSupportAlt": "Symbol für technischen Support",
-"support.settingsCustomization": "Einstellungen und Anpassung",
-"support.settingsCustomizationAlt": "Symbol für Einstellungen und Anpassung",
-"support.dataUserMigration": "Daten- und Benutzermigration",
-"support.dataUserMigrationAlt": "Symbol für Daten- und Benutzermigration",
-"support.sharePointMigration": "SharePoint Online-Migration",
-"support.sharePointMigrationAlt": "Symbol für SharePoint Online-Migration",
+    "windowsHosting.description":
+      "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
+    "support.title":
+      "Nicht sicher, wo Sie anfangen sollen? Keine Sorge, wir sind hier, um Ihnen zu helfen",
+    "support.description":
+      "Libya Spider, als offizieller Anbieter von Microsoft-Cloud-Lösungen, ist bereit, Ihre Organisation bei der Einführung und vollständigen Integration der Microsoft 365 Cloud-Produktivitätslösung in Ihren Arbeitsablauf zu unterstützen.",
+    "support.successMessage":
+      "Wir sind stolz darauf, zahlreiche Unternehmen bei ihrem erfolgreichen Übergang zu Microsoft 365-Diensten unterstützt zu haben – und freuen uns, auch Ihnen zu helfen!",
+    "support.cta": "Jetzt anfragen!",
+    "support.settingsChanges": "Einstellungsänderungen",
+    "support.settingsChangesAlt": "Symbol für Einstellungsänderungen",
+    "support.training": "Schulung",
+    "support.trainingAlt": "Symbol für Schulung",
+    "support.technicalSupport": "Technischer Support",
+    "support.technicalSupportAlt": "Symbol für technischen Support",
+    "support.settingsCustomization": "Einstellungen und Anpassung",
+    "support.settingsCustomizationAlt":
+      "Symbol für Einstellungen und Anpassung",
+    "support.dataUserMigration": "Daten- und Benutzermigration",
+    "support.dataUserMigrationAlt": "Symbol für Daten- und Benutzermigration",
+    "support.sharePointMigration": "SharePoint Online-Migration",
+    "support.sharePointMigrationAlt": "Symbol für SharePoint Online-Migration",
     "tigersHosting.title": "Nomoar Hosting",
-"tigersHosting.description": "Einfach zu verwaltende und kosteneffiziente Cloud-Infrastruktur",
-"cloudInfrastructure.title": "Flexible, leicht zu verwaltende und skalierbare Infrastruktur",
-"cloudInfrastructure.description": "LS Cloud kombiniert Rechen-, Speicher- und Netzwerkressourcen mit fortschrittlichen Analysen und Überwachungstools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
-"cloudInfrastructure.tools": "Tools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
-"cloudInfrastructure.resources": "Cloud-Ressourcen, die in Minuten bereitgestellt werden können",
-"cloudInfrastructure.loadMetrics": "Lastmetriken",
-"cloudInfrastructure.loadMetricsAlt": "Symbol für Lastmetriken",
-"cloudInfrastructure.networking": "Netzwerk",
-"cloudInfrastructure.networkingAlt": "Symbol für Netzwerk",
-"cloudInfrastructure.storageSizes": "Speichergrößen",
-"cloudInfrastructure.storageSizesAlt": "Symbol für Speichergrößen",
-"cloudInfrastructure.virtualServers": "Virtuelle Server",
-"cloudInfrastructure.virtualServersAlt": "Symbol für virtuelle Server",
-"cloudInfrastructure.backgroundAlt": "Cloud-Hintergrund",
-"whyChooseTigers.blockUnauthorizedEmail": "Unbefugte E-Mails blockieren",
-"whyChooseTigers.blockUnauthorizedEmailDesc": "Mit PowerDMARC eliminieren Sie nicht nur E-Mail-Spoofing, sondern können auch detaillierte Berichte nutzen, um Ihre Content-Strategie sofort anzupassen. Lassen Sie nichts dem Zufall über.",
-"whyChooseTigers.blockUnauthorizedEmailAlt": "Symbol für das Blockieren unbefugter E-Mails",
-"whyChooseTigers.preventEmailSpoofing": "E-Mail-Spoofing verhindern",
-"whyChooseTigers.preventEmailSpoofingDesc": "Schützen Sie Ihre Domain vor E-Mail-Spoofing und Phishing-Angriffen mit fortschrittlichen Authentifizierungsprotokollen. Stellen Sie sicher, dass nur autorisierte Absender Ihre Domain verwenden können.",
-"whyChooseTigers.preventEmailSpoofingAlt": "Symbol für die Verhinderung von E-Mail-Spoofing",
-"whyChooseTigers.enhanceEmailSecurity": "E-Mail-Sicherheit verbessern",
-"whyChooseTigers.enhanceEmailSecurityDesc": "Erhalten Sie vollständige Einblicke in Ihren E-Mail-Verkehr und erkennen Sie unbefugte Aktivitäten in Echtzeit. Halten Sie Ihre Kommunikation sicher und konform.",
-"whyChooseTigers.enhanceEmailSecurityAlt": "Symbol für die Verbesserung der E-Mail-Sicherheit",
-"whyChooseTigers.verifyEmail": "Jede E-Mail verifizieren",
-"whyChooseTigers.verifyEmailDesc": "Verwenden Sie DMARC, SPF und DKIM, um Ihre E-Mails zu validieren und Cyberkriminelle daran zu hindern, Ihre Domain zu spoofen. Bauen Sie Vertrauen bei den Empfängern auf.",
-"whyChooseTigers.verifyEmailAlt": "Symbol für die Verifizierung jeder E-Mail",
-"whyChooseTigers.backgroundRightAlt": "Rechter Hintergrund",
-"whyChooseTigers.backgroundLeftAlt": "Linker Hintergrund",
+    "tigersHosting.description":
+      "Einfach zu verwaltende und kosteneffiziente Cloud-Infrastruktur",
+    "cloudInfrastructure.title":
+      "Flexible, leicht zu verwaltende und skalierbare Infrastruktur",
+    "cloudInfrastructure.description":
+      "LS Cloud kombiniert Rechen-, Speicher- und Netzwerkressourcen mit fortschrittlichen Analysen und Überwachungstools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
+    "cloudInfrastructure.tools":
+      "Tools in einer einzigen, benutzerfreundlichen Cloud-Plattform.",
+    "cloudInfrastructure.resources":
+      "Cloud-Ressourcen, die in Minuten bereitgestellt werden können",
+    "cloudInfrastructure.loadMetrics": "Lastmetriken",
+    "cloudInfrastructure.loadMetricsAlt": "Symbol für Lastmetriken",
+    "cloudInfrastructure.networking": "Netzwerk",
+    "cloudInfrastructure.networkingAlt": "Symbol für Netzwerk",
+    "cloudInfrastructure.storageSizes": "Speichergrößen",
+    "cloudInfrastructure.storageSizesAlt": "Symbol für Speichergrößen",
+    "cloudInfrastructure.virtualServers": "Virtuelle Server",
+    "cloudInfrastructure.virtualServersAlt": "Symbol für virtuelle Server",
+    "cloudInfrastructure.backgroundAlt": "Cloud-Hintergrund",
+    "whyChooseTigers.blockUnauthorizedEmail": "Unbefugte E-Mails blockieren",
+    "whyChooseTigers.blockUnauthorizedEmailDesc":
+      "Mit PowerDMARC eliminieren Sie nicht nur E-Mail-Spoofing, sondern können auch detaillierte Berichte nutzen, um Ihre Content-Strategie sofort anzupassen. Lassen Sie nichts dem Zufall über.",
+    "whyChooseTigers.blockUnauthorizedEmailAlt":
+      "Symbol für das Blockieren unbefugter E-Mails",
+    "whyChooseTigers.preventEmailSpoofing": "E-Mail-Spoofing verhindern",
+    "whyChooseTigers.preventEmailSpoofingDesc":
+      "Schützen Sie Ihre Domain vor E-Mail-Spoofing und Phishing-Angriffen mit fortschrittlichen Authentifizierungsprotokollen. Stellen Sie sicher, dass nur autorisierte Absender Ihre Domain verwenden können.",
+    "whyChooseTigers.preventEmailSpoofingAlt":
+      "Symbol für die Verhinderung von E-Mail-Spoofing",
+    "whyChooseTigers.enhanceEmailSecurity": "E-Mail-Sicherheit verbessern",
+    "whyChooseTigers.enhanceEmailSecurityDesc":
+      "Erhalten Sie vollständige Einblicke in Ihren E-Mail-Verkehr und erkennen Sie unbefugte Aktivitäten in Echtzeit. Halten Sie Ihre Kommunikation sicher und konform.",
+    "whyChooseTigers.enhanceEmailSecurityAlt":
+      "Symbol für die Verbesserung der E-Mail-Sicherheit",
+    "whyChooseTigers.verifyEmail": "Jede E-Mail verifizieren",
+    "whyChooseTigers.verifyEmailDesc":
+      "Verwenden Sie DMARC, SPF und DKIM, um Ihre E-Mails zu validieren und Cyberkriminelle daran zu hindern, Ihre Domain zu spoofen. Bauen Sie Vertrauen bei den Empfängern auf.",
+    "whyChooseTigers.verifyEmailAlt":
+      "Symbol für die Verifizierung jeder E-Mail",
+    "whyChooseTigers.backgroundRightAlt": "Rechter Hintergrund",
+    "whyChooseTigers.backgroundLeftAlt": "Linker Hintergrund",
 
     "businessHosting.title": "Business-Hosting",
-"businessHosting.description": "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
-"servicesThree.title": "Schnell starten und Ihr Unternehmen ausbauen",
-"servicesThree.reliableStaticHosting": "Zuverlässiges statisches Hosting",
-"servicesThree.reliableStaticHostingDesc": "Hosten Sie Ihre statischen Websites mit blitzschnellen Ladezeiten und unübertroffener Stabilität. Genießen Sie nahtlosen Einsatz mit einem global verteilten CDN.",
-"servicesThree.reliableStaticHostingAlt": "Symbol für zuverlässiges statisches Hosting",
-"servicesThree.scalableCloudStorage": "Skalierbarer Cloud-Speicher",
-"servicesThree.scalableCloudStorageDesc": "Speichern und greifen Sie sicher auf Ihre Daten mit hochleistungsfähigem Cloud-Speicher zu. Skalieren Sie mühelos, während Ihr Unternehmen wächst, mit verbesserter Redundanz.",
-"servicesThree.scalableCloudStorageAlt": "Symbol für skalierbaren Cloud-Speicher",
-"servicesThree.enterpriseStaticHosting": "Statisches Hosting auf Unternehmensebene",
-"servicesThree.enterpriseStaticHostingDesc": "Liefern Sie Ihre statischen Anwendungen mit Sicherheit und hoher Leistung. Profitieren Sie von sofortigen Updates, globalem Zugriff und keiner Wartung.",
-"servicesThree.enterpriseStaticHostingAlt": "Symbol für statisches Hosting auf Unternehmensebene",
-"mainFeatures.title": "Hauptfunktionen",
-"mainFeatures.description": "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
-"mainFeatures.crossPlatform": "Funktioniert auf mehreren Plattformen",
-"mainFeatures.crossPlatformAlt": "Symbol für Multiplattform",
-"mainFeatures.ddosMitigation": "Abwehr von DDoS-Angriffen",
-"mainFeatures.ddosMitigationAlt": "Symbol für DDoS-Abwehr",
-"mainFeatures.malwareDetection": "Erkennung und Entfernung von Malware",
-"mainFeatures.malwareDetectionAlt": "Symbol für Malware-Erkennung",
-"mainFeatures.sslCertificate": "SSL-Sicherheitszertifikat",
-"mainFeatures.sslCertificateAlt": "Symbol für SSL-Zertifikat",
-"mainFeatures.securityMonitoring": "Sicherheitsüberwachung",
-"mainFeatures.securityMonitoringAlt": "Symbol für Sicherheitsüberwachung",
-"mainFeatures.performanceOptimization": "Leistungsoptimierung",
-"mainFeatures.performanceOptimizationAlt": "Symbol für Leistungsoptimierung",
-"mainFeatures.backgroundRightAlt": "Rechtes Hintergrundbild",
-"mainFeatures.backgroundLeftAlt": "Linkes Hintergrundbild",
+    "businessHosting.description":
+      "Einer der besten, schnellsten und einfachsten Hosting-Dienste",
+    "servicesThree.title": "Schnell starten und Ihr Unternehmen ausbauen",
+    "servicesThree.reliableStaticHosting": "Zuverlässiges statisches Hosting",
+    "servicesThree.reliableStaticHostingDesc":
+      "Hosten Sie Ihre statischen Websites mit blitzschnellen Ladezeiten und unübertroffener Stabilität. Genießen Sie nahtlosen Einsatz mit einem global verteilten CDN.",
+    "servicesThree.reliableStaticHostingAlt":
+      "Symbol für zuverlässiges statisches Hosting",
+    "servicesThree.scalableCloudStorage": "Skalierbarer Cloud-Speicher",
+    "servicesThree.scalableCloudStorageDesc":
+      "Speichern und greifen Sie sicher auf Ihre Daten mit hochleistungsfähigem Cloud-Speicher zu. Skalieren Sie mühelos, während Ihr Unternehmen wächst, mit verbesserter Redundanz.",
+    "servicesThree.scalableCloudStorageAlt":
+      "Symbol für skalierbaren Cloud-Speicher",
+    "servicesThree.enterpriseStaticHosting":
+      "Statisches Hosting auf Unternehmensebene",
+    "servicesThree.enterpriseStaticHostingDesc":
+      "Liefern Sie Ihre statischen Anwendungen mit Sicherheit und hoher Leistung. Profitieren Sie von sofortigen Updates, globalem Zugriff und keiner Wartung.",
+    "servicesThree.enterpriseStaticHostingAlt":
+      "Symbol für statisches Hosting auf Unternehmensebene",
+    "mainFeatures.title": "Hauptfunktionen",
+    "mainFeatures.description":
+      "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
+    "mainFeatures.crossPlatform": "Funktioniert auf mehreren Plattformen",
+    "mainFeatures.crossPlatformAlt": "Symbol für Multiplattform",
+    "mainFeatures.ddosMitigation": "Abwehr von DDoS-Angriffen",
+    "mainFeatures.ddosMitigationAlt": "Symbol für DDoS-Abwehr",
+    "mainFeatures.malwareDetection": "Erkennung und Entfernung von Malware",
+    "mainFeatures.malwareDetectionAlt": "Symbol für Malware-Erkennung",
+    "mainFeatures.sslCertificate": "SSL-Sicherheitszertifikat",
+    "mainFeatures.sslCertificateAlt": "Symbol für SSL-Zertifikat",
+    "mainFeatures.securityMonitoring": "Sicherheitsüberwachung",
+    "mainFeatures.securityMonitoringAlt": "Symbol für Sicherheitsüberwachung",
+    "mainFeatures.performanceOptimization": "Leistungsoptimierung",
+    "mainFeatures.performanceOptimizationAlt":
+      "Symbol für Leistungsoptimierung",
+    "mainFeatures.backgroundRightAlt": "Rechtes Hintergrundbild",
+    "mainFeatures.backgroundLeftAlt": "Linkes Hintergrundbild",
 
     "emailHosting.title": "E-Mail-Hosting",
     "emailHosting.description":
@@ -3632,7 +4501,6 @@ const translations: Record<Language, Translations> = {
     "wordpressHosting.description":
       "Eine optimierte Umgebung für das Wachstum Ihrer Website mit WordPress",
     "wordpressHosting.startNow": "Jetzt starten!",
-    "kubernetes.title": "Kubernetes-Cluster in Minuten erstellen",
     "kubernetes.description":
       "Hören Sie auf, Zeit und Mühe mit der Verwaltung von Kubernetes-Clustern zu verschwenden. Mit unserer vollständig verwalteten Kubernetes-Engine können Sie die containerisierten Ressourcen Ihrer Anwendung in Minuten statt Tagen einfach bereitstellen, verwalten und skalieren.",
     "kubernetes.orderNow": "Jetzt bestellen!",
@@ -3854,7 +4722,7 @@ const translations: Record<Language, Translations> = {
       "Sicherheitsschloss-Symbol",
     "featuresSectionFive.feature.powerDmarcComplianceAlt":
       "Sicherheitsschild mit Häkchen-Symbol",
-    "whyChooseTigers.title": "Warum Tigers wählen",
+    "whyChooseTigers.title": "Warum Nomoar wählen",
     "whyChooseTigers.feature.emailBlocking": "Blockieren Sie unbefugte E-Mails",
     "whyChooseTigers.feature.emailBlockingDesc":
       "Bei der Nutzung von PowerDMARC eliminieren Sie nicht nur E-Mail-Spoofing, sondern können auch detaillierte Berichte verwenden, um Ihre Inhaltsstrategie sofort anzupassen. Überlassen Sie nichts dem Zufall.",
@@ -4345,81 +5213,269 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
+    "supportParagraph.description":
+      "Eğer şirket müşterilerinden biriyseniz, teknik destek veya satış ekibimize ulaşmak için hesabınız ,üzerinden kolayca bizimle iletişime geçebilirsiniz. İhtiyaçlarınıza uygun en iyi hizmeti ve hızlı çözümleri sunmaya kararlıyız.",
+
+    "supportSectionTwo.helpCenter": "Yardım Merkezi",
+    "supportSectionTwo.serverStatus": "Sunucu Durumu",
+    "supportSectionTwo.subscriberServices": "Abone Hizmetleri",
+    "supportSectionTwo.helpCenterAlt": "Yardım Merkezi İkonu",
+    "supportSectionTwo.serverStatusAlt": "Sunucu Durumu İkonu",
+    "supportSectionTwo.subscriberServicesAlt": "Abone Hizmetleri İkonu",
+    "supportSectionTwo.emailService": "E-posta Servisi",
+    "supportSectionTwo.phone": "Telefon",
+    "supportSectionTwo.location": "Konum",
+    "supportSectionTwo.emailServiceAlt": "E-posta İkonu",
+    "supportSectionTwo.phoneAlt": "Telefon İkonu",
+    "supportSectionTwo.locationAlt": "Konum İkonu",
+    "supportSectionTwo.mapTitle": "Haritadaki Konumumuz",
+    "supportSectionTwo.locationValue": "Riyad, Olaya, Suudi Arabistan",
+
+    "contactForm.title":
+      "Hâlâ cevabınızı bulamadınız mı? Şimdi teknik destek alın.",
+    "contactForm.description":
+      "Birçok benzersiz çözümle, kodlama yapmadan kolayca bir sayfa oluşturabilirsiniz. Bir sonraki danışmanlık web sitenizi birkaç dakika içinde oluşturun.",
+    "contactForm.salesTab": "Satış",
+    "contactForm.customizationTab": "Özelleştirme",
+    "contactForm.trendsTab": "Trendler",
+    "contactForm.pricesTab": "Fiyatlar",
+    "contactForm.fullNameLabel": "Tam Ad",
+    "contactForm.usernameLabel": "Kullanıcı Adı",
+    "contactForm.messageLabel": "Mesajınız",
+    "contactForm.languageLabel": "Hangi dilde iletişim kurmak istersiniz?",
+    "contactForm.languagePlaceholder": "Bir dil seçin",
+    "contactForm.languageArabic": "Arapça",
+    "contactForm.languageEnglish": "İngilizce",
+    "contactForm.languageSpanish": "İspanyolca",
+    "contactForm.submitButton": "Gönder",
+    "contactForm.contactAlternative": "Veya bizi şu numaradan arayın",
+
+    "loginSection.logoAlt": "Logo",
+    "loginSection.emailIconAlt": "E-posta İkonu",
+    "loginSection.passwordIconAlt": "Kilit İkonu",
+    "loginSection.footerLogoAlt": "Altbilgi Logosu",
+    "loginSection.title": "Giriş",
+    "loginSection.emailPlaceholder": "E-postanızı girin",
+    "loginSection.passwordPlaceholder": "Şifrenizi girin",
+    "loginSection.forgotPassword": "Giriş bilgilerinizi mi unuttunuz?",
+    "loginSection.loginButton": "Giriş",
+    "loginSection.noAccount": "Hesabınız yok mu?",
+    "loginSection.createAccount": "Yeni hesap oluştur",
+
+    "softaculousSection.title": "Softaculous Barındırma",
+    "softaculousSection.description":
+      "Softaculous ile 400'den fazla uygulama için tek tıkla kurulum",
+
+    "appHostingSection.title": "Uygulama Barındırma",
+    "appHostingSection.description":
+      "Paylaşımlı barındırma hizmetleri hakkında açıklama ve detaylar, uygulamalarınız için güvenilir ve ölçeklenebilir çözümler sunmak üzere tasarlanmıştır",
+    "appHostingSection.viewPricing": "Fiyatları Görüntüle",
+    "appHostingSection.createAccount": "Hesap Oluştur",
+    "ecommerceSection.title": "E-ticaret – Elektronik Ticaret",
+    "ecommerceSection.cyclosName": "Cyclos 4 Pro",
+    "ecommerceSection.magentoName": "Magento",
+    "ecommerceSection.magentoClusterName": "Magento Cluster",
+    "ecommerceSection.maianCartName": "Maian Cart",
+    "ecommerceSection.openCartName": "OpenCart",
+    "ecommerceSection.prestaShopName": "PrestaShop",
+    "ecommerceSection.cyclosDescription":
+      "Cyclos 4 PRO, büyük şirketler ve kurumlar için bir ödeme platformudur",
+    "ecommerceSection.magentoDescription":
+      "Magento, dünyanın önde gelen markaları tarafından güvenilen bir e-ticaret yazılımı ve platformudur. Magento ile çevrimiçi işinizi büyütün",
+    "ecommerceSection.magentoClusterDescription":
+      "Yük dengeleme, veri çoğaltma, içerik önbellekleme ve kullanıcı oturumu depolama ile otomatik ölçeklenebilirlik ve yüksek kullanılabilirlik sunan Magento kümesi",
+    "ecommerceSection.maianCartDescription":
+      "Maian Cart, PHP ve MySQL ile geliştirilmiş hızlı, güçlü ve ücretsiz bir e-ticaret platformudur ve çevrimiçi mağazanızı yönetmek için ihtiyacınız olan tüm özelliklere sahiptir",
+    "ecommerceSection.openCartDescription":
+      "OpenCart, PHP tabanlı açık kaynaklı bir çevrimiçi alışveriş sistemidir",
+    "ecommerceSection.prestaShopDescription":
+      "PrestaShop, ürünleri çevrimiçi satmak için açık kaynaklı ve tamamen özelleştirilebilir, verimli, hızlı ve kullanımı kolay bir çözümdür",
+    "ecommerceSection.cyclosLogoAlt": "Cyclos 4 Pro Logosu",
+    "ecommerceSection.magentoLogoAlt": "Magento Logosu",
+    "ecommerceSection.maianCartLogoAlt": "Maian Cart Alışveriş Sepeti İkonu",
+    "ecommerceSection.openCartLogoAlt": "OpenCart Logosu",
+    "ecommerceSection.prestaShopLogoAlt": "PrestaShop Logosu",
+    "ecommerceSection.launchNow": "Şimdi Başlat",
+    "statsSection.dataCenters": "Veri Merkezleri",
+    "statsSection.uptime": "Çalışma Süresi",
+    "statsSection.hostedSites": "Barındırılan Siteler",
+    "statsSection.guaranteedAvailability": "Garantili Kullanılabilirlik",
+    "statsSection.customerSatisfaction": "Müşteri Memnuniyeti",
+    "statsSection.dataCentersAlt": "Veri Merkezleri İkonu",
+    "statsSection.uptimeAlt": "Çalışma Süresi İkonu",
+    "statsSection.hostedSitesAlt": "Barındırılan Siteler İkonu",
+    "statsSection.guaranteedAvailabilityAlt":
+      "Garantili Kullanılabilirlik İkonu",
+    "statsSection.customerSatisfactionAlt": "Müşteri Memnuniyeti İkonu",
+
+    "statsSectionTwo.dataCenters": "Rechenzentren",
+    "statsSectionTwo.uptime": "Betriebszeit",
+    "statsSectionTwo.hostedSites": "Gehostete Websites",
+    "statsSectionTwo.guaranteedAvailability": "Garantierte Verfügbarkeit",
+    "statsSectionTwo.customerSatisfaction": "Kundenzufriedenheit",
+    "statsSectionTwo.dataCentersAlt": "Symbol für Rechenzentren",
+    "statsSectionTwo.uptimeAlt": "Symbol für Betriebszeit",
+    "statsSectionTwo.hostedSitesAlt": "Symbol für gehostete Websites",
+    "statsSectionTwo.guaranteedAvailabilityAlt":
+      "Symbol für garantierte Verfügbarkeit",
+    "statsSectionTwo.customerSatisfactionAlt": "Symbol für Kundenzufriedenheit",
+
+    "achievementsSectionTwo.title": "Başarılarımız",
+    "achievementsSectionTwo.description":
+      "Ali Al-Mansi ve Yahya Hassan tarafından kurulan şirket, yalnızca 3 kişilik bir ekiple barındırma hizmetlerinde uzmanlaşarak faaliyetlerine başladı.",
+
+    "contactSection.description":
+      "İşletmenizin başarısına nasıl yardımcı olabileceğimizi öğrenmek ister misiniz? Bize ulaşın.",
+    "contactSection.helpTitle": "Yardım mı gerekiyor?",
+    "contactSection.helpDescription": "Bize ulaşın ve destek alın",
+    "contactSection.contactButton": "Şimdi İletişime Geç",
+    "contactSection.microsoftLogoAlt": "Microsoft Logosu",
+    "contactSection.partner1LogoAlt": "Ortak 1 Logosu",
+    "contactSection.partner2LogoAlt": "Ortak 2 Logosu",
+    "contactSection.partner3LogoAlt": "Ortak 3 Logosu",
+    "contactSection.partner4LogoAlt": "Ortak 4 Logosu",
+
+    "tigersSection.title": "Nomoar Hakkında",
+    "tigersSection.description":
+      "Nomoar, Suudi Arabistan'daki lider bulut hizmetleri sağlayıcısıdır ve her büyüklükteki kuruluşun teknik altyapısını desteklemeye ve korumaya adanmıştır.",
+    "featuresSection.title": "Özellikler",
+    "featuresSection.multilingualSites": "Çok Dilli Web Siteleri",
+    "featuresSection.fiftyLanguages": "50 Dil Desteği",
+    "featuresSection.responsiveDesign": "Tüm Cihazlar için Duyarlı Tasarım",
+    "featuresSection.easyTool": "Kullanıcı Dostu Araç",
+    "featuresSection.videoTutorials": "Kullanım Videoları",
+    "featuresSection.plugins": "Eklentiler",
+    "featuresSection.templates": "Bir Milyondan Fazla Şablon",
+    "featuresSection.siteMigration":
+      "Diğer Yapım Araçlarından Site Taşıma İmkanı",
+    "featuresSection.multilingualSitesAlt": "Çok Dilli Web Siteleri İkonu",
+    "featuresSection.fiftyLanguagesAlt": "50 Dil Desteği İkonu",
+    "featuresSection.responsiveDesignAlt": "Duyarlı Tasarım İkonu",
+    "featuresSection.easyToolAlt": "Kullanıcı Dostu Araç İkonu",
+    "featuresSection.videoTutorialsAlt": "Kullanım Videoları İkonu",
+    "featuresSection.pluginsAlt": "Eklentiler İkonu",
+    "featuresSection.templatesAlt": "Şablonlar İkonu",
+    "featuresSection.siteMigrationAlt": "Site Taşıma İkonu",
+    "featuresSection.rightImgAlt": "Sağ Arka Plan Görseli",
+    "featuresSection.leftImgAlt": "Sol Arka Plan Görseli",
+    "oneClickApps.helmChartsAlt": "Helm Charts İkonu",
+    "oneClickApps.certManagerAlt": "Sertifika Yöneticisi İkonu",
+    "oneClickApps.linkerdAlt": "Linkerd İkonu",
+    "oneClickApps.operatorsAlt": "Operatörler İkonu",
+    "oneClickApps.illustrationAlt": "Tek Tıkla Uygulamalar İllüstrasyonu",
+    "distributorBasicNeed.title":
+      "Sunucunuzu çalıştırmak için lisanslara mı ihtiyacınız var?",
+    "distributorBasicNeed.subtitle": "Bunları en düşük maliyetle sağlıyoruz",
+    "distributorBasicNeed.registerButton": "Kayıt Formu",
+    "distributorBasicNeed.distributorsButton": "Dağıtıcılar",
+    "distributorBasicNeed.settingsIllustrationAlt": "Ayarlar",
+    "kubernetes.title": "Kubernetes Kümelerini Dakikalar İçinde Oluşturun",
+    "resellerHosting.title": "Bayi Barındırma",
+    "resellerHostingPlus.title": "Bayi Plus",
+    "resellerHostingUltra.title": "Bayi Ultra",
+    "resellerHostingProgram.title": "Bayi Programı",
+    "resellerHosting.description":
+      "Kâr elde edin ve hizmetlerinizi genişletin.",
     "windowsHosting.title": "Windows Barındırma",
-"windowsHosting.description": "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
-    "support.title": "Nereden başlayacağınızı bilmiyor musunuz? Endişelenmeyin, size yardımcı olmak için buradayız",
-"support.description": "Resmi bir Microsoft bulut çözümleri sağlayıcısı olan Libya Spider, kuruluşunuzun Microsoft 365 bulut üretkenlik çözümünü benimsemesine ve iş akışınıza tam olarak entegre etmesine yardımcı olmaya hazır.",
-"support.successMessage": "Çok sayıda şirketin Microsoft 365 hizmetlerine başarılı geçişlerinde destek olmaktan gurur duyuyoruz – ve size de yardım etmekten mutluluk duyarız!",
-"support.cta": "Şimdi Talep Edin!",
-"support.settingsChanges": "Ayar Değişiklikleri",
-"support.settingsChangesAlt": "Ayar Değişiklikleri İkonu",
-"support.training": "Eğitim",
-"support.trainingAlt": "Eğitim İkonu",
-"support.technicalSupport": "Teknik Destek",
-"support.technicalSupportAlt": "Teknik Destek İkonu",
-"support.settingsCustomization": "Ayarlar ve Özelleştirme",
-"support.settingsCustomizationAlt": "Ayarlar ve Özelleştirme İkonu",
-"support.dataUserMigration": "Veri ve Kullanıcı Göçü",
-"support.dataUserMigrationAlt": "Veri ve Kullanıcı Göçü İkonu",
-"support.sharePointMigration": "SharePoint Online Göçü",
-"support.sharePointMigrationAlt": "SharePoint Online Göçü İkonu",
+    "windowsHosting.description":
+      "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
+    "support.title":
+      "Nereden başlayacağınızı bilmiyor musunuz? Endişelenmeyin, size yardımcı olmak için buradayız",
+    "support.description":
+      "Resmi bir Microsoft bulut çözümleri sağlayıcısı olan Libya Spider, kuruluşunuzun Microsoft 365 bulut üretkenlik çözümünü benimsemesine ve iş akışınıza tam olarak entegre etmesine yardımcı olmaya hazır.",
+    "support.successMessage":
+      "Çok sayıda şirketin Microsoft 365 hizmetlerine başarılı geçişlerinde destek olmaktan gurur duyuyoruz – ve size de yardım etmekten mutluluk duyarız!",
+    "support.cta": "Şimdi Talep Edin!",
+    "support.settingsChanges": "Ayar Değişiklikleri",
+    "support.settingsChangesAlt": "Ayar Değişiklikleri İkonu",
+    "support.training": "Eğitim",
+    "support.trainingAlt": "Eğitim İkonu",
+    "support.technicalSupport": "Teknik Destek",
+    "support.technicalSupportAlt": "Teknik Destek İkonu",
+    "support.settingsCustomization": "Ayarlar ve Özelleştirme",
+    "support.settingsCustomizationAlt": "Ayarlar ve Özelleştirme İkonu",
+    "support.dataUserMigration": "Veri ve Kullanıcı Göçü",
+    "support.dataUserMigrationAlt": "Veri ve Kullanıcı Göçü İkonu",
+    "support.sharePointMigration": "SharePoint Online Göçü",
+    "support.sharePointMigrationAlt": "SharePoint Online Göçü İkonu",
     "tigersHosting.title": "Nomoar Barındırma",
-"tigersHosting.description": "Yönetimi kolay ve uygun maliyetli bulut altyapısı",
-"cloudInfrastructure.title": "Esnek, Yönetimi Kolay ve Ölçeklenebilir Altyapı",
-"cloudInfrastructure.description": "LS Cloud, bilgi işlem, depolama ve ağ kaynaklarını gelişmiş analizler ve izleme araçlarıyla tek bir kullanıcı dostu bulut platformunda birleştirir.",
-"cloudInfrastructure.tools": "Tek bir kullanıcı dostu bulut platformunda araçlar.",
-"cloudInfrastructure.resources": "Dakikalar içinde dağıtılabilen bulut kaynakları",
-"cloudInfrastructure.loadMetrics": "Yük Metrikleri",
-"cloudInfrastructure.loadMetricsAlt": "Yük Metrikleri İkonu",
-"cloudInfrastructure.networking": "Ağ",
-"cloudInfrastructure.networkingAlt": "Ağ İkonu",
-"cloudInfrastructure.storageSizes": "Depolama Boyutları",
-"cloudInfrastructure.storageSizesAlt": "Depolama Boyutları İkonu",
-"cloudInfrastructure.virtualServers": "Sanal Sunucular",
-"cloudInfrastructure.virtualServersAlt": "Sanal Sunucular İkonu",
-"cloudInfrastructure.backgroundAlt": "Bulut Arka Planı",
-"whyChooseTigers.blockUnauthorizedEmail": "Yetkisiz E-postaları Engelle",
-"whyChooseTigers.blockUnauthorizedEmailDesc": "PowerDMARC ile sadece e-posta sahteciliğini ortadan kaldırmakla kalmaz, aynı zamanda ayrıntılı raporları kullanarak içerik stratejinizi anında ayarlayabilirsiniz. Şansa yer bırakmayın.",
-"whyChooseTigers.blockUnauthorizedEmailAlt": "Yetkisiz E-posta Engelleme İkonu",
-"whyChooseTigers.preventEmailSpoofing": "E-posta Sahteciliğini Önle",
-"whyChooseTigers.preventEmailSpoofingDesc": "Gelişmiş kimlik doğrulama protokolleri kullanarak alan adınızı e-posta sahteciliği ve kimlik avı saldırılarına karşı koruyun. Yalnızca yetkili göndericilerin alan adınızı kullanabileceğinden emin olun.",
-"whyChooseTigers.preventEmailSpoofingAlt": "E-posta Sahteciliğini Önleme İkonu",
-"whyChooseTigers.enhanceEmailSecurity": "E-posta Güvenliğini Artır",
-"whyChooseTigers.enhanceEmailSecurityDesc": "E-posta trafiğinize tam görünürlük kazanın ve yetkisiz etkinlikleri gerçek zamanlı olarak tespit edin. İletişiminizi güvenli ve uyumlu tutun.",
-"whyChooseTigers.enhanceEmailSecurityAlt": "E-posta Güvenliğini Artırma İkonu",
-"whyChooseTigers.verifyEmail": "Her E-postayı Doğrula",
-"whyChooseTigers.verifyEmailDesc": "DMARC, SPF ve DKIM kullanarak e-postalarınızı doğrulayın ve siber suçluların alan adınızı sahtecilikle kullanmasını engelleyin. Alıcılarla güven oluşturun.",
-"whyChooseTigers.verifyEmailAlt": "Her E-postayı Doğrulama İkonu",
-"whyChooseTigers.backgroundRightAlt": "Sağ Arka Plan",
-"whyChooseTigers.backgroundLeftAlt": "Sol Arka Plan",
+    "tigersHosting.description":
+      "Yönetimi kolay ve uygun maliyetli bulut altyapısı",
+    "cloudInfrastructure.title":
+      "Esnek, Yönetimi Kolay ve Ölçeklenebilir Altyapı",
+    "cloudInfrastructure.description":
+      "LS Cloud, bilgi işlem, depolama ve ağ kaynaklarını gelişmiş analizler ve izleme araçlarıyla tek bir kullanıcı dostu bulut platformunda birleştirir.",
+    "cloudInfrastructure.tools":
+      "Tek bir kullanıcı dostu bulut platformunda araçlar.",
+    "cloudInfrastructure.resources":
+      "Dakikalar içinde dağıtılabilen bulut kaynakları",
+    "cloudInfrastructure.loadMetrics": "Yük Metrikleri",
+    "cloudInfrastructure.loadMetricsAlt": "Yük Metrikleri İkonu",
+    "cloudInfrastructure.networking": "Ağ",
+    "cloudInfrastructure.networkingAlt": "Ağ İkonu",
+    "cloudInfrastructure.storageSizes": "Depolama Boyutları",
+    "cloudInfrastructure.storageSizesAlt": "Depolama Boyutları İkonu",
+    "cloudInfrastructure.virtualServers": "Sanal Sunucular",
+    "cloudInfrastructure.virtualServersAlt": "Sanal Sunucular İkonu",
+    "cloudInfrastructure.backgroundAlt": "Bulut Arka Planı",
+    "whyChooseTigers.blockUnauthorizedEmail": "Yetkisiz E-postaları Engelle",
+    "whyChooseTigers.blockUnauthorizedEmailDesc":
+      "PowerDMARC ile sadece e-posta sahteciliğini ortadan kaldırmakla kalmaz, aynı zamanda ayrıntılı raporları kullanarak içerik stratejinizi anında ayarlayabilirsiniz. Şansa yer bırakmayın.",
+    "whyChooseTigers.blockUnauthorizedEmailAlt":
+      "Yetkisiz E-posta Engelleme İkonu",
+    "whyChooseTigers.preventEmailSpoofing": "E-posta Sahteciliğini Önle",
+    "whyChooseTigers.preventEmailSpoofingDesc":
+      "Gelişmiş kimlik doğrulama protokolleri kullanarak alan adınızı e-posta sahteciliği ve kimlik avı saldırılarına karşı koruyun. Yalnızca yetkili göndericilerin alan adınızı kullanabileceğinden emin olun.",
+    "whyChooseTigers.preventEmailSpoofingAlt":
+      "E-posta Sahteciliğini Önleme İkonu",
+    "whyChooseTigers.enhanceEmailSecurity": "E-posta Güvenliğini Artır",
+    "whyChooseTigers.enhanceEmailSecurityDesc":
+      "E-posta trafiğinize tam görünürlük kazanın ve yetkisiz etkinlikleri gerçek zamanlı olarak tespit edin. İletişiminizi güvenli ve uyumlu tutun.",
+    "whyChooseTigers.enhanceEmailSecurityAlt":
+      "E-posta Güvenliğini Artırma İkonu",
+    "whyChooseTigers.verifyEmail": "Her E-postayı Doğrula",
+    "whyChooseTigers.verifyEmailDesc":
+      "DMARC, SPF ve DKIM kullanarak e-postalarınızı doğrulayın ve siber suçluların alan adınızı sahtecilikle kullanmasını engelleyin. Alıcılarla güven oluşturun.",
+    "whyChooseTigers.verifyEmailAlt": "Her E-postayı Doğrulama İkonu",
+    "whyChooseTigers.backgroundRightAlt": "Sağ Arka Plan",
+    "whyChooseTigers.backgroundLeftAlt": "Sol Arka Plan",
     "businessHosting.title": "İş Barındırma",
-"businessHosting.description": "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
-"servicesThree.title": "Hızla Başlayın ve İşinizi Büyütün",
-"servicesThree.reliableStaticHosting": "Güvenilir Statik Barındırma",
-"servicesThree.reliableStaticHostingDesc": "Statik web sitelerinizi yıldırım hızında yükleme süreleri ve eşsiz stabilite ile barındırın. Küresel olarak dağıtılmış bir CDN ile sorunsuz dağıtımın keyfini çıkarın.",
-"servicesThree.reliableStaticHostingAlt": "Güvenilir Statik Barındırma İkonu",
-"servicesThree.scalableCloudStorage": "Ölçeklenebilir Bulut Depolama",
-"servicesThree.scalableCloudStorageDesc": "Verilerinizi yüksek performanslı bulut depolama ile güvenli bir şekilde saklayın ve erişin. İşletmeniz büyüdükçe gelişmiş yedeklilik ile kolayca ölçeklendirin.",
-"servicesThree.scalableCloudStorageAlt": "Ölçeklenebilir Bulut Depolama İkonu",
-"servicesThree.enterpriseStaticHosting": "Kurumsal Düzeyde Statik Barındırma",
-"servicesThree.enterpriseStaticHostingDesc": "Statik uygulamalarınızı güvenlik ve yüksek performansla sunun. Anlık güncellemeler, küresel erişim ve sıfır bakım avantajlarından yararlanın.",
-"servicesThree.enterpriseStaticHostingAlt": "Kurumsal Statik Barındırma İkonu",
-"mainFeatures.title": "Ana Özellikler",
-"mainFeatures.description": "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla kendi özel sunucunuza sahip olun.",
-"mainFeatures.crossPlatform": "Birden Fazla Platformda Çalışır",
-"mainFeatures.crossPlatformAlt": "Çoklu Platform İkonu",
-"mainFeatures.ddosMitigation": "DDoS Saldırılarını Hafifletme",
-"mainFeatures.ddosMitigationAlt": "DDoS Hafifletme İkonu",
-"mainFeatures.malwareDetection": "Kötü Amaçlı Yazılım Tespiti ve Kaldırma",
-"mainFeatures.malwareDetectionAlt": "Kötü Amaçlı Yazılım Tespiti İkonu",
-"mainFeatures.sslCertificate": "SSL Güvenlik Sertifikası",
-"mainFeatures.sslCertificateAlt": "SSL Sertifikası İkonu",
-"mainFeatures.securityMonitoring": "Güvenlik İzleme",
-"mainFeatures.securityMonitoringAlt": "Güvenlik İzleme İkonu",
-"mainFeatures.performanceOptimization": "Performans Optimizasyonu",
-"mainFeatures.performanceOptimizationAlt": "Performans Optimizasyonu İkonu",
-"mainFeatures.backgroundRightAlt": "Sağ Arka Plan Resmi",
-"mainFeatures.backgroundLeftAlt": "Sol Arka Plan Resmi",
+    "businessHosting.description":
+      "En iyi, en hızlı ve en kolay barındırma hizmetlerinden biri",
+    "servicesThree.title": "Hızla Başlayın ve İşinizi Büyütün",
+    "servicesThree.reliableStaticHosting": "Güvenilir Statik Barındırma",
+    "servicesThree.reliableStaticHostingDesc":
+      "Statik web sitelerinizi yıldırım hızında yükleme süreleri ve eşsiz stabilite ile barındırın. Küresel olarak dağıtılmış bir CDN ile sorunsuz dağıtımın keyfini çıkarın.",
+    "servicesThree.reliableStaticHostingAlt":
+      "Güvenilir Statik Barındırma İkonu",
+    "servicesThree.scalableCloudStorage": "Ölçeklenebilir Bulut Depolama",
+    "servicesThree.scalableCloudStorageDesc":
+      "Verilerinizi yüksek performanslı bulut depolama ile güvenli bir şekilde saklayın ve erişin. İşletmeniz büyüdükçe gelişmiş yedeklilik ile kolayca ölçeklendirin.",
+    "servicesThree.scalableCloudStorageAlt":
+      "Ölçeklenebilir Bulut Depolama İkonu",
+    "servicesThree.enterpriseStaticHosting":
+      "Kurumsal Düzeyde Statik Barındırma",
+    "servicesThree.enterpriseStaticHostingDesc":
+      "Statik uygulamalarınızı güvenlik ve yüksek performansla sunun. Anlık güncellemeler, küresel erişim ve sıfır bakım avantajlarından yararlanın.",
+    "servicesThree.enterpriseStaticHostingAlt":
+      "Kurumsal Statik Barındırma İkonu",
+    "mainFeatures.title": "Ana Özellikler",
+    "mainFeatures.description":
+      "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla kendi özel sunucunuza sahip olun.",
+    "mainFeatures.crossPlatform": "Birden Fazla Platformda Çalışır",
+    "mainFeatures.crossPlatformAlt": "Çoklu Platform İkonu",
+    "mainFeatures.ddosMitigation": "DDoS Saldırılarını Hafifletme",
+    "mainFeatures.ddosMitigationAlt": "DDoS Hafifletme İkonu",
+    "mainFeatures.malwareDetection": "Kötü Amaçlı Yazılım Tespiti ve Kaldırma",
+    "mainFeatures.malwareDetectionAlt": "Kötü Amaçlı Yazılım Tespiti İkonu",
+    "mainFeatures.sslCertificate": "SSL Güvenlik Sertifikası",
+    "mainFeatures.sslCertificateAlt": "SSL Sertifikası İkonu",
+    "mainFeatures.securityMonitoring": "Güvenlik İzleme",
+    "mainFeatures.securityMonitoringAlt": "Güvenlik İzleme İkonu",
+    "mainFeatures.performanceOptimization": "Performans Optimizasyonu",
+    "mainFeatures.performanceOptimizationAlt": "Performans Optimizasyonu İkonu",
+    "mainFeatures.backgroundRightAlt": "Sağ Arka Plan Resmi",
+    "mainFeatures.backgroundLeftAlt": "Sol Arka Plan Resmi",
 
     "emailHosting.title": "E-posta Barındırma",
     "emailHosting.description":
@@ -4551,7 +5607,6 @@ const translations: Record<Language, Translations> = {
     "wordpressHosting.description":
       "WordPress ile sitenizin büyümesi için optimize edilmiş bir ortam",
     "wordpressHosting.startNow": "Şimdi Başla!",
-    "kubernetes.title": "Kubernetes Kümelerini Dakikalar İçinde Oluşturun",
     "kubernetes.description":
       "Kubernetes kümelerini yönetmek için zaman ve çaba harcamayı bırakın. Tamamen yönetilen Kubernetes motorumuzla, uygulamanızın konteynerli kaynaklarını dakikalar içinde kolayca dağıtabilir, yönetebilir ve ölçeklendirebilirsiniz.",
     "kubernetes.orderNow": "Şimdi Sipariş Ver!",
@@ -4758,7 +5813,7 @@ const translations: Record<Language, Translations> = {
       "Sicherheitsschloss-Symbol",
     "featuresSectionFive.feature.powerDmarcComplianceAlt":
       "Sicherheitsschild mit Häkchen-Symbol",
-    "whyChooseTigers.title": "Warum Tigers wählen",
+    "whyChooseTigers.title": "Warum Nomoar wählen",
     "whyChooseTigers.feature.emailBlocking": "Blockieren Sie unbefugte E-Mails",
     "whyChooseTigers.feature.emailBlockingDesc":
       "Bei der Nutzung von PowerDMARC eliminieren Sie nicht nur E-Mail-Spoofing, sondern können auch detaillierte Berichte verwenden, um Ihre Inhaltsstrategie sofort anzupassen. Überlassen Sie nichts dem Zufall.",

@@ -7,7 +7,7 @@ import Jpaas from "../public/jpaas.svg"
 import Ls from "../public/ls-email.svg"
 import HostingCloud from "../public/hosting-cloud-sh.svg"
 import { useLanguage } from "../contexts/language-context"
-import AnimatedOnScroll from "./AnimatedOnScroll"
+import AnimatedOnScroll from "./animated-on-scroll"
 
 export default function CloudServicesSection() {
   const { t, isRTL } = useLanguage()
