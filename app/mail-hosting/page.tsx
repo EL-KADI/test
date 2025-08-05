@@ -90,7 +90,7 @@ export default function MailHosting() {
             <div className="flex flex-col gap-6 justify-center items-center mt-10">
         <h2 className="text-4xl text-white">{t("emailHosting.title")}</h2>
       <p className="text-white text-base">{t("emailHosting.description")}</p>
-              <button className="font-bold hover:text-[#2b1f51] rounded-lg px-10 py-2 duration-200 -mt3 bg-inherit hover:bg-white text-white border-white border-2">
+              <button className="font-bold hover:text-[#2b1f51] rounded-lg px-10 py-2 duration-200  bg-inherit hover:bg-white text-white border-white border-2">
                 {t("serverLicenses.signUpNow")}
               </button>
             </div>

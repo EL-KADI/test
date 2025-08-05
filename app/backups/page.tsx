@@ -516,9 +516,9 @@ export default function Backups() {
         </div>
         <div className="absolute top-16 left-1/2 text-center transform -translate-x-1/2 mt-10 w-full px-6">
           <h1 className="lg:text-4xl text-xl mb-6 text-white">
-            {t("serverManagement.title")}
+            {t("backupsSection.title")}
           </h1>
-          <p className="text-white">{t("serverManagement.description")}</p>
+          <p className="text-white">{t("backupsSection.description")}</p>
           <div className="bg-white hover:bg-transparent transition duration-200 hover:text-white hover:border-2 hover:border-white text-[#092346] rounded-md px-12 py-2 w-fit mx-auto cursor-pointer font-bold mt-4">
             <p>{t("serverManagement.signUpNow")}</p>
           </div>

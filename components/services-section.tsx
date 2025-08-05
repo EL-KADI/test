@@ -52,7 +52,7 @@ const { t, isRTL } = useLanguage();
   ];
 
   return (
-    <div className="relative mt-72" dir="rtl">
+    <div className="relative mt-60" dir="rtl">
       <div className="container mt-32 mx-auto px-4">
         {/* Header Section */}
         <h2 className="text-center w-fit mx-auto bg-[#2B1F51] text-white font-bold text-2xl p-2 rounded-xl mb-4">

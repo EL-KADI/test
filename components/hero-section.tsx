@@ -6,7 +6,6 @@ import Logo from "../public/logo.svg";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import LanguageSelector from "./language-selector";
-import AnimatedOnScroll from "./animated-on-scroll";
 import AnimatedOnLoad from "./animated-on-load";
 
 export default function HeroSection() {
@@ -274,10 +273,10 @@ export default function HeroSection() {
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t('softaculousSection.title')}
+                              {t("softaculousSection.title")}
                             </h4>
                             <p className="text-xs text-gray-600">
-                            {t('softaculousSection.description')}
+                              {t("softaculousSection.description")}
                             </p>
                           </Link>
                           <Link
@@ -346,7 +345,7 @@ export default function HeroSection() {
                   </div>
 
                   {/* Reseller */}
-                  <div className="border-b border-gray-100" >
+                  <div className="border-b border-gray-100">
                     <div
                       className={`flex items-center justify-between py-3 cursor-pointer hover:bg-gray-50 transition-colors duration-200 ${
                         isRTL ? "flex-row-reverse " : " "
@@ -454,7 +453,7 @@ export default function HeroSection() {
                     >
                       <div
                         className={`pb-3 space-y-3 z-50 relative ${
-                           isRTL ? "pr-4  text-right" : " text-left"
+                          isRTL ? "pr-4  text-right" : " text-left"
                         }`}
                       >
                         <div className="grid grid-cols-2 gap-3">
@@ -483,7 +482,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/server-management"
+                            href="/full-servers"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -561,7 +560,7 @@ export default function HeroSection() {
                     >
                       <div
                         className={`pb-3 space-y-3 z-50 relative ${
-                           isRTL ? "pr-4  text-right" : " text-left"
+                          isRTL ? "pr-4  text-right" : " text-left"
                         }`}
                       >
                         <div className="grid grid-cols-2 gap-3">
@@ -668,7 +667,7 @@ export default function HeroSection() {
                     >
                       <div
                         className={`pb-3 space-y-3 z-50 relative ${
-                           isRTL ? "pr-4  text-right" : " text-left"
+                          isRTL ? "pr-4  text-right" : " text-left"
                         }`}
                       >
                         <div className="grid grid-cols-2 gap-3">
@@ -685,7 +684,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/company/contact"
+                            href="/contact"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -697,7 +696,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/company/jobs"
+                            href="/jobs"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -709,7 +708,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/company/news"
+                            href="/blog"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -733,7 +732,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/company/payment"
+                            href="/payment"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -777,12 +776,12 @@ export default function HeroSection() {
                     >
                       <div
                         className={`pb-3 space-y-3 z-50 relative ${
-                           isRTL ? "pr-4  text-right" : " text-left"
+                          isRTL ? "pr-4  text-right" : " text-left"
                         }`}
                       >
                         <div className="grid grid-cols-2 gap-3">
                           <Link
-                            href="/technology/security"
+                            href="/security"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -794,7 +793,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/technology/speed"
+                            href="/speed"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -806,7 +805,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/technology/control"
+                            href="/static-dashboard"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -818,7 +817,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/technology/datacenter"
+                            href="/data-centers"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -842,7 +841,7 @@ export default function HeroSection() {
                             </p>
                           </Link>
                           <Link
-                            href="/technology/backup"
+                            href="/backups"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -946,10 +945,10 @@ export default function HeroSection() {
                           className={`${isRTL ? "text-right" : "text-left"}`}
                         >
                           <h3 className="font-bold text-lg mb-2 text-gray-900">
-                           {t('softaculousSection.title')}
+                            {t("softaculousSection.title")}
                           </h3>
                           <p className="text-gray-600 leading-relaxed text-sm">
-                             {t('softaculousSection.description')}
+                            {t("softaculousSection.description")}
                           </p>
                         </div>
                       </Link>
@@ -998,21 +997,7 @@ export default function HeroSection() {
                           </p>
                         </div>
                       </Link>
-                      {/* <Link
-                        href="/programers-hosting"
-                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                      >
-                        <div
-                          className={`${isRTL ? "text-right" : "text-left"}`}
-                        >
-                          <h3 className="font-bold text-lg mb-2 text-gray-900">
-                            {t("hosting.developer")}
-                          </h3>
-                          <p className="text-gray-600 leading-relaxed text-sm">
-                            {t("hosting.developer.desc")}
-                          </p>
-                        </div>
-                      </Link> */}
+             
 
                       <Link
                         href="/nomoar-hosting"
@@ -1163,7 +1148,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/server-management"
+                        href="/full-servers"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1356,7 +1341,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/company/contact"
+                        href="/contact"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1371,7 +1356,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/company/jobs"
+                        href="/jobs"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1386,7 +1371,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/company/news"
+                        href="/blog"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1416,7 +1401,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/company/payment"
+                        href="/payment"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1445,7 +1430,7 @@ export default function HeroSection() {
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                     <div className="grid grid-cols-3 gap-6">
                       <Link
-                        href="/technology/security"
+                        href="/security"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1460,7 +1445,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/technology/speed"
+                        href="/speed"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1475,7 +1460,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/technology/control"
+                        href="/static-dashboard"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1490,7 +1475,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/technology/datacenter"
+                        href="/data-centers"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1520,7 +1505,7 @@ export default function HeroSection() {
                         </div>
                       </Link>
                       <Link
-                        href="/technology/backup"
+                        href="/backups"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
                         <div
@@ -1581,6 +1566,9 @@ export default function HeroSection() {
                       }`}
                       dir={isRTL ? "rtl" : "ltr"}
                     />
+                  </div>
+                  <div className="flex justify-center items-center mx-auto mt-8">
+                    <img src="/Certificates.svg" alt="" />
                   </div>
                 </div>
               </AnimatedOnLoad>

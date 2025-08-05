@@ -497,7 +497,7 @@ export default function NavigationBar({
                             </p>
                           </Link>
                           <Link
-                            href="/server-management"
+                            href="/full-servers"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
@@ -699,7 +699,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/company/contact"
+                        href="/contact"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -711,7 +711,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/company/jobs"
+                        href="/jobs"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -723,7 +723,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/company/news"
+                        href="/blog"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -747,7 +747,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/company/payment"
+                        href="/payment"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -794,7 +794,7 @@ export default function NavigationBar({
                   >
                     <div className="grid grid-cols-2 gap-3">
                       <Link
-                        href="/technology/security"
+                        href="/security"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -806,7 +806,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/technology/speed"
+                        href="/speed"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -818,7 +818,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/technology/control"
+                        href="/static-dashboard"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -830,7 +830,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/technology/datacenter"
+                        href="/data-centers"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -854,7 +854,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/technology/backup"
+                        href="/backups"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -1134,7 +1134,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/server-management"
+                    href="/full-servers"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1305,7 +1305,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/company/contact"
+                    href="/contact"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1318,7 +1318,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/company/jobs"
+                    href="/jobs"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1331,7 +1331,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/company/news"
+                    href="/blog"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1357,7 +1357,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/company/payment"
+                    href="/payment"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1384,7 +1384,7 @@ export default function NavigationBar({
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
-                    href="/technology/security"
+                    href="/security"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1397,7 +1397,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/technology/speed"
+                    href="/speed"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1410,7 +1410,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/technology/control"
+                    href="/static-dashboard"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1423,7 +1423,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/technology/datacenter"
+                    href="/data-centers"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1449,7 +1449,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/technology/backup"
+                    href="/backups"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>

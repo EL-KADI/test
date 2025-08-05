@@ -17,6 +17,96 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 type TranslationKeys =
+  | "speedSection.title"
+  | "dashboardWelcome.title"
+  | "dashboardWelcome.description"
+  | "dashboardWelcome.imageAlt"
+  // DashboardOverview
+  | "dashboardOverview.title"
+  | "dashboardOverview.description"
+  | "dashboardOverview.imageAlt"
+  // PerformanceTracking
+  | "performanceTracking.title"
+  | "performanceTracking.description"
+  | "performanceTracking.mobileAlt"
+  | "performanceTracking.backgroundAlt"
+  | "performanceTracking.patternAlt"
+  // DomainManagement
+  | "domainManagement.title"
+  | "domainManagement.description"
+  | "domainManagement.imageAlt"
+  // TechStack
+  | "techStack.mainTitle"
+  | "techStack.reactTitle"
+  | "techStack.reactAlt"
+  | "techStack.laravelTitle"
+  | "techStack.laravelAlt"
+  | "techStack.phpTitle"
+  | "techStack.phpAlt"
+  | "techStack.javascriptTitle"
+  | "techStack.javascriptAlt"
+  | "techStack.lagomTitle"
+  | "techStack.lagomAlt"
+  | "techStack.whatsappApiTitle"
+  | "techStack.whatsappApiAlt"
+  | "techStack.whmcsTitle"
+  | "techStack.whmcsAlt"
+  // KeyFeaturesTwo
+  | "keyFeaturesTwo.mainTitle"
+  | "keyFeaturesTwo.mainDescription"
+  | "keyFeaturesTwo.cloudHostingTitle"
+  | "keyFeaturesTwo.cloudHostingDescription"
+  | "keyFeaturesTwo.cloudHostingAlt"
+  | "keyFeaturesTwo.lsSuiteTitle"
+  | "keyFeaturesTwo.lsSuiteDescription"
+  | "keyFeaturesTwo.lsSuiteAlt"
+  | "keyFeaturesTwo.jpaasTitle"
+  | "keyFeaturesTwo.jpaasDescription"
+  | "keyFeaturesTwo.jpaasAlt"
+  | "keyFeaturesTwo.learnMore"
+  | "speedSection.description"
+  | "launchAppsSection.mainTitle"
+  | "launchAppsSection.mainDescription"
+  | "launchAppsSection.appAlt"
+  | "launchAppsSection.dockerAlt"
+  | "launchAppsSection.phpAlt"
+  | "launchAppsSection.pythonAlt"
+  | "featuresGrid.disasterRecovery"
+  | "featuresGrid.emailProtection"
+  | "featuresGrid.threatDetection"
+  | "featuresGrid.centralizedManagement1"
+  | "featuresGrid.centralizedManagement2"
+  | "featuresGrid.centralizedManagement3"
+  | "featuresGrid.centralizedManagement4"
+  | "featuresGrid.centralizedManagement5"
+  | "featuresGrid.centralizedManagement6"
+  | "onlinePaymentSection.americanExpressAlt"
+   | "serverLocations.mapAlt"
+   | "serverLocations.comingSoonMessage"
+   | "serverLocations.comingSoonTitle"
+    | "serverLocations.upload"
+ | "serverLocations.download"
+
+  | "onlinePaymentSection.visaAlt"
+  | "onlinePaymentSection.masterCardAlt"
+  | "countrySelector.italyName"
+  | "countrySelector.franceName"
+  | "countrySelector.germanyName"
+  | "countrySelector.japanName"
+  | "countrySelector.finlandName"
+  | "countrySelector.usaName"
+  | "countrySelector.turkeyName"
+  | "countrySelector.italyFlagAlt"
+  | "countrySelector.franceFlagAlt"
+  | "countrySelector.germanyFlagAlt"
+  | "onlinePaymentSection.mainTitle"
+  | "onlinePaymentSection.mainDescription"
+  | "countrySelector.japanFlagAlt"
+  | "countrySelector.finlandFlagAlt"
+  | "countrySelector.usaFlagAlt"
+  | "countrySelector.turkeyFlagAlt"
+  | "backupsSection.title"
+  | "backupsSection.description"
   | "supportParagraph.description"
   | "supportSectionTwo.helpCenter"
   | "supportSectionTwo.serverStatus"
@@ -71,6 +161,54 @@ type TranslationKeys =
   | "ecommerceSection.magentoClusterName"
   | "ecommerceSection.maianCartName"
   | "ecommerceSection.openCartName"
+  | "paymentMethodsSection.title"
+  | "paymentMethodsSection.description"
+  | "walletsSection.mainTitle"
+  | "walletsSection.mainDescription"
+  | "walletsSection.sdadTitle"
+  | "walletsSection.sdadDescription"
+  | "walletsSection.sdadAlt"
+  | "walletsSection.paypalTitle"
+  | "walletsSection.paypalDescription"
+  | "walletsSection.paypalAlt"
+  | "walletsSection.vodafoneTitle"
+  | "walletsSection.vodafoneDescription"
+  | "walletsSection.vodafoneAlt"
+  | "walletsSection.zainTitle"
+  | "walletsSection.zainDescription"
+  | "walletsSection.zainAlt"
+  | "walletsSection.moreLink"
+  | "paymentMethodsSection.mainTitle"
+  | "paymentMethodsSection.mainDescription"
+  | "paymentMethodsSection.bankakTitle"
+  | "paymentMethodsSection.bankakDescription"
+  | "paymentMethodsSection.bankakAlt"
+  | "paymentMethodsSection.ibanTitle"
+  | "paymentMethodsSection.ibanDescription"
+  | "paymentMethodsSection.ibanAlt"
+  | "paymentMethodsSection.instantTitle"
+  | "paymentMethodsSection.instantDescription"
+  | "paymentMethodsSection.instantAlt"
+  | "paymentMethodsSection.oowCashTitle"
+  | "paymentMethodsSection.oowCashDescription"
+  | "paymentMethodsSection.oowCashAlt"
+  | "paymentMethodsSection.moreLink"
+  | "cryptocurrenciesSection.mainTitle"
+  | "cryptocurrenciesSection.mainDescription"
+  | "cryptocurrenciesSection.ethereumAlt"
+  | "cryptocurrenciesSection.binanceAlt"
+  | "cryptocurrenciesSection.bitcoinAlt"
+  | "cryptocurrenciesSection.tetherAlt"
+  | "traditionalPaymentSection.mainTitle"
+  | "traditionalPaymentSection.cdnTitle"
+  | "traditionalPaymentSection.cdnDescription"
+  | "traditionalPaymentSection.cdnAlt"
+  | "traditionalPaymentSection.ddosTitle"
+  | "traditionalPaymentSection.ddosDescription"
+  | "traditionalPaymentSection.ddosAlt"
+  | "traditionalPaymentSection.securityTitle"
+  | "traditionalPaymentSection.securityDescription"
+  | "traditionalPaymentSection.securityAlt"
   | "ecommerceSection.prestaShopName"
   | "ecommerceSection.cyclosDescription"
   | "ecommerceSection.magentoDescription"
@@ -141,6 +279,7 @@ type TranslationKeys =
   | "resellerHostingPlus.title"
   | "resellerHostingUltra.title"
   | "resellerHostingProgram.title"
+  | "standalone.serverDescription"
   | "resellerHosting.description"
   | "windowsHosting.title"
   | "windowsHosting.description"
@@ -177,6 +316,25 @@ type TranslationKeys =
   | "websiteBuilder.title"
   | "websiteBuilder.chooseTemplate"
   | "websiteBuilder.chooseTemplateDesc"
+  | "whoisToolSectionTwo.description"
+  | "whoisToolSectionTwo.imageAlt"
+  | "whoisToolSection.title"
+  | "whoisToolSection.description"
+  | "whoisToolSection.imageAlt"
+  | "keyBenefitsSection.mainTitle"
+  | "keyBenefitsSection.mainDescription"
+  | "keyBenefitsSection.pciDssTitle"
+  | "keyBenefitsSection.pciDssAlt"
+  | "keyBenefitsSection.encryptionTitle"
+  | "keyBenefitsSection.encryptionAlt"
+  | "keyBenefitsSection.secureClientTitle"
+  | "keyBenefitsSection.secureClientAlt"
+  | "keyBenefitsSection.supportTitle"
+  | "keyBenefitsSection.supportAlt"
+  | "keyBenefitsSection.warrantyTitle"
+  | "keyBenefitsSection.warrantyAlt"
+  | "keyBenefitsSection.securityTitle"
+  | "keyBenefitsSection.securityAlt"
   | "websiteBuilder.enhanceFunctionality"
   | "websiteBuilder.enhanceFunctionalityDesc"
   | "websiteBuilder.previewSite"
@@ -215,6 +373,27 @@ type TranslationKeys =
   | "services.enterpriseHostingAlt"
   | "services.backgroundDecorationAlt"
   | "oneClickApps.title"
+  | "blogsSection.title"
+  | "blogsSection.description"
+  | "benefitsSection.mainTitle"
+  | "benefitsSection.description"
+  | "benefitsSection.trainingTitle"
+  | "benefitsSection.trainingAlt"
+  | "benefitsSection.leaveTitle"
+  | "benefitsSection.leaveAlt"
+  | "benefitsSection.rewardsTitle"
+  | "benefitsSection.rewardsAlt"
+  | "benefitsSection.insuranceTitle"
+  | "benefitsSection.insuranceAlt"
+  | "joinUsSection.title"
+  | "joinUsSection.description"
+  | "joinUsSection.button"
+  | "jobsSection.title"
+  | "jobsSection.description"
+  | "jobsSection.button"
+  | "jobsSection.rightBackgroundAlt"
+  | "jobsSection.leftBackgroundAlt"
+  | "jobsSection.lampImageAlt"
   | "oneClickApps.description"
   | "oneClickApps.helmCharts"
   | "oneClickApps.certManager"
@@ -667,6 +846,57 @@ type TranslationKeys =
   | "dedicatedServerPricing.serverInfo.subtitle"
   | "dedicatedServerPricing.pricing.renewal"
   | "dedicatedServerPricing.pricing.buyNow"
+  | "geoRegions.header"
+  | "geoRegions.text"
+  | "geoRegions.illustrationAlt"
+  | "essentialFeatures.header"
+  | "essentialFeatures.serverMonitoringTitle"
+  | "essentialFeatures.serverMonitoringAlt"
+  | "essentialFeatures.sslCertificateTitle"
+  | "essentialFeatures.sslCertificateAlt"
+  | "essentialFeatures.threatProtectionTitle"
+  | "essentialFeatures.threatProtectionAlt"
+  | "essentialFeatures.softaculousInstallerTitle"
+  | "essentialFeatures.softaculousInstallerAlt"
+  | "essentialFeatures.regularBackupTitle"
+  | "essentialFeatures.regularBackupAlt"
+  | "essentialFeatures.linuxOsTitle"
+  | "essentialFeatures.linuxOsAlt"
+  | "essentialFeatures.controlPanelTitle"
+  | "essentialFeatures.controlPanelAlt"
+  | "essentialFeatures.technicalSupportTitle"
+  | "essentialFeatures.technicalSupportAlt"
+  | "fullServers.mainTitle"
+  | "fullServers.mainDescription"
+  | "hostingTiers.mainTitle"
+  | "hostingTiers.serverInfoTitle"
+  | "hostingTiers.serverInfoSubtitle"
+  | "hostingTiers.priceMain"
+  | "hostingTiers.priceRenewal"
+  | "hostingTiers.buyNowButton"
+  | "hostingTiers.featuresButton"
+  | "hostingTiers.cpuSpecTitle"
+  | "hostingTiers.cpuSpecSubtitle"
+  | "hostingTiers.storageSpecTitle"
+  | "hostingTiers.storageSpecSubtitle"
+  | "hostingTiers.databaseSpecTitle"
+  | "hostingTiers.databaseSpecSubtitle"
+  | "hostingTiers.ramSpecTitle"
+  | "hostingTiers.ramSpecSubtitle"
+  | "hostingTiers.bandwidthSpecTitle"
+  | "hostingTiers.bandwidthSpecSubtitle"
+  | "hostingTiers.controlPanelSpecTitle"
+  | "hostingTiers.controlPanelSpecSubtitle"
+  | "hostingTiers.germanyFlagAlt"
+  | "hostingTiers.finlandFlagAlt"
+  | "hostingTiers.ukFlagAlt"
+  | "serverServices.mainTitle"
+  | "serverServices.emailProtection"
+  | "serverServices.malwareProtection"
+  | "serverServices.networkSecurity"
+  | "serverServices.cloudMigration"
+  | "serverServices.threatDetection"
+  | "serverServices.identityProtection"
   | "dedicatedServerPricing.pricing.features"
   | "dedicatedServerPricing.specs.cpu"
   | "dedicatedServerPricing.specs.cpuSubtitle"
@@ -857,6 +1087,270 @@ type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
+    
+  "serverLocations.download": "تنزيل",
+  "serverLocations.upload": "رفع",
+  "serverLocations.comingSoonTitle": "قريباً",
+  "serverLocations.comingSoonMessage": "سيتم إطلاق هذا الخادم قريباً",
+  "serverLocations.mapAlt": "خريطة العالم",
+
+    "dashboardWelcome.title": "مرحبًا بك في لوحة التحكم الخاصة بك",
+  "dashboardWelcome.description": "إدارة مجالك بسهولة، تحقق من إحصائياتك، وراقب الأداء من مكان واحد.",
+  "dashboardWelcome.imageAlt": "لوحة التحكم",
+  "dashboardOverview.title": "نظرة عامة على لوحة التحكم",
+  "dashboardOverview.description": "الوصول إلى البيانات في الوقت الفعلي وقياسات الأداء مباشرة من لوحة التحكم الخاصة بك. تتبع حالة مجالك، إحصائيات الزوار، والكثير غيرها في مكان واحد.",
+  "dashboardOverview.imageAlt": "صورة نظرة عامة على لوحة التحكم",
+  "performanceTracking.title": "تتبع الأداء",
+  "performanceTracking.description": "ابق على اطلاع دائم بأداء مجالك. راقب حركة المرور، التجديدات، والاستخدام بسرعة.",
+  "performanceTracking.mobileAlt": "صورة أداء الجوال",
+  "performanceTracking.backgroundAlt": "صورة طبقة الخلفية",
+  "performanceTracking.patternAlt": "نمط SVG زخرفي",
+  "domainManagement.title": "إدارة المجال",
+  "domainManagement.description": "قم بإدارة مجالك بسهولة. قم بتسجيل مجالات جديدة، وتجديد المجالات الحالية، وعرض جميع التفاصيل ذات الصلة في الوقت الفعلي.",
+  "domainManagement.imageAlt": "صورة سطح المكتب",
+  "techStack.mainTitle": "التقنية المستخدمة في بناء المشروع",
+  "techStack.reactTitle": "React",
+  "techStack.reactAlt": "أيقونة React",
+  "techStack.laravelTitle": "Laravel",
+  "techStack.laravelAlt": "شعار Laravel",
+  "techStack.phpTitle": "PHP",
+  "techStack.phpAlt": "شعار PHP",
+  "techStack.javascriptTitle": "JavaScript",
+  "techStack.javascriptAlt": "شعار JavaScript",
+  "techStack.lagomTitle": "Lagom Theme",
+  "techStack.lagomAlt": "شعار Lagom Theme",
+  "techStack.whatsappApiTitle": "واجهة برمجة WhatsApp",
+  "techStack.whatsappApiAlt": "أيقونة واجهة برمجة WhatsApp",
+  "techStack.whmcsTitle": "WHMCS",
+  "techStack.whmcsAlt": "شعار WHMCS",
+  "keyFeaturesTwo.mainTitle": "مزايا رئيسية",
+  "keyFeaturesTwo.mainDescription": "من خلال منتجاتنا وخدماتنا السحابية، ستجد أننا نلبي 100% من احتياجات عملك وبياناتك، مع توفير أعلى مستويات الأمان لبنيتك التحتية.",
+  "keyFeaturesTwo.cloudHostingTitle": "استضافة سحابية مشتركة",
+  "keyFeaturesTwo.cloudHostingDescription": "استضف موقعك بسهولة وراحة بتكلفة اقتصادية! مع الاستضافة السحابية المشتركة.",
+  "keyFeaturesTwo.cloudHostingAlt": "أيقونة الاستضافة السحابية المشتركة",
+  "keyFeaturesTwo.lsSuiteTitle": "مجموعة LS",
+  "keyFeaturesTwo.lsSuiteDescription": "البريد الإلكتروني المهني، التخزين عبر الإنترنت، الاجتماعات المؤسسية، والمزيد. تم بناؤه للعمل.",
+  "keyFeaturesTwo.lsSuiteAlt": "أيقونة مجموعة LS",
+  "keyFeaturesTwo.jpaasTitle": "JPaaS منصة كخدمة",
+  "keyFeaturesTwo.jpaasDescription": "ادارة السيرفر مع تحكم كامل",
+  "keyFeaturesTwo.jpaasAlt": "أيقونة منصة JPaaS",
+  "keyFeaturesTwo.learnMore": "اعرف المزيد",
+
+    "speedSection.title": "السرعة",
+    "speedSection.description":
+      "حماية بيانات موقعك، وإظهار شهادة الأمان الخاصة بك لزوارك",
+    "launchAppsSection.mainTitle": "أطلق تطبيقاتك في ثواني!",
+    "launchAppsSection.mainDescription":
+      "قم بإنشاء أو تشغيل مختلف تطبيقاتك، مع الدعم الشامل للمنصة",
+    "launchAppsSection.appAlt": "أيقونة تطبيق",
+    "launchAppsSection.dockerAlt": "أيقونة Docker",
+    "launchAppsSection.phpAlt": "أيقونة PHP",
+    "launchAppsSection.pythonAlt": "أيقونة Python",
+    "featuresGrid.disasterRecovery": "التعافي من الكوارث المستند إلى السحابة",
+    "featuresGrid.emailProtection": "حماية البريد الإلكتروني والأرشفة",
+    "featuresGrid.threatDetection": "اكتشاف التهديدات المتقدمة والاستجابة لها",
+    "featuresGrid.centralizedManagement1": "إدارة ومراقبة مركزية",
+    "featuresGrid.centralizedManagement2": "إدارة ومراقبة مركزية",
+    "featuresGrid.centralizedManagement3": "إدارة ومراقبة مركزية",
+    "featuresGrid.centralizedManagement4": "إدارة ومراقبة مركزية",
+    "featuresGrid.centralizedManagement5": "إدارة ومراقبة مركزية",
+    "featuresGrid.centralizedManagement6": "إدارة ومراقبة مركزية",
+    "whoisToolSectionTwo.description":
+      "تُعد أداة WHOIS خدمة مفيدة تتيح الحصول على معلومات شاملة حول أسماء النطاقات، مثل اسم المالك، وتفاصيل التسجيل، وتاريخ الانتهاء، وبيانات الاتصال ذات الصلة. تساعد هذه الأداة في التأكد من ملكية النطاق، ومعرفة ما إذا كان متاحًا للتسجيل، بالإضافة إلى التحقق من موثوقية المواقع الإلكترونية. ويعتمد عليها العديد من مسجلي النطاقات والمتخصصين في الأمن السيبراني لأغراض البحث والحماية والالتزام بالمعايير القانونية.",
+    "whoisToolSectionTwo.imageAlt": "صورة أداة WHOIS",
+    "whoisToolSection.title": "ما هي أداة WHOIS؟",
+    "whoisToolSection.description":
+      "أداة WHOIS هي خدمة توفر معلومات حول أسماء النطاقات، بما في ذلك مالك النطاق وتفاصيل التسجيل وتاريخ الانتهاء ومعلومات الاتصال المرتبطة به. تساعد المستخدمين على التحقق من ملكية النطاق، وفحص توفره، والتحقق من مصداقية المواقع الإلكترونية. ويستخدم العديد من مسجلي النطاقات والمتخصصين في الأمن السيبراني هذه الأداة لأغراض البحث والأمن والامتثال.",
+    "whoisToolSection.imageAlt": "صورة أمان WHOIS",
+    "keyBenefitsSection.mainTitle": "الفوائد الرئيسية",
+    "keyBenefitsSection.mainDescription":
+      "قم بامتلاك مُخدّمك المخصص مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
+    "keyBenefitsSection.pciDssTitle": "التوافق مع معيار PCI/DSS",
+    "keyBenefitsSection.pciDssAlt": "أيقونة التوافق",
+    "keyBenefitsSection.encryptionTitle": "تشفير البيانات بمفتاح 256 بت",
+    "keyBenefitsSection.encryptionAlt": "أيقونة التشفير",
+    "keyBenefitsSection.secureClientTitle": "تأمين بيانات العملاء",
+    "keyBenefitsSection.secureClientAlt": "أيقونة تأمين البيانات",
+    "keyBenefitsSection.supportTitle": "الدعم الفني",
+    "keyBenefitsSection.supportAlt": "أيقونة الدعم الفني",
+    "keyBenefitsSection.warrantyTitle": "الضمان",
+    "keyBenefitsSection.warrantyAlt": "أيقونة الضمان",
+    "keyBenefitsSection.securityTitle": "رمز القفل واختصار https://",
+    "keyBenefitsSection.securityAlt": "أيقونة الأمان",
+    "onlinePaymentSection.mainTitle": "الدفع عبر الإنترنت",
+    "onlinePaymentSection.mainDescription":
+      "استمتع بعملية دفع عبر الإنترنت سريعة ومباشرة",
+    "onlinePaymentSection.americanExpressAlt": "أيقونة American Express",
+    "onlinePaymentSection.visaAlt": "أيقونة Visa",
+    "onlinePaymentSection.masterCardAlt": "أيقونة MasterCard",
+    "paymentMethodsSection.title": "طرق الدفع",
+    "paymentMethodsSection.description":
+      "ادفع بالطريقة التي تناسبك واستمتع بتجربة دفع سهلة وسلسة",
+    "paymentMethodsSection.mainTitle": "طرق الدفع عبر التحويل البنكي",
+    "paymentMethodsSection.mainDescription":
+      "ادفع بسهولة وأمان عبر التحويل البنكي",
+    "paymentMethodsSection.bankakTitle": "بنكك",
+    "paymentMethodsSection.bankakDescription":
+      "تعرف على المزيد عن بنكك، خدماته، وكيف يساعد في إدارة معاملاتك المالية بأمان وكفاءة.",
+    "paymentMethodsSection.bankakAlt": "أيقونة بنكك",
+    "paymentMethodsSection.ibanTitle": "رقم الحساب المصرفي الدولي (IBAN)",
+    "paymentMethodsSection.ibanDescription":
+      "افهم أهمية رقم IBAN للمعاملات الدولية وكيف يضمن تحويلات مالية آمنة ودقيقة.",
+    "paymentMethodsSection.ibanAlt": "أيقونة IBAN",
+    "paymentMethodsSection.instantTitle": "التحويلات الفورية",
+    "paymentMethodsSection.instantDescription":
+      "أرسل واستلم الأموال فورًا باستخدام حلول الدفع الآمنة والموثوقة المصممة للمعاملات السريعة.",
+    "paymentMethodsSection.instantAlt": "أيقونة التحويلات الفورية",
+    "paymentMethodsSection.oowCashTitle": "أوو-كاش",
+    "paymentMethodsSection.oowCashDescription":
+      "اكتشف مزايا أوو-كاش للمدفوعات الرقمية السلسة والإدارة المالية السهلة.",
+    "paymentMethodsSection.oowCashAlt": "أيقونة أوو-كاش",
+    "paymentMethodsSection.moreLink": "المزيد",
+    "walletsSection.mainTitle": "المحافظ الإلكترونية",
+    "walletsSection.mainDescription":
+      "احصل على ترخيص واحد للخوادم الخاصة والخوادم المخصصة الكاملة",
+    "walletsSection.sdadTitle": "دفع",
+    "walletsSection.sdadDescription":
+      "قم بإجراء مدفوعات آمنة وسريعة مع حلول الدفع الموثوقة لدينا، مما يضمن تجربة معاملة سلسة.",
+    "walletsSection.sdadAlt": "أيقونة الدفع",
+    "walletsSection.paypalTitle": "بايبال",
+    "walletsSection.paypalDescription":
+      "أرسل واستلم الأموال من جميع أنحاء العالم باستخدام بايبال، منصة الدفع الإلكترونية الموثوقة التي تقدم معاملات آمنة.",
+    "walletsSection.paypalAlt": "أيقونة بايبال",
+    "walletsSection.vodafoneTitle": "فودافون كاش",
+    "walletsSection.vodafoneDescription":
+      "قم بتحويل الأموال بسهولة، ودفع الفواتير، وشحن رصيدك مع خدمة الدفع عبر الهاتف المحمول من فودافون المريحة.",
+    "walletsSection.vodafoneAlt": "أيقونة فودافون كاش",
+    "walletsSection.zainTitle": "زين كاش",
+    "walletsSection.zainDescription":
+      "استمتع بمعاملات مالية سلسة مع زين كاش، التي توفر مدفوعات رقمية آمنة وتحويلات مالية.",
+    "walletsSection.zainAlt": "أيقونة زين كاش",
+    "walletsSection.moreLink": "المزيد",
+    "cryptocurrenciesSection.mainTitle": "العملات الرقمية",
+    "cryptocurrenciesSection.mainDescription":
+      "احصل على ترخيص واحد للخوادم الخاصة والخوادم المخصصة الكاملة",
+    "cryptocurrenciesSection.ethereumAlt": "أيقونة Ethereum",
+    "cryptocurrenciesSection.binanceAlt": "أيقونة Binance",
+    "cryptocurrenciesSection.bitcoinAlt": "أيقونة Bitcoin",
+    "cryptocurrenciesSection.tetherAlt": "أيقونة Tether",
+    "traditionalPaymentSection.mainTitle": "طرق الدفع التقليدية",
+    "traditionalPaymentSection.cdnTitle": "تحسين أداء الموقع عبر CDN",
+    "traditionalPaymentSection.cdnDescription":
+      "قم بربط اسم نطاق شركتك لتعزيز الوعي بالعلامة التجارية وتقديم صورة أكثر احترافية باستخدام بريد إلكتروني مخصص",
+    "traditionalPaymentSection.cdnAlt": "أيقونة البطاقة",
+    "traditionalPaymentSection.ddosTitle": "التخفيف من هجمات DDoS",
+    "traditionalPaymentSection.ddosDescription":
+      "يمكن أن تؤدي هجمات الحرمان من الخدمة الموزعة (DDoS) إلى تعطيل عملك بالكامل. نحن نحجب هجمات DDoS على المستويات 3 و4 و7 ونؤمن عرض النطاق الترددي أثناء الهجمات.",
+    "traditionalPaymentSection.ddosAlt": "أيقونة التحويل",
+    "traditionalPaymentSection.securityTitle":
+      "الحماية من الاختراق والبرمجيات الضارة",
+    "traditionalPaymentSection.securityDescription":
+      "قم بحماية موقعك من البرمجيات الضارة ومنع محاولات الاختراق، وهجمات يوم الصفر، وهجمات تخمين كلمات المرور بالقوة الغاشمة.",
+    "traditionalPaymentSection.securityAlt": "أيقونة النقدية",
+    "blogsSection.title": "المدونات",
+    "blogsSection.description": "تصفح آخر المقالات وأحدثها عن نمور",
+    "benefitsSection.mainTitle": "المزايا",
+    "benefitsSection.description":
+      "نوفر بيئة عمل مرنة، تدريبًا مستمرًا، ومكافآت للأداء المتميز.",
+    "benefitsSection.trainingTitle": "التدريب / المساعدة التعليمية",
+    "benefitsSection.trainingAlt": "أيقونة التدريب",
+    "benefitsSection.leaveTitle": "الإجازات الشخصية والمرضية",
+    "benefitsSection.leaveAlt": "أيقونة الإجازات",
+    "benefitsSection.rewardsTitle":
+      "المكافآت (الأداء المتميز، تحقيق هدف، اجتياز مرحلة)",
+    "benefitsSection.rewardsAlt": "أيقونة المكافآت",
+    "benefitsSection.insuranceTitle": "تأمين صحّي",
+    "benefitsSection.insuranceAlt": "أيقونة التأمين الصحي",
+    "joinUsSection.title": "انضم الينا الأن",
+    "joinUsSection.description":
+      "نؤمن بأن فريقنا هو أساس نجاحنا، ونسعى لتوفير بيئة عمل محفزة مع الاستثمار المستمر في تطوير مهاراتهم ليواكبوا جديد خدماتنا.",
+    "joinUsSection.button": "الوظائف المتاحة",
+    "jobsSection.title": "الوظائف المتاحة",
+    "jobsSection.description":
+      "مهمتنا هي قيادة التطور التقني محليًا، اقتصاديًا وثقافيًا، ونحتاج إلى أشخاص شغوفين ومجتهدين لتحقيق هذا الهدف!",
+    "jobsSection.button": "الوظائف المتاحة",
+    "jobsSection.rightBackgroundAlt": "خلفية يمين",
+    "jobsSection.leftBackgroundAlt": "خلفية يسار",
+    "jobsSection.lampImageAlt": "صورة المصباح",
+
+    "countrySelector.italyName": "إيطاليا",
+    "countrySelector.franceName": "فرنسا",
+    "countrySelector.germanyName": "ألمانيا",
+    "countrySelector.japanName": "اليابان",
+    "countrySelector.finlandName": "فنلندا",
+    "countrySelector.usaName": "أمريكا",
+    "countrySelector.turkeyName": "تركيا",
+    "countrySelector.italyFlagAlt": "علم إيطاليا",
+    "countrySelector.franceFlagAlt": "علم فرنسا",
+    "countrySelector.germanyFlagAlt": "علم ألمانيا",
+    "countrySelector.japanFlagAlt": "علم اليابان",
+    "countrySelector.finlandFlagAlt": "علم فنلندا",
+    "countrySelector.usaFlagAlt": "علم أمريكا",
+    "countrySelector.turkeyFlagAlt": "علم تركيا",
+    "standalone.serverDescription":
+      "يمكنك امتلاك خادم مخصص مع نظام التشغيل الذي تفضله والتطبيقات المثبتة مسبقًا.",
+    "geoRegions.header": "تعدد المناطق الجغرافية",
+    "geoRegions.text":
+      "قم بإدارة وتشغيل تطبيقاتك عبر مناطق أجهزة متعددة من خلال واجهة مستخدم سهلة وموحدة، مما يتيح لك نقلها بسلاسة لتكون أقرب إلى عملائك.",
+    "geoRegions.illustrationAlt": "رسم توضيحي للمناطق الجغرافية",
+    "essentialFeatures.header":
+      "استمتع بمجموعة من الميزات الضرورية التي تضمن لك تجربة متكاملة وفعالة مع خدماتنا، بغض النظر عن الخطة التي تختارها",
+    "essentialFeatures.serverMonitoringTitle": "مراقبة الخادم على مدار الساعة",
+    "essentialFeatures.serverMonitoringAlt": "أيقونة مراقبة الخادم",
+    "essentialFeatures.sslCertificateTitle": "شهادة SSL مجانية",
+    "essentialFeatures.sslCertificateAlt": "أيقونة شهادة SSL",
+    "essentialFeatures.threatProtectionTitle": "حمايتك من التهديدات الضارة",
+    "essentialFeatures.threatProtectionAlt": "أيقونة الحماية من التهديدات",
+    "essentialFeatures.softaculousInstallerTitle": "برنامج Softaculous المثبت",
+    "essentialFeatures.softaculousInstallerAlt": "أيقونة برنامج Softaculous",
+    "essentialFeatures.regularBackupTitle": "نسخ احتياطي منتظم",
+    "essentialFeatures.regularBackupAlt": "أيقونة النسخ الاحتياطي",
+    "essentialFeatures.linuxOsTitle": "نظام التشغيل لينكس",
+    "essentialFeatures.linuxOsAlt": "أيقونة نظام لينكس",
+    "essentialFeatures.controlPanelTitle": "لوحة التحكم Cpanel/Plesk",
+    "essentialFeatures.controlPanelAlt": "أيقونة لوحة التحكم",
+    "essentialFeatures.technicalSupportTitle": "دعم فني متواصل",
+    "essentialFeatures.technicalSupportAlt": "أيقونة الدعم الفني",
+    "fullServers.mainTitle": "السيرفرات الكاملة المخصصة",
+    "fullServers.mainDescription":
+      "نحن نقدم لك استضافة مشتركة سهلة الاستخدام مع أدوات مبتكرة تساعدك على بناء وإدارة موقعك بكل سهولة",
+
+    "hostingTiers.mainTitle": "خطط السيرفرات المخصصة",
+    "hostingTiers.serverInfoTitle": "معلومات السيرفر",
+    "hostingTiers.serverInfoSubtitle": "اختر السيرفر المناسب لاحتياجاتك",
+    "hostingTiers.priceMain": "31.99",
+    "hostingTiers.priceRenewal": "20 ر.س/شهر عند التجديد",
+    "hostingTiers.buyNowButton": "اشتر الآن",
+    "hostingTiers.featuresButton": "المزايا",
+    "hostingTiers.cpuSpecTitle": "32 نواة بسرعة 2.4 جيجاهرتز",
+    "hostingTiers.cpuSpecSubtitle": "نتيجة الاختبار: 15,390",
+    "hostingTiers.storageSpecTitle": "2 أقراص SSD بسعة 250 جيجابايت",
+    "hostingTiers.storageSpecSubtitle": "قابلة للتوسيع حتى 8 أقراص",
+    "hostingTiers.databaseSpecTitle": "1 قاعدة بيانات",
+    "hostingTiers.databaseSpecSubtitle": "قابلة للتوسيع حتى 3 قواعد بيانات",
+    "hostingTiers.ramSpecTitle": "64 جيجابايت",
+    "hostingTiers.ramSpecSubtitle": "قابل للزيادة حتى 384 جيجابايت",
+    "hostingTiers.bandwidthSpecTitle": "سرعة 3 جيجابت في الثانية",
+    "hostingTiers.bandwidthSpecSubtitle":
+      "100 تيرابايت من البيانات المجانية شهريًا",
+    "hostingTiers.controlPanelSpecTitle": "سي بانل/WHM، بليسك",
+    "hostingTiers.controlPanelSpecSubtitle": "إصدار استضافة الويب Obsidian",
+    "hostingTiers.germanyFlagAlt": "علم ألمانيا",
+    "hostingTiers.finlandFlagAlt": "علم فنلندا",
+    "hostingTiers.ukFlagAlt": "علم المملكة المتحدة",
+    "serverServices.mainTitle": "كل الخدمات تتضمن",
+    "serverServices.emailProtection": "حماية البريد الإلكتروني والفيروسية",
+    "serverServices.malwareProtection":
+      "الحماية من البرامج الخبيثة ومكافحة برامج الفدية الضارة",
+    "serverServices.networkSecurity":
+      "التتبع والاحتيال والأنشطار للشبكات المعلنة والسرقة والتشهير والتخصيص",
+    "serverServices.cloudMigration": "الانتقال من التكوين المستحيل إلى السحابة",
+    "serverServices.threatDetection":
+      "اكتشاف التهديدات المتقدمة والاستجابة لها",
+    "serverServices.identityProtection": "حماية الهوية الإلكترونية وأجهزتها",
+
+    "backupsSection.title": "النسخ الاحتياطي",
+    "backupsSection.description": "نسخ احتياطية تلقائية دائمة!",
     "supportParagraph.description":
       "إذا كنت أحد عملاء الشركة، يمكنك التواصل معنا بسهولة عبر حسابك للوصول إلى فريق الدعم الفني أو المبيعات . نحن ملتزمون بتقديم أفضل خدمة وحلول سريعة تناسب احتياجاتك.",
     "supportSectionTwo.helpCenter": "مركز المساعدة",
@@ -1892,6 +2386,282 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
+      "serverLocations.download": "Download",
+  "serverLocations.upload": "Upload",
+  "serverLocations.comingSoonTitle": "Coming Soon",
+  "serverLocations.comingSoonMessage": "This server will be launched soon",
+  "serverLocations.mapAlt": "World Map",
+
+    "dashboardWelcome.title": "Welcome to Your Dashboard",
+  "dashboardWelcome.description": "Manage your domain easily, check your statistics, and monitor performance from one place.",
+  "dashboardWelcome.imageAlt": "Dashboard",
+  "dashboardOverview.title": "Dashboard Overview",
+  "dashboardOverview.description": "Access real-time data and performance metrics directly from your dashboard. Track your domain status, visitor statistics, and much more in one place.",
+  "dashboardOverview.imageAlt": "Dashboard Overview Image",
+  "performanceTracking.title": "Track Your Performance",
+  "performanceTracking.description": "Stay updated on your domain's performance. Monitor traffic, renewals, and usage quickly.",
+  "performanceTracking.mobileAlt": "Mobile Performance Image",
+  "performanceTracking.backgroundAlt": "Background Layer Image",
+  "performanceTracking.patternAlt": "Decorative SVG Pattern",
+  "domainManagement.title": "Domain Management",
+  "domainManagement.description": "Manage your domain with ease. Register new domains, renew existing ones, and view all relevant details in real-time.",
+  "domainManagement.imageAlt": "Desktop Image",
+  "techStack.mainTitle": "Technologies Used in Building the Project",
+  "techStack.reactTitle": "React",
+  "techStack.reactAlt": "React Icon",
+  "techStack.laravelTitle": "Laravel",
+  "techStack.laravelAlt": "Laravel Logo",
+  "techStack.phpTitle": "PHP",
+  "techStack.phpAlt": "PHP Logo",
+  "techStack.javascriptTitle": "JavaScript",
+  "techStack.javascriptAlt": "JavaScript Logo",
+  "techStack.lagomTitle": "Lagom Theme",
+  "techStack.lagomAlt": "Lagom Theme Logo",
+  "techStack.whatsappApiTitle": "WhatsApp API",
+  "techStack.whatsappApiAlt": "WhatsApp API Icon",
+  "techStack.whmcsTitle": "WHMCS",
+  "techStack.whmcsAlt": "WHMCS Logo",
+  "keyFeaturesTwo.mainTitle": "Key Features",
+  "keyFeaturesTwo.mainDescription": "Through our cloud products and services, we meet 100% of your business and data needs, providing the highest levels of security for your infrastructure.",
+  "keyFeaturesTwo.cloudHostingTitle": "Shared Cloud Hosting",
+  "keyFeaturesTwo.cloudHostingDescription": "Host your website easily and comfortably at an affordable cost! With shared cloud hosting.",
+  "keyFeaturesTwo.cloudHostingAlt": "Shared Cloud Hosting Icon",
+  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+  "keyFeaturesTwo.lsSuiteDescription": "Professional email, online storage, enterprise meetings, and more. Built for business.",
+  "keyFeaturesTwo.lsSuiteAlt": "LS Suite Icon",
+  "keyFeaturesTwo.jpaasTitle": "JPaaS Platform as a Service",
+  "keyFeaturesTwo.jpaasDescription": "Manage your server with full control",
+  "keyFeaturesTwo.jpaasAlt": "JPaaS Platform Icon",
+  "keyFeaturesTwo.learnMore": "Learn More",
+
+    "speedSection.title": "Speed",
+    "speedSection.description":
+      "Protect your website's data and display your security certificate to your visitors",
+    "launchAppsSection.mainTitle": "Launch Your Apps in Seconds!",
+    "launchAppsSection.mainDescription":
+      "Create or run various applications with comprehensive platform support",
+    "launchAppsSection.appAlt": "App Icon",
+    "launchAppsSection.dockerAlt": "Docker Icon",
+    "launchAppsSection.phpAlt": "PHP Icon",
+    "launchAppsSection.pythonAlt": "Python Icon",
+    "featuresGrid.disasterRecovery": "Cloud-Based Disaster Recovery",
+    "featuresGrid.emailProtection": "Email Protection and Archiving",
+    "featuresGrid.threatDetection": "Advanced Threat Detection and Response",
+    "featuresGrid.centralizedManagement1":
+      "Centralized Management and Monitoring",
+    "featuresGrid.centralizedManagement2":
+      "Centralized Management and Monitoring",
+    "featuresGrid.centralizedManagement3":
+      "Centralized Management and Monitoring",
+    "featuresGrid.centralizedManagement4":
+      "Centralized Management and Monitoring",
+    "featuresGrid.centralizedManagement5":
+      "Centralized Management and Monitoring",
+    "featuresGrid.centralizedManagement6":
+      "Centralized Management and Monitoring",
+
+    "whoisToolSectionTwo.description":
+      "The WHOIS tool is a valuable service that provides comprehensive information about domain names, such as the owner's name, registration details, expiration date, and related contact information. It helps verify domain ownership, check availability for registration, and assess the reliability of websites. Many domain registrars and cybersecurity professionals rely on it for research, protection, and compliance with legal standards.",
+    "whoisToolSectionTwo.imageAlt": "WHOIS Tool Image",
+    "whoisToolSection.title": "What is the WHOIS Tool?",
+    "whoisToolSection.description":
+      "The WHOIS tool is a service that provides information about domain names, including the domain owner, registration details, expiration date, and associated contact information. It helps users verify domain ownership, check availability, and validate website credibility. Many domain registrars and cybersecurity professionals use this tool for research, security, and compliance purposes.",
+    "whoisToolSection.imageAlt": "WHOIS Security Image",
+    "keyBenefitsSection.mainTitle": "Key Benefits",
+    "keyBenefitsSection.mainDescription":
+      "Own your dedicated server with your preferred operating system and pre-installed applications.",
+    "keyBenefitsSection.pciDssTitle": "PCI/DSS Compliance",
+    "keyBenefitsSection.pciDssAlt": "Compliance Icon",
+    "keyBenefitsSection.encryptionTitle": "256-bit Data Encryption",
+    "keyBenefitsSection.encryptionAlt": "Encryption Icon",
+    "keyBenefitsSection.secureClientTitle": "Securing Customer Data",
+    "keyBenefitsSection.secureClientAlt": "Data Security Icon",
+    "keyBenefitsSection.supportTitle": "Technical Support",
+    "keyBenefitsSection.supportAlt": "Technical Support Icon",
+    "keyBenefitsSection.warrantyTitle": "Warranty",
+    "keyBenefitsSection.warrantyAlt": "Warranty Icon",
+    "keyBenefitsSection.securityTitle": "Lock Icon and https://",
+    "keyBenefitsSection.securityAlt": "Security Icon",
+
+    "onlinePaymentSection.mainTitle": "Online Payment",
+    "onlinePaymentSection.mainDescription":
+      "Enjoy a fast and direct online payment process",
+    "onlinePaymentSection.americanExpressAlt": "American Express Icon",
+    "onlinePaymentSection.visaAlt": "Visa Icon",
+    "onlinePaymentSection.masterCardAlt": "MasterCard Icon",
+    "paymentMethodsSection.title": "Payment Methods",
+    "paymentMethodsSection.description":
+      "Pay in the way that suits you and enjoy a seamless payment experience",
+    "paymentMethodsSection.mainTitle": "Bank Transfer Payment Methods",
+    "paymentMethodsSection.mainDescription":
+      "Make bank transfers easily and securely",
+    "paymentMethodsSection.bankakTitle": "Bankak",
+    "paymentMethodsSection.bankakDescription":
+      "Learn more about Bankak, its services, and how it helps manage your financial transactions securely and efficiently.",
+    "paymentMethodsSection.bankakAlt": "Bankak Icon",
+    "paymentMethodsSection.ibanTitle":
+      "International Bank Account Number (IBAN)",
+    "paymentMethodsSection.ibanDescription":
+      "Understand the importance of IBAN for international transactions and how it ensures secure and accurate financial transfers.",
+    "paymentMethodsSection.ibanAlt": "IBAN Icon",
+    "paymentMethodsSection.instantTitle": "Instant Transfers",
+    "paymentMethodsSection.instantDescription":
+      "Send and receive money instantly with secure and reliable payment solutions designed for fast transactions.",
+    "paymentMethodsSection.instantAlt": "Instant Transfers Icon",
+    "paymentMethodsSection.oowCashTitle": "Oow-Cash",
+    "paymentMethodsSection.oowCashDescription":
+      "Discover the benefits of Oow-Cash for seamless digital payments and easy financial management.",
+    "paymentMethodsSection.oowCashAlt": "Oow-Cash Icon",
+    "paymentMethodsSection.moreLink": "More",
+    "walletsSection.mainTitle": "Electronic Wallets",
+    "walletsSection.mainDescription":
+      "Get a single license for private servers and full dedicated servers",
+    "walletsSection.sdadTitle": "Payment",
+    "walletsSection.sdadDescription":
+      "Make secure and fast payments with our reliable payment solutions, ensuring a seamless transaction experience.",
+    "walletsSection.sdadAlt": "Payment Icon",
+    "walletsSection.paypalTitle": "PayPal",
+    "walletsSection.paypalDescription":
+      "Send and receive money worldwide using PayPal, a trusted electronic payment platform offering secure transactions.",
+    "walletsSection.paypalAlt": "PayPal Icon",
+    "walletsSection.vodafoneTitle": "Vodafone Cash",
+    "walletsSection.vodafoneDescription":
+      "Easily transfer money, pay bills, and top up your balance with Vodafone's convenient mobile payment service.",
+    "walletsSection.vodafoneAlt": "Vodafone Cash Icon",
+    "walletsSection.zainTitle": "Zain Cash",
+    "walletsSection.zainDescription":
+      "Enjoy seamless financial transactions with Zain Cash, providing secure digital payments and money transfers.",
+    "walletsSection.zainAlt": "Zain Cash Icon",
+    "walletsSection.moreLink": "More",
+    "cryptocurrenciesSection.mainTitle": "Cryptocurrencies",
+    "cryptocurrenciesSection.mainDescription":
+      "Get a single license for VPS and full dedicated servers",
+    "cryptocurrenciesSection.ethereumAlt": "Ethereum icon",
+    "cryptocurrenciesSection.binanceAlt": "Binance icon",
+    "cryptocurrenciesSection.bitcoinAlt": "Bitcoin icon",
+    "cryptocurrenciesSection.tetherAlt": "Tether icon",
+    "traditionalPaymentSection.mainTitle": "Traditional Payment Methods",
+    "traditionalPaymentSection.cdnTitle":
+      "Improve Website Performance with CDN",
+    "traditionalPaymentSection.cdnDescription":
+      "Connect your company's domain name to enhance brand awareness and present a more professional image using a custom email",
+    "traditionalPaymentSection.cdnAlt": "Card Icon",
+    "traditionalPaymentSection.ddosTitle": "DDoS Attack Mitigation",
+    "traditionalPaymentSection.ddosDescription":
+      "Distributed Denial of Service (DDoS) attacks can disrupt your entire business. We block DDoS attacks at layers 3, 4, and 7, securing bandwidth during attacks.",
+    "traditionalPaymentSection.ddosAlt": "Transfer Icon",
+    "traditionalPaymentSection.securityTitle":
+      "Protection Against Hacking and Malware",
+    "traditionalPaymentSection.securityDescription":
+      "Protect your website from malware, prevent hacking attempts, zero-day attacks, and brute-force password guessing attacks.",
+    "traditionalPaymentSection.securityAlt": "Cash Icon",
+    "blogsSection.title": "Blogs",
+    "blogsSection.description":
+      "Browse the latest and most recent articles about Nemours",
+    "benefitsSection.mainTitle": "Benefits",
+    "benefitsSection.description":
+      "We provide a flexible work environment, continuous training, and rewards for outstanding performance.",
+    "benefitsSection.trainingTitle": "Training / Educational Assistance",
+    "benefitsSection.trainingAlt": "Training Icon",
+    "benefitsSection.leaveTitle": "Personal and Sick Leave",
+    "benefitsSection.leaveAlt": "Leave Icon",
+    "benefitsSection.rewardsTitle":
+      "Rewards (Outstanding Performance, Goal Achievement, Milestone Completion)",
+    "benefitsSection.rewardsAlt": "Rewards Icon",
+    "benefitsSection.insuranceTitle": "Health Insurance",
+    "benefitsSection.insuranceAlt": "Health Insurance Icon",
+    "joinUsSection.title": "Join Us Now",
+    "joinUsSection.description":
+      "We believe our team is the foundation of our success, and we strive to provide a motivating work environment with continuous investment in their skills development to keep up with our latest services.",
+    "joinUsSection.button": "Available Jobs",
+    "jobsSection.title": "Available Jobs",
+    "jobsSection.description":
+      "Our mission is to lead technological advancement locally, economically, and culturally, and we need passionate and dedicated individuals to achieve this goal!",
+    "jobsSection.button": "Available Jobs",
+    "jobsSection.rightBackgroundAlt": "Right Background",
+    "jobsSection.leftBackgroundAlt": "Left Background",
+    "jobsSection.lampImageAlt": "Lamp Image",
+    "countrySelector.italyName": "Italy",
+    "countrySelector.franceName": "France",
+    "countrySelector.germanyName": "Germany",
+    "countrySelector.japanName": "Japan",
+    "countrySelector.finlandName": "Finland",
+    "countrySelector.usaName": "USA",
+    "countrySelector.turkeyName": "Turkey",
+    "countrySelector.italyFlagAlt": "Italy Flag",
+    "countrySelector.franceFlagAlt": "France Flag",
+    "countrySelector.germanyFlagAlt": "Germany Flag",
+    "countrySelector.japanFlagAlt": "Japan Flag",
+    "countrySelector.finlandFlagAlt": "Finland Flag",
+    "countrySelector.usaFlagAlt": "USA Flag",
+    "countrySelector.turkeyFlagAlt": "Turkey Flag",
+    "standalone.serverDescription":
+      "You can own a dedicated server with your preferred operating system and pre-installed applications.",
+    "geoRegions.header": "Multiple Geographic Regions",
+    "geoRegions.text":
+      "Manage and run your applications across multiple device regions through an easy and unified user interface, enabling seamless migration to be closer to your customers.",
+    "geoRegions.illustrationAlt": "Geographic Regions Illustration",
+    "essentialFeatures.header":
+      "Enjoy a range of essential features that ensure a comprehensive and efficient experience with our services, regardless of the plan you choose",
+    "essentialFeatures.serverMonitoringTitle": "24/7 Server Monitoring",
+    "essentialFeatures.serverMonitoringAlt": "Server Monitoring Icon",
+    "essentialFeatures.sslCertificateTitle": "Free SSL Certificate",
+    "essentialFeatures.sslCertificateAlt": "SSL Certificate Icon",
+    "essentialFeatures.threatProtectionTitle":
+      "Protection from Harmful Threats",
+    "essentialFeatures.threatProtectionAlt": "Threat Protection Icon",
+    "essentialFeatures.softaculousInstallerTitle":
+      "Softaculous Installer Program",
+    "essentialFeatures.softaculousInstallerAlt": "Softaculous Icon",
+    "essentialFeatures.regularBackupTitle": "Regular Backup",
+    "essentialFeatures.regularBackupAlt": "Backup Icon",
+    "essentialFeatures.linuxOsTitle": "Linux Operating System",
+    "essentialFeatures.linuxOsAlt": "Linux Icon",
+    "essentialFeatures.controlPanelTitle": "Cpanel/Plesk Control Panel",
+    "essentialFeatures.controlPanelAlt": "Control Panel Icon",
+    "essentialFeatures.technicalSupportTitle": "Continuous Technical Support",
+    "essentialFeatures.technicalSupportAlt": "Technical Support Icon",
+    "fullServers.mainTitle": "Dedicated Full Servers",
+    "fullServers.mainDescription":
+      "We provide you with user-friendly shared hosting with innovative tools to help you build and manage your website with ease",
+
+    "hostingTiers.mainTitle": "Dedicated Server Plans",
+    "hostingTiers.serverInfoTitle": "Server Information",
+    "hostingTiers.serverInfoSubtitle":
+      "Choose the server that suits your needs",
+    "hostingTiers.priceMain": "31.99",
+    "hostingTiers.priceRenewal": "20 SAR/month upon renewal",
+    "hostingTiers.buyNowButton": "Buy Now",
+    "hostingTiers.featuresButton": "Features",
+    "hostingTiers.cpuSpecTitle": "32 Cores at 2.4 GHz",
+    "hostingTiers.cpuSpecSubtitle": "Benchmark Score: 15,390",
+    "hostingTiers.storageSpecTitle": "2 x 250 GB SSD Drives",
+    "hostingTiers.storageSpecSubtitle": "Expandable up to 8 drives",
+    "hostingTiers.databaseSpecTitle": "1 Database",
+    "hostingTiers.databaseSpecSubtitle": "Expandable up to 3 databases",
+    "hostingTiers.ramSpecTitle": "64 GB",
+    "hostingTiers.ramSpecSubtitle": "Upgradable up to 384 GB",
+    "hostingTiers.bandwidthSpecTitle": "3 Gbps Speed",
+    "hostingTiers.bandwidthSpecSubtitle": "100 TB of free monthly data",
+    "hostingTiers.controlPanelSpecTitle": "cPanel/WHM, Plesk",
+    "hostingTiers.controlPanelSpecSubtitle": "Obsidian Web Hosting Edition",
+    "hostingTiers.germanyFlagAlt": "Germany Flag",
+    "hostingTiers.finlandFlagAlt": "Finland Flag",
+    "hostingTiers.ukFlagAlt": "United Kingdom Flag",
+    "serverServices.mainTitle": "All Services Include",
+    "serverServices.emailProtection": "Email and Virus Protection",
+    "serverServices.malwareProtection":
+      "Protection Against Malware and Ransomware",
+    "serverServices.networkSecurity":
+      "Tracking, Fraud, and Protection Against Ad Network Threats, Theft, Defamation, and Customization",
+    "serverServices.cloudMigration":
+      "Migration from Impossible Configuration to the Cloud",
+    "serverServices.threatDetection": "Advanced Threat Detection and Response",
+    "serverServices.identityProtection":
+      "Protection of Digital Identity and Devices",
+
+    "backupsSection.title": "Backups",
+    "backupsSection.description": "Permanent automatic backups!",
     "supportParagraph.description":
       "If you are a company customer, you can easily contact us through your account to reach our technical support or sales team. We are committed to providing the best service and fast solutions tailored to your needs.",
     "supportSectionTwo.helpCenter": "Help Center",
@@ -2959,6 +3729,292 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
+      "serverLocations.download": "Téléchargement",
+  "serverLocations.upload": "Téléversement",
+  "serverLocations.comingSoonTitle": "Bientôt disponible",
+  "serverLocations.comingSoonMessage": "Ce serveur sera lancé bientôt",
+  "serverLocations.mapAlt": "Carte du monde",
+ 
+    "dashboardWelcome.title": "Bienvenue sur votre tableau de bord",
+  "dashboardWelcome.description": "Gérez votre domaine facilement, consultez vos statistiques et surveillez les performances depuis un seul endroit.",
+  "dashboardWelcome.imageAlt": "Tableau de bord",
+  "dashboardOverview.title": "Aperçu du tableau de bord",
+  "dashboardOverview.description": "Accédez aux données en temps réel et aux métriques de performance directement depuis votre tableau de bord. Suivez l'état de votre domaine, les statistiques des visiteurs, et bien plus encore en un seul endroit.",
+  "dashboardOverview.imageAlt": "Image d'aperçu du tableau de bord",
+  "performanceTracking.title": "Suivez vos performances",
+  "performanceTracking.description": "Restez informé des performances de votre domaine. Surveillez le trafic, les renouvellements et l'utilisation rapidement.",
+  "performanceTracking.mobileAlt": "Image de performance mobile",
+  "performanceTracking.backgroundAlt": "Image de couche de fond",
+  "performanceTracking.patternAlt": "Motif SVG décoratif",
+  "domainManagement.title": "Gestion de domaine",
+  "domainManagement.description": "Gérez votre domaine facilement. Enregistrez de nouveaux domaines, renouvelez ceux existants et consultez toutes les informations pertinentes en temps réel.",
+  "domainManagement.imageAlt": "Image de bureau",
+  "techStack.mainTitle": "Technologies utilisées pour construire le projet",
+  "techStack.reactTitle": "React",
+  "techStack.reactAlt": "Icône React",
+  "techStack.laravelTitle": "Laravel",
+  "techStack.laravelAlt": "Logo Laravel",
+  "techStack.phpTitle": "PHP",
+  "techStack.phpAlt": "Logo PHP",
+  "techStack.javascriptTitle": "JavaScript",
+  "techStack.javascriptAlt": "Logo JavaScript",
+  "techStack.lagomTitle": "Thème Lagom",
+  "techStack.lagomAlt": "Logo du thème Lagom",
+  "techStack.whatsappApiTitle": "API WhatsApp",
+  "techStack.whatsappApiAlt": "Icône API WhatsApp",
+  "techStack.whmcsTitle": "WHMCS",
+  "techStack.whmcsAlt": "Logo WHMCS",
+  "keyFeaturesTwo.mainTitle": "Fonctionnalités clés",
+  "keyFeaturesTwo.mainDescription": "Grâce à nos produits et services cloud, nous répondons à 100% de vos besoins professionnels et de données, tout en offrant les plus hauts niveaux de sécurité pour votre infrastructure.",
+  "keyFeaturesTwo.cloudHostingTitle": "Hébergement cloud partagé",
+  "keyFeaturesTwo.cloudHostingDescription": "Hébergez votre site web facilement et confortablement à un coût abordable ! Avec l'hébergement cloud partagé.",
+  "keyFeaturesTwo.cloudHostingAlt": "Icône d'hébergement cloud partagé",
+  "keyFeaturesTwo.lsSuiteTitle": "Suite LS",
+  "keyFeaturesTwo.lsSuiteDescription": "Email professionnel, stockage en ligne, réunions d'entreprise, et plus encore. Conçu pour les affaires.",
+  "keyFeaturesTwo.lsSuiteAlt": "Icône de la suite LS",
+  "keyFeaturesTwo.jpaasTitle": "JPaaS Plateforme en tant que service",
+  "keyFeaturesTwo.jpaasDescription": "Gérez votre serveur avec un contrôle total",
+  "keyFeaturesTwo.jpaasAlt": "Icône de la plateforme JPaaS",
+  "keyFeaturesTwo.learnMore": "En savoir plus",
+    "speedSection.title": "Vitesse",
+    "speedSection.description":
+      "Protégez les données de votre site web et affichez votre certificat de sécurité à vos visiteurs",
+    "launchAppsSection.mainTitle":
+      "Lancez vos applications en quelques secondes !",
+    "launchAppsSection.mainDescription":
+      "Créez ou exécutez diverses applications avec un support complet de la plateforme",
+    "launchAppsSection.appAlt": "Icône d'application",
+    "launchAppsSection.dockerAlt": "Icône Docker",
+    "launchAppsSection.phpAlt": "Icône PHP",
+    "launchAppsSection.pythonAlt": "Icône Python",
+    "featuresGrid.disasterRecovery":
+      "Récupération après sinistre basée sur le cloud",
+    "featuresGrid.emailProtection": "Protection et archivage des e-mails",
+    "featuresGrid.threatDetection": "Détection et réponse avancées aux menaces",
+    "featuresGrid.centralizedManagement1":
+      "Gestion et surveillance centralisées",
+    "featuresGrid.centralizedManagement2":
+      "Gestion et surveillance centralisées",
+    "featuresGrid.centralizedManagement3":
+      "Gestion et surveillance centralisées",
+    "featuresGrid.centralizedManagement4":
+      "Gestion et surveillance centralisées",
+    "featuresGrid.centralizedManagement5":
+      "Gestion et surveillance centralisées",
+    "featuresGrid.centralizedManagement6":
+      "Gestion et surveillance centralisées",
+
+    "whoisToolSectionTwo.description":
+      "L'outil WHOIS est un service précieux qui fournit des informations complètes sur les noms de domaine, telles que le nom du propriétaire, les détails d'enregistrement, la date d'expiration et les informations de contact associées. Il aide à vérifier la propriété des domaines, à vérifier leur disponibilité pour l'enregistrement et à évaluer la fiabilité des sites web. De nombreux registraires de domaines et professionnels de la cybersécurité s'appuient sur cet outil pour la recherche, la protection et le respect des normes légales.",
+    "whoisToolSectionTwo.imageAlt": "Image de l'outil WHOIS",
+    "whoisToolSection.title": "Qu'est-ce que l'outil WHOIS ?",
+    "whoisToolSection.description":
+      "L'outil WHOIS est un service qui fournit des informations sur les noms de domaine, y compris le propriétaire du domaine, les détails d'enregistrement, la date d'expiration et les informations de contact associées. Il aide les utilisateurs à vérifier la propriété des domaines, à vérifier leur disponibilité et à valider la crédibilité des sites web. De nombreux registraires de domaines et professionnels de la cybersécurité utilisent cet outil pour la recherche, la sécurité et la conformité.",
+    "whoisToolSection.imageAlt": "Image de sécurité WHOIS",
+    "keyBenefitsSection.mainTitle": "Avantages clés",
+    "keyBenefitsSection.mainDescription":
+      "Possédez votre serveur dédié avec votre système d'exploitation préféré et des applications préinstallées.",
+    "keyBenefitsSection.pciDssTitle": "Conformité PCI/DSS",
+    "keyBenefitsSection.pciDssAlt": "Icône de conformité",
+    "keyBenefitsSection.encryptionTitle": "Chiffrement des données à 256 bits",
+    "keyBenefitsSection.encryptionAlt": "Icône de chiffrement",
+    "keyBenefitsSection.secureClientTitle":
+      "Sécurisation des données des clients",
+    "keyBenefitsSection.secureClientAlt": "Icône de sécurité des données",
+    "keyBenefitsSection.supportTitle": "Support technique",
+    "keyBenefitsSection.supportAlt": "Icône de support technique",
+    "keyBenefitsSection.warrantyTitle": "Garantie",
+    "keyBenefitsSection.warrantyAlt": "Icône de garantie",
+    "keyBenefitsSection.securityTitle": "Icône de verrouillage et https://",
+    "keyBenefitsSection.securityAlt": "Icône de sécurité",
+
+    "paymentMethodsSection.title": "Méthodes de paiement",
+    "onlinePaymentSection.americanExpressAlt": "Icône American Express",
+    "onlinePaymentSection.visaAlt": "Icône Visa",
+    "onlinePaymentSection.masterCardAlt": "Icône MasterCard",
+    "onlinePaymentSection.mainTitle": "Paiement en ligne",
+    "onlinePaymentSection.mainDescription":
+      "Profitez d'un processus de paiement en ligne rapide et direct",
+    "paymentMethodsSection.description":
+      "Payez de la manière qui vous convient et profitez d'une expérience de paiement fluide",
+    "paymentMethodsSection.mainTitle":
+      "Méthodes de paiement par virement bancaire",
+    "paymentMethodsSection.mainDescription":
+      "Effectuez des virements bancaires facilement et en toute sécurité",
+    "paymentMethodsSection.bankakTitle": "Bankak",
+    "paymentMethodsSection.bankakDescription":
+      "Découvrez Bankak, ses services, et comment il aide à gérer vos transactions financières en toute sécurité et efficacité.",
+    "paymentMethodsSection.bankakAlt": "Icône Bankak",
+    "paymentMethodsSection.ibanTitle":
+      "Numéro de compte bancaire international (IBAN)",
+    "paymentMethodsSection.ibanDescription":
+      "Comprenez l'importance de l'IBAN pour les transactions internationales et comment il garantit des transferts financiers sécurisés et précis.",
+    "paymentMethodsSection.ibanAlt": "Icône IBAN",
+    "paymentMethodsSection.instantTitle": "Virements instantanés",
+    "paymentMethodsSection.instantDescription":
+      "Envoyez et recevez de l'argent instantanément avec des solutions de paiement sécurisées et fiables conçues pour les transactions rapides.",
+    "paymentMethodsSection.instantAlt": "Icône des virements instantanés",
+    "paymentMethodsSection.oowCashTitle": "Oow-Cash",
+    "paymentMethodsSection.oowCashDescription":
+      "Découvrez les avantages d'Oow-Cash pour des paiements numériques fluides et une gestion financière facile.",
+    "paymentMethodsSection.oowCashAlt": "Icône Oow-Cash",
+    "paymentMethodsSection.moreLink": "Plus",
+    "walletsSection.mainTitle": "Portefeuilles électroniques",
+    "walletsSection.mainDescription":
+      "Obtenez une licence unique pour les serveurs privés et les serveurs dédiés complets",
+    "walletsSection.sdadTitle": "Paiement",
+    "walletsSection.sdadDescription":
+      "Effectuez des paiements sécurisés et rapides avec nos solutions de paiement fiables, garantissant une expérience de transaction fluide.",
+    "walletsSection.sdadAlt": "Icône de paiement",
+    "walletsSection.paypalTitle": "PayPal",
+    "walletsSection.paypalDescription":
+      "Envoyez et recevez de l'argent dans le monde entier avec PayPal, une plateforme de paiement électronique fiable offrant des transactions sécurisées.",
+    "walletsSection.paypalAlt": "Icône PayPal",
+    "walletsSection.vodafoneTitle": "Vodafone Cash",
+    "walletsSection.vodafoneDescription":
+      "Transférez de l'argent facilement, payez vos factures et rechargez votre solde avec le service de paiement mobile pratique de Vodafone.",
+    "walletsSection.vodafoneAlt": "Icône Vodafone Cash",
+    "walletsSection.zainTitle": "Zain Cash",
+    "walletsSection.zainDescription":
+      "Profitez de transactions financières fluides avec Zain Cash, offrant des paiements numériques sécurisés et des transferts d'argent.",
+    "walletsSection.zainAlt": "Icône Zain Cash",
+    "walletsSection.moreLink": "Plus",
+    "cryptocurrenciesSection.mainTitle": "Cryptomonnaies",
+    "cryptocurrenciesSection.mainDescription":
+      "Obtenez une licence unique pour les serveurs privés et les serveurs dédiés complets",
+    "cryptocurrenciesSection.ethereumAlt": "Icône Ethereum",
+    "cryptocurrenciesSection.binanceAlt": "Icône Binance",
+    "cryptocurrenciesSection.bitcoinAlt": "Icône Bitcoin",
+    "cryptocurrenciesSection.tetherAlt": "Icône Tether",
+    "traditionalPaymentSection.mainTitle":
+      "Méthodes de paiement traditionnelles",
+    "traditionalPaymentSection.cdnTitle":
+      "Améliorer les performances du site avec un CDN",
+    "traditionalPaymentSection.cdnDescription":
+      "Connectez le nom de domaine de votre entreprise pour renforcer la notoriété de votre marque et présenter une image plus professionnelle avec un email personnalisé",
+    "traditionalPaymentSection.cdnAlt": "Icône de carte",
+    "traditionalPaymentSection.ddosTitle": "Atténuation des attaques DDoS",
+    "traditionalPaymentSection.ddosDescription":
+      "Les attaques par déni de service distribué (DDoS) peuvent perturber toute votre entreprise. Nous bloquons les attaques DDoS aux couches 3, 4 et 7, sécurisant la bande passante pendant les attaques.",
+    "traditionalPaymentSection.ddosAlt": "Icône de transfert",
+    "traditionalPaymentSection.securityTitle":
+      "Protection contre le piratage et les malwares",
+    "traditionalPaymentSection.securityDescription":
+      "Protégez votre site contre les malwares, empêchez les tentatives de piratage, les attaques zero-day et les attaques par force brute sur les mots de passe.",
+    "traditionalPaymentSection.securityAlt": "Icône de paiement en espèces",
+    "blogsSection.title": "Blogs",
+    "blogsSection.description":
+      "Parcourez les articles les plus récents sur Nemours",
+    "benefitsSection.mainTitle": "Avantages",
+    "benefitsSection.description":
+      "Nous offrons un environnement de travail flexible, une formation continue et des récompenses pour des performances exceptionnelles.",
+    "benefitsSection.trainingTitle": "Formation / Aide éducative",
+    "benefitsSection.trainingAlt": "Icône de formation",
+    "benefitsSection.leaveTitle": "Congés personnels et maladie",
+    "benefitsSection.leaveAlt": "Icône de congés",
+    "benefitsSection.rewardsTitle":
+      "Récompenses (Performance exceptionnelle, atteinte d'objectifs, réussite d'étapes)",
+    "benefitsSection.rewardsAlt": "Icône de récompenses",
+    "benefitsSection.insuranceTitle": "Assurance santé",
+    "benefitsSection.insuranceAlt": "Icône d'assurance santé",
+    "joinUsSection.title": "Rejoignez-nous maintenant",
+    "joinUsSection.description":
+      "Nous croyons que notre équipe est la base de notre succès, et nous nous efforçons de fournir un environnement de travail motivant avec un investissement continu dans le développement de leurs compétences pour suivre nos derniers services.",
+    "joinUsSection.button": "Emplois disponibles",
+    "jobsSection.title": "Emplois disponibles",
+    "jobsSection.description":
+      "Notre mission est de mener l'avancement technologique localement, économiquement et culturellement, et nous avons besoin de personnes passionnées et dévouées pour atteindre cet objectif !",
+    "jobsSection.button": "Emplois disponibles",
+    "jobsSection.rightBackgroundAlt": "Fond droit",
+    "jobsSection.leftBackgroundAlt": "Fond gauche",
+    "jobsSection.lampImageAlt": "Image de lampe",
+    "countrySelector.italyName": "Italie",
+    "countrySelector.franceName": "France",
+    "countrySelector.germanyName": "Allemagne",
+    "countrySelector.japanName": "Japon",
+    "countrySelector.finlandName": "Finlande",
+    "countrySelector.usaName": "États-Unis",
+    "countrySelector.turkeyName": "Turquie",
+    "countrySelector.italyFlagAlt": "Drapeau de l'Italie",
+    "countrySelector.franceFlagAlt": "Drapeau de la France",
+    "countrySelector.germanyFlagAlt": "Drapeau de l'Allemagne",
+    "countrySelector.japanFlagAlt": "Drapeau du Japon",
+    "countrySelector.finlandFlagAlt": "Drapeau de la Finlande",
+    "countrySelector.usaFlagAlt": "Drapeau des États-Unis",
+    "countrySelector.turkeyFlagAlt": "Drapeau de la Turquie",
+    "standalone.serverDescription":
+      "Vous pouvez posséder un serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
+    "geoRegions.header": "Multiples Régions Géographiques",
+    "geoRegions.text":
+      "Gérez et exécutez vos applications sur plusieurs régions de dispositifs via une interface utilisateur simple et unifiée, permettant une migration fluide pour être plus proche de vos clients.",
+    "geoRegions.illustrationAlt": "Illustration des Régions Géographiques",
+    "essentialFeatures.header":
+      "Profitez d'une gamme de fonctionnalités essentielles qui garantissent une expérience complète et efficace avec nos services, quelle que soit l'offre choisie",
+    "essentialFeatures.serverMonitoringTitle": "Surveillance du serveur 24/7",
+    "essentialFeatures.serverMonitoringAlt": "Icône de surveillance du serveur",
+    "essentialFeatures.sslCertificateTitle": "Certificat SSL gratuit",
+    "essentialFeatures.sslCertificateAlt": "Icône de certificat SSL",
+    "essentialFeatures.threatProtectionTitle":
+      "Protection contre les menaces nuisibles",
+    "essentialFeatures.threatProtectionAlt":
+      "Icône de protection contre les menaces",
+    "essentialFeatures.softaculousInstallerTitle":
+      "Programme d'installation Softaculous",
+    "essentialFeatures.softaculousInstallerAlt": "Icône Softaculous",
+    "essentialFeatures.regularBackupTitle": "Sauvegarde régulière",
+    "essentialFeatures.regularBackupAlt": "Icône de sauvegarde",
+    "essentialFeatures.linuxOsTitle": "Système d'exploitation Linux",
+    "essentialFeatures.linuxOsAlt": "Icône Linux",
+    "essentialFeatures.controlPanelTitle": "Panneau de contrôle Cpanel/Plesk",
+    "essentialFeatures.controlPanelAlt": "Icône du panneau de contrôle",
+    "essentialFeatures.technicalSupportTitle": "Support technique continu",
+    "essentialFeatures.technicalSupportAlt": "Icône de support technique",
+
+    "fullServers.mainTitle": "Serveurs Dédiés Complets",
+    "fullServers.mainDescription":
+      "Nous vous offrons un hébergement partagé convivial avec des outils innovants pour vous aider à construire et gérer votre site web facilement",
+
+    "hostingTiers.mainTitle": "Plans de Serveurs Dédiés",
+    "hostingTiers.serverInfoTitle": "Informations sur le Serveur",
+    "hostingTiers.serverInfoSubtitle":
+      "Choisissez le serveur qui répond à vos besoins",
+    "hostingTiers.priceMain": "31,99 ",
+    "hostingTiers.priceRenewal": "20 SAR/mois au renouvellement",
+    "hostingTiers.buyNowButton": "Acheter Maintenant",
+    "hostingTiers.featuresButton": "Fonctionnalités",
+    "hostingTiers.cpuSpecTitle": "32 Cœurs à 2,4 GHz",
+    "hostingTiers.cpuSpecSubtitle": "Score de Benchmark : 15 390",
+    "hostingTiers.storageSpecTitle": "2 Disques SSD de 250 Go",
+    "hostingTiers.storageSpecSubtitle": "Extensible jusqu'à 8 disques",
+    "hostingTiers.databaseSpecTitle": "1 Base de Données",
+    "hostingTiers.databaseSpecSubtitle":
+      "Extensible jusqu'à 3 bases de données",
+    "hostingTiers.ramSpecTitle": "64 Go",
+    "hostingTiers.ramSpecSubtitle": "Évolutif jusqu'à 384 Go",
+    "hostingTiers.bandwidthSpecTitle": "Vitesse de 3 Gbps",
+    "hostingTiers.bandwidthSpecSubtitle":
+      "100 To de données gratuites par mois",
+    "hostingTiers.controlPanelSpecTitle": "cPanel/WHM, Plesk",
+    "hostingTiers.controlPanelSpecSubtitle":
+      "Édition Obsidian pour l'Hébergement Web",
+    "hostingTiers.germanyFlagAlt": "Drapeau de l'Allemagne",
+    "hostingTiers.finlandFlagAlt": "Drapeau de la Finlande",
+    "hostingTiers.ukFlagAlt": "Drapeau du Royaume-Uni",
+    "serverServices.mainTitle": "Tous les Services Incluent",
+    "serverServices.emailProtection": "Protection des Emails et Antivirale",
+    "serverServices.malwareProtection":
+      "Protection Contre les Malwares et Ransomwares",
+    "serverServices.networkSecurity":
+      "Suivi, Fraude et Protection Contre les Menaces des Réseaux Publicitaires, Vol, Diffamation et Personnalisation",
+    "serverServices.cloudMigration":
+      "Migration d'une Configuration Impossible vers le Cloud",
+    "serverServices.threatDetection":
+      "Détection et Réponse aux Menaces Avancées",
+    "serverServices.identityProtection":
+      "Protection de l'Identité Numérique et des Appareils",
+
+    "backupsSection.title": "Sauvegardes",
+    "backupsSection.description": "Sauvegardes automatiques permanentes !",
     "supportParagraph.description":
       "Si vous êtes client de l'entreprise, vous pouvez facilement nous contacter via votre compte pour joindre notre équipe de support technique ou de vente. Nous nous engageons à fournir le meilleur service et des solutions rapides adaptées à vos besoins.",
 
@@ -4093,6 +5149,282 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
+      "serverLocations.download": "Download",
+  "serverLocations.upload": "Upload",
+  "serverLocations.comingSoonTitle": "Demnächst",
+  "serverLocations.comingSoonMessage": "Dieser Server wird bald gestartet",
+  "serverLocations.mapAlt": "Weltkarte",
+
+    "dashboardWelcome.title": "Willkommen in Ihrem Dashboard",
+  "dashboardWelcome.description": "Verwalten Sie Ihre Domain einfach, überprüfen Sie Ihre Statistiken und überwachen Sie die Leistung von einem Ort aus.",
+  "dashboardWelcome.imageAlt": "Dashboard",
+  "dashboardOverview.title": "Dashboard-Übersicht",
+  "dashboardOverview.description": "Greifen Sie direkt von Ihrem Dashboard auf Echtzeitdaten und Leistungsmetriken zu. Verfolgen Sie den Status Ihrer Domain, Besucherstatistiken und vieles mehr an einem Ort.",
+  "dashboardOverview.imageAlt": "Bild der Dashboard-Übersicht",
+  "performanceTracking.title": "Leistung verfolgen",
+  "performanceTracking.description": "Bleiben Sie über die Leistung Ihrer Domain auf dem Laufenden. Überwachen Sie den Traffic, Verlängerungen und die Nutzung schnell.",
+  "performanceTracking.mobileAlt": "Bild der mobilen Leistung",
+  "performanceTracking.backgroundAlt": "Bild der Hintergrundschicht",
+  "performanceTracking.patternAlt": "Dekoratives SVG-Muster",
+  "domainManagement.title": "Domainverwaltung",
+  "domainManagement.description": "Verwalten Sie Ihre Domain mit Leichtigkeit. Registrieren Sie neue Domains, verlängern Sie bestehende und sehen Sie alle relevanten Details in Echtzeit ein.",
+  "domainManagement.imageAlt": "Desktop-Bild",
+  "techStack.mainTitle": "Technologien, die beim Aufbau des Projekts verwendet wurden",
+  "techStack.reactTitle": "React",
+  "techStack.reactAlt": "React-Symbol",
+  "techStack.laravelTitle": "Laravel",
+  "techStack.laravelAlt": "Laravel-Logo",
+  "techStack.phpTitle": "PHP",
+  "techStack.phpAlt": "PHP-Logo",
+  "techStack.javascriptTitle": "JavaScript",
+  "techStack.javascriptAlt": "JavaScript-Logo",
+  "techStack.lagomTitle": "Lagom Theme",
+  "techStack.lagomAlt": "Lagom Theme-Logo",
+  "techStack.whatsappApiTitle": "WhatsApp API",
+  "techStack.whatsappApiAlt": "WhatsApp API-Symbol",
+  "techStack.whmcsTitle": "WHMCS",
+  "techStack.whmcsAlt": "WHMCS-Logo",
+  "keyFeaturesTwo.mainTitle": "Hauptmerkmale",
+  "keyFeaturesTwo.mainDescription": "Durch unsere Cloud-Produkte und -Dienste erfüllen wir 100% Ihrer Geschäfts- und Datenanforderungen und bieten höchste Sicherheitsstandards für Ihre Infrastruktur.",
+  "keyFeaturesTwo.cloudHostingTitle": "Geteiltes Cloud-Hosting",
+  "keyFeaturesTwo.cloudHostingDescription": "Hosten Sie Ihre Website einfach und komfortabel zu einem erschwinglichen Preis! Mit geteiltem Cloud-Hosting.",
+  "keyFeaturesTwo.cloudHostingAlt": "Symbol für geteiltes Cloud-Hosting",
+  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+  "keyFeaturesTwo.lsSuiteDescription": "Professionelle E-Mail, Online-Speicher, Unternehmensmeetings und mehr. Entwickelt für Unternehmen.",
+  "keyFeaturesTwo.lsSuiteAlt": "LS Suite-Symbol",
+  "keyFeaturesTwo.jpaasTitle": "JPaaS Plattform als Dienst",
+  "keyFeaturesTwo.jpaasDescription": "Verwalten Sie Ihren Server mit voller Kontrolle",
+  "keyFeaturesTwo.jpaasAlt": "JPaaS Plattform-Symbol",
+  "keyFeaturesTwo.learnMore": "Erfahren Sie mehr",
+    "speedSection.title": "Geschwindigkeit",
+    "speedSection.description":
+      "Schützen Sie die Daten Ihrer Website und zeigen Sie Ihr Sicherheitszertifikat Ihren Besuchern",
+    "launchAppsSection.mainTitle": "Starten Sie Ihre Apps in Sekunden!",
+    "launchAppsSection.mainDescription":
+      "Erstellen oder führen Sie verschiedene Anwendungen mit umfassender Plattformunterstützung aus",
+    "launchAppsSection.appAlt": "App-Symbol",
+    "launchAppsSection.dockerAlt": "Docker-Symbol",
+    "launchAppsSection.phpAlt": "PHP-Symbol",
+    "launchAppsSection.pythonAlt": "Python-Symbol",
+    "featuresGrid.disasterRecovery": "Cloud-basierte Notfallwiederherstellung",
+    "featuresGrid.emailProtection": "E-Mail-Schutz und Archivierung",
+    "featuresGrid.threatDetection":
+      "Erweiterte Bedrohungserkennung und -reaktion",
+    "featuresGrid.centralizedManagement1":
+      "Zentralisierte Verwaltung und Überwachung",
+    "featuresGrid.centralizedManagement2":
+      "Zentralisierte Verwaltung und Überwachung",
+    "featuresGrid.centralizedManagement3":
+      "Zentralisierte Verwaltung und Überwachung",
+    "featuresGrid.centralizedManagement4":
+      "Zentralisierte Verwaltung und Überwachung",
+    "featuresGrid.centralizedManagement5":
+      "Zentralisierte Verwaltung und Überwachung",
+    "featuresGrid.centralizedManagement6":
+      "Zentralisierte Verwaltung und Überwachung",
+
+    "whoisToolSectionTwo.description":
+      "Das WHOIS-Tool ist ein wertvoller Dienst, der umfassende Informationen über Domainnamen liefert, wie z.B. den Namen des Eigentümers, Registrierungsdetails, Ablaufdatum und zugehörige Kontaktinformationen. Es hilft, die Eigentümerschaft von Domains zu überprüfen, die Verfügbarkeit für die Registrierung zu prüfen und die Zuverlässigkeit von Websites zu bewerten. Viele Domain-Registrare und Cybersicherheitsexperten verlassen sich auf dieses Tool für Forschung, Schutz und die Einhaltung gesetzlicher Standards.",
+    "whoisToolSectionTwo.imageAlt": "WHOIS-Tool-Bild",
+    "whoisToolSection.title": "Was ist das WHOIS-Tool?",
+    "whoisToolSection.description":
+      "Das WHOIS-Tool ist ein Dienst, der Informationen über Domainnamen bereitstellt, einschließlich des Domaininhabers, Registrierungsdetails, Ablaufdatum und zugehöriger Kontaktinformationen. Es hilft Nutzern, die Eigentümerschaft von Domains zu überprüfen, die Verfügbarkeit zu prüfen und die Glaubwürdigkeit von Websites zu validieren. Viele Domain-Registrare und Cybersicherheitsexperten nutzen dieses Tool für Forschung, Sicherheit und Compliance-Zwecke.",
+    "whoisToolSection.imageAlt": "WHOIS-Sicherheitsbild",
+    "keyBenefitsSection.mainTitle": "Hauptvorteile",
+    "keyBenefitsSection.mainDescription":
+      "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
+    "keyBenefitsSection.pciDssTitle": "PCI/DSS-Konformität",
+    "keyBenefitsSection.pciDssAlt": "Konformitätssymbol",
+    "keyBenefitsSection.encryptionTitle": "256-Bit-Datenverschlüsselung",
+    "keyBenefitsSection.encryptionAlt": "Verschlüsselungssymbol",
+    "keyBenefitsSection.secureClientTitle": "Sicherung von Kundendaten",
+    "keyBenefitsSection.secureClientAlt": "Datensicherheitssymbol",
+    "keyBenefitsSection.supportTitle": "Technischer Support",
+    "keyBenefitsSection.supportAlt": "Technisches Supportsymbol",
+    "keyBenefitsSection.warrantyTitle": "Garantie",
+    "keyBenefitsSection.warrantyAlt": "Garantiesymbol",
+    "keyBenefitsSection.securityTitle": "Schlosssymbol und https://",
+    "keyBenefitsSection.securityAlt": "Sicherheitssymbol",
+
+    "onlinePaymentSection.mainTitle": "Online-Zahlung",
+    "onlinePaymentSection.mainDescription":
+      "Genießen Sie einen schnellen und direkten Online-Zahlungsprozess",
+    "onlinePaymentSection.americanExpressAlt": "American Express-Symbol",
+    "onlinePaymentSection.visaAlt": "Visa-Symbol",
+    "onlinePaymentSection.masterCardAlt": "MasterCard-Symbol",
+    "paymentMethodsSection.title": "Zahlungsmethoden",
+    "paymentMethodsSection.description":
+      "Zahlen Sie auf die für Sie passende Weise und genießen Sie ein reibungsloses Zahlungserlebnis",
+    "paymentMethodsSection.mainTitle": "Zahlungsmethoden per Banküberweisung",
+    "paymentMethodsSection.mainDescription":
+      "Führen Sie Banküberweisungen einfach und sicher durch",
+    "paymentMethodsSection.bankakTitle": "Bankak",
+    "paymentMethodsSection.bankakDescription":
+      "Erfahren Sie mehr über Bankak, seine Dienstleistungen und wie es Ihnen hilft, Ihre Finanztransaktionen sicher und effizient zu verwalten.",
+    "paymentMethodsSection.bankakAlt": "Bankak-Symbol",
+    "paymentMethodsSection.ibanTitle": "Internationale Bankkontonummer (IBAN)",
+    "paymentMethodsSection.ibanDescription":
+      "Verstehen Sie die Bedeutung der IBAN für internationale Transaktionen und wie sie sichere und genaue Finanzüberweisungen gewährleistet.",
+    "paymentMethodsSection.ibanAlt": "IBAN-Symbol",
+    "paymentMethodsSection.instantTitle": "Sofortüberweisungen",
+    "paymentMethodsSection.instantDescription":
+      "Senden und empfangen Sie Geld sofort mit sicheren und zuverlässigen Zahlungslösungen, die für schnelle Transaktionen entwickelt wurden.",
+    "paymentMethodsSection.instantAlt": "Sofortüberweisungen-Symbol",
+    "paymentMethodsSection.oowCashTitle": "Oow-Cash",
+    "paymentMethodsSection.oowCashDescription":
+      "Entdecken Sie die Vorteile von Oow-Cash für reibungslose digitale Zahlungen und einfache Finanzverwaltung.",
+    "paymentMethodsSection.oowCashAlt": "Oow-Cash-Symbol",
+    "paymentMethodsSection.moreLink": "Mehr",
+    "walletsSection.mainTitle": "Portefeuilles électroniques",
+    "walletsSection.mainDescription":
+      "Obtenez une licence unique pour les serveurs privés et les serveurs dédiés complets",
+    "walletsSection.sdadTitle": "Paiement",
+    "walletsSection.sdadDescription":
+      "Effectuez des paiements sécurisés et rapides avec nos solutions de paiement fiables, garantissant une expérience de transaction fluide.",
+    "walletsSection.sdadAlt": "Icône de paiement",
+    "walletsSection.paypalTitle": "PayPal",
+    "walletsSection.paypalDescription":
+      "Envoyez et recevez de l'argent dans le monde entier avec PayPal, une plateforme de paiement électronique fiable offrant des transactions sécurisées.",
+    "walletsSection.paypalAlt": "Icône PayPal",
+    "walletsSection.vodafoneTitle": "Vodafone Cash",
+    "walletsSection.vodafoneDescription":
+      "Transférez de l'argent facilement, payez vos factures et rechargez votre solde avec le service de paiement mobile pratique de Vodafone.",
+    "walletsSection.vodafoneAlt": "Icône Vodafone Cash",
+    "walletsSection.zainTitle": "Zain Cash",
+    "walletsSection.zainDescription":
+      "Profitez de transactions financières fluides avec Zain Cash, offrant des paiements numériques sécurisés et des transferts d'argent.",
+    "walletsSection.zainAlt": "Icône Zain Cash",
+    "walletsSection.moreLink": "Plus",
+    "cryptocurrenciesSection.mainTitle": "Kryptowährungen",
+    "cryptocurrenciesSection.mainDescription":
+      "Erhalten Sie eine einzige Lizenz für private Server und vollständig dedizierte Server",
+    "cryptocurrenciesSection.ethereumAlt": "Ethereum-Symbol",
+    "cryptocurrenciesSection.binanceAlt": "Binance-Symbol",
+    "cryptocurrenciesSection.bitcoinAlt": "Bitcoin-Symbol",
+    "cryptocurrenciesSection.tetherAlt": "Tether-Symbol",
+    "traditionalPaymentSection.mainTitle": "Traditionelle Zahlungsmethoden",
+    "traditionalPaymentSection.cdnTitle":
+      "Verbessern Sie die Website-Leistung mit CDN",
+    "traditionalPaymentSection.cdnDescription":
+      "Verbinden Sie den Domainnamen Ihres Unternehmens, um die Markenbekanntheit zu steigern und ein professionelleres Image mit einer benutzerdefinierten E-Mail zu präsentieren",
+    "traditionalPaymentSection.cdnAlt": "Kartensymbol",
+    "traditionalPaymentSection.ddosTitle": "Abwehr von DDoS-Angriffen",
+    "traditionalPaymentSection.ddosDescription":
+      "Verteilte Denial-of-Service-Angriffe (DDoS) können Ihr gesamtes Unternehmen stören. Wir blockieren DDoS-Angriffe auf den Ebenen 3, 4 und 7 und sichern die Bandbreite während der Angriffe.",
+    "traditionalPaymentSection.ddosAlt": "Transfersymbol",
+    "traditionalPaymentSection.securityTitle": "Schutz vor Hacking und Malware",
+    "traditionalPaymentSection.securityDescription":
+      "Schützen Sie Ihre Website vor Malware, verhindern Sie Hacking-Versuche, Zero-Day-Angriffe und Brute-Force-Angriffe auf Passwörter.",
+    "traditionalPaymentSection.securityAlt": "Bargeldsymbol",
+    "blogsSection.title": "Blogs",
+    "blogsSection.description":
+      "Durchstöbern Sie die neuesten und aktuellsten Artikel über Nemours",
+    "benefitsSection.mainTitle": "Vorteile",
+    "benefitsSection.description":
+      "Wir bieten eine flexible Arbeitsumgebung, kontinuierliche Schulungen und Belohnungen für herausragende Leistungen.",
+    "benefitsSection.trainingTitle": "Schulung / Bildungsunterstützung",
+    "benefitsSection.trainingAlt": "Schulungssymbol",
+    "benefitsSection.leaveTitle": "Persönlicher und Krankenurlaub",
+    "benefitsSection.leaveAlt": "Urlaubssymbol",
+    "benefitsSection.rewardsTitle":
+      "Belohnungen (Herausragende Leistung, Zielerreichung, Meilensteinabschluss)",
+    "benefitsSection.rewardsAlt": "Belohnungssymbol",
+    "benefitsSection.insuranceTitle": "Krankenversicherung",
+    "benefitsSection.insuranceAlt": "Krankenversicherungssymbol",
+    "joinUsSection.title": "Jetzt beitreten",
+    "joinUsSection.description":
+      "Wir glauben, dass unser Team die Grundlage unseres Erfolgs ist, und wir streben danach, eine motivierende Arbeitsumgebung mit kontinuierlicher Investition in die Entwicklung ihrer Fähigkeiten zu bieten, um mit unseren neuesten Dienstleistungen Schritt zu halten.",
+    "joinUsSection.button": "Verfügbare Stellen",
+    "jobsSection.title": "Verfügbare Stellen",
+    "jobsSection.description":
+      "Unsere Mission ist es, den technologischen Fortschritt lokal, wirtschaftlich und kulturell zu führen, und wir brauchen leidenschaftliche und engagierte Menschen, um dieses Ziel zu erreichen!",
+    "jobsSection.button": "Verfügbare Stellen",
+    "jobsSection.rightBackgroundAlt": "Rechter Hintergrund",
+    "jobsSection.leftBackgroundAlt": "Linker Hintergrund",
+    "jobsSection.lampImageAlt": "Lampenbild",
+    "countrySelector.italyName": "Italien",
+    "countrySelector.franceName": "Frankreich",
+    "countrySelector.germanyName": "Deutschland",
+    "countrySelector.japanName": "Japan",
+    "countrySelector.finlandName": "Finnland",
+    "countrySelector.usaName": "USA",
+    "countrySelector.turkeyName": "Türkei",
+    "countrySelector.italyFlagAlt": "Flagge Italiens",
+    "countrySelector.franceFlagAlt": "Flagge Frankreichs",
+    "countrySelector.germanyFlagAlt": "Flagge Deutschlands",
+    "countrySelector.japanFlagAlt": "Flagge Japans",
+    "countrySelector.finlandFlagAlt": "Flagge Finnlands",
+    "countrySelector.usaFlagAlt": "Flagge der USA",
+    "countrySelector.turkeyFlagAlt": "Flagge der Türkei",
+    "standalone.serverDescription":
+      "Vous pouvez posséder un serveur dédié avec le système d'exploitation de votre choix et des applications préinstallées.",
+    "geoRegions.header": "Mehrere Geografische Regionen",
+    "geoRegions.text":
+      "Verwalten und betreiben Sie Ihre Anwendungen über mehrere Geräteregionen hinweg mit einer einfachen und einheitlichen Benutzeroberfläche, die eine nahtlose Migration ermöglicht, um Ihren Kunden näher zu sein.",
+    "geoRegions.illustrationAlt": "Illustration Geografischer Regionen",
+    "essentialFeatures.header":
+      "Profitieren Sie von einer Reihe essentieller Funktionen, die ein umfassendes und effizientes Erlebnis mit unseren Diensten gewährleisten, unabhängig vom gewählten Plan",
+    "essentialFeatures.serverMonitoringTitle": "24/7 Serverüberwachung",
+    "essentialFeatures.serverMonitoringAlt": "Serverüberwachungssymbol",
+    "essentialFeatures.sslCertificateTitle": "Kostenloses SSL-Zertifikat",
+    "essentialFeatures.sslCertificateAlt": "SSL-Zertifikatssymbol",
+    "essentialFeatures.threatProtectionTitle":
+      "Schutz vor schädlichen Bedrohungen",
+    "essentialFeatures.threatProtectionAlt": "Bedrohungsschutzsymbol",
+    "essentialFeatures.softaculousInstallerTitle":
+      "Softaculous-Installationsprogramm",
+    "essentialFeatures.softaculousInstallerAlt": "Softaculous-Symbol",
+    "essentialFeatures.regularBackupTitle": "Regelmäßige Sicherung",
+    "essentialFeatures.regularBackupAlt": "Sicherungssymbol",
+    "essentialFeatures.linuxOsTitle": "Linux-Betriebssystem",
+    "essentialFeatures.linuxOsAlt": "Linux-Symbol",
+    "essentialFeatures.controlPanelTitle": "Cpanel/Plesk-Kontrollpanel",
+    "essentialFeatures.controlPanelAlt": "Kontrollpanel-Symbol",
+    "essentialFeatures.technicalSupportTitle":
+      "Kontinuierlicher technischer Support",
+    "essentialFeatures.technicalSupportAlt": "Technisches Support-Symbol",
+
+    "fullServers.mainTitle": "Dedizierte Volle Server",
+    "fullServers.mainDescription":
+      "Wir bieten Ihnen benutzerfreundliches Shared Hosting mit innovativen Tools, die Ihnen helfen, Ihre Website einfach zu erstellen und zu verwalten",
+
+    "hostingTiers.mainTitle": "Dedizierte Serverpläne",
+    "hostingTiers.serverInfoTitle": "Serverinformationen",
+    "hostingTiers.serverInfoSubtitle":
+      "Wählen Sie den Server, der Ihren Anforderungen entspricht",
+    "hostingTiers.priceMain": "31,99 ",
+    "hostingTiers.priceRenewal": "20 SAR/Monat bei Verlängerung",
+    "hostingTiers.buyNowButton": "Jetzt Kaufen",
+    "hostingTiers.featuresButton": "Funktionen",
+    "hostingTiers.cpuSpecTitle": "32 Kerne bei 2,4 GHz",
+    "hostingTiers.cpuSpecSubtitle": "Benchmark-Ergebnis: 15.390",
+    "hostingTiers.storageSpecTitle": "2 x 250 GB SSD-Laufwerke",
+    "hostingTiers.storageSpecSubtitle": "Erweiterbar auf bis zu 8 Laufwerke",
+    "hostingTiers.databaseSpecTitle": "1 Datenbank",
+    "hostingTiers.databaseSpecSubtitle": "Erweiterbar auf bis zu 3 Datenbanken",
+    "hostingTiers.ramSpecTitle": "64 GB",
+    "hostingTiers.ramSpecSubtitle": "Aufrüstbar auf bis zu 384 GB",
+    "hostingTiers.bandwidthSpecTitle": "3 Gbps Geschwindigkeit",
+    "hostingTiers.bandwidthSpecSubtitle": "100 TB kostenlose monatliche Daten",
+    "hostingTiers.controlPanelSpecTitle": "cPanel/WHM, Plesk",
+    "hostingTiers.controlPanelSpecSubtitle": "Obsidian Webhosting-Edition",
+    "hostingTiers.germanyFlagAlt": "Flagge Deutschlands",
+    "hostingTiers.finlandFlagAlt": "Flagge Finnlands",
+    "hostingTiers.ukFlagAlt": "Flagge des Vereinigten Königreichs",
+    "serverServices.mainTitle": "Alle Dienste Enthalten",
+    "serverServices.emailProtection": "E-Mail- und Virenschutz",
+    "serverServices.malwareProtection": "Schutz vor Malware und Ransomware",
+    "serverServices.networkSecurity":
+      "Verfolgung, Betrug und Schutz vor Bedrohungen durch Werbenetzwerke, Diebstahl, Verleumdung und Anpassung",
+    "serverServices.cloudMigration":
+      "Migration von unmöglicher Konfiguration in die Cloud",
+    "serverServices.threatDetection":
+      "Erkennung und Reaktion auf fortgeschrittene Bedrohungen",
+    "serverServices.identityProtection":
+      "Schutz der digitalen Identität und Geräte",
+
+    "backupsSection.title": "Sauvegardes",
+    "backupsSection.description": "Sauvegardes automatiques permanentes !",
     "supportParagraph.description":
       "Wenn Sie Kunde des Unternehmens sind, können Sie uns einfach über Ihr Konto kontaktieren, um unser technisches Support- oder Vertriebsteam zu erreichen. Wir sind bestrebt, den besten Service und schnelle Lösungen zu bieten, die auf Ihre Bedürfnisse zugeschnitten sind.",
 
@@ -5213,6 +6545,278 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
+      "serverLocations.download": "İndirme",
+  "serverLocations.upload": "Yükleme",
+  "serverLocations.comingSoonTitle": "Yakında",
+  "serverLocations.comingSoonMessage": "Bu sunucu yakında başlatılacak",
+  "serverLocations.mapAlt": "Dünya Haritası",
+
+    "dashboardWelcome.title": "Kontrol Panelinize Hoş Geldiniz",
+  "dashboardWelcome.description": "Alan adınızı kolayca yönetin, istatistiklerinizi kontrol edin ve performansı tek bir yerden izleyin.",
+  "dashboardWelcome.imageAlt": "Kontrol Paneli",
+  "dashboardOverview.title": "Kontrol Paneli Genel Bakış",
+  "dashboardOverview.description": "Kontrol panelinizden gerçek zamanlı verilere ve performans metriklerine doğrudan erişin. Alan adı durumunuzu, ziyaretçi istatistiklerini ve daha fazlasını tek bir yerde takip edin.",
+  "dashboardOverview.imageAlt": "Kontrol Paneli Genel Bakış Görseli",
+  "performanceTracking.title": "Performansı Takip Et",
+  "performanceTracking.description": "Alan adınızın performansını güncel tutun. Trafiği, yenilemeleri ve kullanımı hızlıca izleyin.",
+  "performanceTracking.mobileAlt": "Mobil Performans Görseli",
+  "performanceTracking.backgroundAlt": "Arka Plan Katmanı Görseli",
+  "performanceTracking.patternAlt": "Dekoratif SVG Deseni",
+  "domainManagement.title": "Alan Adı Yönetimi",
+  "domainManagement.description": "Alan adınızı kolayca yönetin. Yeni alan adları kaydedin, mevcut olanları yenileyin ve tüm ilgili detayları gerçek zamanlı olarak görüntüleyin.",
+  "domainManagement.imageAlt": "Masaüstü Görseli",
+  "techStack.mainTitle": "Projenin İnşasında Kullanılan Teknolojiler",
+  "techStack.reactTitle": "React",
+  "techStack.reactAlt": "React İkonu",
+  "techStack.laravelTitle": "Laravel",
+  "techStack.laravelAlt": "Laravel Logosu",
+  "techStack.phpTitle": "PHP",
+  "techStack.phpAlt": "PHP Logosu",
+  "techStack.javascriptTitle": "JavaScript",
+  "techStack.javascriptAlt": "JavaScript Logosu",
+  "techStack.lagomTitle": "Lagom Theme",
+  "techStack.lagomAlt": "Lagom Theme Logosu",
+  "techStack.whatsappApiTitle": "WhatsApp API",
+  "techStack.whatsappApiAlt": "WhatsApp API İkonu",
+  "techStack.whmcsTitle": "WHMCS",
+  "techStack.whmcsAlt": "WHMCS Logosu",
+  "keyFeaturesTwo.mainTitle": "Ana Özellikler",
+  "keyFeaturesTwo.mainDescription": "Bulut ürünlerimiz ve hizmetlerimizle, iş ve veri ihtiyaçlarınızın %100'ünü karşılıyoruz, altyapınız için en yüksek güvenlik seviyelerini sağlıyoruz.",
+  "keyFeaturesTwo.cloudHostingTitle": "Paylaşımlı Bulut Barındırma",
+  "keyFeaturesTwo.cloudHostingDescription": "Web sitenizi kolayca ve uygun maliyetle barındırın! Paylaşımlı bulut barındırma ile.",
+  "keyFeaturesTwo.cloudHostingAlt": "Paylaşımlı Bulut Barındırma İkonu",
+  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+  "keyFeaturesTwo.lsSuiteDescription": "Profesyonel e-posta, çevrimiçi depolama, kurumsal toplantılar ve daha fazlası. İş için tasarlandı.",
+  "keyFeaturesTwo.lsSuiteAlt": "LS Suite İkonu",
+  "keyFeaturesTwo.jpaasTitle": "JPaaS Platformu Servis Olarak",
+  "keyFeaturesTwo.jpaasDescription": "Sunucunuzu tam kontrolle yönetin",
+  "keyFeaturesTwo.jpaasAlt": "JPaaS Platform İkonu",
+  "keyFeaturesTwo.learnMore": "Daha Fazla Bilgi Edinin",
+    "speedSection.title": "Hız",
+    "speedSection.description":
+      "Web sitenizin verilerini koruyun ve ziyaretçilerinize güvenlik sertifikanızı gösterin",
+    "launchAppsSection.mainTitle":
+      "Uygulamalarınızı Saniyeler İçinde Başlatın!",
+    "launchAppsSection.mainDescription":
+      "Çeşitli uygulamalarınızı oluşturun veya çalıştırın, kapsamlı platform desteği ile",
+    "launchAppsSection.appAlt": "Uygulama İkonu",
+    "launchAppsSection.dockerAlt": "Docker İkonu",
+    "launchAppsSection.phpAlt": "PHP İkonu",
+    "launchAppsSection.pythonAlt": "Python İkonu",
+    "featuresGrid.disasterRecovery": "Bulut Tabanlı Felaket Kurtarma",
+    "featuresGrid.emailProtection": "E-posta Koruması ve Arşivleme",
+    "featuresGrid.threatDetection": "Gelişmiş Tehdit Tespiti ve Yanıt",
+    "featuresGrid.centralizedManagement1": "Merkezi Yönetim ve İzleme",
+    "featuresGrid.centralizedManagement2": "Merkezi Yönetim ve İzleme",
+    "featuresGrid.centralizedManagement3": "Merkezi Yönetim ve İzleme",
+    "featuresGrid.centralizedManagement4": "Merkezi Yönetim ve İzleme",
+    "featuresGrid.centralizedManagement5": "Merkezi Yönetim ve İzleme",
+    "featuresGrid.centralizedManagement6": "Merkezi Yönetim ve İzleme",
+
+    "whoisToolSectionTwo.description":
+      "WHOIS aracı, alan adları hakkında kapsamlı bilgiler sağlayan değerli bir hizmettir; örneğin, sahibin adı, kayıt detayları, son kullanma tarihi ve ilgili iletişim bilgileri. Bu araç, alan adı sahipliğini doğrulamaya, kayıt için uygun olup olmadığını kontrol etmeye ve web sitelerinin güvenilirliğini değerlendirmeye yardımcı olur. Birçok alan adı kayıt kuruluşu ve siber güvenlik uzmanı, araştırma, koruma ve yasal standartlara uygunluk için bu araca güvenir.",
+    "whoisToolSectionTwo.imageAlt": "WHOIS Aracı Resmi",
+    "whoisToolSection.title": "WHOIS Aracı Nedir?",
+    "whoisToolSection.description":
+      "WHOIS aracı, alan adları hakkında bilgi sağlayan bir hizmettir; bu, alan adı sahibi, kayıt detayları, son kullanma tarihi ve ilgili iletişim bilgilerini içerir. Kullanıcıların alan adı sahipliğini doğrulamasına, uygunluğunu kontrol etmesine ve web sitelerinin güvenilirliğini doğrulamasına yardımcı olur. Birçok alan adı kayıt kuruluşu ve siber güvenlik uzmanı, araştırma, güvenlik ve uyumluluk amaçları için bu aracı kullanır.",
+    "whoisToolSection.imageAlt": "WHOIS Güvenlik Resmi",
+    "keyBenefitsSection.mainTitle": "Ana Faydalar",
+    "keyBenefitsSection.mainDescription":
+      "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla özel sunucunuza sahip olun.",
+    "keyBenefitsSection.pciDssTitle": "PCI/DSS Uyumluluğu",
+    "keyBenefitsSection.pciDssAlt": "Uyumluluk İkonu",
+    "keyBenefitsSection.encryptionTitle": "256-bit Veri Şifreleme",
+    "keyBenefitsSection.encryptionAlt": "Şifreleme İkonu",
+    "keyBenefitsSection.secureClientTitle":
+      "Müşteri Verilerini Güvence Altına Alma",
+    "keyBenefitsSection.secureClientAlt": "Veri Güvenliği İkonu",
+    "keyBenefitsSection.supportTitle": "Teknik Destek",
+    "keyBenefitsSection.supportAlt": "Teknik Destek İkonu",
+    "keyBenefitsSection.warrantyTitle": "Garanti",
+    "keyBenefitsSection.warrantyAlt": "Garanti İkonu",
+    "keyBenefitsSection.securityTitle": "Kilit İkonu ve https://",
+    "keyBenefitsSection.securityAlt": "Güvenlik İkonu",
+
+    "onlinePaymentSection.mainTitle": "Çevrimiçi Ödeme",
+    "onlinePaymentSection.mainDescription":
+      "Hızlı ve doğrudan bir çevrimiçi ödeme sürecinin keyfini çıkarın",
+    "onlinePaymentSection.americanExpressAlt": "American Express İkonu",
+    "onlinePaymentSection.visaAlt": "Visa İkonu",
+    "onlinePaymentSection.masterCardAlt": "MasterCard İkonu",
+    "paymentMethodsSection.title": "Ödeme Yöntemleri",
+    "paymentMethodsSection.description":
+      "Size uygun şekilde ödeme yapın ve sorunsuz bir ödeme deneyimi yaşayın",
+    "paymentMethodsSection.mainTitle": "Banka Havalesi Ödeme Yöntemleri",
+    "paymentMethodsSection.mainDescription":
+      "Banka havalelerini kolay ve güvenli bir şekilde gerçekleştirin",
+    "paymentMethodsSection.bankakTitle": "Bankak",
+    "paymentMethodsSection.bankakDescription":
+      "Bankak, hizmetleri ve finansal işlemlerinizi güvenli ve verimli bir şekilde yönetmenize nasıl yardımcı olduğu hakkında daha fazla bilgi edinin.",
+    "paymentMethodsSection.bankakAlt": "Bankak İkonu",
+    "paymentMethodsSection.ibanTitle":
+      "Uluslararası Banka Hesap Numarası (IBAN)",
+    "paymentMethodsSection.ibanDescription":
+      "Uluslararası işlemler için IBAN'ın önemini ve güvenli ve doğru finansal transferleri nasıl sağladığını anlayın.",
+    "paymentMethodsSection.ibanAlt": "IBAN İkonu",
+    "paymentMethodsSection.instantTitle": "Anlık Transferler",
+    "paymentMethodsSection.instantDescription":
+      "Hızlı işlemler için tasarlanmış güvenli ve güvenilir ödeme çözümleriyle anında para gönderin ve alın.",
+    "paymentMethodsSection.instantAlt": "Anlık Transferler İkonu",
+    "paymentMethodsSection.oowCashTitle": "Oow-Cash",
+    "paymentMethodsSection.oowCashDescription":
+      "Sorunsuz dijital ödemeler ve kolay finansal yönetim için Oow-Cash'in avantajlarını keşfedin.",
+    "paymentMethodsSection.oowCashAlt": "Oow-Cash İkonu",
+    "paymentMethodsSection.moreLink": "Daha Fazla",
+    "walletsSection.mainTitle": "Elektronik Cüzdanlar",
+    "walletsSection.mainDescription":
+      "Özel sunucular ve tam teşekküllü özel sunucular için tek bir lisans alın",
+    "walletsSection.sdadTitle": "Ödeme",
+    "walletsSection.sdadDescription":
+      "Güvenilir ödeme çözümlerimizle güvenli ve hızlı ödemeler yapın, sorunsuz bir işlem deneyimi sağlayın.",
+    "walletsSection.sdadAlt": "Ödeme İkonu",
+    "walletsSection.paypalTitle": "PayPal",
+    "walletsSection.paypalDescription":
+      "PayPal ile dünya çapında para gönderin ve alın; güvenli işlemler sunan güvenilir bir elektronik ödeme platformu.",
+    "walletsSection.paypalAlt": "PayPal İkonu",
+    "walletsSection.vodafoneTitle": "Vodafone Cash",
+    "walletsSection.vodafoneDescription":
+      "Vodafone'un pratik mobil ödeme servisi ile kolayca para transferi yapın, faturalarınızı ödeyin ve bakiyenizi doldurun.",
+    "walletsSection.vodafoneAlt": "Vodafone Cash İkonu",
+    "walletsSection.zainTitle": "Zain Cash",
+    "walletsSection.zainDescription":
+      "Zain Cash ile sorunsuz finansal işlemlerin keyfini çıkarın; güvenli dijital ödemeler ve para transferleri sunar.",
+    "walletsSection.zainAlt": "Zain Cash İkonu",
+    "walletsSection.moreLink": "Daha Fazla",
+    "cryptocurrenciesSection.mainTitle": "Kripto Paralar",
+    "cryptocurrenciesSection.mainDescription":
+      "Özel sunucular ve tam teşekküllü özel sunucular için tek bir lisans alın",
+    "cryptocurrenciesSection.ethereumAlt": "Ethereum İkonu",
+    "cryptocurrenciesSection.binanceAlt": "Binance İkonu",
+    "cryptocurrenciesSection.bitcoinAlt": "Bitcoin İkonu",
+    "cryptocurrenciesSection.tetherAlt": "Tether İkonu",
+    "traditionalPaymentSection.mainTitle": "Geleneksel Ödeme Yöntemleri",
+    "traditionalPaymentSection.cdnTitle":
+      "CDN ile Web Sitesi Performansını İyileştirin",
+    "traditionalPaymentSection.cdnDescription":
+      "Marka bilinirliğini artırmak ve özel bir e-posta kullanarak daha profesyonel bir görüntü sunmak için şirketinizin alan adını bağlayın",
+    "traditionalPaymentSection.cdnAlt": "Kart İkonu",
+    "traditionalPaymentSection.ddosTitle": "DDoS Saldırılarını Hafifletme",
+    "traditionalPaymentSection.ddosDescription":
+      "Dağıtık Hizmet Engelleme (DDoS) saldırıları tüm işinizi aksatabilir. Katman 3, 4 ve 7'de DDoS saldırılarını engelliyor ve saldırılar sırasında bant genişliğini güvence altına alıyoruz.",
+    "traditionalPaymentSection.ddosAlt": "Transfer İkonu",
+    "traditionalPaymentSection.securityTitle":
+      "Hacking ve Kötü Amaçlı Yazılımlara Karşı Koruma",
+    "traditionalPaymentSection.securityDescription":
+      "Web sitenizi kötü amaçlı yazılımlardan koruyun, hack girişiklerini, sıfırıncı gün saldırılarını ve kaba kuvvet parola tahmin saldırılarını önleyin.",
+    "traditionalPaymentSection.securityAlt": "Nakit İkonu",
+    "blogsSection.title": "Bloglar",
+    "blogsSection.description":
+      "Nemours hakkında en son ve en yeni makalelere göz atın",
+    "benefitsSection.mainTitle": "Avantajlar",
+    "benefitsSection.description":
+      "Esnek bir çalışma ortamı, sürekli eğitim ve üstün performans için ödüller sunuyoruz.",
+    "benefitsSection.trainingTitle": "Eğitim / Eğitim Yardımı",
+    "benefitsSection.trainingAlt": "Eğitim İkonu",
+    "benefitsSection.leaveTitle": "Kişisel ve Hastalık İzinleri",
+    "benefitsSection.leaveAlt": "İzin İkonu",
+    "benefitsSection.rewardsTitle":
+      "Ödüller (Üstün Performans, Hedef Başarısı, Aşama Tamamlama)",
+    "benefitsSection.rewardsAlt": "Ödül İkonu",
+    "benefitsSection.insuranceTitle": "Sağlık Sigortası",
+    "benefitsSection.insuranceAlt": "Sağlık Sigortası İkonu",
+    "joinUsSection.title": "Şimdi Bize Katıl",
+    "joinUsSection.description":
+      "Ekibimizin başarımızın temeli olduğuna inanıyoruz ve en yeni hizmetlerimizle uyum sağlamak için becerilerinin geliştirilmesine sürekli yatırım yaparak motive edici bir çalışma ortamı sağlamaya çalışıyoruz.",
+    "joinUsSection.button": "Mevcut İşler",
+    "jobsSection.title": "Mevcut İşler",
+    "jobsSection.description":
+      "Misyonumuz, yerel, ekonomik ve kültürel olarak teknolojik gelişimi yönetmek ve bu hedefe ulaşmak için tutkulu ve özverili insanlara ihtiyacımız var!",
+    "jobsSection.button": "Mevcut İşler",
+    "jobsSection.rightBackgroundAlt": "Sağ Arka Plan",
+    "jobsSection.leftBackgroundAlt": "Sol Arka Plan",
+    "jobsSection.lampImageAlt": "Lamba Resmi",
+    "countrySelector.italyName": "Italien",
+    "countrySelector.franceName": "Frankreich",
+    "countrySelector.germanyName": "Deutschland",
+    "countrySelector.japanName": "Japan",
+    "countrySelector.finlandName": "Finnland",
+    "countrySelector.usaName": "USA",
+    "countrySelector.turkeyName": "Türkei",
+    "countrySelector.italyFlagAlt": "Flagge Italiens",
+    "countrySelector.franceFlagAlt": "Flagge Frankreichs",
+    "countrySelector.germanyFlagAlt": "Flagge Deutschlands",
+    "countrySelector.japanFlagAlt": "Flagge Japans",
+    "countrySelector.finlandFlagAlt": "Flagge Finnlands",
+    "countrySelector.usaFlagAlt": "Flagge der USA",
+    "countrySelector.turkeyFlagAlt": "Flagge der Türkei",
+    "standalone.serverDescription":
+      "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla özel bir sunucuya sahip olabilirsiniz.",
+    "geoRegions.header": "Çoklu Coğrafi Bölgeler",
+    "geoRegions.text":
+      "Uygulamalarınızı birden fazla cihaz bölgesi üzerinden kolay ve birleşik bir kullanıcı arayüzü ile yönetin ve çalıştırın, müşterilerinize daha yakın olmak için sorunsuz geçiş yapmanızı sağlar.",
+    "geoRegions.illustrationAlt": "Coğrafi Bölgeler İllüstrasyonu",
+
+    "essentialFeatures.header":
+      "Seçtiğiniz plana bakılmaksızın hizmetlerimizle kapsamlı ve verimli bir deneyim sağlayan temel özelliklerden yararlanın",
+    "essentialFeatures.serverMonitoringTitle": "7/24 Sunucu İzleme",
+    "essentialFeatures.serverMonitoringAlt": "Sunucu İzleme Simgesi",
+    "essentialFeatures.sslCertificateTitle": "Ücretsiz SSL Sertifikası",
+    "essentialFeatures.sslCertificateAlt": "SSL Sertifikası Simgesi",
+    "essentialFeatures.threatProtectionTitle":
+      "Zararlı Tehditlere Karşı Koruma",
+    "essentialFeatures.threatProtectionAlt": "Tehdit Koruması Simgesi",
+    "essentialFeatures.softaculousInstallerTitle":
+      "Softaculous Kurulum Programı",
+    "essentialFeatures.softaculousInstallerAlt": "Softaculous Simgesi",
+    "essentialFeatures.regularBackupTitle": "Düzenli Yedekleme",
+    "essentialFeatures.regularBackupAlt": "Yedekleme Simgesi",
+    "essentialFeatures.linuxOsTitle": "Linux İşletim Sistemi",
+    "essentialFeatures.linuxOsAlt": "Linux Simgesi",
+    "essentialFeatures.controlPanelTitle": "Cpanel/Plesk Kontrol Paneli",
+    "essentialFeatures.controlPanelAlt": "Kontrol Paneli Simgesi",
+    "essentialFeatures.technicalSupportTitle": "Sürekli Teknik Destek",
+    "essentialFeatures.technicalSupportAlt": "Teknik Destek Simgesi",
+
+    "fullServers.mainTitle": "Tamamen Adanmış Sunucular",
+    "fullServers.mainDescription":
+      "Web sitenizi kolaylıkla oluşturmanıza ve yönetmenize yardımcı olacak yenilikçi araçlarla kullanıcı dostu paylaşımlı barındırma sunuyoruz",
+
+    "hostingTiers.mainTitle": "Adanmış Sunucu Planları",
+    "hostingTiers.serverInfoTitle": "Sunucu Bilgileri",
+    "hostingTiers.serverInfoSubtitle": "İhtiyaçlarınıza uygun sunucuyu seçin",
+    "hostingTiers.priceMain": "31,99 ",
+    "hostingTiers.priceRenewal": "Yenilemede 20 SAR/ay",
+    "hostingTiers.buyNowButton": "Şimdi Satın Al",
+    "hostingTiers.featuresButton": "Özellikler",
+    "hostingTiers.cpuSpecTitle": "2,4 GHz'de 32 Çekirdek",
+    "hostingTiers.cpuSpecSubtitle": "Benchmark Skoru: 15.390",
+    "hostingTiers.storageSpecTitle": "2 x 250 GB SSD Sürücü",
+    "hostingTiers.storageSpecSubtitle": "8 sürücüye kadar genişletilebilir",
+    "hostingTiers.databaseSpecTitle": "1 Veritabanı",
+    "hostingTiers.databaseSpecSubtitle":
+      "3 veritabanına kadar genişletilebilir",
+    "hostingTiers.ramSpecTitle": "64 GB",
+    "hostingTiers.ramSpecSubtitle": "384 GB'a kadar yükseltilebilir",
+    "hostingTiers.bandwidthSpecTitle": "3 Gbps Hız",
+    "hostingTiers.bandwidthSpecSubtitle": "Aylık 100 TB ücretsiz veri",
+    "hostingTiers.controlPanelSpecTitle": "cPanel/WHM, Plesk",
+    "hostingTiers.controlPanelSpecSubtitle": "Obsidian Web Barındırma Sürümü",
+    "hostingTiers.germanyFlagAlt": "Almanya Bayrağı",
+    "hostingTiers.finlandFlagAlt": "Finlandiya Bayrağı",
+    "hostingTiers.ukFlagAlt": "Birleşik Krallık Bayrağı",
+    "serverServices.mainTitle": "Tüm Hizmetler İçerir",
+    "serverServices.emailProtection": "E-posta ve Virüs Koruması",
+    "serverServices.malwareProtection":
+      "Kötü Amaçlı Yazılımlara ve Fidye Yazılımlarına Karşı Koruma",
+    "serverServices.networkSecurity":
+      "İzleme, Dolandırıcılık ve Reklam Ağı Tehditlerine, Hırsızlığa, İftiraya ve Özelleştirmeye Karşı Koruma",
+    "serverServices.cloudMigration": "İmkansız Yapılandırmadan Buluta Geçiş",
+    "serverServices.threatDetection": "Gelişmiş Tehdit Tespiti ve Yanıt",
+    "serverServices.identityProtection":
+      "Dijital Kimlik ve Cihazların Koruması",
+
+    "backupsSection.title": "Backups",
+    "backupsSection.description": "Permanente automatische Backups!",
     "supportParagraph.description":
       "Eğer şirket müşterilerinden biriyseniz, teknik destek veya satış ekibimize ulaşmak için hesabınız ,üzerinden kolayca bizimle iletişime geçebilirsiniz. İhtiyaçlarınıza uygun en iyi hizmeti ve hızlı çözümleri sunmaya kararlıyız.",
 
