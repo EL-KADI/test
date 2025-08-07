@@ -45,7 +45,7 @@ export default function PartnersSection() {
 
           {/* Cloudlinux */}
           <PartnerCard
-            img="/Cloudlinux.svg"
+            img="/cloudlinuxno.svg"
             name="Cloudlinux"
             desc={t("partners.cloudlinux.desc")}
             isRTL={isRTL}

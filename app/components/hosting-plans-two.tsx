@@ -15,7 +15,7 @@ export default function HostingPlansTwo() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#ffffff] p-8 relative overflow-hidden mx-auto mt-28" dir="rtl">
+    <div className="bg-[#ffffff] p-8 relative overflow-hidden mx-auto mt-28" dir="rtl">
       <Image
         alt="rightImg"
         width={393}
@@ -32,7 +32,7 @@ export default function HostingPlansTwo() {
         style={{ color: "transparent" }}
         src={LeftImg}
       />
-      <div className="container mx-auto relative z-10 max-w-6xl">
+      <div className="container mx-auto relative  max-w-6xl">
         <h1 className="text-4xl  font-bold text-[#2b1f51] text-center mb-16">
           {t("hostingPlans.choosePlan")}
         </h1>

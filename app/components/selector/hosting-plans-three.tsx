@@ -346,7 +346,7 @@ export default function HostingPlansThree() {
                   <p className="font-light">{spec.subtitle}</p>
                 </div>
               </div>
-              <div className="w-[calc(100%+2rem)] absolute bottom-0 border-b-2 z-10"></div>
+              <div className="w-[calc(100%+2rem)] absolute bottom-0 border-b-2 -z-0"></div>
             </div>
           ))}
         </div>

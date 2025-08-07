@@ -9,31 +9,37 @@ export default function FeaturesSectionFour() {
       image: "/work-across-platforms.svg",
       alt: t("featuresSectionFour.feature.crossPlatformAlt"),
       title: t("featuresSectionFour.feature.crossPlatform"),
+      width:"88px"
     },
     {
       image: "/ddos-mitigation.svg",
       alt: t("featuresSectionFour.feature.ddosMitigationAlt"),
       title: t("featuresSectionFour.feature.ddosMitigation"),
+       width:"80px"
     },
     {
       image: "/malware-detection.svg",
       alt: t("featuresSectionFour.feature.malwareRemovalAlt"),
       title: t("featuresSectionFour.feature.malwareRemoval"),
+       width:"58px"
     },
     {
       image: "/ssl-certificate.svg",
       alt: t("featuresSectionFour.feature.sslCertificateAlt"),
       title: t("featuresSectionFour.feature.sslCertificate"),
+       width:"60px"
     },
     {
       image: "/security-monitoring.svg",
       alt: t("featuresSectionFour.feature.securityMonitoringAlt"),
       title: t("featuresSectionFour.feature.securityMonitoring"),
+       width:"88px"
     },
     {
       image: "/performance-optimization.svg",
       alt: t("featuresSectionFour.feature.performanceOptimizationAlt"),
-      title: t("featuresSectionFour.feature.performanceOptimization"),
+      title: t("featuresSectionFour.feature.performanceOptimization"), 
+      width:"88px"
     },
   ];
 
@@ -48,8 +54,8 @@ export default function FeaturesSectionFour() {
               key={index}
               className="bg-white rounded-lg p-6 flex items-center justify-center gap-4 flex-col shadow-md transition hover:scale-105 hover:shadow-lg"
             >
-              <Image src={feature.image} alt={feature.alt} width={64} height={64} />
-              <h2 className="text-center text-base font-medium text-gray-700">{feature.title}</h2>
+             <Image src={feature.image} alt={feature.alt} width={parseInt(feature.width)} height={parseInt(feature.width)} />
+              <h2 className="text-center  text-base font-medium text-gray-700">{feature.title}</h2>
             </div>
           ))}
         </div>

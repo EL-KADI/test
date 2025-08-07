@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useLanguage } from '../../contexts/language-context';
 
 const WhoisToolSectionTwo = () => {
@@ -6,10 +7,12 @@ const WhoisToolSectionTwo = () => {
   return (
     <div className="container mt-32 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-8">
-        <img
+        <Image
           className={`w-5/6 ${isRTL ? 'lg:me-auto' : 'lg:ms-auto'} mx-auto ${isRTL ? 'lg:order-last' : 'lg:order-last'}`}
           alt={t('whoisToolSectionTwo.imageAlt')}
           src="/WhoisToolSectionTwo.svg"
+             width={500}
+          height={500}
         />
         <div className="grid-flow-dense">
           <h1 className={`text-3xl font-semibold ${isRTL ? 'text-right' : 'text-left'}`}>

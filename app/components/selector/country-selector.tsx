@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -57,10 +56,13 @@ export default function CountrySelector() {
 
   // State to keep track of the currently selected country, defaulting to Italy
   const [selectedCountryId, setSelectedCountryId] = useState("italy");
+
   // Ref for the main container to measure its position
   const containerRef = useRef<HTMLDivElement>(null);
+
   // Ref for each country item to measure their individual positions and widths
   const itemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
   // State to store the calculated left position and width for the animated background
   const [backgroundStyle, setBackgroundStyle] = useState({
     left: 0,
@@ -110,7 +112,7 @@ export default function CountrySelector() {
     <div className="flex justify-center items-center px-4 p-4">
       <div
         ref={containerRef}
-        className={`relative grid grid-cols-2 w-[60%] lg:w-full lg:grid-cols-7 gap-4 rounded-xl bg-white p-2 px-4 max-w-4xl sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)]`}
+        className={`relative grid grid-cols-2 w-[60%] lg:w-full items-center justify-items-stretch lg:justify-items-center lg:grid-cols-7 gap-4 rounded-xl bg-white p-2 px-4 max-w-4xl sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)]`}
         dir={isRTL ? "rtl" : "ltr"}
       >
         {/* Animated blue background */}
@@ -133,22 +135,13 @@ export default function CountrySelector() {
               itemRefs.current[country.id] = el;
             }}
             className={cn(
-              `relative z-10 flex ${
-                isRTL ? "flex-row-reverse" : "flex-row"
-              } w-max mx-auto items-center justify-center gap-2 px-4 py-2 rounded-full cursor-pointer`,
+              `relative -z-0 flex flex-row w-full lg:w-max lg:mx-auto items-center ${isRTL ? 'justify-end' : 'justify-start'} lg:justify-center gap-2 px-4 py-2 rounded-full cursor-pointer`,
               selectedCountryId === country.id
                 ? "text-white"
                 : "text-gray-700 hover:bg-gray-100"
             )}
             onClick={() => setSelectedCountryId(country.id)}
           >
-            <span
-              className={`text-sm font-medium ${
-                isRTL ? "text-right" : "text-left"
-              }`}
-            >
-              {country.name}
-            </span>
             <Image
               src={country.flag || "/placeholder.svg"}
               alt={country.flagAlt}
@@ -156,6 +149,13 @@ export default function CountrySelector() {
               height={24}
               className="w-6 h-6 rounded-full object-cover"
             />
+            <span
+              className={`text-sm font-medium ${
+                isRTL ? "text-right" : "text-left"
+              }`}
+            >
+              {country.name}
+            </span>
           </div>
         ))}
       </div>

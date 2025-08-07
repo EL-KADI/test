@@ -1,13 +1,1 @@
-<svg width="110" height="112" viewBox="0 0 110 112" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_3550_3631)">
-<path d="M75.4375 42V70H89.0625" stroke="#265597" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M99.2812 84H10.7188C6.97187 84 3.90625 80.85 3.90625 77V35C3.90625 31.15 6.97187 28 10.7188 28H99.2812C103.028 28 106.094 31.15 106.094 35V77C106.094 80.85 103.028 84 99.2812 84Z" stroke="#265597" stroke-width="6" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M34.5625 49C34.5625 45.15 31.4969 42 27.75 42C24.0031 42 20.9375 45.15 20.9375 49C20.9375 52.85 24.0031 56 27.75 56C31.4969 56 34.5625 59.15 34.5625 63C34.5625 66.85 31.4969 70 27.75 70C24.0031 70 20.9375 66.85 20.9375 63" stroke="#265597" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M61.8125 49C61.8125 45.15 58.7469 42 55 42C51.2531 42 48.1875 45.15 48.1875 49C48.1875 52.85 51.2531 56 55 56C58.7469 56 61.8125 59.15 61.8125 63C61.8125 66.85 58.7469 70 55 70C51.2531 70 48.1875 66.85 48.1875 63" stroke="#265597" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_3550_3631">
-<rect width="109" height="112" fill="white" transform="translate(0.5)"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="112" fill="none" viewBox="0 0 110 112"><g stroke="#265597" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" clip-path="url(#a)"><path stroke-width="4" d="M75.438 42v28h13.624"/><path stroke-width="6" d="M99.281 84H10.72c-3.747 0-6.813-3.15-6.813-7V35c0-3.85 3.066-7 6.813-7H99.28c3.747 0 6.813 3.15 6.813 7v42c0 3.85-3.066 7-6.813 7"/><path stroke-width="4" d="M34.563 49c0-3.85-3.066-7-6.813-7s-6.812 3.15-6.812 7 3.065 7 6.812 7 6.813 3.15 6.813 7-3.066 7-6.813 7-6.812-3.15-6.812-7M61.813 49c0-3.85-3.066-7-6.813-7s-6.812 3.15-6.812 7 3.065 7 6.812 7 6.813 3.15 6.813 7-3.066 7-6.813 7-6.812-3.15-6.812-7"/></g><defs><clipPath id="a"><path fill="#fff" d="M.5 0h109v112H.5z"/></clipPath></defs></svg>

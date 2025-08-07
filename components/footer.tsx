@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useLanguage } from "../contexts/language-context";
 import Link from "next/link";
-import LanguageSelector from "./language-selector";
+import LanguageSelectorTwo from "./language-selector-two";
+import Image from "next/image";
 
 const Footer = () => {
   const { t, isRTL } = useLanguage();
@@ -18,9 +19,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8  ">
           {/* First Column */}
           <div className="flex flex-col items-center text-center">
-            <img
+            <Image
               src="/logoFooter.svg"
               alt="Logo"
+              width={100}
+              height={100}
               className={`mb-4 max-w-[350px] lg:w-full ${
                 isRTL ? "2xl:translate-x-8" : "2xl:-translate-x-8"
               }`}
@@ -153,23 +156,25 @@ const Footer = () => {
               </svg>
               +966551234567
             </Button>
-            <div className=" lg:grid lg:grid-cols-2 lg:gap-2 flex  max-w-xs    py-0">
-              {["visa", "mastercard", "paypal", "cib", "vodafone", "mada"].map(
-                (img, i) => (
-                  <img
-                    key={i}
-                    src={`/${img}.png`}
-                    alt={img}
-                    className="lg:w-10 w-8 lg:mx-5 mx-2 md:mx-0.5 my-4"
+            <div className=" lg:grid lg:grid-cols-1  flex  max-w-xs    py-0">
+  
+                  <Image
+
+                    src="payments-compny.webp"
+                    alt="visa, mastercard, paypal, cib, vodafone, mada"
+                      width={250}
+              height={250}
+                    className=" my-4 max-w-44 lg:max-w-full md:translate-x-1 lg:translate-x-0 "
                   />
-                )
-              )}
+         
             </div>
             <div className="bg-[#F36C34] py-0 px-0 rounded-lg flex justify-center items-center lg:w-[75%] w-1/2">
-              <img
-                src="/Cpanel.png"
+              <Image
+                src="/Cpanel.webp"
                 alt="cPanel"
-                className="lg:w-full w-9/12   object-cover"
+                  width={40}
+              height={40}
+                className="lg:w-full w-9/12  rounded-lg object-cover"
               />
             </div>
           </div>
@@ -199,7 +204,7 @@ const Footer = () => {
                 : "me-auto justify-start items-start"
             }`}
           >
-            <LanguageSelector />
+            <LanguageSelectorTwo />
           </div>
         </div>
         <div className="text-black text-sm text-center opacity-55">

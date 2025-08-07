@@ -22,7 +22,7 @@ export default function CTA() {
           width={180}
           height={180}
         />
-        <div className="relative z-10">
+        <div className="relative -z-0">
           <h1 className="font-bold text-2xl">{t("cta.title")}</h1>
           <h1 className="font-bold text-lg mt-4">{t("cta.description")}</h1>
           <div className="bg-white text-primary hover:bg-transparent transition hover:text-white hover:border-2 hover:border-white rounded-md px-12 py-2 w-fit mx-auto cursor-pointer mt-8 font-bold">

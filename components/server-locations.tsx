@@ -1,8 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X } from 'lucide-react';
 import { useLanguage } from "../contexts/language-context";
 import AnimatedNumber from "./animated-number";
 
@@ -18,6 +17,7 @@ import korea from "../public/korea.svg";
 import sd from "../public/sd-circle.svg";
 import fi from "../public/fi-circle.svg";
 import it from "../public/it-circle.svg";
+import india from "../public/india-circle.svg";
 
 // Circular Gauge Component with proper number positioning
 function CircularGauge({ value, max = 100 }: { value: number; max?: number }) {
@@ -169,58 +169,62 @@ function getDailySeed() {
 export default function ServerLocations() {
   const { t, isRTL } = useLanguage();
   const [selectedCountry, setSelectedCountry] = useState<any>(null);
+  const [hoveredCountry, setHoveredCountry] = useState<any>(null);
   const [isModalClosing, setIsModalClosing] = useState(false);
   const [isModalOpening, setIsModalOpening] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showHoverModal, setShowHoverModal] = useState(false);
+  const [isHoverModalClosing, setIsHoverModalClosing] = useState(false);
+  const [isHoverModalOpening, setIsHoverModalOpening] = useState(false);
 
   const initialServerData = [
     {
       nameKey: "serverLocations.uae",
-      latency: "109ms",
+      latency: "85",
       flag: ae,
       gauge: 65,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "42",
+      upload: "18",
     },
     {
       nameKey: "serverLocations.germany",
-      latency: "129ms",
+      latency: "95",
       flag: de,
       gauge: 72,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "48",
+      upload: "20",
     },
     {
       nameKey: "serverLocations.finland",
-      latency: "165ms",
+      latency: "120",
       flag: fi,
       gauge: 58,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "38",
+      upload: "16",
     },
     {
       nameKey: "serverLocations.korea",
-      latency: "123ms",
+      latency: "180",
       flag: korea,
       gauge: 68,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "35",
+      upload: "15",
     },
     {
       nameKey: "serverLocations.italy",
-      latency: "45ms",
+      latency: "75",
       flag: it,
       gauge: 75,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "50",
+      upload: "22",
     },
     {
       nameKey: "serverLocations.saudi",
-      latency: "146ms",
+      latency: "65",
       flag: sa,
       gauge: 62,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "40",
+      upload: "17",
     },
     {
       nameKey: "serverLocations.sudan",
@@ -233,59 +237,83 @@ export default function ServerLocations() {
     },
     {
       nameKey: "serverLocations.turkey",
-      latency: "157ms",
+      latency: "90",
       flag: tr,
       gauge: 60,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "44",
+      upload: "19",
     },
     {
       nameKey: "serverLocations.britain",
-      latency: "71ms",
+      latency: "55",
       flag: uk,
       gauge: 78,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "52",
+      upload: "24",
     },
     {
       nameKey: "serverLocations.america",
-      latency: "223ms",
+      latency: "150",
       flag: us,
       gauge: 45,
-      download: "45 GB",
-      upload: "18 GB",
+      download: "30",
+      upload: "12",
     },
+    // New countries added
+    {
+      nameKey: "serverLocations.india",
+      latency: "125",
+      flag: india,
+      gauge: 55,
+      download: "32",
+      upload: "14",
+    },
+ 
   ];
+
   const [serverData, setServerData] = useState<any[]>([]);
 
   useEffect(() => {
     const dailySeed = getDailySeed();
     const dailyRandom = mulberry32(dailySeed);
-
+    
+    // Create a refresh seed based on current timestamp (changes on each refresh)
+    const refreshSeed = Date.now() % 1000000;
+    const refreshRandom = mulberry32(refreshSeed);
+    
     const updatedData = initialServerData.map((server) => {
       if (server.isComingSoon) {
         return server;
       }
-
+      
       const originalLatency = Number.parseInt(server.latency as string);
       const originalGauge = server.gauge;
       const originalDownload = Number.parseInt(server.download as string);
       const originalUpload = Number.parseInt(server.upload as string);
 
-      const dailyOffset = Math.floor(dailyRandom() * 11) - 5;
-      const refreshOffset = Math.floor(Math.random() * 7) - 3;
+      // Daily variation: ±15ms for latency, ±10 for gauge, ±8 for download/upload
+      const dailyLatencyOffset = Math.floor(dailyRandom() * 31) - 15; // -15 to +15
+      const dailyGaugeOffset = Math.floor(dailyRandom() * 21) - 10; // -10 to +10
+      const dailyDownloadOffset = Math.floor(dailyRandom() * 17) - 8; // -8 to +8
+      const dailyUploadOffset = Math.floor(dailyRandom() * 17) - 8; // -8 to +8
 
-      let newGauge = originalGauge + dailyOffset + refreshOffset;
-      newGauge = Math.max(0, Math.min(100, newGauge));
+      // Refresh variation: ±3 for all values
+      const refreshLatencyOffset = Math.floor(refreshRandom() * 7) - 3; // -3 to +3
+      const refreshGaugeOffset = Math.floor(refreshRandom() * 7) - 3; // -3 to +3
+      const refreshDownloadOffset = Math.floor(refreshRandom() * 7) - 3; // -3 to +3
+      const refreshUploadOffset = Math.floor(refreshRandom() * 7) - 3; // -3 to +3
 
-      let newLatency = originalLatency + dailyOffset + refreshOffset;
-      newLatency = Math.max(1, newLatency);
+      // Calculate new values
+      let newLatency = originalLatency + dailyLatencyOffset + refreshLatencyOffset;
+      let newGauge = originalGauge + dailyGaugeOffset + refreshGaugeOffset;
+      let newDownload = originalDownload + dailyDownloadOffset + refreshDownloadOffset;
+      let newUpload = originalUpload + dailyUploadOffset + refreshUploadOffset;
 
-      let newDownload = originalDownload + dailyOffset + refreshOffset;
-      newDownload = Math.max(0, newDownload);
-
-      let newUpload = originalUpload + dailyOffset + refreshOffset;
-      newUpload = Math.max(0, newUpload);
+      // Ensure values stay within logical ranges
+      newLatency = Math.max(15, Math.min(300, newLatency)); // 15ms to 300ms
+      newGauge = Math.max(20, Math.min(95, newGauge)); // 20% to 95%
+      newDownload = Math.max(25, Math.min(80, newDownload)); // 25GB to 80GB
+      newUpload = Math.max(10, Math.min(40, newUpload)); // 10GB to 40GB
 
       return {
         ...server,
@@ -295,7 +323,7 @@ export default function ServerLocations() {
         upload: newUpload,
       };
     });
-
+    
     setServerData(updatedData);
   }, []);
 
@@ -360,6 +388,14 @@ export default function ServerLocations() {
       countryKey: "serverLocations.turkey",
       flag: tr,
     },
+    // New countries on map
+    {
+      top: "38.5%",
+      left: isRTL ? "72.8%" : "72.8%",
+      countryKey: "serverLocations.india",
+      flag: india,
+    },
+
   ];
 
   const handleDotClick = (dot: any) => {
@@ -377,6 +413,32 @@ export default function ServerLocations() {
         setIsModalOpening(false);
       }, 50);
     }
+  };
+
+  const handleDotHover = (dot: any) => {
+    const countryData = serverData.find(
+      (server) => server.nameKey === dot.countryKey
+    );
+    if (countryData) {
+      setIsHoverModalOpening(true);
+      setShowHoverModal(true);
+      setHoveredCountry({
+        ...countryData,
+        countryKey: dot.countryKey,
+      });
+      setTimeout(() => {
+        setIsHoverModalOpening(false);
+      }, 50);
+    }
+  };
+
+  const handleDotLeave = () => {
+    setIsHoverModalClosing(true);
+    setTimeout(() => {
+      setShowHoverModal(false);
+      setHoveredCountry(null);
+      setIsHoverModalClosing(false);
+    }, 300);
   };
 
   const closeModal = () => {
@@ -414,6 +476,7 @@ export default function ServerLocations() {
             src={map || "/placeholder.svg"}
             width={800}
             height={400}
+            loading="lazy"
           />
           <div>
             {mapDots.map((dot, index) => (
@@ -422,38 +485,18 @@ export default function ServerLocations() {
                 className="absolute"
                 style={{ top: dot.top, left: dot.left }}
               >
-                <div className="group relative">
-                  <div
-                    className="w-3 h-3 bg-blue-500 rounded-full cursor-pointer hover:scale-125 transition-transform"
-                    onClick={() => handleDotClick(dot)}
-                  ></div>
-                  <div
-                    className={`absolute ${
-                      isRTL
-                        ? "right-1/2 translate-x-1/2 flex-row-reverse"
-                        : "left-1/2 -translate-x-1/2 flex-row-reverse"
-                    } top-full mt-2 hidden group-hover:flex items-center bg-white py-3 shadow-lg rounded-lg px-8 gap-4 justify-center z-10 whitespace-nowrap`}
-                  >
-                    <h1
-                      className={`w-fit text-black ${
-                        isRTL ? "text-right " : "text-left "
-                      }`}
-                    >
-                      {t(dot.countryKey as any)}
-                    </h1>
-                    <Image
-                      width={30}
-                      height={30}
-                      alt={t(dot.countryKey as any)}
-                      src={dot.flag || "/placeholder.svg"}
-                    />
-                  </div>
-                </div>
+                <div
+                  className="w-3 h-3 bg-blue-500 rounded-full cursor-pointer hover:scale-125 transition-transform"
+                  onClick={() => handleDotClick(dot)}
+                  onMouseEnter={() => handleDotHover(dot)}
+                  onMouseLeave={handleDotLeave}
+                ></div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
       <div
         className={`grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mt-12 ${
           isRTL ? "text-right" : "text-left"
@@ -471,6 +514,7 @@ export default function ServerLocations() {
               alt={t(server.nameKey)}
               width={40}
               height={40}
+              loading="lazy"
             />
             <div className={isRTL ? "text-right" : "text-left"}>
               <h1
@@ -499,6 +543,8 @@ export default function ServerLocations() {
           </div>
         ))}
       </div>
+
+      {/* Click Modal */}
       {showModal && (
         <div
           className={`fixed inset-0 bg-black transition-all duration-300 flex items-center justify-center z-50 p-4 ${
@@ -536,6 +582,7 @@ export default function ServerLocations() {
                 width={32}
                 height={32}
                 className="rounded-full"
+                loading="lazy"
               />
               <h2
                 className={`text-lg font-semibold text-gray-800 ${
@@ -612,6 +659,123 @@ export default function ServerLocations() {
                   >
                     <AnimatedNumber
                       value={selectedCountry?.latency || 0}
+                      suffix="ms"
+                    />
+                  </span>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Hover Modal */}
+      {showHoverModal && (
+        <div
+          className={`fixed inset-0 bg-black transition-all duration-300 flex items-center justify-center z-40 p-4 pointer-events-none ${
+            isHoverModalClosing ? "bg-opacity-0" : "bg-opacity-30"
+          }`}
+        >
+          <div
+            className={`bg-white rounded-lg p-6 max-w-sm w-full relative transform transition-all duration-300 ${
+              isHoverModalOpening
+                ? "scale-75 opacity-0"
+                : isHoverModalClosing
+                ? "scale-75 opacity-0"
+                : "scale-100 opacity-100"
+            }`}
+            dir={isRTL ? "rtl" : "ltr"}
+          >
+            <div
+              className={`flex items-center gap-3 mb-4 ${
+                isRTL ? "flex-row" : "flex-row"
+              }`}
+            >
+              <Image
+                src={hoveredCountry?.flag || "/placeholder.svg"}
+                alt={hoveredCountry ? t(hoveredCountry.countryKey) : ""}
+                width={28}
+                height={28}
+                className="rounded-full"
+                loading="lazy"
+              />
+              <h2
+                className={`text-base font-semibold text-gray-800 ${
+                  isRTL ? "text-right" : "text-left"
+                }`}
+              >
+                {hoveredCountry ? t(hoveredCountry.countryKey) : ""}
+              </h2>
+            </div>
+            {hoveredCountry?.isComingSoon ? (
+              <div className="text-center py-4">
+                <div className="text-4xl mb-2">🚧</div>
+                <h3 className="text-lg font-bold text-orange-500 mb-1">
+                  {t("serverLocations.comingSoonTitle")}
+                </h3>
+                <p className="text-gray-600 text-center text-sm">
+                  {t("serverLocations.comingSoonMessage")}
+                </p>
+              </div>
+            ) : (
+              <>
+                <div className="flex justify-center mb-4">
+                  <div className="scale-75">
+                    <CircularGauge value={hoveredCountry?.gauge || 0} />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center text-sm">
+                  <div className="text-center">
+                    <div
+                      className={`flex items-center gap-1 text-gray-500 text-xs mb-1 ${
+                        isRTL ? "flex-row" : "flex-row-reverse"
+                      }`}
+                    >
+                      <span>↓</span>
+                      <span>{t("serverLocations.download")}</span>
+                    </div>
+                    <div
+                      className={`text-sm font-semibold text-gray-800 ${
+                        isRTL ? "text-right" : "text-left"
+                      }`}
+                    >
+                      <AnimatedNumber
+                        value={hoveredCountry?.download || 0}
+                        suffix=" GB"
+                      />
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div
+                      className={`flex items-center gap-1 text-gray-500 text-xs mb-1 ${
+                        isRTL ? "flex-row" : "flex-row-reverse"
+                      }`}
+                    >
+                      <span>↑</span>
+                      <span>{t("serverLocations.upload")}</span>
+                    </div>
+                    <div
+                      className={`text-sm font-semibold text-gray-800 ${
+                        isRTL ? "text-right" : "text-left"
+                      }`}
+                    >
+                      <AnimatedNumber
+                        value={hoveredCountry?.upload || 0}
+                        suffix=" GB"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3 text-center">
+                  <span
+                    className={`text-xs font-semibold ${
+                      hoveredCountry?.latency >= 70
+                        ? "text-red-500"
+                        : "text-green-500"
+                    }`}
+                  >
+                    <AnimatedNumber
+                      value={hoveredCountry?.latency || 0}
                       suffix="ms"
                     />
                   </span>

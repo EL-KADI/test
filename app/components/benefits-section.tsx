@@ -1,4 +1,5 @@
 import { useLanguage } from '../../contexts/language-context';
+import Image from 'next/image';
 
 const BenefitsSection = () => {
   const { t, isRTL } = useLanguage();
@@ -40,7 +41,7 @@ const BenefitsSection = () => {
             key={index}
             className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105"
           >
-            <img src={benefit.image} alt={benefit.alt} />
+            <Image src={benefit.image} alt={benefit.alt} width={40} height={40} />
             <h1 className={`text-center text-xs ${isRTL ? 'text-right' : 'text-left'}`}>
               {benefit.title}
             </h1>

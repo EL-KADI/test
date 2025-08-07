@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useLanguage } from '../../contexts/language-context';
 
 const DashboardWelcome = () => {
@@ -12,7 +13,7 @@ const DashboardWelcome = () => {
       <p className="mt-8 text-center ">
         {t('dashboardWelcome.description')}
       </p>
-      <img className="mx-auto w-1/2" alt={t('dashboardWelcome.imageAlt')} src="/DashboardWelcome.svg" />
+      <Image className="mx-auto w-1/2" alt={t('dashboardWelcome.imageAlt')} src="/DashboardWelcome.svg" width={500} height={500} />
     </div>
   );
 };

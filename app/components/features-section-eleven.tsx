@@ -50,26 +50,26 @@ const FeaturesSectionEleven = () => {
   return (
     <div dir={isRTL ? 'rtl' : 'ltr'} className="relative my-64">
       <img
-        className="absolute top-0 z-10 left-0"
+        className="absolute top-0 -z-10 left-0"
         alt={t('featuresSection.rightImgAlt')}
         src="/Lbg.svg"
       />
       <img
-        className="absolute top-0 right-0'  z-10"
+        className="absolute top-0 right-0  -z-10"
         alt={t('featuresSection.leftImgAlt')}
         src="/Rbg.svg"
       />
       <h1 className="lg:text-4xl text-xl mb-6 text-center">{t('featuresSection.title')}</h1>
-      <p className="mt-4 text-center">{t('featuresSection.description')}</p>
-      <div className="container z-10  max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-12 z-20">
+      <p className="mt-4 text-center  relative">{t('featuresSection.description')}</p>
+      <div className="container   max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-12 ">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] z-20 rounded-lg p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105"
+              className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)]  rounded-lg p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105"
             >
               <img src={feature.image} alt={feature.alt} />
-              <h1 className="text-center text-xs">{feature.title}</h1>
+              <h1 className="text-center text-xs ">{feature.title}</h1>
             </div>
           ))}
         </div>

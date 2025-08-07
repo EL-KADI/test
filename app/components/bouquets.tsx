@@ -1,5 +1,6 @@
 "use client";
 import type React from "react";
+import Image from 'next/image';
 import { useLanguage } from "../../contexts/language-context";
 
 export default function Bouquets() {
@@ -8,16 +9,20 @@ export default function Bouquets() {
   return (
     <div className="mt-48 relative" dir="rtl">
       {/* Right decorative SVG */}
-      <img
-        className="absolute right-0 -top-52 -z-10 "
+      <Image
+        className="absolute right-0 -top-52 -z-10"
         alt="Right Bg"
         src="Rbg.svg"
+        width={500}
+        height={500}
       />
       {/* Left decorative SVG */}
-      <img
+      <Image
         className="absolute left-0 -top-52 -z-10"
         alt="Left Bg"
         src="Lbg.svg"
+        width={500}
+        height={500}
       />
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="lg:text-4xl text-xl mb-6 text-center">

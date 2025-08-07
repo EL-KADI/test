@@ -1,4 +1,5 @@
 import { useLanguage } from "../../contexts/language-context";
+import Image from 'next/image';
 
 export default function BusinessNeedsSection() {
   const { t } = useLanguage();
@@ -9,18 +10,21 @@ export default function BusinessNeedsSection() {
       title: t("businessNeeds.brandAwareness"),
       description: t("businessNeeds.brandAwarenessDesc"),
       alt: t("businessNeeds.brandAwarenessAlt"),
+      width: 90
     },
     {
       image: "/safety.svg",
       title: t("businessNeeds.security"),
       description: t("businessNeeds.securityDesc"),
       alt: t("businessNeeds.securityAlt"),
+      width: 45
     },
     {
       image: "/correct.svg",
       title: t("businessNeeds.accessCollaboration"),
       description: t("businessNeeds.accessCollaborationDesc"),
       alt: t("businessNeeds.accessCollaborationAlt"),
+      width: 45
     },
   ];
 
@@ -36,10 +40,12 @@ export default function BusinessNeedsSection() {
               key={index}
               className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light flex-col justify-between transition hover:scale-105"
             >
-              <img
+              <Image
                 className="relative before:absolute before:w-16 before:h-2 before:bg-black before:bottom-0 before:left-0"
                 src={feature.image}
                 alt={feature.alt}
+                width={feature.width}
+                height={feature.width}
               />
               <div>
                 <h1 className="mb-6 text-xl">{feature.title}</h1>

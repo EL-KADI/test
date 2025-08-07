@@ -32,7 +32,7 @@ export default function HostingPlans() {
         style={{ color: "transparent" }}
         src={LeftImg}
       />
-      <div className="container mx-auto relative z-10 max-w-6xl">
+      <div className="container mx-auto relative -z-0 max-w-6xl">
         <h1 className="text-4xl  font-bold text-[#2b1f51] text-center mb-16">
           {t("hostingPlans.choosePlan")}
         </h1>

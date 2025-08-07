@@ -31,7 +31,7 @@ export default function DistributorBasicNeed() {
           </svg>
         </div>
 
-        <div className={`relative mx-auto z-10 ${isRTL ? "md:text-right" : "md:text-left"} md:px-36 text-center`}>
+        <div className={`relative mx-auto  ${isRTL ? "md:text-right" : "md:text-left"} md:px-36 text-center`}>
           <h1 className="font-bold text-2xl">{t("distributorBasicNeed.title")}</h1>
           <h1 className="font-bold text-lg mt-4">{t("distributorBasicNeed.subtitle")}</h1>
 

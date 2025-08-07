@@ -1,13 +1,5 @@
 "use client";
 import Image from "next/image";
-import Rbg from "../public/Rbg.svg";
-import Lbg from "../public/Lbg.svg";
-import IsCloud from "../public/ls-cloud-card.svg";
-import CustomCloud from "../public/custom-cloud.svg";
-import SpecialServer from "../public/special-server.svg";
-import Vps from "../public/Vps.svg";
-import Wpaas from "../public/Wpaas.svg";
-import Kaas from "../public/Kaas.svg";
 import { useLanguage } from "../contexts/language-context";
 
 export default function ServicesSection() {
@@ -17,37 +9,37 @@ const { t, isRTL } = useLanguage();
       title: t("servicesCards.dedicatedServers.title"),
       description: t("servicesCards.dedicatedServers.desc"),
       borderColor: "border-[#FBE06B]",
-      image: SpecialServer,
+      image: "/special-server.svg"
     },
     {
       title: t("servicesCards.sharedCloudHosting.title"),
       description: t("servicesCards.sharedCloudHosting.desc"),
       borderColor: "border-[#E5E7EB]",
-      image: CustomCloud,
+      image: "/custom-cloud.svg"
     },
     {
       title: t("servicesCards.webHosting.title"),
       description: t("servicesCards.webHosting.desc"),
       borderColor: "border-[#7F6FCB]",
-      image: IsCloud,
+      image: "/ls-cloud-card.svg"
     },
     {
       title: t("servicesCards.controlPanelLicense.title"),
       description: t("servicesCards.controlPanelLicense.desc"),
       borderColor: "border-[#594734]",
-      image: Kaas,
+      image: "/Kaas.svg"
     },
     {
       title: t("servicesCards.domains.title"),
       description: t("servicesCards.domains.desc"),
       borderColor: "border-[#333C5E]",
-      image: Wpaas,
+      image: "/Wpaas.svg",
     },
     {
       title: t("servicesCards.vps.title"),
       description: t("servicesCards.vps.desc"),
       borderColor: "border-[#568F5E]",
-      image: Vps,
+      image:"/Vps.svg"
     },
   ];
 
@@ -66,16 +58,16 @@ const { t, isRTL } = useLanguage();
         <Image
           className="absolute -top-52 right-0 -z-10"
           alt="rightImg"
-          src={Rbg}
-          width={393}
-          height={636}
+          src="/Rbg.svg"
+          width={400}
+          height={400}
         />
         <Image
           className="absolute -top-52 left-0 -z-10"
           alt="leftImg"
-          src={Lbg}
-          width={393}
-          height={636}
+          src="/Lbg.svg"
+          width={400}
+          height={400}
         />
 
         {/* Services Grid */}
@@ -91,14 +83,14 @@ const { t, isRTL } = useLanguage();
                   <Image
                     alt={service.title}
                     src={service.image}
-                    width={200}
-                    height={200}
+                    width={300}
+                    height={300}
                     className="object-contain"
                     style={{
                       width: "auto",
                       height: "auto",
-                      maxWidth: "200px",
-                      maxHeight: "200px",
+                      maxWidth: "300px",
+                      maxHeight: "300px",
                     }}
                   />
                 </div>

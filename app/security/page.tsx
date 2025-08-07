@@ -49,32 +49,11 @@ export default function Security() {
     stroke: #4C73CC; /* Corrected to user's specified blue */
   }
 
- 
-
-  .svg-container-fade {
-    opacity: 0;
-    transform: translateY(20px) scale(0.95);
-    animation: containerFadeIn 1.5s ease-out 0.5s forwards;
-  }
-
-  @keyframes containerFadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
   @keyframes draw {
     to {
       stroke-dashoffset: 0;
     }
   }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
   }
 `;
 

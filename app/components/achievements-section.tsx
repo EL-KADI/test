@@ -28,7 +28,7 @@ const AchievementsSection = () => {
   ];
 
   return (
-    <div dir={isRTL ? 'rtl' : 'ltr'} className="relative mt-32 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
+    <div dir={isRTL ? 'rtl' : 'ltr'} className="relative mt-32 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <h1 className="lg:text-4xl  text-2xl lg:mb-6 text-center font-bold" >
         {t('achievementsSectionTwo.title')}
       </h1>

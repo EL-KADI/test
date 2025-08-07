@@ -1,22 +1,29 @@
 import React from 'react';
+import Image from 'next/image';
 
 const BackgroundSectionSpeed = () => {
   return (
     <div className="relative h-screen">
-      <img
+      <Image
         className="absolute top-0 right-0 w-[250px]"
         alt="Background Image"
-        src="data:image/svg+xml,%3csvg%20width='398'%20height='897'%20viewBox='0%200%20398%20897'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='-36'%20y='448.368'%20width='685'%20height='685'%20rx='88'%20transform='rotate(-45%20-36%20448.368)'%20fill='%23092346'/%3e%3c/svg%3e"
+        src="/bluebg-right.svg"
+        width={398}
+        height={897}
       />
-      <img
+      <Image
         className="absolute top-0 left-0 w-[250px]"
         alt="Background Image"
-        src="data:image/svg+xml,%3csvg%20width='399'%20height='897'%20viewBox='0%200%20399%20897'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20x='-534'%20y='448.368'%20width='685'%20height='685'%20rx='88'%20transform='rotate(-45%20-534%20448.368)'%20fill='%23092346'/%3e%3c/svg%3e"
+        src="/bluebg-left.svg"
+        width={399}
+        height={897}
       />
-      <img
-        className="absolute left-1/2 transform top-[10%] -translate-x-1/2"
+      <Image
+        className="absolute  w-auto sm:max-w-md md:max-w-2xl lg:max-w-4xl  max-w-sm xl:max-w-full left-1/2 transform top-[10%] -translate-x-1/2"
         alt="Background Image"
         src="/center-bg.svg"
+        width={1850}
+        height={1850}
       />
     </div>
   );

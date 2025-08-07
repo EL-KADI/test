@@ -11,7 +11,7 @@ export default function WorldDaljm() {
           <p className="w-full">{t("worldDaljm.description")}</p>
         </div>
         <img  
-           className={`lg:absolute bottom-0  ${
+           className={`lg:absolute bottom-0   ${
                 isRTL ? "lg:right-0" : "lg:left-0"
               }`}
       

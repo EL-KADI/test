@@ -131,7 +131,7 @@ export default function NavigationBar({
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-[#fdfdfd] p-2 z-[999]"
+          className="lg:hidden text-[#fdfdfd] p-2 -z-0"
           onClick={() => setIsMobileMenuOpen(true)}
         >
           <Menu className="w-6 h-6" />
@@ -148,22 +148,22 @@ export default function NavigationBar({
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black transition-opacity duration-300 z-[1100] lg:hidden ${
+        className={`fixed inset-0 bg-black transition-opacity duration-300 !z-[1100] lg:hidden ${
           isMobileMenuOpen
             ? "bg-opacity-50 opacity-100"
             : "bg-opacity-0 opacity-0 pointer-events-none"
         }`}
       >
-        <div
+        <div  
           className={`fixed ${
             isRTL ? "right-0" : "left-0"
-          } top-0 h-full w-80 bg-white shadow-lg overflow-y-auto transform transition-transform duration-300 ease-out ${
-            isMobileMenuOpen
-              ? "translate-x-0"
-              : isRTL
-              ? "translate-x-full"
-              : "-translate-x-full"
-          }`}
+          } top-0 h-full w-[26rem] relative !z-[1200] bg-white shadow-lg overflow-y-auto transform transition-transform duration-300 ease-out ${
+  isMobileMenuOpen
+    ? "translate-x-0"
+    : isRTL
+    ? "translate-x-full"
+    : "-translate-x-full"
+} ${isRTL ? "rtl-scroll" : ""}`}
         >
           {/* Header */}
           <div
@@ -232,7 +232,8 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div  dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
+                      
                       <Link
                         href="/shared-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -281,18 +282,7 @@ export default function NavigationBar({
                        {t('softaculousSection.description')}
                         </p>
                       </Link>
-                      <Link
-                        href="/hosting/softaculous"
-                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                          {t("hosting.softaculous")}
-                        </h4>
-                        <p className="text-xs text-gray-600">
-                          {t("hosting.softaculous.desc")}
-                        </p>
-                      </Link>
+           
                       <Link
                         href="/mail-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -388,7 +378,7 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
                       <Link
                         href="/distributor-basic"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -471,7 +461,7 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                        <div className="grid grid-cols-2 gap-3">
+                        <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
                           <Link
                             href="/vps"
                             className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -578,9 +568,9 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
                       <Link
-                        href="/domains/register"
+                        href="/domains"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -592,7 +582,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/domains/local"
+                        href="/local-domains"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -616,7 +606,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/domains/cloudflare"
+                        href="/cloudflare"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -628,7 +618,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/domains/ssl"
+                        href="/ssl"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -640,7 +630,7 @@ export default function NavigationBar({
                         </p>
                       </Link>
                       <Link
-                        href="/domains/whois"
+                        href="/whois"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
@@ -685,7 +675,7 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
                       <Link
                         href="/about"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -758,6 +748,16 @@ export default function NavigationBar({
                           {t("company.payment.desc")}
                         </p>
                       </Link>
+                      <Link
+                        href="/partners"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("footer.partners")}
+                        </h4>
+                   <p className="text-xs text-gray-600">{t("paymentSection.description")}</p>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -792,7 +792,7 @@ export default function NavigationBar({
                        isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div className="grid grid-cols-2 gap-3">
+                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
                       <Link
                         href="/security"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -890,7 +890,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsHostingDropdownOpen(true)}
               onMouseLeave={() => setIsHostingDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/shared-hosting"
@@ -1039,7 +1039,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsResellerDropdownOpen(true)}
               onMouseLeave={() => setIsResellerDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-8">
                 <div className="grid grid-cols-2 gap-6">
                   <Link
                     href="/distributor-basic"
@@ -1105,7 +1105,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsServersDropdownOpen(true)}
               onMouseLeave={() => setIsServersDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/vps"
@@ -1197,10 +1197,10 @@ export default function NavigationBar({
               onMouseEnter={() => setIsDomainsDropdownOpen(true)}
               onMouseLeave={() => setIsDomainsDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
-                    href="/domains/register"
+                    href="/domains"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1213,7 +1213,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/domains/local"
+                    href="/local-domains"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1239,7 +1239,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/domains/cloudflare"
+                    href="/cloudflare"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1252,7 +1252,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/domains/ssl"
+                    href="/ssl"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1265,7 +1265,7 @@ export default function NavigationBar({
                     </div>
                   </Link>
                   <Link
-                    href="/domains/whois"
+                    href="/whois"
                     className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
                     <div className={`${isRTL ? "text-right" : "text-left"}`}>
@@ -1289,7 +1289,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsCompanyDropdownOpen(true)}
               onMouseLeave={() => setIsCompanyDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/about"
@@ -1369,6 +1369,19 @@ export default function NavigationBar({
                       </p>
                     </div>
                   </Link>
+                  <Link
+                    href="/partners"
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                  >
+                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                      <h3 className="font-bold text-lg mb-2 text-gray-900">
+                        {t("footer.partners")}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">
+                       {t("paymentSection.description")}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -1381,7 +1394,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsTechnologyDropdownOpen(true)}
               onMouseLeave={() => setIsTechnologyDropdownOpen(false)}
             >
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/security"

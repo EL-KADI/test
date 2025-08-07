@@ -8,7 +8,7 @@ export default function TemplatesSection() {
       <h1 className="text-9xl absolute -top-[85px] left-1/2 transform -translate-x-1/2 -z-[10] text-transparent bg-clip-text font-extrabold bg-gradient-to-b from-[#E8F2FC] to-[#F9F9F9]/10">
         {t("templates.million")}
       </h1>
-      <h1 className="lg:text-4xl text-xl mb-6 text-center relative z-10">{t("templates.title")}</h1>
+      <h1 className="lg:text-4xl text-xl mb-6 text-center relative -z-0">{t("templates.title")}</h1>
       <p className="text-center lg:w-1/2 mx-auto">{t("templates.description")}</p>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-12 mt-12">
         <div className="bg-gray-300 h-[150px] rounded-xl"></div>

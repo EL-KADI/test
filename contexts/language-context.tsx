@@ -5,11 +5,13 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 type Language = "arabic" | "english" | "french" | "german" | "turkish";
 
-interface LanguageContextType {
+export interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: TranslationKeys) => string;
   isRTL: boolean;
+  t: (key: string) => string;
+  selectedCountry: string;
+  setSelectedCountry: (country: string) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -17,9 +19,55 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 type TranslationKeys =
+  | "domainRegistrationSA.backgroundAlt"
+  | "domainRegistrationSA.numberOneAlt"
+  | "domainRegistrationSA.title"
+  | "paymentSection.description"
+  | "domainRegistrationSA.description"
+  | "partnersSection.mainTitle"
+  | "partnersSection.rightBackgroundAlt"
+  | "partnersSection.leftBackgroundAlt"
+  | "partnersSection.sucuriName"
+  | "partnersSection.sucuriDescription"
+  | "partnersSection.sucuriLogoAlt"
+  | "partnersSection.softaculousName"
+  | "partnersSection.softaculousDescription"
+  | "partnersSection.softaculousLogoAlt"
+  | "partnersSection.linuxName"
+  | "partnersSection.linuxDescription"
+  | "partnersSection.linuxLogoAlt"
+  | "domainRegistrationSA.saTitle"
+  | "domainRegistrationSA.saPrice"
+  | "domainRegistrationSA.saCircleAlt"
+  | "domainRegistrationSA.eduSa"
+  | "domainRegistrationSA.comSa"
+  | "domainRegistrationSA.netSa"
+  | "domainRegistrationSA.orgSa"
+  | "domainRegistrationSA.medSa"
+  | "domainRegistrationSA.idSa"
+  | "domainRegistrationSA.schSa"
+  | "domainRegistrationSA.plcSa"
+  | "domainRegistrationSA.worldIconAlt"
+  | "domainRegistrationSA.price"
+  | "domainRegistrationSA.approvalTitle"
+  | "domainRegistrationSA.schSaApproval"
+  | "domainRegistrationSA.schSaApprovalDesc"
+  | "domainRegistrationSA.medSaApproval"
+  | "domainRegistrationSA.medSaApprovalDesc"
+  | "domainRegistrationSA.govSaApproval"
+  | "domainRegistrationSA.govSaApprovalDesc"
+  | "domainRegistrationSA.govSaAltApproval"
+  | "domainRegistrationSA.govSaAltApprovalDesc"
+  | "domainStatsSA.title"
+  | "domainStatsSA.description"
+  | "domainStatsSA.chooseDomain"
+  | "domainStatsSA.achievement"
+  | "domainStatsSA.backgroundRightAlt"
+  | "domainStatsSA.backgroundLeftAlt"
   | "speedSection.title"
   | "dashboardWelcome.title"
   | "dashboardWelcome.description"
+  | "serverLocations.india"
   | "dashboardWelcome.imageAlt"
   // DashboardOverview
   | "dashboardOverview.title"
@@ -49,6 +97,66 @@ type TranslationKeys =
   | "techStack.lagomAlt"
   | "techStack.whatsappApiTitle"
   | "techStack.whatsappApiAlt"
+  | "websiteSuccessCriteria.sslTitle"
+  | "websiteSuccessCriteria.sslDescription"
+  | "websiteSuccessCriteria.cloudflareTitle"
+  | "websiteSuccessCriteria.cloudflareDescription"
+  | "websiteSuccessCriteria.cloudflareEnhanceTitle"
+  | "websiteSuccessCriteria.cloudflareEnhanceDescription"
+  | "websiteSuccessCriteria.mainTitle"
+  | "websiteSuccessCriteria.performanceTitle"
+  | "websiteSuccessCriteria.globalSpeedBoost"
+  | "websiteSuccessCriteria.contentDelivery"
+  | "websiteSuccessCriteria.loadBalancing"
+  | "websiteSuccessCriteria.latencyReduction"
+  | "websiteSuccessCriteria.globalSpeedBoostIconAlt"
+  | "websiteSuccessCriteria.globalSpeedBoostDescription"
+  | "websiteSuccessCriteria.securityTitle"
+  | "websiteSuccessCriteria.ddosProtection"
+  | "websiteSuccessCriteria.webApplicationFirewall"
+  | "websiteSuccessCriteria.sslTlsEncryption"
+  | "websiteSuccessCriteria.botManagement"
+  | "websiteSuccessCriteria.realTimeThreatAnalysis"
+  | "websiteSuccessCriteria.securityIconAlt"
+  | "websiteSuccessCriteria.ddosProtectionDescription"
+  | "websiteSuccessCriteria.signUpNow"
+  | "cloudflareSection.cloudflareTitle"
+  | "cloudflareSection.cloudflareDescription"
+  | "cloudflareSection.cloudflareEnhanceTitle"
+  | "cloudflareSection.cloudflareEnhanceDescription"
+  | "cloudflareSection.signUpNow"
+  | "sslSection.sslTitle"
+  | "sslContent.rightBackgroundAlt"
+  | "sslContent.leftBackgroundAlt"
+  | "sslContent.trustTitle"
+  | "sslContent.trustDescription"
+  | "sslContent.chooseSslTitle"
+  | "sslContent.chooseSslDescription"
+  | "choosePlan.rightBackgroundAlt"
+  | "choosePlan.leftBackgroundAlt"
+  | "choosePlan.mainTitle"
+  | "choosePlan.planTitle"
+  | "choosePlan.currency"
+  | "choosePlan.validation"
+  | "choosePlan.organization"
+  | "choosePlan.siteSeal"
+  | "choosePlan.dynamic"
+  | "choosePlan.orderNow"
+  | "websiteSecurity.title"
+  | "websiteSecurity.description"
+  | "websiteSecurity.securityImageAlt"
+  | "beyondProtection.bigBlocksAlt"
+  | "beyondProtection.mainTitle"
+  | "beyondProtection.mainDescription"
+  | "beyondProtection.browserCompatibilityTitle"
+  | "beyondProtection.browserCompatibilityDescription"
+  | "beyondProtection.customerTrustAlt"
+  | "beyondProtection.seoTitle"
+  | "beyondProtection.seoDescription"
+  | "beyondProtection.browserFriendlyAlt"
+  | "beyondProtection.customerTrustTitle"
+  | "beyondProtection.customerTrustDescription"
+  | "beyondProtection.seoIncreaseAlt"
   | "techStack.whmcsTitle"
   | "techStack.whmcsAlt"
   // KeyFeaturesTwo
@@ -81,12 +189,11 @@ type TranslationKeys =
   | "featuresGrid.centralizedManagement5"
   | "featuresGrid.centralizedManagement6"
   | "onlinePaymentSection.americanExpressAlt"
-   | "serverLocations.mapAlt"
-   | "serverLocations.comingSoonMessage"
-   | "serverLocations.comingSoonTitle"
-    | "serverLocations.upload"
- | "serverLocations.download"
-
+  | "serverLocations.mapAlt"
+  | "serverLocations.comingSoonMessage"
+  | "serverLocations.comingSoonTitle"
+  | "serverLocations.upload"
+  | "serverLocations.download"
   | "onlinePaymentSection.visaAlt"
   | "onlinePaymentSection.masterCardAlt"
   | "countrySelector.italyName"
@@ -317,6 +424,16 @@ type TranslationKeys =
   | "websiteBuilder.chooseTemplate"
   | "websiteBuilder.chooseTemplateDesc"
   | "whoisToolSectionTwo.description"
+  | "whoisTool.whoisTitle"
+  | "whoisTool.whoisDescription"
+  | "whoisTool.searchButton"
+  | "whoisTool.searchPlaceholder"
+  | "whoisTool.whatIsWhoisTitle"
+  | "whoisTool.whatIsWhoisDescription"
+  | "whoisTool.groupImageAlt"
+  | "whoisTool.howItWorksTitle"
+  | "whoisTool.howItWorksDescription"
+  | "whoisTool.sslWhoisImageAlt"
   | "whoisToolSectionTwo.imageAlt"
   | "whoisToolSection.title"
   | "whoisToolSection.description"
@@ -1042,6 +1159,18 @@ type TranslationKeys =
   | "servicesThree.enterpriseStaticHostingAlt"
   | "mainFeatures.title"
   | "mainFeatures.description"
+  | "languageSelector.saudi"
+  | "languageSelector.uae"
+  | "languageSelector.sudan"
+  | "languageSelector.turkey"
+  | "languageSelector.egypt"
+  | "languageSelector.oman"
+  | "languageSelector.iraq"
+  | "languageSelector.syria"
+  | "languageSelector.germany"
+  | "languageSelector.france"
+  | "languageSelector.qatar"
+  | "languageSelector.india"
   | "mainFeatures.crossPlatform"
   | "mainFeatures.crossPlatformAlt"
   | "mainFeatures.ddosMitigation"
@@ -1087,54 +1216,220 @@ type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
-    
-  "serverLocations.download": "تنزيل",
-  "serverLocations.upload": "رفع",
-  "serverLocations.comingSoonTitle": "قريباً",
-  "serverLocations.comingSoonMessage": "سيتم إطلاق هذا الخادم قريباً",
-  "serverLocations.mapAlt": "خريطة العالم",
+    "partnersSection.mainTitle": "شركاء النجاح",
+    "partnersSection.rightBackgroundAlt": "خلفية يمين SVG",
+    "partnersSection.leftBackgroundAlt": "خلفية يسار SVG",
+    "partnersSection.sucuriName": "SUCURI",
+    "partnersSection.sucuriDescription": "نحن نقدم خدمات الحماية المتقدمة للمواقع الإلكترونية من خلال تقنيات متطورة تضمن الأمان الكامل. نقدم حلول شاملة لحماية المواقع من الهجمات الإلكترونية والبرمجيات الخبيثة. فريقنا المتخصص يعمل على مدار الساعة لضمان استمرارية عمل موقعك بأمان تام.",
+    "partnersSection.sucuriLogoAlt": "شعار SUCURI",
+    "partnersSection.softaculousName": "Softaculous",
+    "partnersSection.softaculousDescription": "منصة متكاملة لإدارة التطبيقات والبرمجيات بسهولة تامة. نوفر مكتبة شاملة من التطبيقات الجاهزة للتثبيت بنقرة واحدة. حلولنا تساعد في تبسيط عملية إدارة المواقع والتطبيقات المختلفة بكفاءة عالية ومرونة كبيرة.",
+    "partnersSection.softaculousLogoAlt": "شعار Softaculous",
+    "partnersSection.linuxName": "Linux",
+    "partnersSection.linuxDescription": "نظام تشغيل مفتوح المصدر يوفر استقرارًا وأمانًا عاليين. نقدم حلول استضافة متقدمة باستخدام أنظمة لينكس المختلفة. فريقنا المتخصص يضمن الأداء الأمثل والاستقرار الكامل لجميع الخدمات المقدمة.",
+    "partnersSection.linuxLogoAlt": "شعار Linux",
+    "paymentSection.description":
+      "ادفع بالطريقة التي تناسبك واستمتع بتجربة دفع سهلة وسلسة",
+    "whoisTool.whoisTitle": "أداة Whois",
+    "whoisTool.whoisDescription": "استعلام احترافي عن بيانات الدومين",
+    "whoisTool.searchButton": "بحث",
+    "whoisTool.searchPlaceholder": "ادخل اسم الدومين",
+    "whoisTool.whatIsWhoisTitle": "ما هي أداة Whois؟",
+    "whoisTool.whatIsWhoisDescription":
+      "Whois هي أداة تُستخدم للاستعلام عن معلومات تسجيل النطاقات، مثل المالك، وتاريخ التسجيل، وتاريخ الانتهاء.",
+    "whoisTool.groupImageAlt": "صورة توضيحية لأداة Whois",
+    "whoisTool.howItWorksTitle": "كيف تعمل؟",
+    "whoisTool.howItWorksDescription":
+      "تعمل Whois عبر استعلام قاعدة بيانات عامة لاسترداد تفاصيل تسجيل النطاق المخزنة لدى المسجلين.",
+    "whoisTool.sslWhoisImageAlt": "صورة توضيحية لـ SSL و Whois",
+    "websiteSuccessCriteria.sslTitle": "شهادات SSL",
+    "websiteSuccessCriteria.sslDescription":
+      "الحل الأمثل لتأمين موقعك الإلكتروني وحماية بيانات المستخدمين.",
+    "websiteSuccessCriteria.cloudflareTitle": "كلاودفلير",
+    "websiteSuccessCriteria.cloudflareDescription":
+      "الحل المثالي لتجربة ويب أسرع وأكثر أمانًا وموثوقية.",
+    "websiteSuccessCriteria.cloudflareEnhanceTitle":
+      "عزّز حماية موقعك الإلكتروني من التهديدات السيبرانية وحسّن أداؤه مع كلاودفلير.",
+    "websiteSuccessCriteria.cloudflareEnhanceDescription":
+      "من الحماية ضد التهديدات السيبرانية إلى تسريع تسليم المحتوى، تعد كلاودفلير شريكك الموثوق في أداء وأمان الويب.",
+    "websiteSuccessCriteria.mainTitle":
+      "حدد معيارًا جديدًا لنجاح موقعك الإلكتروني",
+    "websiteSuccessCriteria.performanceTitle": "أداء فائق السرعة",
+    "websiteSuccessCriteria.globalSpeedBoost": "تعزيز السرعة العالمية",
+    "websiteSuccessCriteria.contentDelivery": "تحسين تسليم المحتوى",
+    "websiteSuccessCriteria.loadBalancing": "توزيع الحمل",
+    "websiteSuccessCriteria.latencyReduction": "تقليل وقت الانتقال",
+    "websiteSuccessCriteria.globalSpeedBoostIconAlt":
+      "أيقونة تعزيز السرعة العالمية",
+    "websiteSuccessCriteria.globalSpeedBoostDescription":
+      "بفضل شبكة CDN العالمية من كلاودفلير، يتم تحميل موقعك بسرعة للزوار أينما كانوا في العالم.",
+    "websiteSuccessCriteria.securityTitle": "أمان لا مثيل له",
+    "websiteSuccessCriteria.ddosProtection":
+      "الحماية من هجمات حجب الخدمة (DDoS)",
+    "websiteSuccessCriteria.webApplicationFirewall":
+      "جدار حماية تطبيقات الويب (WAF)",
+    "websiteSuccessCriteria.sslTlsEncryption": "تشفير SSL/TLS",
+    "websiteSuccessCriteria.botManagement": "إدارة الروبوتات",
+    "websiteSuccessCriteria.realTimeThreatAnalysis":
+      "تحليل التهديدات في الوقت الفعلي",
+    "websiteSuccessCriteria.securityIconAlt": "أيقونة الأمان",
+    "websiteSuccessCriteria.ddosProtectionDescription":
+      "تم تصميم شبكة كلاودفلير لامتصاص وتخفيف هجمات حجب الخدمة (DDoS)، مما يضمن بقاء موقعك متاحًا حتى أثناء الهجمات المستهدفة.",
+    "websiteSuccessCriteria.signUpNow": "سجّل الآن",
+    "cloudflareSection.cloudflareTitle": "كلاودفلير",
+    "cloudflareSection.cloudflareDescription":
+      "الحل المثالي لتجربة ويب أسرع وأكثر أمانًا وموثوقية.",
+    "cloudflareSection.cloudflareEnhanceTitle":
+      "عزّز حماية موقعك الإلكتروني من التهديدات السيبرانية وحسّن أداؤه مع كلاودفلير.",
+    "cloudflareSection.cloudflareEnhanceDescription":
+      "من الحماية ضد التهديدات السيبرانية إلى تسريع تسليم المحتوى، تعد كلاودفلير شريكك الموثوق في أداء وأمان الويب.",
+    "cloudflareSection.signUpNow": "سجّل الآن",
+    "sslSection.sslTitle": "شهادات SSL",
+    "sslContent.rightBackgroundAlt": "خلفية يمين مع أيقونات",
+    "sslContent.leftBackgroundAlt": "خلفية يسار مع أيقونات",
+    "sslContent.trustTitle": "قم بترسيخ موثوقية عملك",
+    "sslContent.trustDescription":
+      "قم بحماية بيانات موقعك - وبيانات الزائرين - عبر إنشاء اتصال آمن وتشفير البيانات المُقدّمة من شهادات SSL، ودع كافة زوار موقعك يعلمون أن موقع الويب الخاص بك آمن وموثوق من خلال علامة القفل المميزة واختصار https:// في بداية اسم نطاقك.",
+    "sslContent.chooseSslTitle": "اختر شهادة SSL المناسبة",
+    "sslContent.chooseSslDescription":
+      "شركة العنكبوت الليبي توفّر لك مجموعة متنوّعة من شهادات الحماية من أكثر الشركات الموثوقة في المجال عالميًا.",
+    "choosePlan.rightBackgroundAlt": "خلفية يمين SVG",
+    "choosePlan.leftBackgroundAlt": "خلفية يسار SVG",
+    "choosePlan.mainTitle": "اختر الخطة المناسبة",
+    "choosePlan.planTitle": "GeoTrust QuickSSL Premium",
+    "choosePlan.currency": "د.ل/ربع سنوي",
+    "choosePlan.validation": "التحقق من صحة",
+    "choosePlan.organization": "Organization",
+    "choosePlan.siteSeal": "ختم الموقع",
+    "choosePlan.dynamic": "Dynamic",
+    "choosePlan.orderNow": "اطلب الآن",
+    "websiteSecurity.title":
+      "أمن المواقع وتشفير البيانات لم يعد أمرًا اختياريًا بعد اليوم",
+    "websiteSecurity.description":
+      "إن المواقع التي تحمل علامة 'غير آمن' لم تعد مقبولة بعد الآن. شهادة SSL لم تعد مسألة اختيار، إنها مطلب أساسي في أساسيات أمن مواقع الويب في عالمنا المعاصر. حيث يعمل تشفير البيانات والاتصال الآمن على التخلص من مخاطر الهجمات الإلكترونية الناشئة والمتزايدة والتي يمكن أن تستغل أي ثغرة أمنية.",
+    "websiteSecurity.securityImageAlt": "صورة أمن الموقع",
+    "beyondProtection.bigBlocksAlt": "خلفية الكتل الكبيرة",
+    "beyondProtection.mainTitle": "أكثر من مجرد حماية",
+    "beyondProtection.mainDescription":
+      "قم بامتلاك مُخدّمك المخصص مع نظام التشغيل المفضل لديك والتطبيقات المثبتة مسبقًا.",
+    "beyondProtection.browserCompatibilityTitle":
+      "حافظ على ظهور موقعك عبر مختلف المتصفحات",
+    "beyondProtection.browserCompatibilityDescription":
+      "إذا لم يكن لدى موقعك شهادة SSL، فإن معظم المتصفحات الشهيرة عالميًا ستضع عليه علامة 'غير آمن' مع إظهار تحذير، وقد يصل الأمر ببعض المتصفحات إلى حظره تمامًا عن المستخدم.",
+    "beyondProtection.customerTrustAlt": "أيقونة ثقة العملاء",
+    "beyondProtection.seoTitle": "رفع ترتيب موقعك في محركات البحث (SEO)",
+    "beyondProtection.seoDescription":
+      "المواقع المؤمّنة تمتلك ميزة في الحصول على ترتيب أعلى في نتائج محركات البحث، حيث إن الأمان يُعد عاملاً أساسيًا في عملية الترتيب.",
+    "beyondProtection.browserFriendlyAlt": "أيقونة التوافق مع المتصفحات",
+    "beyondProtection.customerTrustTitle": "بناء ثقة العملاء",
+    "beyondProtection.customerTrustDescription":
+      "أظهر لعملائك أن نشاطك التجاري عبر الإنترنت آمن وموثوق به من خلال إبلاغهم بأن بياناتهم الحساسة ومدفوعاتهم عبر الإنترنت محمية بالكامل.",
+    "beyondProtection.seoIncreaseAlt": "أيقونة زيادة تحسين محركات البحث",
+
+    "domainRegistrationSA.backgroundAlt": "صورة خلفية",
+    "domainRegistrationSA.numberOneAlt": "صورة تسجيل رقم 1",
+    "domainRegistrationSA.title": "احصل على اسم نطاق sa. من المسجل رقم #1",
+    "domainRegistrationSA.description":
+      "الآلاف من أسماء نطاق sa. تم تسجيلها بالفعل، سارع بالتسجيل واحجز اسم نطاقك الفريد sa. الآن مع عدة امتدادات متنوعة متاحة",
+    "domainRegistrationSA.saTitle": "SA",
+    "domainRegistrationSA.saPrice": "فقط 20 دولار",
+    "domainRegistrationSA.saCircleAlt": "أيقونة دائرة SA",
+    "domainRegistrationSA.eduSa": ".edu.sa",
+    "domainRegistrationSA.comSa": ".com.sa",
+    "domainRegistrationSA.netSa": ".net.sa",
+    "domainRegistrationSA.orgSa": ".org.sa",
+    "domainRegistrationSA.medSa": ".med.sa",
+    "domainRegistrationSA.idSa": ".id.sa",
+    "domainRegistrationSA.schSa": ".sch.sa",
+    "domainRegistrationSA.plcSa": ".plc.sa",
+    "domainRegistrationSA.worldIconAlt": "أيقونة العالم",
+    "domainRegistrationSA.price": "فقط 20 دولار",
+    "domainRegistrationSA.approvalTitle":
+      "أسماء النطاق التي تحتاج إلى موافقة المسجل",
+    "domainRegistrationSA.schSaApproval": "sch.sa للمدارس.",
+    "domainRegistrationSA.schSaApprovalDesc":
+      "خطاب رسمي إلى شركة السعودية للاتصالات والتقنية؛ لطلب الموافقة على تسجيل اسم النطاق.",
+    "domainRegistrationSA.medSaApproval": "med.sa للمستشفيات والعيادات.",
+    "domainRegistrationSA.medSaApprovalDesc":
+      "خطاب رسمي إلى شركة السعودية للاتصالات والتقنية؛ لطلب الموافقة على تسجيل اسم النطاق.",
+    "domainRegistrationSA.govSaApproval": "gov.sa للحكومات.",
+    "domainRegistrationSA.govSaApprovalDesc":
+      "خطاب رسمي إلى شركة السعودية للاتصالات والتقنية؛ لطلب الموافقة على تسجيل اسم النطاق.",
+    "domainRegistrationSA.govSaAltApproval": "gov.sa للجهات الحكومية.",
+    "domainRegistrationSA.govSaAltApprovalDesc":
+      "يتم تسجيله مباشرة مع شركة السعودية للاتصالات والتقنية بعد موافقة الهيئة العامة للاتصالات وطلب تسجيله تحت لوحة تحكم السعودية الرقمي.",
+    "domainStatsSA.title": "إحصائيات sa.",
+    "domainStatsSA.description": "القِ نظرة على الأرقام:",
+    "domainStatsSA.chooseDomain": "اختر نطاقك الخاص",
+    "domainStatsSA.achievement": "نفتخر بتسجيلنا لأكثر من 1,800 اسم نطاق!",
+    "domainStatsSA.backgroundRightAlt": "خلفية SVG يمين",
+    "domainStatsSA.backgroundLeftAlt": "خلفية SVG يسار",
+    "languageSelector.saudi": "السعودية",
+    "languageSelector.uae": "الإمارات",
+    "languageSelector.sudan": "السودان",
+    "languageSelector.turkey": "تركيا",
+    "languageSelector.egypt": "مصر",
+    "languageSelector.oman": "عمان",
+    "languageSelector.iraq": "العراق",
+    "languageSelector.syria": "سوريا",
+    "languageSelector.germany": "ألمانيا",
+    "languageSelector.france": "فرنسا",
+    "languageSelector.qatar": "قطر",
+    "languageSelector.india": "الهند",
+    "serverLocations.download": "تنزيل",
+    "serverLocations.upload": "رفع",
+    "serverLocations.comingSoonTitle": "قريباً",
+    "serverLocations.comingSoonMessage": "سيتم إطلاق هذا الخادم قريباً",
+    "serverLocations.mapAlt": "خريطة العالم",
 
     "dashboardWelcome.title": "مرحبًا بك في لوحة التحكم الخاصة بك",
-  "dashboardWelcome.description": "إدارة مجالك بسهولة، تحقق من إحصائياتك، وراقب الأداء من مكان واحد.",
-  "dashboardWelcome.imageAlt": "لوحة التحكم",
-  "dashboardOverview.title": "نظرة عامة على لوحة التحكم",
-  "dashboardOverview.description": "الوصول إلى البيانات في الوقت الفعلي وقياسات الأداء مباشرة من لوحة التحكم الخاصة بك. تتبع حالة مجالك، إحصائيات الزوار، والكثير غيرها في مكان واحد.",
-  "dashboardOverview.imageAlt": "صورة نظرة عامة على لوحة التحكم",
-  "performanceTracking.title": "تتبع الأداء",
-  "performanceTracking.description": "ابق على اطلاع دائم بأداء مجالك. راقب حركة المرور، التجديدات، والاستخدام بسرعة.",
-  "performanceTracking.mobileAlt": "صورة أداء الجوال",
-  "performanceTracking.backgroundAlt": "صورة طبقة الخلفية",
-  "performanceTracking.patternAlt": "نمط SVG زخرفي",
-  "domainManagement.title": "إدارة المجال",
-  "domainManagement.description": "قم بإدارة مجالك بسهولة. قم بتسجيل مجالات جديدة، وتجديد المجالات الحالية، وعرض جميع التفاصيل ذات الصلة في الوقت الفعلي.",
-  "domainManagement.imageAlt": "صورة سطح المكتب",
-  "techStack.mainTitle": "التقنية المستخدمة في بناء المشروع",
-  "techStack.reactTitle": "React",
-  "techStack.reactAlt": "أيقونة React",
-  "techStack.laravelTitle": "Laravel",
-  "techStack.laravelAlt": "شعار Laravel",
-  "techStack.phpTitle": "PHP",
-  "techStack.phpAlt": "شعار PHP",
-  "techStack.javascriptTitle": "JavaScript",
-  "techStack.javascriptAlt": "شعار JavaScript",
-  "techStack.lagomTitle": "Lagom Theme",
-  "techStack.lagomAlt": "شعار Lagom Theme",
-  "techStack.whatsappApiTitle": "واجهة برمجة WhatsApp",
-  "techStack.whatsappApiAlt": "أيقونة واجهة برمجة WhatsApp",
-  "techStack.whmcsTitle": "WHMCS",
-  "techStack.whmcsAlt": "شعار WHMCS",
-  "keyFeaturesTwo.mainTitle": "مزايا رئيسية",
-  "keyFeaturesTwo.mainDescription": "من خلال منتجاتنا وخدماتنا السحابية، ستجد أننا نلبي 100% من احتياجات عملك وبياناتك، مع توفير أعلى مستويات الأمان لبنيتك التحتية.",
-  "keyFeaturesTwo.cloudHostingTitle": "استضافة سحابية مشتركة",
-  "keyFeaturesTwo.cloudHostingDescription": "استضف موقعك بسهولة وراحة بتكلفة اقتصادية! مع الاستضافة السحابية المشتركة.",
-  "keyFeaturesTwo.cloudHostingAlt": "أيقونة الاستضافة السحابية المشتركة",
-  "keyFeaturesTwo.lsSuiteTitle": "مجموعة LS",
-  "keyFeaturesTwo.lsSuiteDescription": "البريد الإلكتروني المهني، التخزين عبر الإنترنت، الاجتماعات المؤسسية، والمزيد. تم بناؤه للعمل.",
-  "keyFeaturesTwo.lsSuiteAlt": "أيقونة مجموعة LS",
-  "keyFeaturesTwo.jpaasTitle": "JPaaS منصة كخدمة",
-  "keyFeaturesTwo.jpaasDescription": "ادارة السيرفر مع تحكم كامل",
-  "keyFeaturesTwo.jpaasAlt": "أيقونة منصة JPaaS",
-  "keyFeaturesTwo.learnMore": "اعرف المزيد",
+    "dashboardWelcome.description":
+      "إدارة مجالك بسهولة، تحقق من إحصائياتك، وراقب الأداء من مكان واحد.",
+    "dashboardWelcome.imageAlt": "لوحة التحكم",
+    "dashboardOverview.title": "نظرة عامة على لوحة التحكم",
+    "dashboardOverview.description":
+      "الوصول إلى البيانات في الوقت الفعلي وقياسات الأداء مباشرة من لوحة التحكم الخاصة بك. تتبع حالة مجالك، إحصائيات الزوار، والكثير غيرها في مكان واحد.",
+    "dashboardOverview.imageAlt": "صورة نظرة عامة على لوحة التحكم",
+    "performanceTracking.title": "تتبع الأداء",
+    "performanceTracking.description":
+      "ابق على اطلاع دائم بأداء مجالك. راقب حركة المرور، التجديدات، والاستخدام بسرعة.",
+    "performanceTracking.mobileAlt": "صورة أداء الجوال",
+    "performanceTracking.backgroundAlt": "صورة طبقة الخلفية",
+    "performanceTracking.patternAlt": "نمط SVG زخرفي",
+    "domainManagement.title": "إدارة المجال",
+    "domainManagement.description":
+      "قم بإدارة مجالك بسهولة. قم بتسجيل مجالات جديدة، وتجديد المجالات الحالية، وعرض جميع التفاصيل ذات الصلة في الوقت الفعلي.",
+    "domainManagement.imageAlt": "صورة سطح المكتب",
+    "techStack.mainTitle": "التقنية المستخدمة في بناء المشروع",
+    "techStack.reactTitle": "React",
+    "techStack.reactAlt": "أيقونة React",
+    "techStack.laravelTitle": "Laravel",
+    "techStack.laravelAlt": "شعار Laravel",
+    "techStack.phpTitle": "PHP",
+    "techStack.phpAlt": "شعار PHP",
+    "techStack.javascriptTitle": "JavaScript",
+    "techStack.javascriptAlt": "شعار JavaScript",
+    "techStack.lagomTitle": "Lagom Theme",
+    "techStack.lagomAlt": "شعار Lagom Theme",
+    "techStack.whatsappApiTitle": "واجهة برمجة WhatsApp",
+    "techStack.whatsappApiAlt": "أيقونة واجهة برمجة WhatsApp",
+    "techStack.whmcsTitle": "WHMCS",
+    "techStack.whmcsAlt": "شعار WHMCS",
+    "keyFeaturesTwo.mainTitle": "مزايا رئيسية",
+    "keyFeaturesTwo.mainDescription":
+      "من خلال منتجاتنا وخدماتنا السحابية، ستجد أننا نلبي 100% من احتياجات عملك وبياناتك، مع توفير أعلى مستويات الأمان لبنيتك التحتية.",
+    "keyFeaturesTwo.cloudHostingTitle": "استضافة سحابية مشتركة",
+    "keyFeaturesTwo.cloudHostingDescription":
+      "استضف موقعك بسهولة وراحة بتكلفة اقتصادية! مع الاستضافة السحابية المشتركة.",
+    "keyFeaturesTwo.cloudHostingAlt": "أيقونة الاستضافة السحابية المشتركة",
+    "keyFeaturesTwo.lsSuiteTitle": "مجموعة LS",
+    "keyFeaturesTwo.lsSuiteDescription":
+      "البريد الإلكتروني المهني، التخزين عبر الإنترنت، الاجتماعات المؤسسية، والمزيد. تم بناؤه للعمل.",
+    "keyFeaturesTwo.lsSuiteAlt": "أيقونة مجموعة LS",
+    "keyFeaturesTwo.jpaasTitle": "JPaaS منصة كخدمة",
+    "keyFeaturesTwo.jpaasDescription": "ادارة السيرفر مع تحكم كامل",
+    "keyFeaturesTwo.jpaasAlt": "أيقونة منصة JPaaS",
+    "keyFeaturesTwo.learnMore": "اعرف المزيد",
 
     "speedSection.title": "السرعة",
     "speedSection.description":
@@ -2325,6 +2620,7 @@ const translations: Record<Language, Translations> = {
     "serverLocations.title": "مواقع الخوادم",
     "serverLocations.uae": "الإمارات العربية المتحدة",
     "serverLocations.germany": "ألمانيا",
+    "serverLocations.india": "الهند",
     "serverLocations.finland": "فنلندا",
     "serverLocations.korea": "كوريا",
     "serverLocations.italy": "إيطاليا",
@@ -2386,53 +2682,220 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
-      "serverLocations.download": "Download",
-  "serverLocations.upload": "Upload",
-  "serverLocations.comingSoonTitle": "Coming Soon",
-  "serverLocations.comingSoonMessage": "This server will be launched soon",
-  "serverLocations.mapAlt": "World Map",
+    "partnersSection.mainTitle": "Success Partners",
+    "partnersSection.rightBackgroundAlt": "Right Background SVG",
+    "partnersSection.leftBackgroundAlt": "Left Background SVG",
+    "partnersSection.sucuriName": "SUCURI",
+    "partnersSection.sucuriDescription": "We provide advanced website protection services through cutting-edge technologies that ensure complete security. We offer comprehensive solutions to protect websites from cyberattacks and malware. Our dedicated team works around the clock to ensure your website operates with total security.",
+    "partnersSection.sucuriLogoAlt": "SUCURI Logo",
+    "partnersSection.softaculousName": "Softaculous",
+    "partnersSection.softaculousDescription": "A comprehensive platform for managing applications and software with ease. We provide a complete library of applications ready for one-click installation. Our solutions help simplify the management of websites and various applications with high efficiency and great flexibility.",
+    "partnersSection.softaculousLogoAlt": "Softaculous Logo",
+    "partnersSection.linuxName": "Linux",
+    "partnersSection.linuxDescription": "An open-source operating system offering high stability and security. We provide advanced hosting solutions using various Linux systems. Our specialized team ensures optimal performance and complete stability for all provided services.",
+    "partnersSection.linuxLogoAlt": "Linux Logo",
+    "paymentSection.description":
+      "Pay in the way that suits you and enjoy an easy and smooth payment experience",
+    "whoisTool.whoisTitle": "Whois Tool",
+    "whoisTool.whoisDescription": "Professional domain data lookup",
+    "whoisTool.searchButton": "Search",
+    "whoisTool.searchPlaceholder": "Enter domain name",
+    "whoisTool.whatIsWhoisTitle": "What is the Whois Tool?",
+    "whoisTool.whatIsWhoisDescription":
+      "Whois is a tool used to query domain registration information, such as the owner, registration date, and expiration date.",
+    "whoisTool.groupImageAlt": "Whois Tool Illustration",
+    "whoisTool.howItWorksTitle": "How Does It Work?",
+    "whoisTool.howItWorksDescription":
+      "Whois works by querying a public database to retrieve domain registration details stored with registrars.",
+    "whoisTool.sslWhoisImageAlt": "SSL and Whois Illustration",
+    "websiteSuccessCriteria.sslTitle": "SSL Certificates",
+    "websiteSuccessCriteria.sslDescription":
+      "The perfect solution to secure your website and protect user data.",
+    "websiteSuccessCriteria.cloudflareTitle": "Cloudflare",
+    "websiteSuccessCriteria.cloudflareDescription":
+      "The ideal solution for a faster, safer, and more reliable web experience.",
+    "websiteSuccessCriteria.cloudflareEnhanceTitle":
+      "Enhance your website’s protection against cyber threats and improve its performance with Cloudflare.",
+    "websiteSuccessCriteria.cloudflareEnhanceDescription":
+      "From protection against cyber threats to accelerating content delivery, Cloudflare is your trusted partner in web performance and security.",
+    "websiteSuccessCriteria.mainTitle":
+      "Set a New Standard for Your Website’s Success",
+    "websiteSuccessCriteria.performanceTitle": "Blazing Fast Performance",
+    "websiteSuccessCriteria.globalSpeedBoost": "Global Speed Boost",
+    "websiteSuccessCriteria.contentDelivery": "Content Delivery Optimization",
+    "websiteSuccessCriteria.loadBalancing": "Load Balancing",
+    "websiteSuccessCriteria.latencyReduction": "Latency Reduction",
+    "websiteSuccessCriteria.globalSpeedBoostIconAlt": "Global Speed Boost Icon",
+    "websiteSuccessCriteria.globalSpeedBoostDescription":
+      "Thanks to Cloudflare’s global CDN, your website loads quickly for visitors anywhere in the world.",
+    "websiteSuccessCriteria.securityTitle": "Unmatched Security",
+    "websiteSuccessCriteria.ddosProtection": "DDoS Attack Protection",
+    "websiteSuccessCriteria.webApplicationFirewall":
+      "Web Application Firewall (WAF)",
+    "websiteSuccessCriteria.sslTlsEncryption": "SSL/TLS Encryption",
+    "websiteSuccessCriteria.botManagement": "Bot Management",
+    "websiteSuccessCriteria.realTimeThreatAnalysis":
+      "Real-Time Threat Analysis",
+    "websiteSuccessCriteria.securityIconAlt": "Security Icon",
+    "websiteSuccessCriteria.ddosProtectionDescription":
+      "Cloudflare’s network is designed to absorb and mitigate DDoS attacks, ensuring your website remains available even during targeted attacks.",
+    "websiteSuccessCriteria.signUpNow": "Sign Up Now",
+    "cloudflareSection.cloudflareTitle": "Cloudflare",
+    "cloudflareSection.cloudflareDescription":
+      "The ideal solution for a faster, safer, and more reliable web experience.",
+    "cloudflareSection.cloudflareEnhanceTitle":
+      "Enhance your website’s protection against cyber threats and improve its performance with Cloudflare.",
+    "cloudflareSection.cloudflareEnhanceDescription":
+      "From protection against cyber threats to accelerating content delivery, Cloudflare is your trusted partner in web performance and security.",
+    "cloudflareSection.signUpNow": "Sign Up Now",
+    "sslSection.sslTitle": "SSL Certificates",
+    "sslContent.rightBackgroundAlt": "Right Background with Icons",
+    "sslContent.leftBackgroundAlt": "Left Background with Icons",
+    "sslContent.trustTitle": "Establish Your Business’s Trustworthiness",
+    "sslContent.trustDescription":
+      "Protect your website’s data - and your visitors’ data - by establishing a secure connection and encrypting data provided by SSL certificates. Let all your website visitors know that your site is secure and trustworthy with the distinctive lock icon and the https:// prefix in your domain name.",
+    "sslContent.chooseSslTitle": "Choose the Right SSL Certificate",
+    "sslContent.chooseSslDescription":
+      "Libyan Spider Company provides you with a variety of protection certificates from the most trusted companies in the field worldwide.",
+    "choosePlan.rightBackgroundAlt": "Right Background SVG",
+    "choosePlan.leftBackgroundAlt": "Left Background SVG",
+    "choosePlan.mainTitle": "Choose the Right Plan",
+    "choosePlan.planTitle": "GeoTrust QuickSSL Premium",
+    "choosePlan.currency": "LYD/Quarterly",
+    "choosePlan.validation": "Validation",
+    "choosePlan.organization": "Organization",
+    "choosePlan.siteSeal": "Site Seal",
+    "choosePlan.dynamic": "Dynamic",
+    "choosePlan.orderNow": "Order Now",
+    "websiteSecurity.title":
+      "Website Security and Data Encryption Are No Longer Optional",
+    "websiteSecurity.description":
+      "Websites marked as 'Not Secure' are no longer acceptable. An SSL certificate is no longer a choice; it is a fundamental requirement for website security in today’s world. Data encryption and secure connections eliminate the risks of emerging and increasing cyberattacks that can exploit any security vulnerability.",
+    "websiteSecurity.securityImageAlt": "Website Security Image",
+    "beyondProtection.bigBlocksAlt": "Big Blocks Background",
+    "beyondProtection.mainTitle": "More Than Just Protection",
+    "beyondProtection.mainDescription":
+      "Own your dedicated server with your preferred operating system and pre-installed applications.",
+    "beyondProtection.browserCompatibilityTitle":
+      "Ensure Your Website Appears Across All Browsers",
+    "beyondProtection.browserCompatibilityDescription":
+      "If your website lacks an SSL certificate, most popular browsers worldwide will mark it as 'Not Secure' with a warning, and some browsers may even block it entirely from users.",
+    "beyondProtection.customerTrustAlt": "Customer Trust Icon",
+    "beyondProtection.seoTitle":
+      "Boost Your Website’s Search Engine Ranking (SEO)",
+    "beyondProtection.seoDescription":
+      "Secured websites have an advantage in achieving higher rankings in search engine results, as security is a key factor in the ranking process.",
+    "beyondProtection.browserFriendlyAlt": "Browser Friendly Icon",
+    "beyondProtection.customerTrustTitle": "Build Customer Trust",
+    "beyondProtection.customerTrustDescription":
+      "Show your customers that your online business is safe and trustworthy by ensuring their sensitive data and online payments are fully protected.",
+    "beyondProtection.seoIncreaseAlt": "SEO Increase Icon",
+    "domainRegistrationSA.backgroundAlt": "Background Image",
+    "domainRegistrationSA.numberOneAlt": "Number 1 Register Image",
+    "domainRegistrationSA.title":
+      "Get your sa. domain name from the #1 registrar",
+    "domainRegistrationSA.description":
+      "Thousands of sa. domain names have already been registered. Hurry up and secure your unique sa. domain now with various extensions available.",
+    "domainRegistrationSA.saTitle": "SA",
+    "domainRegistrationSA.saPrice": "Just $20",
+    "domainRegistrationSA.saCircleAlt": "SA Circle Icon",
+    "domainRegistrationSA.eduSa": ".edu.sa",
+    "domainRegistrationSA.comSa": ".com.sa",
+    "domainRegistrationSA.netSa": ".net.sa",
+    "domainRegistrationSA.orgSa": ".org.sa",
+    "domainRegistrationSA.medSa": ".med.sa",
+    "domainRegistrationSA.idSa": ".id.sa",
+    "domainRegistrationSA.schSa": ".sch.sa",
+    "domainRegistrationSA.plcSa": ".plc.sa",
+    "domainRegistrationSA.worldIconAlt": "World Icon",
+    "domainRegistrationSA.price": "Just $20",
+    "domainRegistrationSA.approvalTitle":
+      "Domain Names Requiring Registrar Approval",
+    "domainRegistrationSA.schSaApproval": "sch.sa for schools.",
+    "domainRegistrationSA.schSaApprovalDesc":
+      "Official letter to the Saudi Communications and Technology Company to request approval for domain name registration.",
+    "domainRegistrationSA.medSaApproval": "med.sa for hospitals and clinics.",
+    "domainRegistrationSA.medSaApprovalDesc":
+      "Official letter to the Saudi Communications and Technology Company to request approval for domain name registration.",
+    "domainRegistrationSA.govSaApproval": "gov.sa for governments.",
+    "domainRegistrationSA.govSaApprovalDesc":
+      "Official letter to the Saudi Communications and Technology Company to request approval for domain name registration.",
+    "domainRegistrationSA.govSaAltApproval": "gov.sa for government entities.",
+    "domainRegistrationSA.govSaAltApprovalDesc":
+      "Registered directly with the Saudi Communications and Technology Company after approval from the General Communications Authority and requested under the Saudi Digital Control Panel.",
+    "domainStatsSA.title": "Statistics for sa.",
+    "domainStatsSA.description": "Take a look at the numbers:",
+    "domainStatsSA.chooseDomain": "Choose your own domain",
+    "domainStatsSA.achievement":
+      "We are proud to have registered over 1,800 domain names!",
+    "domainStatsSA.backgroundRightAlt": "Right SVG Background",
+    "domainStatsSA.backgroundLeftAlt": "Left SVG Background",
+    "languageSelector.saudi": "Saudi Arabia",
+    "languageSelector.uae": "United Arab Emirates",
+    "languageSelector.sudan": "Sudan",
+    "languageSelector.turkey": "Turkey",
+    "languageSelector.egypt": "Egypt",
+    "languageSelector.oman": "Oman",
+    "languageSelector.iraq": "Iraq",
+    "languageSelector.syria": "Syria",
+    "languageSelector.germany": "Germany",
+    "languageSelector.france": "France",
+    "languageSelector.qatar": "Qatar",
+    "languageSelector.india": "India",
+    "serverLocations.download": "Download",
+    "serverLocations.upload": "Upload",
+    "serverLocations.comingSoonTitle": "Coming Soon",
+    "serverLocations.comingSoonMessage": "This server will be launched soon",
+    "serverLocations.mapAlt": "World Map",
 
     "dashboardWelcome.title": "Welcome to Your Dashboard",
-  "dashboardWelcome.description": "Manage your domain easily, check your statistics, and monitor performance from one place.",
-  "dashboardWelcome.imageAlt": "Dashboard",
-  "dashboardOverview.title": "Dashboard Overview",
-  "dashboardOverview.description": "Access real-time data and performance metrics directly from your dashboard. Track your domain status, visitor statistics, and much more in one place.",
-  "dashboardOverview.imageAlt": "Dashboard Overview Image",
-  "performanceTracking.title": "Track Your Performance",
-  "performanceTracking.description": "Stay updated on your domain's performance. Monitor traffic, renewals, and usage quickly.",
-  "performanceTracking.mobileAlt": "Mobile Performance Image",
-  "performanceTracking.backgroundAlt": "Background Layer Image",
-  "performanceTracking.patternAlt": "Decorative SVG Pattern",
-  "domainManagement.title": "Domain Management",
-  "domainManagement.description": "Manage your domain with ease. Register new domains, renew existing ones, and view all relevant details in real-time.",
-  "domainManagement.imageAlt": "Desktop Image",
-  "techStack.mainTitle": "Technologies Used in Building the Project",
-  "techStack.reactTitle": "React",
-  "techStack.reactAlt": "React Icon",
-  "techStack.laravelTitle": "Laravel",
-  "techStack.laravelAlt": "Laravel Logo",
-  "techStack.phpTitle": "PHP",
-  "techStack.phpAlt": "PHP Logo",
-  "techStack.javascriptTitle": "JavaScript",
-  "techStack.javascriptAlt": "JavaScript Logo",
-  "techStack.lagomTitle": "Lagom Theme",
-  "techStack.lagomAlt": "Lagom Theme Logo",
-  "techStack.whatsappApiTitle": "WhatsApp API",
-  "techStack.whatsappApiAlt": "WhatsApp API Icon",
-  "techStack.whmcsTitle": "WHMCS",
-  "techStack.whmcsAlt": "WHMCS Logo",
-  "keyFeaturesTwo.mainTitle": "Key Features",
-  "keyFeaturesTwo.mainDescription": "Through our cloud products and services, we meet 100% of your business and data needs, providing the highest levels of security for your infrastructure.",
-  "keyFeaturesTwo.cloudHostingTitle": "Shared Cloud Hosting",
-  "keyFeaturesTwo.cloudHostingDescription": "Host your website easily and comfortably at an affordable cost! With shared cloud hosting.",
-  "keyFeaturesTwo.cloudHostingAlt": "Shared Cloud Hosting Icon",
-  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
-  "keyFeaturesTwo.lsSuiteDescription": "Professional email, online storage, enterprise meetings, and more. Built for business.",
-  "keyFeaturesTwo.lsSuiteAlt": "LS Suite Icon",
-  "keyFeaturesTwo.jpaasTitle": "JPaaS Platform as a Service",
-  "keyFeaturesTwo.jpaasDescription": "Manage your server with full control",
-  "keyFeaturesTwo.jpaasAlt": "JPaaS Platform Icon",
-  "keyFeaturesTwo.learnMore": "Learn More",
+    "dashboardWelcome.description":
+      "Manage your domain easily, check your statistics, and monitor performance from one place.",
+    "dashboardWelcome.imageAlt": "Dashboard",
+    "dashboardOverview.title": "Dashboard Overview",
+    "dashboardOverview.description":
+      "Access real-time data and performance metrics directly from your dashboard. Track your domain status, visitor statistics, and much more in one place.",
+    "dashboardOverview.imageAlt": "Dashboard Overview Image",
+    "performanceTracking.title": "Track Your Performance",
+    "performanceTracking.description":
+      "Stay updated on your domain's performance. Monitor traffic, renewals, and usage quickly.",
+    "performanceTracking.mobileAlt": "Mobile Performance Image",
+    "performanceTracking.backgroundAlt": "Background Layer Image",
+    "performanceTracking.patternAlt": "Decorative SVG Pattern",
+    "domainManagement.title": "Domain Management",
+    "domainManagement.description":
+      "Manage your domain with ease. Register new domains, renew existing ones, and view all relevant details in real-time.",
+    "domainManagement.imageAlt": "Desktop Image",
+    "techStack.mainTitle": "Technologies Used in Building the Project",
+    "techStack.reactTitle": "React",
+    "techStack.reactAlt": "React Icon",
+    "techStack.laravelTitle": "Laravel",
+    "techStack.laravelAlt": "Laravel Logo",
+    "techStack.phpTitle": "PHP",
+    "techStack.phpAlt": "PHP Logo",
+    "techStack.javascriptTitle": "JavaScript",
+    "techStack.javascriptAlt": "JavaScript Logo",
+    "techStack.lagomTitle": "Lagom Theme",
+    "techStack.lagomAlt": "Lagom Theme Logo",
+    "techStack.whatsappApiTitle": "WhatsApp API",
+    "techStack.whatsappApiAlt": "WhatsApp API Icon",
+    "techStack.whmcsTitle": "WHMCS",
+    "techStack.whmcsAlt": "WHMCS Logo",
+    "keyFeaturesTwo.mainTitle": "Key Features",
+    "keyFeaturesTwo.mainDescription":
+      "Through our cloud products and services, we meet 100% of your business and data needs, providing the highest levels of security for your infrastructure.",
+    "keyFeaturesTwo.cloudHostingTitle": "Shared Cloud Hosting",
+    "keyFeaturesTwo.cloudHostingDescription":
+      "Host your website easily and comfortably at an affordable cost! With shared cloud hosting.",
+    "keyFeaturesTwo.cloudHostingAlt": "Shared Cloud Hosting Icon",
+    "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+    "keyFeaturesTwo.lsSuiteDescription":
+      "Professional email, online storage, enterprise meetings, and more. Built for business.",
+    "keyFeaturesTwo.lsSuiteAlt": "LS Suite Icon",
+    "keyFeaturesTwo.jpaasTitle": "JPaaS Platform as a Service",
+    "keyFeaturesTwo.jpaasDescription": "Manage your server with full control",
+    "keyFeaturesTwo.jpaasAlt": "JPaaS Platform Icon",
+    "keyFeaturesTwo.learnMore": "Learn More",
 
     "speedSection.title": "Speed",
     "speedSection.description":
@@ -3668,6 +4131,7 @@ const translations: Record<Language, Translations> = {
     "serverLocations.title": "Server Locations",
     "serverLocations.uae": "United Arab Emirates",
     "serverLocations.germany": "Germany",
+    "serverLocations.india": "India",
     "serverLocations.finland": "Finland",
     "serverLocations.korea": "Korea",
     "serverLocations.italy": "Italy",
@@ -3729,53 +4193,228 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
-      "serverLocations.download": "Téléchargement",
-  "serverLocations.upload": "Téléversement",
-  "serverLocations.comingSoonTitle": "Bientôt disponible",
-  "serverLocations.comingSoonMessage": "Ce serveur sera lancé bientôt",
-  "serverLocations.mapAlt": "Carte du monde",
- 
+    "partnersSection.mainTitle": "Partenaires de succès",
+    "partnersSection.rightBackgroundAlt": "Fond SVG droit",
+    "partnersSection.leftBackgroundAlt": "Fond SVG gauche",
+    "partnersSection.sucuriName": "SUCURI",
+    "partnersSection.sucuriDescription": "Nous proposons des services de protection de sites web avancés grâce à des technologies de pointe garantissant une sécurité totale. Nous offrons des solutions complètes pour protéger les sites contre les cyberattaques et les logiciels malveillants. Notre équipe dédiée travaille 24/7 pour assurer le fonctionnement sécurisé de votre site.",
+    "partnersSection.sucuriLogoAlt": "Logo SUCURI",
+    "partnersSection.softaculousName": "Softaculous",
+    "partnersSection.softaculousDescription": "Une plateforme complète pour gérer les applications et logiciels en toute simplicité. Nous fournissons une bibliothèque complète d’applications prêtes à être installées en un clic. Nos solutions simplifient la gestion des sites web et des applications diverses avec une grande efficacité et flexibilité.",
+    "partnersSection.softaculousLogoAlt": "Logo Softaculous",
+    "partnersSection.linuxName": "Linux",
+    "partnersSection.linuxDescription": "Un système d’exploitation open-source offrant une grande stabilité et sécurité. Nous proposons des solutions d’hébergement avancées utilisant divers systèmes Linux. Notre équipe spécialisée garantit des performances optimales et une stabilité totale pour tous les services fournis.",
+    "partnersSection.linuxLogoAlt": "Logo Linux",
+    "paymentSection.description":
+      "Payez de la manière qui vous convient et profitez d’une expérience de paiement facile et fluide",
+    "whoisTool.whoisTitle": "Outil Whois",
+    "whoisTool.whoisDescription":
+      "Recherche professionnelle de données de domaine",
+    "whoisTool.searchButton": "Rechercher",
+    "whoisTool.searchPlaceholder": "Entrez le nom de domaine",
+    "whoisTool.whatIsWhoisTitle": "Qu’est-ce que l’outil Whois ?",
+    "whoisTool.whatIsWhoisDescription":
+      "Whois est un outil utilisé pour interroger les informations d’enregistrement de domaine, telles que le propriétaire, la date d’enregistrement et la date d’expiration.",
+    "whoisTool.groupImageAlt": "Illustration de l’outil Whois",
+    "whoisTool.howItWorksTitle": "Comment ça fonctionne ?",
+    "whoisTool.howItWorksDescription":
+      "Whois fonctionne en interrogeant une base de données publique pour récupérer les détails d’enregistrement de domaine stockés auprès des registraires.",
+    "whoisTool.sslWhoisImageAlt": "Illustration SSL et Whois",
+    "websiteSuccessCriteria.sslTitle": "Certificats SSL",
+    "websiteSuccessCriteria.sslDescription":
+      "La solution parfaite pour sécuriser votre site web et protéger les données des utilisateurs.",
+    "websiteSuccessCriteria.cloudflareTitle": "Cloudflare",
+    "websiteSuccessCriteria.cloudflareDescription":
+      "La solution idéale pour une expérience web plus rapide, plus sûre et plus fiable.",
+    "websiteSuccessCriteria.cloudflareEnhanceTitle":
+      "Renforcez la protection de votre site web contre les cybermenaces et améliorez ses performances avec Cloudflare.",
+    "websiteSuccessCriteria.cloudflareEnhanceDescription":
+      "De la protection contre les cybermenaces à l’accélération de la livraison de contenu, Cloudflare est votre partenaire de confiance pour la performance et la sécurité web.",
+    "websiteSuccessCriteria.mainTitle":
+      "Établissez une nouvelle norme pour le succès de votre site web",
+    "websiteSuccessCriteria.performanceTitle": "Performance ultra-rapide",
+    "websiteSuccessCriteria.globalSpeedBoost": "Boost de vitesse global",
+    "websiteSuccessCriteria.contentDelivery":
+      "Optimisation de la livraison de contenu",
+    "websiteSuccessCriteria.loadBalancing": "Équilibrage de charge",
+    "websiteSuccessCriteria.latencyReduction": "Réduction de la latence",
+    "websiteSuccessCriteria.globalSpeedBoostIconAlt":
+      "Icône de boost de vitesse global",
+    "websiteSuccessCriteria.globalSpeedBoostDescription":
+      "Grâce au CDN mondial de Cloudflare, votre site web se charge rapidement pour les visiteurs partout dans le monde.",
+    "websiteSuccessCriteria.securityTitle": "Sécurité inégalée",
+    "websiteSuccessCriteria.ddosProtection":
+      "Protection contre les attaques DDoS",
+    "websiteSuccessCriteria.webApplicationFirewall":
+      "Pare-feu d’application web (WAF)",
+    "websiteSuccessCriteria.sslTlsEncryption": "Chiffrement SSL/TLS",
+    "websiteSuccessCriteria.botManagement": "Gestion des bots",
+    "websiteSuccessCriteria.realTimeThreatAnalysis":
+      "Analyse des menaces en temps réel",
+    "websiteSuccessCriteria.securityIconAlt": "Icône de sécurité",
+    "websiteSuccessCriteria.ddosProtectionDescription":
+      "Le réseau de Cloudflare est conçu pour absorber et atténuer les attaques DDoS, garantissant que votre site reste disponible même pendant les attaques ciblées.",
+    "websiteSuccessCriteria.signUpNow": "S’inscrire maintenant",
+    "cloudflareSection.cloudflareTitle": "Cloudflare",
+    "cloudflareSection.cloudflareDescription":
+      "La solution idéale pour une expérience web plus rapide, plus sûre et plus fiable.",
+    "cloudflareSection.cloudflareEnhanceTitle":
+      "Renforcez la protection de votre site web contre les cybermenaces et améliorez ses performances avec Cloudflare.",
+    "cloudflareSection.cloudflareEnhanceDescription":
+      "De la protection contre les cybermenaces à l’accélération de la livraison de contenu, Cloudflare est votre partenaire de confiance pour la performance et la sécurité web.",
+    "cloudflareSection.signUpNow": "S’inscrire maintenant",
+    "sslSection.sslTitle": "Certificats SSL",
+    "sslContent.rightBackgroundAlt": "Fond droit avec icônes",
+    "sslContent.leftBackgroundAlt": "Fond gauche avec icônes",
+    "sslContent.trustTitle": "Renforcez la fiabilité de votre entreprise",
+    "sslContent.trustDescription":
+      "Protégez les données de votre site web - et celles de vos visiteurs - en établissant une connexion sécurisée et en chiffrant les données fournies par les certificats SSL. Faites savoir à tous les visiteurs de votre site que celui-ci est sécurisé et fiable grâce à l’icône de cadenas distinctive et au préfixe https:// dans votre nom de domaine.",
+    "sslContent.chooseSslTitle": "Choisissez le bon certificat SSL",
+    "sslContent.chooseSslDescription":
+      "La société Libyan Spider vous propose une variété de certificats de protection issus des entreprises les plus fiables du secteur à l’échelle mondiale.",
+    "choosePlan.rightBackgroundAlt": "Fond SVG droit",
+    "choosePlan.leftBackgroundAlt": "Fond SVG gauche",
+    "choosePlan.mainTitle": "Choisissez le bon plan",
+    "choosePlan.planTitle": "GeoTrust QuickSSL Premium",
+    "choosePlan.currency": "LYD/Trimestriel",
+    "choosePlan.validation": "Validation",
+    "choosePlan.organization": "Organisation",
+    "choosePlan.siteSeal": "Sceau du site",
+    "choosePlan.dynamic": "Dynamique",
+    "choosePlan.orderNow": "Commander maintenant",
+    "websiteSecurity.title":
+      "La sécurité des sites web et le cryptage des données ne sont plus optionnels",
+    "websiteSecurity.description":
+      "Les sites web marqués comme 'Non sécurisé' ne sont plus acceptables. Un certificat SSL n’est plus un choix ; c’est une exigence fondamentale pour la sécurité des sites web dans le monde d’aujourd’hui. Le cryptage des données et les connexions sécurisées éliminent les risques des cyberattaques émergentes et croissantes qui peuvent exploiter toute vulnérabilité de sécurité.",
+    "websiteSecurity.securityImageAlt": "Image de sécurité de site web",
+    "beyondProtection.bigBlocksAlt": "Fond de blocs volumineux",
+    "beyondProtection.mainTitle": "Plus qu’une simple protection",
+    "beyondProtection.mainDescription":
+      "Possédez votre serveur dédié avec le système d’exploitation de votre choix et des applications préinstallées.",
+    "beyondProtection.browserCompatibilityTitle":
+      "Assurez l’affichage de votre site sur tous les navigateurs",
+    "beyondProtection.browserCompatibilityDescription":
+      "Si votre site web n’a pas de certificat SSL, la plupart des navigateurs populaires dans le monde le marqueront comme 'Non sécurisé' avec un avertissement, et certains navigateurs pourraient même le bloquer complètement pour les utilisateurs.",
+    "beyondProtection.customerTrustAlt": "Icône de confiance des clients",
+    "beyondProtection.seoTitle":
+      "Améliorez le classement de votre site dans les moteurs de recherche (SEO)",
+    "beyondProtection.seoDescription":
+      "Les sites web sécurisés ont un avantage pour obtenir un meilleur classement dans les résultats des moteurs de recherche, car la sécurité est un facteur clé dans le processus de classement.",
+    "beyondProtection.browserFriendlyAlt":
+      "Icône de compatibilité avec les navigateurs",
+    "beyondProtection.customerTrustTitle": "Renforcez la confiance des clients",
+    "beyondProtection.customerTrustDescription":
+      "Montrez à vos clients que votre activité en ligne est sûre et fiable en garantissant que leurs données sensibles et leurs paiements en ligne sont entièrement protégés.",
+    "beyondProtection.seoIncreaseAlt": "Icône d’amélioration SEO",
+    "domainRegistrationSA.backgroundAlt": "Image de fond",
+    "domainRegistrationSA.numberOneAlt": "Image d'enregistrement numéro 1",
+    "domainRegistrationSA.title":
+      "Obtenez votre nom de domaine sa. auprès du registraire n°1",
+    "domainRegistrationSA.description":
+      "Des milliers de noms de domaine sa. ont déjà été enregistrés. Dépêchez-vous de sécuriser votre domaine sa. unique maintenant avec diverses extensions disponibles.",
+    "domainRegistrationSA.saTitle": "SA",
+    "domainRegistrationSA.saPrice": "Seulement 20 $",
+    "domainRegistrationSA.saCircleAlt": "Icône de cercle SA",
+    "domainRegistrationSA.eduSa": ".edu.sa",
+    "domainRegistrationSA.comSa": ".com.sa",
+    "domainRegistrationSA.netSa": ".net.sa",
+    "domainRegistrationSA.orgSa": ".org.sa",
+    "domainRegistrationSA.medSa": ".med.sa",
+    "domainRegistrationSA.idSa": ".id.sa",
+    "domainRegistrationSA.schSa": ".sch.sa",
+    "domainRegistrationSA.plcSa": ".plc.sa",
+    "domainRegistrationSA.worldIconAlt": "Icône du monde",
+    "domainRegistrationSA.price": "Seulement 20 $",
+    "domainRegistrationSA.approvalTitle":
+      "Noms de domaine nécessitant l'approbation du registraire",
+    "domainRegistrationSA.schSaApproval": "sch.sa pour les écoles.",
+    "domainRegistrationSA.schSaApprovalDesc":
+      "Lettre officielle à la Saudi Communications and Technology Company pour demander l'approbation de l'enregistrement du nom de domaine.",
+    "domainRegistrationSA.medSaApproval":
+      "med.sa pour les hôpitaux et cliniques.",
+    "domainRegistrationSA.medSaApprovalDesc":
+      "Lettre officielle à la Saudi Communications and Technology Company pour demander l'approbation de l'enregistrement du nom de domaine.",
+    "domainRegistrationSA.govSaApproval": "gov.sa pour les gouvernements.",
+    "domainRegistrationSA.govSaApprovalDesc":
+      "Lettre officielle à la Saudi Communications and Technology Company pour demander l'approbation de l'enregistrement du nom de domaine.",
+    "domainRegistrationSA.govSaAltApproval":
+      "gov.sa pour les entités gouvernementales.",
+    "domainRegistrationSA.govSaAltApprovalDesc":
+      "Enregistré directement auprès de la Saudi Communications and Technology Company après approbation de l'Autorité Générale des Communications et requis sous le panneau de contrôle numérique saoudien.",
+    "domainStatsSA.title": "Statistiques pour sa.",
+    "domainStatsSA.description": "Jetez un œil aux chiffres :",
+    "domainStatsSA.chooseDomain": "Choisissez votre propre domaine",
+    "domainStatsSA.achievement":
+      "Nous sommes fiers d'avoir enregistré plus de 1,800 noms de domaine !",
+    "domainStatsSA.backgroundRightAlt": "Fond SVG droit",
+    "domainStatsSA.backgroundLeftAlt": "Fond SVG gauche",
+    "languageSelector.saudi": "Arabie Saoudite",
+    "languageSelector.uae": "Émirats arabes unis",
+    "languageSelector.sudan": "Soudan",
+    "languageSelector.turkey": "Turquie",
+    "languageSelector.egypt": "Égypte",
+    "languageSelector.oman": "Oman",
+    "languageSelector.iraq": "Irak",
+    "languageSelector.syria": "Syrie",
+    "languageSelector.germany": "Allemagne",
+    "languageSelector.france": "France",
+    "languageSelector.qatar": "Qatar",
+    "languageSelector.india": "Inde",
+    "serverLocations.download": "Téléchargement",
+    "serverLocations.upload": "Téléversement",
+    "serverLocations.comingSoonTitle": "Bientôt disponible",
+    "serverLocations.comingSoonMessage": "Ce serveur sera lancé bientôt",
+    "serverLocations.mapAlt": "Carte du monde",
+
     "dashboardWelcome.title": "Bienvenue sur votre tableau de bord",
-  "dashboardWelcome.description": "Gérez votre domaine facilement, consultez vos statistiques et surveillez les performances depuis un seul endroit.",
-  "dashboardWelcome.imageAlt": "Tableau de bord",
-  "dashboardOverview.title": "Aperçu du tableau de bord",
-  "dashboardOverview.description": "Accédez aux données en temps réel et aux métriques de performance directement depuis votre tableau de bord. Suivez l'état de votre domaine, les statistiques des visiteurs, et bien plus encore en un seul endroit.",
-  "dashboardOverview.imageAlt": "Image d'aperçu du tableau de bord",
-  "performanceTracking.title": "Suivez vos performances",
-  "performanceTracking.description": "Restez informé des performances de votre domaine. Surveillez le trafic, les renouvellements et l'utilisation rapidement.",
-  "performanceTracking.mobileAlt": "Image de performance mobile",
-  "performanceTracking.backgroundAlt": "Image de couche de fond",
-  "performanceTracking.patternAlt": "Motif SVG décoratif",
-  "domainManagement.title": "Gestion de domaine",
-  "domainManagement.description": "Gérez votre domaine facilement. Enregistrez de nouveaux domaines, renouvelez ceux existants et consultez toutes les informations pertinentes en temps réel.",
-  "domainManagement.imageAlt": "Image de bureau",
-  "techStack.mainTitle": "Technologies utilisées pour construire le projet",
-  "techStack.reactTitle": "React",
-  "techStack.reactAlt": "Icône React",
-  "techStack.laravelTitle": "Laravel",
-  "techStack.laravelAlt": "Logo Laravel",
-  "techStack.phpTitle": "PHP",
-  "techStack.phpAlt": "Logo PHP",
-  "techStack.javascriptTitle": "JavaScript",
-  "techStack.javascriptAlt": "Logo JavaScript",
-  "techStack.lagomTitle": "Thème Lagom",
-  "techStack.lagomAlt": "Logo du thème Lagom",
-  "techStack.whatsappApiTitle": "API WhatsApp",
-  "techStack.whatsappApiAlt": "Icône API WhatsApp",
-  "techStack.whmcsTitle": "WHMCS",
-  "techStack.whmcsAlt": "Logo WHMCS",
-  "keyFeaturesTwo.mainTitle": "Fonctionnalités clés",
-  "keyFeaturesTwo.mainDescription": "Grâce à nos produits et services cloud, nous répondons à 100% de vos besoins professionnels et de données, tout en offrant les plus hauts niveaux de sécurité pour votre infrastructure.",
-  "keyFeaturesTwo.cloudHostingTitle": "Hébergement cloud partagé",
-  "keyFeaturesTwo.cloudHostingDescription": "Hébergez votre site web facilement et confortablement à un coût abordable ! Avec l'hébergement cloud partagé.",
-  "keyFeaturesTwo.cloudHostingAlt": "Icône d'hébergement cloud partagé",
-  "keyFeaturesTwo.lsSuiteTitle": "Suite LS",
-  "keyFeaturesTwo.lsSuiteDescription": "Email professionnel, stockage en ligne, réunions d'entreprise, et plus encore. Conçu pour les affaires.",
-  "keyFeaturesTwo.lsSuiteAlt": "Icône de la suite LS",
-  "keyFeaturesTwo.jpaasTitle": "JPaaS Plateforme en tant que service",
-  "keyFeaturesTwo.jpaasDescription": "Gérez votre serveur avec un contrôle total",
-  "keyFeaturesTwo.jpaasAlt": "Icône de la plateforme JPaaS",
-  "keyFeaturesTwo.learnMore": "En savoir plus",
+    "dashboardWelcome.description":
+      "Gérez votre domaine facilement, consultez vos statistiques et surveillez les performances depuis un seul endroit.",
+    "dashboardWelcome.imageAlt": "Tableau de bord",
+    "dashboardOverview.title": "Aperçu du tableau de bord",
+    "dashboardOverview.description":
+      "Accédez aux données en temps réel et aux métriques de performance directement depuis votre tableau de bord. Suivez l'état de votre domaine, les statistiques des visiteurs, et bien plus encore en un seul endroit.",
+    "dashboardOverview.imageAlt": "Image d'aperçu du tableau de bord",
+    "performanceTracking.title": "Suivez vos performances",
+    "performanceTracking.description":
+      "Restez informé des performances de votre domaine. Surveillez le trafic, les renouvellements et l'utilisation rapidement.",
+    "performanceTracking.mobileAlt": "Image de performance mobile",
+    "performanceTracking.backgroundAlt": "Image de couche de fond",
+    "performanceTracking.patternAlt": "Motif SVG décoratif",
+    "domainManagement.title": "Gestion de domaine",
+    "domainManagement.description":
+      "Gérez votre domaine facilement. Enregistrez de nouveaux domaines, renouvelez ceux existants et consultez toutes les informations pertinentes en temps réel.",
+    "domainManagement.imageAlt": "Image de bureau",
+    "techStack.mainTitle": "Technologies utilisées pour construire le projet",
+    "techStack.reactTitle": "React",
+    "techStack.reactAlt": "Icône React",
+    "techStack.laravelTitle": "Laravel",
+    "techStack.laravelAlt": "Logo Laravel",
+    "techStack.phpTitle": "PHP",
+    "techStack.phpAlt": "Logo PHP",
+    "techStack.javascriptTitle": "JavaScript",
+    "techStack.javascriptAlt": "Logo JavaScript",
+    "techStack.lagomTitle": "Thème Lagom",
+    "techStack.lagomAlt": "Logo du thème Lagom",
+    "techStack.whatsappApiTitle": "API WhatsApp",
+    "techStack.whatsappApiAlt": "Icône API WhatsApp",
+    "techStack.whmcsTitle": "WHMCS",
+    "techStack.whmcsAlt": "Logo WHMCS",
+    "keyFeaturesTwo.mainTitle": "Fonctionnalités clés",
+    "keyFeaturesTwo.mainDescription":
+      "Grâce à nos produits et services cloud, nous répondons à 100% de vos besoins professionnels et de données, tout en offrant les plus hauts niveaux de sécurité pour votre infrastructure.",
+    "keyFeaturesTwo.cloudHostingTitle": "Hébergement cloud partagé",
+    "keyFeaturesTwo.cloudHostingDescription":
+      "Hébergez votre site web facilement et confortablement à un coût abordable ! Avec l'hébergement cloud partagé.",
+    "keyFeaturesTwo.cloudHostingAlt": "Icône d'hébergement cloud partagé",
+    "keyFeaturesTwo.lsSuiteTitle": "Suite LS",
+    "keyFeaturesTwo.lsSuiteDescription":
+      "Email professionnel, stockage en ligne, réunions d'entreprise, et plus encore. Conçu pour les affaires.",
+    "keyFeaturesTwo.lsSuiteAlt": "Icône de la suite LS",
+    "keyFeaturesTwo.jpaasTitle": "JPaaS Plateforme en tant que service",
+    "keyFeaturesTwo.jpaasDescription":
+      "Gérez votre serveur avec un contrôle total",
+    "keyFeaturesTwo.jpaasAlt": "Icône de la plateforme JPaaS",
+    "keyFeaturesTwo.learnMore": "En savoir plus",
     "speedSection.title": "Vitesse",
     "speedSection.description":
       "Protégez les données de votre site web et affichez votre certificat de sécurité à vos visiteurs",
@@ -5109,6 +5748,7 @@ const translations: Record<Language, Translations> = {
     "serverLocations.title": "Emplacements des Serveurs",
     "serverLocations.uae": "Émirats Arabes Unis",
     "serverLocations.germany": "Allemagne",
+    "serverLocations.india": "Inde",
     "serverLocations.finland": "Finlande",
     "serverLocations.korea": "Corée",
     "serverLocations.italy": "Italie",
@@ -5149,53 +5789,228 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
-      "serverLocations.download": "Download",
-  "serverLocations.upload": "Upload",
-  "serverLocations.comingSoonTitle": "Demnächst",
-  "serverLocations.comingSoonMessage": "Dieser Server wird bald gestartet",
-  "serverLocations.mapAlt": "Weltkarte",
+    "partnersSection.mainTitle": "Erfolgspartner",
+    "partnersSection.rightBackgroundAlt": "Rechter SVG-Hintergrund",
+    "partnersSection.leftBackgroundAlt": "Linker SVG-Hintergrund",
+    "partnersSection.sucuriName": "SUCURI",
+    "partnersSection.sucuriDescription": "Wir bieten fortschrittliche Website-Schutzdienste durch modernste Technologien, die vollständige Sicherheit gewährleisten. Wir bieten umfassende Lösungen zum Schutz von Websites vor Cyberangriffen und Malware. Unser engagiertes Team arbeitet rund um die Uhr, um den sicheren Betrieb Ihrer Website zu gewährleisten.",
+    "partnersSection.sucuriLogoAlt": "SUCURI-Logo",
+    "partnersSection.softaculousName": "Softaculous",
+    "partnersSection.softaculousDescription": "Eine umfassende Plattform zur einfachen Verwaltung von Anwendungen und Software. Wir bieten eine vollständige Bibliothek von Anwendungen, die mit einem Klick installiert werden können. Unsere Lösungen vereinfachen die Verwaltung von Websites und verschiedenen Anwendungen mit hoher Effizienz und großer Flexibilität.",
+    "partnersSection.softaculousLogoAlt": "Softaculous-Logo",
+    "partnersSection.linuxName": "Linux",
+    "partnersSection.linuxDescription": "Ein Open-Source-Betriebssystem, das hohe Stabilität und Sicherheit bietet. Wir bieten fortschrittliche Hosting-Lösungen mit verschiedenen Linux-Systemen. Unser spezialisiertes Team sorgt für optimale Leistung und vollständige Stabilität für alle bereitgestellten Dienste.",
+    "partnersSection.linuxLogoAlt": "Linux-Logo",
+    "paymentSection.description":
+      "Zahlen Sie auf die Weise, die Ihnen passt, und genießen Sie ein einfaches und reibungsloses Zahlungserlebnis",
+    "whoisTool.whoisTitle": "Whois-Tool",
+    "whoisTool.whoisDescription": "Professionelle Domain-Datenabfrage",
+    "whoisTool.searchButton": "Suchen",
+    "whoisTool.searchPlaceholder": "Geben Sie den Domainnamen ein",
+    "whoisTool.whatIsWhoisTitle": "Was ist das Whois-Tool?",
+    "whoisTool.whatIsWhoisDescription":
+      "Whois ist ein Tool, das verwendet wird, um Informationen zur Domainregistrierung abzufragen, wie z.B. den Eigentümer, das Registrierungsdatum und das Ablaufdatum.",
+    "whoisTool.groupImageAlt": "Whois-Tool-Illustration",
+    "whoisTool.howItWorksTitle": "Wie funktioniert es?",
+    "whoisTool.howItWorksDescription":
+      "Whois funktioniert durch die Abfrage einer öffentlichen Datenbank, um Details zur Domainregistrierung abzurufen, die bei Registraren gespeichert sind.",
+    "whoisTool.sslWhoisImageAlt": "SSL- und Whois-Illustration",
+    "websiteSuccessCriteria.sslTitle": "SSL-Zertifikate",
+    "websiteSuccessCriteria.sslDescription":
+      "Die perfekte Lösung, um Ihre Website zu sichern und Benutzerdaten zu schützen.",
+    "websiteSuccessCriteria.cloudflareTitle": "Cloudflare",
+    "websiteSuccessCriteria.cloudflareDescription":
+      "Die ideale Lösung für ein schnelleres, sichereres und zuverlässigeres Web-Erlebnis.",
+    "websiteSuccessCriteria.cloudflareEnhanceTitle":
+      "Verbessern Sie den Schutz Ihrer Website vor Cyberbedrohungen und steigern Sie ihre Leistung mit Cloudflare.",
+    "websiteSuccessCriteria.cloudflareEnhanceDescription":
+      "Vom Schutz vor Cyberbedrohungen bis zur Beschleunigung der Inhaltsauslieferung ist Cloudflare Ihr vertrauenswürdiger Partner für Web-Performance und Sicherheit.",
+    "websiteSuccessCriteria.mainTitle":
+      "Setzen Sie einen neuen Standard für den Erfolg Ihrer Website",
+    "websiteSuccessCriteria.performanceTitle": "Blitzschnelle Leistung",
+    "websiteSuccessCriteria.globalSpeedBoost": "Globaler Geschwindigkeitsboost",
+    "websiteSuccessCriteria.contentDelivery":
+      "Optimierung der Inhaltsauslieferung",
+    "websiteSuccessCriteria.loadBalancing": "Lastverteilung",
+    "websiteSuccessCriteria.latencyReduction": "Latenzreduktion",
+    "websiteSuccessCriteria.globalSpeedBoostIconAlt":
+      "Symbol für globalen Geschwindigkeitsboost",
+    "websiteSuccessCriteria.globalSpeedBoostDescription":
+      "Dank des globalen CDN von Cloudflare lädt Ihre Website schnell für Besucher auf der ganzen Welt.",
+    "websiteSuccessCriteria.securityTitle": "Unübertroffene Sicherheit",
+    "websiteSuccessCriteria.ddosProtection": "Schutz vor DDoS-Angriffen",
+    "websiteSuccessCriteria.webApplicationFirewall":
+      "Web Application Firewall (WAF)",
+    "websiteSuccessCriteria.sslTlsEncryption": "SSL/TLS-Verschlüsselung",
+    "websiteSuccessCriteria.botManagement": "Bot-Management",
+    "websiteSuccessCriteria.realTimeThreatAnalysis":
+      "Echtzeit-Bedrohungsanalyse",
+    "websiteSuccessCriteria.securityIconAlt": "Sicherheitssymbol",
+    "websiteSuccessCriteria.ddosProtectionDescription":
+      "Das Netzwerk von Cloudflare ist darauf ausgelegt, DDoS-Angriffe abzuwehren und zu entschärfen, sodass Ihre Website auch während gezielter Angriffe verfügbar bleibt.",
+    "websiteSuccessCriteria.signUpNow": "Jetzt anmelden",
+    "cloudflareSection.cloudflareTitle": "Cloudflare",
+    "cloudflareSection.cloudflareDescription":
+      "Die ideale Lösung für ein schnelleres, sichereres und zuverlässigeres Web-Erlebnis.",
+    "cloudflareSection.cloudflareEnhanceTitle":
+      "Verbessern Sie den Schutz Ihrer Website vor Cyberbedrohungen und steigern Sie ihre Leistung mit Cloudflare.",
+    "cloudflareSection.cloudflareEnhanceDescription":
+      "Vom Schutz vor Cyberbedrohungen bis zur Beschleunigung der Inhaltsauslieferung ist Cloudflare Ihr vertrauenswürdiger Partner für Web-Performance und Sicherheit.",
+    "cloudflareSection.signUpNow": "Jetzt anmelden",
+    "sslSection.sslTitle": "SSL-Zertifikate",
+    "sslContent.rightBackgroundAlt": "Rechter Hintergrund mit Symbolen",
+    "sslContent.leftBackgroundAlt": "Linker Hintergrund mit Symbolen",
+    "sslContent.trustTitle":
+      "Bauen Sie die Vertrauenswürdigkeit Ihres Unternehmens auf",
+    "sslContent.trustDescription":
+      "Schützen Sie die Daten Ihrer Website - und die Ihrer Besucher - durch eine sichere Verbindung und die Verschlüsselung der von SSL-Zertifikaten bereitgestellten Daten. Zeigen Sie allen Besuchern Ihrer Website, dass Ihre Seite sicher und vertrauenswürdig ist, mit dem markanten Schloss-Symbol und dem https://-Präfix in Ihrem Domainnamen.",
+    "sslContent.chooseSslTitle": "Wählen Sie das richtige SSL-Zertifikat",
+    "sslContent.chooseSslDescription":
+      "Die Libyan Spider Company bietet Ihnen eine Vielzahl von Schutz-Zertifikaten von den weltweit vertrauenswürdigsten Unternehmen im Bereich.",
+    "choosePlan.rightBackgroundAlt": "Rechter SVG-Hintergrund",
+    "choosePlan.leftBackgroundAlt": "Linker SVG-Hintergrund",
+    "choosePlan.mainTitle": "Wählen Sie den richtigen Plan",
+    "choosePlan.planTitle": "GeoTrust QuickSSL Premium",
+    "choosePlan.currency": "LYD/Vierteljährlich",
+    "choosePlan.validation": "Validierung",
+    "choosePlan.organization": "Organisation",
+    "choosePlan.siteSeal": "Website-Siegel",
+    "choosePlan.dynamic": "Dynamisch",
+    "choosePlan.orderNow": "Jetzt bestellen",
+    "websiteSecurity.title":
+      "Websitesicherheit und Datenverschlüsselung sind nicht mehr optional",
+    "websiteSecurity.description":
+      "Websites, die als 'Nicht sicher' gekennzeichnet sind, sind nicht mehr akzeptabel. Ein SSL-Zertifikat ist keine Wahl mehr; es ist eine grundlegende Anforderung für die Sicherheit von Websites in der heutigen Welt. Datenverschlüsselung und sichere Verbindungen beseitigen die Risiken von neuen und zunehmenden Cyberangriffen, die jede Sicherheitslücke ausnutzen können.",
+    "websiteSecurity.securityImageAlt": "Bild zur Websitesicherheit",
+    "beyondProtection.bigBlocksAlt": "Großer Blöcke-Hintergrund",
+    "beyondProtection.mainTitle": "Mehr als nur Schutz",
+    "beyondProtection.mainDescription":
+      "Besitzen Sie Ihren dedizierten Server mit Ihrem bevorzugten Betriebssystem und vorinstallierten Anwendungen.",
+    "beyondProtection.browserCompatibilityTitle":
+      "Stellen Sie sicher, dass Ihre Website in allen Browsern angezeigt wird",
+    "beyondProtection.browserCompatibilityDescription":
+      "Wenn Ihre Website kein SSL-Zertifikat hat, werden die meisten weltweit beliebten Browser sie als 'Nicht sicher' markieren und eine Warnung anzeigen, und einige Browser könnten sie für Benutzer vollständig blockieren.",
+    "beyondProtection.customerTrustAlt": "Symbol für Kundenvertrauen",
+    "beyondProtection.seoTitle":
+      "Verbessern Sie das Ranking Ihrer Website in Suchmaschinen (SEO)",
+    "beyondProtection.seoDescription":
+      "Gesicherte Websites haben einen Vorteil, um höhere Platzierungen in den Suchmaschinenergebnissen zu erzielen, da Sicherheit ein Schlüsselfaktor im Ranking-Prozess ist.",
+    "beyondProtection.browserFriendlyAlt": "Symbol für Browserfreundlichkeit",
+    "beyondProtection.customerTrustTitle": "Kundenvertrauen aufbauen",
+    "beyondProtection.customerTrustDescription":
+      "Zeigen Sie Ihren Kunden, dass Ihr Online-Geschäft sicher und vertrauenswürdig ist, indem Sie sicherstellen, dass ihre sensiblen Daten und Online-Zahlungen vollständig geschützt sind.",
+    "beyondProtection.seoIncreaseAlt": "Symbol für SEO-Steigerung",
+
+    "domainRegistrationSA.backgroundAlt": "Hintergrundbild",
+    "domainRegistrationSA.numberOneAlt": "Nummer 1 Registrierungsbild",
+    "domainRegistrationSA.title":
+      "Sichern Sie sich Ihre sa.-Domain vom Registrar Nr. 1",
+    "domainRegistrationSA.description":
+      "Tausende von sa.-Domainnamen wurden bereits registriert. Beeilen Sie sich und sichern Sie sich jetzt Ihre einzigartige sa.-Domain mit verschiedenen verfügbaren Erweiterungen.",
+    "domainRegistrationSA.saTitle": "SA",
+    "domainRegistrationSA.saPrice": "Nur 20 $",
+    "domainRegistrationSA.saCircleAlt": "SA-Kreis-Symbol",
+    "domainRegistrationSA.eduSa": ".edu.sa",
+    "domainRegistrationSA.comSa": ".com.sa",
+    "domainRegistrationSA.netSa": ".net.sa",
+    "domainRegistrationSA.orgSa": ".org.sa",
+    "domainRegistrationSA.medSa": ".med.sa",
+    "domainRegistrationSA.idSa": ".id.sa",
+    "domainRegistrationSA.schSa": ".sch.sa",
+    "domainRegistrationSA.plcSa": ".plc.sa",
+    "domainRegistrationSA.worldIconAlt": "Welt-Symbol",
+    "domainRegistrationSA.price": "Nur 20 $",
+    "domainRegistrationSA.approvalTitle":
+      "Domainnamen, die die Genehmigung des Registrars erfordern",
+    "domainRegistrationSA.schSaApproval": "sch.sa für Schulen.",
+    "domainRegistrationSA.schSaApprovalDesc":
+      "Offizielles Schreiben an die Saudi Communications and Technology Company zur Beantragung der Genehmigung für die Registrierung des Domainnamens.",
+    "domainRegistrationSA.medSaApproval":
+      "med.sa für Krankenhäuser und Kliniken.",
+    "domainRegistrationSA.medSaApprovalDesc":
+      "Offizielles Schreiben an die Saudi Communications and Technology Company zur Beantragung der Genehmigung für die Registrierung des Domainnamens.",
+    "domainRegistrationSA.govSaApproval": "gov.sa für Regierungen.",
+    "domainRegistrationSA.govSaApprovalDesc":
+      "Offizielles Schreiben an die Saudi Communications and Technology Company zur Beantragung der Genehmigung für die Registrierung des Domainnamens.",
+    "domainRegistrationSA.govSaAltApproval":
+      "gov.sa für staatliche Einrichtungen.",
+    "domainRegistrationSA.govSaAltApprovalDesc":
+      "Direkt bei der Saudi Communications and Technology Company registriert nach Genehmigung der Allgemeinen Kommunikationsbehörde und Antrag unter dem saudi-arabischen digitalen Kontrollpanel.",
+    "domainStatsSA.title": "Statistiken für sa.",
+    "domainStatsSA.description": "Werfen Sie einen Blick auf die Zahlen:",
+    "domainStatsSA.chooseDomain": "Wählen Sie Ihre eigene Domain",
+    "domainStatsSA.achievement":
+      "Wir sind stolz darauf, über 1.800 Domainnamen registriert zu haben!",
+    "domainStatsSA.backgroundRightAlt": "Rechter SVG-Hintergrund",
+    "domainStatsSA.backgroundLeftAlt": "Linker SVG-Hintergrund",
+    "languageSelector.saudi": "Saudi-Arabien",
+    "languageSelector.uae": "Vereinigte Arabische Emirate",
+    "languageSelector.sudan": "Sudan",
+    "languageSelector.turkey": "Türkei",
+    "languageSelector.egypt": "Ägypten",
+    "languageSelector.oman": "Oman",
+    "languageSelector.iraq": "Irak",
+    "languageSelector.syria": "Syrien",
+    "languageSelector.germany": "Deutschland",
+    "languageSelector.france": "Frankreich",
+    "languageSelector.qatar": "Katar",
+    "languageSelector.india": "Indien",
+    "serverLocations.download": "Download",
+    "serverLocations.upload": "Upload",
+    "serverLocations.comingSoonTitle": "Demnächst",
+    "serverLocations.comingSoonMessage": "Dieser Server wird bald gestartet",
+    "serverLocations.mapAlt": "Weltkarte",
 
     "dashboardWelcome.title": "Willkommen in Ihrem Dashboard",
-  "dashboardWelcome.description": "Verwalten Sie Ihre Domain einfach, überprüfen Sie Ihre Statistiken und überwachen Sie die Leistung von einem Ort aus.",
-  "dashboardWelcome.imageAlt": "Dashboard",
-  "dashboardOverview.title": "Dashboard-Übersicht",
-  "dashboardOverview.description": "Greifen Sie direkt von Ihrem Dashboard auf Echtzeitdaten und Leistungsmetriken zu. Verfolgen Sie den Status Ihrer Domain, Besucherstatistiken und vieles mehr an einem Ort.",
-  "dashboardOverview.imageAlt": "Bild der Dashboard-Übersicht",
-  "performanceTracking.title": "Leistung verfolgen",
-  "performanceTracking.description": "Bleiben Sie über die Leistung Ihrer Domain auf dem Laufenden. Überwachen Sie den Traffic, Verlängerungen und die Nutzung schnell.",
-  "performanceTracking.mobileAlt": "Bild der mobilen Leistung",
-  "performanceTracking.backgroundAlt": "Bild der Hintergrundschicht",
-  "performanceTracking.patternAlt": "Dekoratives SVG-Muster",
-  "domainManagement.title": "Domainverwaltung",
-  "domainManagement.description": "Verwalten Sie Ihre Domain mit Leichtigkeit. Registrieren Sie neue Domains, verlängern Sie bestehende und sehen Sie alle relevanten Details in Echtzeit ein.",
-  "domainManagement.imageAlt": "Desktop-Bild",
-  "techStack.mainTitle": "Technologien, die beim Aufbau des Projekts verwendet wurden",
-  "techStack.reactTitle": "React",
-  "techStack.reactAlt": "React-Symbol",
-  "techStack.laravelTitle": "Laravel",
-  "techStack.laravelAlt": "Laravel-Logo",
-  "techStack.phpTitle": "PHP",
-  "techStack.phpAlt": "PHP-Logo",
-  "techStack.javascriptTitle": "JavaScript",
-  "techStack.javascriptAlt": "JavaScript-Logo",
-  "techStack.lagomTitle": "Lagom Theme",
-  "techStack.lagomAlt": "Lagom Theme-Logo",
-  "techStack.whatsappApiTitle": "WhatsApp API",
-  "techStack.whatsappApiAlt": "WhatsApp API-Symbol",
-  "techStack.whmcsTitle": "WHMCS",
-  "techStack.whmcsAlt": "WHMCS-Logo",
-  "keyFeaturesTwo.mainTitle": "Hauptmerkmale",
-  "keyFeaturesTwo.mainDescription": "Durch unsere Cloud-Produkte und -Dienste erfüllen wir 100% Ihrer Geschäfts- und Datenanforderungen und bieten höchste Sicherheitsstandards für Ihre Infrastruktur.",
-  "keyFeaturesTwo.cloudHostingTitle": "Geteiltes Cloud-Hosting",
-  "keyFeaturesTwo.cloudHostingDescription": "Hosten Sie Ihre Website einfach und komfortabel zu einem erschwinglichen Preis! Mit geteiltem Cloud-Hosting.",
-  "keyFeaturesTwo.cloudHostingAlt": "Symbol für geteiltes Cloud-Hosting",
-  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
-  "keyFeaturesTwo.lsSuiteDescription": "Professionelle E-Mail, Online-Speicher, Unternehmensmeetings und mehr. Entwickelt für Unternehmen.",
-  "keyFeaturesTwo.lsSuiteAlt": "LS Suite-Symbol",
-  "keyFeaturesTwo.jpaasTitle": "JPaaS Plattform als Dienst",
-  "keyFeaturesTwo.jpaasDescription": "Verwalten Sie Ihren Server mit voller Kontrolle",
-  "keyFeaturesTwo.jpaasAlt": "JPaaS Plattform-Symbol",
-  "keyFeaturesTwo.learnMore": "Erfahren Sie mehr",
+    "dashboardWelcome.description":
+      "Verwalten Sie Ihre Domain einfach, überprüfen Sie Ihre Statistiken und überwachen Sie die Leistung von einem Ort aus.",
+    "dashboardWelcome.imageAlt": "Dashboard",
+    "dashboardOverview.title": "Dashboard-Übersicht",
+    "dashboardOverview.description":
+      "Greifen Sie direkt von Ihrem Dashboard auf Echtzeitdaten und Leistungsmetriken zu. Verfolgen Sie den Status Ihrer Domain, Besucherstatistiken und vieles mehr an einem Ort.",
+    "dashboardOverview.imageAlt": "Bild der Dashboard-Übersicht",
+    "performanceTracking.title": "Leistung verfolgen",
+    "performanceTracking.description":
+      "Bleiben Sie über die Leistung Ihrer Domain auf dem Laufenden. Überwachen Sie den Traffic, Verlängerungen und die Nutzung schnell.",
+    "performanceTracking.mobileAlt": "Bild der mobilen Leistung",
+    "performanceTracking.backgroundAlt": "Bild der Hintergrundschicht",
+    "performanceTracking.patternAlt": "Dekoratives SVG-Muster",
+    "domainManagement.title": "Domainverwaltung",
+    "domainManagement.description":
+      "Verwalten Sie Ihre Domain mit Leichtigkeit. Registrieren Sie neue Domains, verlängern Sie bestehende und sehen Sie alle relevanten Details in Echtzeit ein.",
+    "domainManagement.imageAlt": "Desktop-Bild",
+    "techStack.mainTitle":
+      "Technologien, die beim Aufbau des Projekts verwendet wurden",
+    "techStack.reactTitle": "React",
+    "techStack.reactAlt": "React-Symbol",
+    "techStack.laravelTitle": "Laravel",
+    "techStack.laravelAlt": "Laravel-Logo",
+    "techStack.phpTitle": "PHP",
+    "techStack.phpAlt": "PHP-Logo",
+    "techStack.javascriptTitle": "JavaScript",
+    "techStack.javascriptAlt": "JavaScript-Logo",
+    "techStack.lagomTitle": "Lagom Theme",
+    "techStack.lagomAlt": "Lagom Theme-Logo",
+    "techStack.whatsappApiTitle": "WhatsApp API",
+    "techStack.whatsappApiAlt": "WhatsApp API-Symbol",
+    "techStack.whmcsTitle": "WHMCS",
+    "techStack.whmcsAlt": "WHMCS-Logo",
+    "keyFeaturesTwo.mainTitle": "Hauptmerkmale",
+    "keyFeaturesTwo.mainDescription":
+      "Durch unsere Cloud-Produkte und -Dienste erfüllen wir 100% Ihrer Geschäfts- und Datenanforderungen und bieten höchste Sicherheitsstandards für Ihre Infrastruktur.",
+    "keyFeaturesTwo.cloudHostingTitle": "Geteiltes Cloud-Hosting",
+    "keyFeaturesTwo.cloudHostingDescription":
+      "Hosten Sie Ihre Website einfach und komfortabel zu einem erschwinglichen Preis! Mit geteiltem Cloud-Hosting.",
+    "keyFeaturesTwo.cloudHostingAlt": "Symbol für geteiltes Cloud-Hosting",
+    "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+    "keyFeaturesTwo.lsSuiteDescription":
+      "Professionelle E-Mail, Online-Speicher, Unternehmensmeetings und mehr. Entwickelt für Unternehmen.",
+    "keyFeaturesTwo.lsSuiteAlt": "LS Suite-Symbol",
+    "keyFeaturesTwo.jpaasTitle": "JPaaS Plattform als Dienst",
+    "keyFeaturesTwo.jpaasDescription":
+      "Verwalten Sie Ihren Server mit voller Kontrolle",
+    "keyFeaturesTwo.jpaasAlt": "JPaaS Plattform-Symbol",
+    "keyFeaturesTwo.learnMore": "Erfahren Sie mehr",
     "speedSection.title": "Geschwindigkeit",
     "speedSection.description":
       "Schützen Sie die Daten Ihrer Website und zeigen Sie Ihr Sicherheitszertifikat Ihren Besuchern",
@@ -6505,6 +7320,7 @@ const translations: Record<Language, Translations> = {
     "serverLocations.title": "Server-Standorte",
     "serverLocations.uae": "Vereinigte Arabische Emirate",
     "serverLocations.germany": "Deutschland",
+    "serverLocations.india": "Indien",
     "serverLocations.finland": "Finnland",
     "serverLocations.korea": "Korea",
     "serverLocations.italy": "Italien",
@@ -6545,53 +7361,222 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
-      "serverLocations.download": "İndirme",
-  "serverLocations.upload": "Yükleme",
-  "serverLocations.comingSoonTitle": "Yakında",
-  "serverLocations.comingSoonMessage": "Bu sunucu yakında başlatılacak",
-  "serverLocations.mapAlt": "Dünya Haritası",
+    "partnersSection.mainTitle": "Başarı Ortakları",
+    "partnersSection.rightBackgroundAlt": "Sağ SVG Arka Plan",
+    "partnersSection.leftBackgroundAlt": "Sol SVG Arka Plan",
+    "partnersSection.sucuriName": "SUCURI",
+    "partnersSection.sucuriDescription": "Web siteleri için gelişmiş koruma hizmetleri sunuyoruz ve tam güvenlik sağlayan son teknoloji çözümler kullanıyoruz. Siber saldırılara ve kötü amaçlı yazılımlara karşı kapsamlı çözümler sunuyoruz. Özel ekibimiz, web sitenizin tamamen güvenli bir şekilde çalışmasını sağlamak için 7/24 çalışır.",
+    "partnersSection.sucuriLogoAlt": "SUCURI Logosu",
+    "partnersSection.softaculousName": "Softaculous",
+    "partnersSection.softaculousDescription": "Uygulamaları ve yazılımları kolayca yönetmek için kapsamlı bir platform. Tek tıkla kuruluma hazır kapsamlı bir uygulama kütüphanesi sunuyoruz. Çözümlerimiz, web siteleri ve çeşitli uygulamaların yönetimini yüksek verimlilik ve büyük esneklikle basitleştirir.",
+    "partnersSection.softaculousLogoAlt": "Softaculous Logosu",
+    "partnersSection.linuxName": "Linux",
+    "partnersSection.linuxDescription": "Yüksek stabilite ve güvenlik sunan açık kaynaklı bir işletim sistemi. Çeşitli Linux sistemlerini kullanarak gelişmiş barındırma çözümleri sunuyoruz. Uzman ekibimiz, tüm sağlanan hizmetler için optimum performans ve tam stabilite sağlar.",
+    "partnersSection.linuxLogoAlt": "Linux Logosu",
+    "paymentSection.description":
+      "Size uygun olan şekilde ödeme yapın ve kolay ve sorunsuz bir ödeme deneyimi yaşayın",
+    "whoisTool.whoisTitle": "Whois Aracı",
+    "whoisTool.whoisDescription": "Profesyonel alan adı verisi sorgulama",
+    "whoisTool.searchButton": "Ara",
+    "whoisTool.searchPlaceholder": "Alan adını girin",
+    "whoisTool.whatIsWhoisTitle": "Whois Aracı Nedir?",
+    "whoisTool.whatIsWhoisDescription":
+      "Whois, alan adı kayıt bilgileri, örneğin sahip, kayıt tarihi ve sona erme tarihi gibi bilgileri sorgulamak için kullanılan bir araçtır.",
+    "whoisTool.groupImageAlt": "Whois Aracı İllüstrasyonu",
+    "whoisTool.howItWorksTitle": "Nasıl Çalışır?",
+    "whoisTool.howItWorksDescription":
+      "Whois, kayıt kuruluşlarında saklanan alan adı kayıt detaylarını almak için genel bir veritabanını sorgulayarak çalışır.",
+    "whoisTool.sslWhoisImageAlt": "SSL ve Whois İllüstrasyonu",
+    "websiteSuccessCriteria.sslTitle": "SSL Sertifikaları",
+    "websiteSuccessCriteria.sslDescription":
+      "Web sitenizi güvence altına almak ve kullanıcı verilerini korumak için mükemmel çözüm.",
+    "websiteSuccessCriteria.cloudflareTitle": "Cloudflare",
+    "websiteSuccessCriteria.cloudflareDescription":
+      "Daha hızlı, daha güvenli ve daha güvenilir bir web deneyimi için ideal çözüm.",
+    "websiteSuccessCriteria.cloudflareEnhanceTitle":
+      "Cloudflare ile web sitenizin siber tehditlere karşı korumasını artırın ve performansını iyileştirin.",
+    "websiteSuccessCriteria.cloudflareEnhanceDescription":
+      "Siber tehditlere karşı korumadan içerik teslimini hızlandırmaya kadar, Cloudflare web performansı ve güvenliğinde güvenilir ortağınızdır.",
+    "websiteSuccessCriteria.mainTitle":
+      "Web Sitenizin Başarısı İçin Yeni Bir Standart Belirleyin",
+    "websiteSuccessCriteria.performanceTitle": "Yıldırım Hızında Performans",
+    "websiteSuccessCriteria.globalSpeedBoost": "Küresel Hız Artışı",
+    "websiteSuccessCriteria.contentDelivery": "İçerik Teslim Optimizasyonu",
+    "websiteSuccessCriteria.loadBalancing": "Yük Dengeleme",
+    "websiteSuccessCriteria.latencyReduction": "Gecikme Azaltma",
+    "websiteSuccessCriteria.globalSpeedBoostIconAlt":
+      "Küresel Hız Artışı Simgesi",
+    "websiteSuccessCriteria.globalSpeedBoostDescription":
+      "Cloudflare’ın küresel CDN’si sayesinde, web siteniz dünya çapındaki ziyaretçiler için hızlı bir şekilde yüklenir.",
+    "websiteSuccessCriteria.securityTitle": "Eşsiz Güvenlik",
+    "websiteSuccessCriteria.ddosProtection": "DDoS Saldırı Koruması",
+    "websiteSuccessCriteria.webApplicationFirewall":
+      "Web Uygulama Güvenlik Duvarı (WAF)",
+    "websiteSuccessCriteria.sslTlsEncryption": "SSL/TLS Şifreleme",
+    "websiteSuccessCriteria.botManagement": "Bot Yönetimi",
+    "websiteSuccessCriteria.realTimeThreatAnalysis":
+      "Gerçek Zamanlı Tehdit Analizi",
+    "websiteSuccessCriteria.securityIconAlt": "Güvenlik Simgesi",
+    "websiteSuccessCriteria.ddosProtectionDescription":
+      "Cloudflare’ın ağı, DDoS saldırılarını absorbe etmek ve hafifletmek için tasarlanmıştır, böylece web siteniz hedefli saldırılar sırasında bile erişilebilir kalır.",
+    "websiteSuccessCriteria.signUpNow": "Şimdi Kaydol",
+    "cloudflareSection.cloudflareTitle": "Cloudflare",
+    "cloudflareSection.cloudflareDescription":
+      "Daha hızlı, daha güvenli ve daha güvenilir bir web deneyimi için ideal çözüm.",
+    "cloudflareSection.cloudflareEnhanceTitle":
+      "Cloudflare ile web sitenizin siber tehditlere karşı korumasını artırın ve performansını iyileştirin.",
+    "cloudflareSection.cloudflareEnhanceDescription":
+      "Siber tehditlere karşı korumadan içerik teslimini hızlandırmaya kadar, Cloudflare web performansı ve güvenliğinde güvenilir ortağınızdır.",
+    "cloudflareSection.signUpNow": "Şimdi Kaydol",
+    "sslSection.sslTitle": "SSL Sertifikaları",
+    "sslContent.rightBackgroundAlt": "Simge içeren sağ arka plan",
+    "sslContent.leftBackgroundAlt": "Simge içeren sol arka plan",
+    "sslContent.trustTitle": "İşletmenizin Güvenilirliğini Artırın",
+    "sslContent.trustDescription":
+      "SSL sertifikaları tarafından sağlanan güvenli bir bağlantı kurarak ve verileri şifreleyerek web sitenizin verilerini - ve ziyaretçilerinizin verilerini - koruyun. Web sitenizin güvenli ve güvenilir olduğunu, ayırt edici kilit simgesi ve alan adınızın başında yer alan https:// ön eki ile tüm ziyaretçilere bildirin.",
+    "sslContent.chooseSslTitle": "Doğru SSL Sertifikasını Seçin",
+    "sslContent.chooseSslDescription":
+      "Libyan Spider Company, dünya çapında en güvenilir şirketlerden çeşitli koruma sertifikaları sunar.",
+    "choosePlan.rightBackgroundAlt": "Sağ SVG Arka Plan",
+    "choosePlan.leftBackgroundAlt": "Sol SVG Arka Plan",
+    "choosePlan.mainTitle": "Doğru Planı Seçin",
+    "choosePlan.planTitle": "GeoTrust QuickSSL Premium",
+    "choosePlan.currency": "LYD/Çeyreklik",
+    "choosePlan.validation": "Doğrulama",
+    "choosePlan.organization": "Organizasyon",
+    "choosePlan.siteSeal": "Site Mührü",
+    "choosePlan.dynamic": "Dinamik",
+    "choosePlan.orderNow": "Şimdi Sipariş Ver",
+    "websiteSecurity.title":
+      "Web Sitesi Güvenliği ve Veri Şifreleme Artık İsteğe Bağlı Değil",
+    "websiteSecurity.description":
+      "'Güvenli Değil' olarak işaretlenmiş web siteleri artık kabul edilebilir değil. SSL sertifikası artık bir seçenek değil; günümüz dünyasında web sitesi güvenliği için temel bir gerekliliktir. Veri şifreleme ve güvenli bağlantılar, herhangi bir güvenlik açığını istismar edebilecek ortaya çıkan ve artan siber saldırıların risklerini ortadan kaldırır.",
+    "websiteSecurity.securityImageAlt": "Web Sitesi Güvenlik Resmi",
+    "beyondProtection.bigBlocksAlt": "Büyük Bloklar Arka Planı",
+    "beyondProtection.mainTitle": "Sadece Koruma Değil",
+    "beyondProtection.mainDescription":
+      "Tercih ettiğiniz işletim sistemi ve önceden yüklenmiş uygulamalarla özel sunucunuza sahip olun.",
+    "beyondProtection.browserCompatibilityTitle":
+      "Web Sitenizin Tüm Tarayıcılarda Göründüğünden Emin Olun",
+    "beyondProtection.browserCompatibilityDescription":
+      "Web sitenizde SSL sertifikası yoksa, dünya çapındaki popüler tarayıcıların çoğu onu 'Güvenli Değil' olarak işaretleyecek ve bir uyarı gösterecek, bazı tarayıcılar ise kullanıcılar için tamamen engelleyebilir.",
+    "beyondProtection.customerTrustAlt": "Müşteri Güveni Simgesi",
+    "beyondProtection.seoTitle":
+      "Web Sitenizin Arama Motoru Sıralamasını Yükseltin (SEO)",
+    "beyondProtection.seoDescription":
+      "Güvenli web siteleri, arama motoru sonuçlarında daha yüksek sıralamalar elde etme avantajına sahiptir, çünkü güvenlik sıralama sürecinde temel bir faktördür.",
+    "beyondProtection.browserFriendlyAlt": "Tarayıcı Dostu Simge",
+    "beyondProtection.customerTrustTitle": "Müşteri Güveni Oluşturun",
+    "beyondProtection.customerTrustDescription":
+      "Hassas verilerinin ve çevrimiçi ödemelerinin tamamen korunduğunu bildirerek müşterilerinize çevrimiçi işinizin güvenli ve güvenilir olduğunu gösterin.",
+    "beyondProtection.seoIncreaseAlt": "SEO Artış Simgesi",
+    "domainRegistrationSA.backgroundAlt": "Arka Plan Resmi",
+    "domainRegistrationSA.numberOneAlt": "Numara 1 Kayıt Resmi",
+    "domainRegistrationSA.title":
+      "1 numaralı kayıt şirketinden sa. alan adınızı alın",
+    "domainRegistrationSA.description":
+      "Binlerce sa. alan adı zaten kaydedildi. Hemen kaydolun ve çeşitli uzantılarla mevcut olan benzersiz sa. alan adınızı şimdi güvence altına alın.",
+    "domainRegistrationSA.saTitle": "SA",
+    "domainRegistrationSA.saPrice": "Sadece 20 $",
+    "domainRegistrationSA.saCircleAlt": "SA Daire Simgesi",
+    "domainRegistrationSA.eduSa": ".edu.sa",
+    "domainRegistrationSA.comSa": ".com.sa",
+    "domainRegistrationSA.netSa": ".net.sa",
+    "domainRegistrationSA.orgSa": ".org.sa",
+    "domainRegistrationSA.medSa": ".med.sa",
+    "domainRegistrationSA.idSa": ".id.sa",
+    "domainRegistrationSA.schSa": ".sch.sa",
+    "domainRegistrationSA.plcSa": ".plc.sa",
+    "domainRegistrationSA.worldIconAlt": "Dünya Simgesi",
+    "domainRegistrationSA.price": "Sadece 20 $",
+    "domainRegistrationSA.approvalTitle":
+      "Kayıt Şirketi Onayı Gerektiren Alan Adları",
+    "domainRegistrationSA.schSaApproval": "sch.sa okullar için.",
+    "domainRegistrationSA.schSaApprovalDesc":
+      "Alan adı kaydı için onay talep etmek üzere Suudi İletişim ve Teknoloji Şirketi'ne resmi bir mektup.",
+    "domainRegistrationSA.medSaApproval":
+      "med.sa hastaneler ve klinikler için.",
+    "domainRegistrationSA.medSaApprovalDesc":
+      "Alan adı kaydı için onay talep etmek üzere Suudi İletişim ve Teknoloji Şirketi'ne resmi bir mektup.",
+    "domainRegistrationSA.govSaApproval": "gov.sa hükümetler için.",
+    "domainRegistrationSA.govSaApprovalDesc":
+      "Alan adı kaydı için onay talep etmek üzere Suudi İletişim ve Teknoloji Şirketi'ne resmi bir mektup.",
+    "domainRegistrationSA.govSaAltApproval": "gov.sa devlet kurumları için.",
+    "domainRegistrationSA.govSaAltApprovalDesc":
+      "Genel İletişim Otoritesinin onayıyla ve Suudi Dijital Kontrol Paneli altında talep edildikten sonra Suudi İletişim ve Teknoloji Şirketi ile doğrudan kaydedilir.",
+    "domainStatsSA.title": "sa. için istatistikler",
+    "domainStatsSA.description": "Rakamlara bir göz atın:",
+    "domainStatsSA.chooseDomain": "Kendi alan adınızı seçin",
+    "domainStatsSA.achievement":
+      "1.800'den fazla alan adı kaydetmekten gurur duyuyoruz!",
+    "domainStatsSA.backgroundRightAlt": "Sağ SVG Arka Plan",
+    "domainStatsSA.backgroundLeftAlt": "Sol SVG Arka Plan",
+    "languageSelector.saudi": "Suudi Arabistan",
+    "languageSelector.uae": "Birleşik Arap Emirlikleri",
+    "languageSelector.sudan": "Sudan",
+    "languageSelector.turkey": "Türkiye",
+    "languageSelector.egypt": "Mısır",
+    "languageSelector.oman": "Umman",
+    "languageSelector.iraq": "Irak",
+    "languageSelector.syria": "Suriye",
+    "languageSelector.germany": "Almanya",
+    "languageSelector.france": "Fransa",
+    "languageSelector.qatar": "Katar",
+    "languageSelector.india": "Hindistan",
+    "serverLocations.download": "İndirme",
+    "serverLocations.upload": "Yükleme",
+    "serverLocations.comingSoonTitle": "Yakında",
+    "serverLocations.comingSoonMessage": "Bu sunucu yakında başlatılacak",
+    "serverLocations.mapAlt": "Dünya Haritası",
 
     "dashboardWelcome.title": "Kontrol Panelinize Hoş Geldiniz",
-  "dashboardWelcome.description": "Alan adınızı kolayca yönetin, istatistiklerinizi kontrol edin ve performansı tek bir yerden izleyin.",
-  "dashboardWelcome.imageAlt": "Kontrol Paneli",
-  "dashboardOverview.title": "Kontrol Paneli Genel Bakış",
-  "dashboardOverview.description": "Kontrol panelinizden gerçek zamanlı verilere ve performans metriklerine doğrudan erişin. Alan adı durumunuzu, ziyaretçi istatistiklerini ve daha fazlasını tek bir yerde takip edin.",
-  "dashboardOverview.imageAlt": "Kontrol Paneli Genel Bakış Görseli",
-  "performanceTracking.title": "Performansı Takip Et",
-  "performanceTracking.description": "Alan adınızın performansını güncel tutun. Trafiği, yenilemeleri ve kullanımı hızlıca izleyin.",
-  "performanceTracking.mobileAlt": "Mobil Performans Görseli",
-  "performanceTracking.backgroundAlt": "Arka Plan Katmanı Görseli",
-  "performanceTracking.patternAlt": "Dekoratif SVG Deseni",
-  "domainManagement.title": "Alan Adı Yönetimi",
-  "domainManagement.description": "Alan adınızı kolayca yönetin. Yeni alan adları kaydedin, mevcut olanları yenileyin ve tüm ilgili detayları gerçek zamanlı olarak görüntüleyin.",
-  "domainManagement.imageAlt": "Masaüstü Görseli",
-  "techStack.mainTitle": "Projenin İnşasında Kullanılan Teknolojiler",
-  "techStack.reactTitle": "React",
-  "techStack.reactAlt": "React İkonu",
-  "techStack.laravelTitle": "Laravel",
-  "techStack.laravelAlt": "Laravel Logosu",
-  "techStack.phpTitle": "PHP",
-  "techStack.phpAlt": "PHP Logosu",
-  "techStack.javascriptTitle": "JavaScript",
-  "techStack.javascriptAlt": "JavaScript Logosu",
-  "techStack.lagomTitle": "Lagom Theme",
-  "techStack.lagomAlt": "Lagom Theme Logosu",
-  "techStack.whatsappApiTitle": "WhatsApp API",
-  "techStack.whatsappApiAlt": "WhatsApp API İkonu",
-  "techStack.whmcsTitle": "WHMCS",
-  "techStack.whmcsAlt": "WHMCS Logosu",
-  "keyFeaturesTwo.mainTitle": "Ana Özellikler",
-  "keyFeaturesTwo.mainDescription": "Bulut ürünlerimiz ve hizmetlerimizle, iş ve veri ihtiyaçlarınızın %100'ünü karşılıyoruz, altyapınız için en yüksek güvenlik seviyelerini sağlıyoruz.",
-  "keyFeaturesTwo.cloudHostingTitle": "Paylaşımlı Bulut Barındırma",
-  "keyFeaturesTwo.cloudHostingDescription": "Web sitenizi kolayca ve uygun maliyetle barındırın! Paylaşımlı bulut barındırma ile.",
-  "keyFeaturesTwo.cloudHostingAlt": "Paylaşımlı Bulut Barındırma İkonu",
-  "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
-  "keyFeaturesTwo.lsSuiteDescription": "Profesyonel e-posta, çevrimiçi depolama, kurumsal toplantılar ve daha fazlası. İş için tasarlandı.",
-  "keyFeaturesTwo.lsSuiteAlt": "LS Suite İkonu",
-  "keyFeaturesTwo.jpaasTitle": "JPaaS Platformu Servis Olarak",
-  "keyFeaturesTwo.jpaasDescription": "Sunucunuzu tam kontrolle yönetin",
-  "keyFeaturesTwo.jpaasAlt": "JPaaS Platform İkonu",
-  "keyFeaturesTwo.learnMore": "Daha Fazla Bilgi Edinin",
+    "dashboardWelcome.description":
+      "Alan adınızı kolayca yönetin, istatistiklerinizi kontrol edin ve performansı tek bir yerden izleyin.",
+    "dashboardWelcome.imageAlt": "Kontrol Paneli",
+    "dashboardOverview.title": "Kontrol Paneli Genel Bakış",
+    "dashboardOverview.description":
+      "Kontrol panelinizden gerçek zamanlı verilere ve performans metriklerine doğrudan erişin. Alan adı durumunuzu, ziyaretçi istatistiklerini ve daha fazlasını tek bir yerde takip edin.",
+    "dashboardOverview.imageAlt": "Kontrol Paneli Genel Bakış Görseli",
+    "performanceTracking.title": "Performansı Takip Et",
+    "performanceTracking.description":
+      "Alan adınızın performansını güncel tutun. Trafiği, yenilemeleri ve kullanımı hızlıca izleyin.",
+    "performanceTracking.mobileAlt": "Mobil Performans Görseli",
+    "performanceTracking.backgroundAlt": "Arka Plan Katmanı Görseli",
+    "performanceTracking.patternAlt": "Dekoratif SVG Deseni",
+    "domainManagement.title": "Alan Adı Yönetimi",
+    "domainManagement.description":
+      "Alan adınızı kolayca yönetin. Yeni alan adları kaydedin, mevcut olanları yenileyin ve tüm ilgili detayları gerçek zamanlı olarak görüntüleyin.",
+    "domainManagement.imageAlt": "Masaüstü Görseli",
+    "techStack.mainTitle": "Projenin İnşasında Kullanılan Teknolojiler",
+    "techStack.reactTitle": "React",
+    "techStack.reactAlt": "React İkonu",
+    "techStack.laravelTitle": "Laravel",
+    "techStack.laravelAlt": "Laravel Logosu",
+    "techStack.phpTitle": "PHP",
+    "techStack.phpAlt": "PHP Logosu",
+    "techStack.javascriptTitle": "JavaScript",
+    "techStack.javascriptAlt": "JavaScript Logosu",
+    "techStack.lagomTitle": "Lagom Theme",
+    "techStack.lagomAlt": "Lagom Theme Logosu",
+    "techStack.whatsappApiTitle": "WhatsApp API",
+    "techStack.whatsappApiAlt": "WhatsApp API İkonu",
+    "techStack.whmcsTitle": "WHMCS",
+    "techStack.whmcsAlt": "WHMCS Logosu",
+    "keyFeaturesTwo.mainTitle": "Ana Özellikler",
+    "keyFeaturesTwo.mainDescription":
+      "Bulut ürünlerimiz ve hizmetlerimizle, iş ve veri ihtiyaçlarınızın %100'ünü karşılıyoruz, altyapınız için en yüksek güvenlik seviyelerini sağlıyoruz.",
+    "keyFeaturesTwo.cloudHostingTitle": "Paylaşımlı Bulut Barındırma",
+    "keyFeaturesTwo.cloudHostingDescription":
+      "Web sitenizi kolayca ve uygun maliyetle barındırın! Paylaşımlı bulut barındırma ile.",
+    "keyFeaturesTwo.cloudHostingAlt": "Paylaşımlı Bulut Barındırma İkonu",
+    "keyFeaturesTwo.lsSuiteTitle": "LS Suite",
+    "keyFeaturesTwo.lsSuiteDescription":
+      "Profesyonel e-posta, çevrimiçi depolama, kurumsal toplantılar ve daha fazlası. İş için tasarlandı.",
+    "keyFeaturesTwo.lsSuiteAlt": "LS Suite İkonu",
+    "keyFeaturesTwo.jpaasTitle": "JPaaS Platformu Servis Olarak",
+    "keyFeaturesTwo.jpaasDescription": "Sunucunuzu tam kontrolle yönetin",
+    "keyFeaturesTwo.jpaasAlt": "JPaaS Platform İkonu",
+    "keyFeaturesTwo.learnMore": "Daha Fazla Bilgi Edinin",
     "speedSection.title": "Hız",
     "speedSection.description":
       "Web sitenizin verilerini koruyun ve ziyaretçilerinize güvenlik sertifikanızı gösterin",
@@ -7833,6 +8818,7 @@ const translations: Record<Language, Translations> = {
     "serverLocations.title": "Sunucu Konumları",
     "serverLocations.uae": "Birleşik Arap Emirlikleri",
     "serverLocations.germany": "Almanya",
+    "serverLocations.india": "Hindistan",
     "serverLocations.finland": "Finlandiya",
     "serverLocations.korea": "Kore",
     "serverLocations.italy": "İtalya",
@@ -7894,6 +8880,7 @@ const translations: Record<Language, Translations> = {
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("arabic");
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") as Language;
@@ -7924,8 +8911,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         : "tr";
   };
 
-  const t = (key: TranslationKeys): string => {
-    return translations[language][key] || key;
+  const t = (key: string): string => {
+    return translations[language][key as TranslationKeys] || key;
   };
 
   const isRTL = language === "arabic";
@@ -7937,6 +8924,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setLanguage: handleSetLanguage,
         t,
         isRTL,
+        selectedCountry,
+        setSelectedCountry,
       }}
     >
       {children}

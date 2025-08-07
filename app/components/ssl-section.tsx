@@ -34,7 +34,7 @@ export default function SSLSection() {
           }}
         ></div>
 
-        <div className="mt-32 container mx-auto px-4 relative z-10 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
+        <div className="mt-32 container mx-auto px-4 relative -z-0 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl">
           <h1
             className="lg:text-4xl text-xl mb-6 text-center font-bold"
             dir="rtl"
