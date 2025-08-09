@@ -4,14 +4,14 @@ import Image from "next/image"; // Assuming Next.js Image component, adjust if u
 const DomainStatsIQ = () => {
   return (
     <div className="relative mt-32">
-      <Image
+      <Image loading="lazy"
         className="absolute -top-36 right-0 -z-10"
         src="/Rbg.svg"
         alt="SVG Background Right"
         width={400}
         height={400}
       />
-      <Image
+      <Image loading="lazy"
         className="absolute -top-36 left-0 -z-10"
         src="/Lbg.svg"
         alt="SVG Background Left"

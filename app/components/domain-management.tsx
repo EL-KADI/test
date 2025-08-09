@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 const DomainManagement = () => {
@@ -20,12 +21,15 @@ const DomainManagement = () => {
         </p>
       </div>
       <div>
-        <img
+        <Image
+        width={500}
+        height={500}
           className={`transform ${
             isRTL ? "lg:-translate-x-56" : "lg:translate-x-56"
           } mx-auto w-2/3`}
           alt={t("domainManagement.imageAlt")}
           src="/DomainManagement.svg"
+          loading="lazy"
         />
       </div>
     </div>

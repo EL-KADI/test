@@ -24,14 +24,14 @@ export default function ChoosePlan() {
         src="/Rbg.svg"
         alt={t("choosePlan.rightBackgroundAlt")}
         width={393}
-        height={636}
+        height={636} loading="lazy"
       />
       <Image
         className="absolute left-0 -top-16 -z-[4]"
         src="/Lbg.svg"
         alt={t("choosePlan.leftBackgroundAlt")}
         width={393}
-        height={636}
+        height={636} loading="lazy"
       />
       <div className="container max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <h2 className="text-center text-[#2b1f51] lg:text-4xl text-2xl mb-8">

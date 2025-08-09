@@ -85,7 +85,7 @@ function PartnerCard({
         src={img}
         alt={`${name} Logo`}
         width={96}
-        height={96}
+        height={96}  loading="lazy"
       />
       <div>
         <h1
@@ -115,7 +115,7 @@ function MiniCard({ img, name }: { img: string; name: string }) {
         alt={`${name} Logo`}
         className="w-24 h-32 object-contain"
         width={96}
-        height={96}
+        height={96}  loading="lazy"
       />
       <h1 className="text-center text-[20px]">{name}</h1>
     </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function WorldDaljm() {
@@ -10,7 +11,10 @@ export default function WorldDaljm() {
           <h1 className="font-semibold text-2xl mb-3 w-full">{t("worldDaljm.multiRegionSupport")}</h1>
           <p className="w-full">{t("worldDaljm.description")}</p>
         </div>
-        <img  
+        <Image
+        width={380}
+        height={380}
+        loading="lazy" 
            className={`lg:absolute bottom-0   ${
                 isRTL ? "lg:right-0" : "lg:left-0"
               }`}

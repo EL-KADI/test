@@ -27,7 +27,7 @@ export function SystemSucuri() {
               alt={platform.alt}
               width={64}
               height={64}
-              className="h-16 w-16 object-contain"
+              className="h-16 w-16 object-contain"  loading="lazy"
             />
             <h1 className="text-center text-xs">{platform.name}</h1>
           </div>

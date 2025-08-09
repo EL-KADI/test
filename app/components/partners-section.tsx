@@ -30,14 +30,14 @@ export default function PartnersSection() {
         alt={t("partnersSection.rightBackgroundAlt")}
         src="/Rbg.svg"
         width={500}
-        height={500}
+        height={500}  loading="lazy"
       />
       <Image
         className="absolute -top-32 left-0 -z-0"
         alt={t("partnersSection.leftBackgroundAlt")}
         src="/Lbg.svg"
         width={500}
-        height={500}
+        height={500}  loading="lazy"
       />
       <h2 className="text-3xl relative z-0 font-bold text-center mb-12 text-gray-800">
         {t("partnersSection.mainTitle")}
@@ -54,7 +54,7 @@ export default function PartnersSection() {
                 alt={t(`partnersSection.${partner.name.toLowerCase()}LogoAlt`)}
                 width={180}
                 height={140}
-                className="object-contain"
+                className="object-contain"  loading="lazy"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4 text-gray-800">
@@ -82,7 +82,7 @@ export default function PartnersSection() {
                 alt={t(`partnersSection.${partner.name.toLowerCase()}LogoAlt`)}
                 width={180}
                 height={140}
-                className="object-contain"
+                className="object-contain"  loading="lazy"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4 text-gray-800">
@@ -110,7 +110,7 @@ export default function PartnersSection() {
                 alt={t(`partnersSection.${partner.name.toLowerCase()}LogoAlt`)}
                 width={180}
                 height={140}
-                className="object-contain"
+                className="object-contain"  loading="lazy"
               />
             </div>
             <h3 className="text-xl font-semibold mb-4 text-gray-800">

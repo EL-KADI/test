@@ -69,15 +69,15 @@ export default function FeaturesSectionNine() {
         className="absolute top-0 right-0 -z-10"
         alt={t("featuresNine.rightImageAlt")}
         src="/Rbg.svg"
-        width={393}
-        height={636}
+        width={393} 
+        height={636} loading="lazy"
       />
       <Image
         className="absolute top-0 left-0 -z-10"
         alt={t("featuresNine.leftImageAlt")}
         src="/Lbg.svg"
         width={393}
-        height={636}
+        height={636}  loading="lazy"
       />
       <h1 className="lg:text-4xl text-xl mb-6 text-center">
         {t("featuresNine.title")}
@@ -94,7 +94,7 @@ export default function FeaturesSectionNine() {
                 alt={feature.alt}
                 src={feature.image}
                 width={feature.width}
-                height={feature.height}
+                height={feature.height} loading="lazy"
               />
               <h1 className="text-center text-xs">{feature.title}</h1>
             </div>

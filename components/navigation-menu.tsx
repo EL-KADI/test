@@ -5,15 +5,14 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
 import Logo from "../public/logo.svg";
-import AnimatedOnScroll from "./animated-on-scroll";
 import LanguageSelector from "./language-selector";
-
+import React from "react";
 interface NavigationBarProps {
   className?: string;
   onMobileMenuOpen?: () => void;
 }
 
-export default function NavigationBar({
+function NavigationBar({
   className = "",
   onMobileMenuOpen,
 }: NavigationBarProps) {
@@ -874,23 +873,18 @@ export default function NavigationBar({
         </div>
       </div>
 
-      {/* Hero Section مع الخلفيتين */}
-      <AnimatedOnScroll
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <div className="relative flex items-center justify-center z-50 bg-contain bg-bottom xl:bg-cover bg-no-repeat">
+
+        <div className="relative flex items-center justify-center z-50">
 
           {/* Desktop Dropdown Menus */}
           {/* Hosting Dropdown Menu */}
           {isHostingDropdownOpen && (
             <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 "
               onMouseEnter={() => setIsHostingDropdownOpen(true)}
               onMouseLeave={() => setIsHostingDropdownOpen(false)}
             >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto ">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/shared-hosting"
@@ -1105,7 +1099,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsServersDropdownOpen(true)}
               onMouseLeave={() => setIsServersDropdownOpen(false)}
             >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/vps"
@@ -1197,7 +1191,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsDomainsDropdownOpen(true)}
               onMouseLeave={() => setIsDomainsDropdownOpen(false)}
             >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/domains"
@@ -1289,7 +1283,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsCompanyDropdownOpen(true)}
               onMouseLeave={() => setIsCompanyDropdownOpen(false)}
             >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/about"
@@ -1394,7 +1388,7 @@ export default function NavigationBar({
               onMouseEnter={() => setIsTechnologyDropdownOpen(true)}
               onMouseLeave={() => setIsTechnologyDropdownOpen(false)}
             >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-5xl w-full mx-8">
+              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
                 <div className="grid grid-cols-3 gap-6">
                   <Link
                     href="/security"
@@ -1481,7 +1475,8 @@ export default function NavigationBar({
 
           {/* Center Content */}
         </div>
-      </AnimatedOnScroll>
+   
     </div>
   );
 }
+export default React.memo(NavigationBar);

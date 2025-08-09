@@ -14,7 +14,7 @@ export default function Bouquets() {
         alt="Right Bg"
         src="Rbg.svg"
         width={500}
-        height={500}
+        height={500} loading="lazy"
       />
       {/* Left decorative SVG */}
       <Image
@@ -22,7 +22,7 @@ export default function Bouquets() {
         alt="Left Bg"
         src="Lbg.svg"
         width={500}
-        height={500}
+        height={500} loading="lazy"
       />
       <div className="container mx-auto px-4 max-w-6xl">
         <h1 className="lg:text-4xl text-xl mb-6 text-center">

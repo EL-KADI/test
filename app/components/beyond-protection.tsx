@@ -28,7 +28,7 @@ export default function BeyondProtection() {
               src="/customer-trust.svg"
               alt={t("beyondProtection.customerTrustAlt")}
               width={80}
-              height={80}
+              height={80} loading="lazy"
             />
             <div>
               <h1 className="mb-6 text-xl">{t("beyondProtection.browserCompatibilityTitle")}</h1>

@@ -7,14 +7,14 @@ export default function DomainStatsSA() {
 
   return (
     <div className="relative mt-32">
-      <Image
+      <Image loading="lazy"
         className="absolute -top-36 right-0 -z-10"
         src="/Rbg.svg"
         alt={t("domainStatsSA.backgroundRightAlt")}
         width={400}
         height={400}
       />
-      <Image
+      <Image loading="lazy"
         className="absolute -top-36 left-0 -z-10"
         src="/Lbg.svg"
         alt={t("domainStatsSA.backgroundLeftAlt")}

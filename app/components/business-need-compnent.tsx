@@ -45,7 +45,7 @@ export default function BusinessNeedsSection() {
                 src={feature.image}
                 alt={feature.alt}
                 width={feature.width}
-                height={feature.width}
+                height={feature.width} loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{feature.title}</h1>

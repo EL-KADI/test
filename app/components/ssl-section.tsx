@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function SSLSection() {
@@ -51,7 +52,10 @@ export default function SSLSection() {
                 key={index}
                 className="bg-white rounded-lg px-6 py-6 flex items-start gap-4 shadow-lg flex-col gap-y-6 transition hover:scale-105"
               >
-                <img
+                <Image
+                  width={24}
+                  height={24}
+                  loading="lazy"
                   className="w-24 h-24 relative before:absolute before:w-16 before:h-2 before:bg-black before:bottom-0 before:left-0"
                   src={card.image}
                   alt={card.alt}

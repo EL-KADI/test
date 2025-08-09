@@ -64,7 +64,8 @@ export default function WebsiteBuilderSection() {
             </div>
             <Image
               className="w-full"
-              src={step.image ?? "/placeholder.png"}
+              loading="lazy"
+              src={step.image ?? ""}
               alt={step.alt ?? ""}
               width={400}
               height={300}

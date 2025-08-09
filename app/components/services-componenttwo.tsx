@@ -32,14 +32,14 @@ export default function ServicesComponentTwo() {
         alt={t("services.backgroundDecorationAltTwo")}
         src="/Rbg.svg"
         width={393}
-        height={636}
+        height={636}  loading="lazy"
       />
       <Image
         className="absolute left-0 -top-[150px] -z-10"
         alt={t("services.backgroundDecorationAltTwo")}
         src="/Lbg.svg"
         width={393}
-        height={636}
+        height={636}  loading="lazy"
       />
       <h1 className="lg:text-4xl text-xl mb-5 text-center">{t("servicesTwo.title")}</h1>
       <p className="lg:text-xl text-base mb-20 text-center text-black/50">{t("servicesTwo.description")}</p>
@@ -55,7 +55,7 @@ export default function ServicesComponentTwo() {
                 src={service.image}
                 alt={service.alt}
                 width={60}
-                height={60}
+                height={60}  loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{service.title}</h1>

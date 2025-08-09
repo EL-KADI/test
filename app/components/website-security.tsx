@@ -16,6 +16,7 @@ export default function WebsiteSecurity() {
         </div>
         <Image
           className="w-5/6 ms-auto"
+          loading="lazy"
           alt={t("websiteSecurity.securityImageAlt")}
           src="/securityWebsite.svg"
           width={500}

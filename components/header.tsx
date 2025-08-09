@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "../contexts/language-context";
 import LanguageSelector from "./language-selector";
 import Link from "next/link";
-export default function Header() {
+import React from "react";
+
+export default React.memo(function Header() {
   const { t, isRTL } = useLanguage();
 
   const navItems = [
@@ -273,4 +275,4 @@ export default function Header() {
       </div>
     </header>
   );
-}
+});

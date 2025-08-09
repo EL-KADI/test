@@ -42,7 +42,7 @@ export default function ServicesComponentThree() {
                 src={service.image}
                 alt={service.alt}
                 width={60}
-                height={60}
+                height={60}  loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{service.title}</h1>

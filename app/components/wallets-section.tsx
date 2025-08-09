@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useLanguage } from '../../contexts/language-context';
 
 const WalletsSection = () => {
@@ -44,7 +45,7 @@ const WalletsSection = () => {
             key={index}
             className="bg-white  mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 gap-4 shadow-light items-start w-64 transition hover:scale-105 flex flex-col justify-between"
           >
-            <img className="h-36 mx-auto p-4" src={wallet.image} alt={wallet.alt} />
+            <Image width={250} height={250} loading='lazy' className="h-36 mx-auto p-4" src={wallet.image} alt={wallet.alt} />
             <div className="relative">
               <h1 className={`my-6 text-xl font-semibold ${isRTL ? 'text-right' : 'text-left'}`}>
                 {wallet.title}

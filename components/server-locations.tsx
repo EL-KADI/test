@@ -6,7 +6,7 @@ import { useLanguage } from "../contexts/language-context";
 import AnimatedNumber from "./animated-number";
 
 // Original image imports
-import map from "../public/map.png";
+import map from "../public/map.webp";
 import uk from "../public/uk-circle.svg";
 import ae from "../public/ae-circle.svg";
 import tr from "../public/tr-circle.svg";

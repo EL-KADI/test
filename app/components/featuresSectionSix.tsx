@@ -63,7 +63,7 @@ export default function FeaturesSectionSix() {
                   src={feature.image}
                   alt={feature.alt}
                   width={54}
-                  height={54}
+                  height={54}  loading="lazy"
                 />
                 <h2 className="text-center text-base font-medium text-gray-700">
                   {feature.title}

@@ -62,6 +62,7 @@ export default function WebsiteSuccessCriteria() {
           <div className="md:col-span-2 col-span-3">
             <div className="md:mt-12 shadow-[0_0_20px_0_rgba(0,0,0,0.08)] bg-white py-8 px-12 rounded-lg flex items-start justify-start gap-8 flex-col shadow-light transition hover:scale-105">
               <Image
+              loading="lazy"
                 src="/global-speed-boost-icon.svg"
                 alt={t("websiteSuccessCriteria.globalSpeedBoostIconAlt")}
                 width={82}
@@ -95,6 +96,7 @@ export default function WebsiteSuccessCriteria() {
           <div className="md:col-span-2 col-span-3">
             <div className="md:mt-12 shadow-[0_0_20px_0_rgba(0,0,0,0.08)] bg-white py-8 px-12 rounded-lg flex items-start justify-start gap-8 flex-col shadow-light transition hover:scale-105">
               <Image
+              loading="lazy"
                 src="/advantage-ddos.svg"
                 alt={t("websiteSuccessCriteria.securityIconAlt")}
                 width={48}

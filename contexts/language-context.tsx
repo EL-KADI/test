@@ -21,7 +21,54 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 type TranslationKeys =
   | "domainRegistrationSA.backgroundAlt"
   | "domainRegistrationSA.numberOneAlt"
+  | "domainInfographic.titlePart1"
+  | "domainInfographic.titlePart2"
+  | "domainFeatures.mainTitle"
+  | "domainFeatures.lockTitle"
+  | "domainFeatures.lockDescription"
+  | "domainFeatures.renewalTitle"
+  | "domainFeatures.renewalDescription"
+  | "domainFeatures.autoRenewalTitle"
+  | "domainFeatures.autoRenewalDescription"
+  | "domainFeatures.managementTitle"
+  | "domainFeatures.managementDescription"
+  | "domainFeatures.privacyTitle"
+  | "domainFeatures.privacyDescription"
+  | "domainFeatures.pricingTitle"
+  | "domainFeatures.pricingDescription"
+  | "domainInfographic.section1Title"
+  | "domainInfographic.section1Description"
+  | "domainPricingTable.title1"
+  | "domainPricingTable.title2"
+  | "domainPricingTable.domain"
+  | "domainPricingTable.registration"
+  | "domainPricingTable.renewal"
+  | "domainPricingTable.transfer"
+  | "domainPricingTable.protection"
+  | "domainPricingTable.searchPlaceholder"
+  | "domainPricingTable.noResults"
+  | "domainPricingTable.previous"
+  | "domainPricingTable.next"
+  | "domainPricingTable.currencySymbol"
+  | "domainInfographic.section2Title"
+  | "domainInfographic.section2Description"
+  | "domainInfographic.section3Title"
+  | "domainInfographic.section3Description"
   | "domainRegistrationSA.title"
+  | "domainSearchSection.title"
+  | "domainSearchSection.description"
+  | "domainSearchSection.searchPlaceholder"
+  | "domainSearchSection.searchButton"
+  | "domainSearchSection.popular"
+  | "domainSearchSection.geographic"
+  | "domainSearchSection.technology"
+  | "domainSearchSection.service"
+  | "domainSearchSection.business"
+  | "domainSearchSection.media"
+  | "domainSearchSection.shopping"
+  | "domainSearchSection.more"
+  | "domainSearchSection.domainImageAlt"
+  | "namoorSection.title"
   | "paymentSection.description"
   | "domainRegistrationSA.description"
   | "partnersSection.mainTitle"
@@ -86,6 +133,12 @@ type TranslationKeys =
   // TechStack
   | "techStack.mainTitle"
   | "techStack.reactTitle"
+  | "priceDomains.backgroundAlt"
+  | "priceDomains.title"
+  | "priceDomains.domainName"
+  | "priceDomains.price"
+  | "priceDomains.originalPrice"
+  | "priceDomains.domainAriaLabel"
   | "techStack.reactAlt"
   | "techStack.laravelTitle"
   | "techStack.laravelAlt"
@@ -1216,17 +1269,82 @@ type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
+    "domainFeatures.mainTitle": "لماذا تشتري النطاقات من النامور؟",
+    "domainFeatures.lockTitle": "قفل النطاق",
+    "domainFeatures.lockDescription":
+      "اقفل نطاقك لمنع النقل غير المصرح به لأسماء النطاقات الخاصة بك.",
+    "domainFeatures.renewalTitle": "معدلات تجديد رائعة",
+    "domainFeatures.renewalDescription":
+      "عندما يحين وقت تجديد نطاقك، لن تقلق أبداً بشأن كسر البنك.",
+    "domainFeatures.autoRenewalTitle": "التجديد التلقائي",
+    "domainFeatures.autoRenewalDescription":
+      "لن تفقد نطاقك أبداً (حتى لو نسيت) بفضل خيار التجديد التلقائي لدينا.",
+    "domainFeatures.managementTitle": "إدارة سهلة",
+    "domainFeatures.managementDescription":
+      "أدر نطاقك بلوحة تحكم سهلة الاستخدام ولوحة معلومات.",
+    "domainFeatures.privacyTitle": "حماية خصوصية Whois",
+    "domainFeatures.privacyDescription":
+      "تحتاج لبعض الخصوصية؟ سنحمي معلوماتك الشخصية من قاعدة بيانات WHOIS مقابل رسوم صغيرة.",
+    "domainFeatures.pricingTitle": "أسعار منخفضة ومجموعة ضخمة",
+    "domainFeatures.pricingDescription":
+      "سجل نطاقك بسعر منخفض واختر من مجموعة واسعة من الامتدادات.",
+    "domainPricingTable.title1": "استكشف الإمكانيات",
+    "domainPricingTable.title2": "من قائمة النطاقات الخاصة بنا",
+    "domainPricingTable.domain": "النطاق",
+    "domainPricingTable.registration": "التسجيل",
+    "domainPricingTable.renewal": "التجديد",
+    "domainPricingTable.transfer": "النقل",
+    "domainPricingTable.protection": "حماية الهوية",
+    "domainPricingTable.searchPlaceholder": "بحث...",
+    "domainPricingTable.noResults": 'لا توجد نتائج للبحث "{searchTerm}"',
+    "domainPricingTable.previous": "السابق",
+    "domainPricingTable.next": "التالي",
+    "domainPricingTable.currencySymbol": "د.ل ",
+    "domainInfographic.titlePart1": "أشياء يجب تذكرها",
+    "domainInfographic.titlePart2": "قبل شراء النطاقات",
+    "domainInfographic.section1Title": "ابقه بسيطاً",
+    "domainInfographic.section1Description":
+      "لا تعقد الأمور. اسم النطاق السهل التذكر هو الأفضل دائماً.",
+    "domainInfographic.section2Title": "تصرف الآن",
+    "domainInfographic.section2Description":
+      "كن صادقاً مع علامتك التجارية. كن مميزاً ولكن اختر نطاقاً سيتعرف عليه جمهورك.",
+    "domainInfographic.section3Title": "تجنب الشرطات",
+    "domainInfographic.section3Description":
+      "فقط لأن الإنترنت تقني لا يعني أن اسم نطاقك يجب أن يكون كذلك.",
+    "priceDomains.backgroundAlt": "نمط زخرفي للخلفية",
+    "priceDomains.title": "اختر من أكثر امتدادات النطاقات شيوعًا",
+    "priceDomains.domainName": "اسم النطاق",
+    "priceDomains.price": "6.49 د.ل/سنة",
+    "priceDomains.originalPrice": "بدلاً من 14.98 د.ل/سنة",
+    "priceDomains.domainAriaLabel": "اسم النطاق {tld}",
+    "domainSearchSection.title": "ابحث واشترِ نطاق",
+    "domainSearchSection.description": "احصل على النطاق الذي كنت تبحث عنه.",
+    "domainSearchSection.searchPlaceholder": "اكتب هنا للبحث",
+    "domainSearchSection.searchButton": "بحث",
+    "domainSearchSection.popular": "شائع",
+    "domainSearchSection.geographic": "جغرافي",
+    "domainSearchSection.technology": "تكنولوجيا",
+    "domainSearchSection.service": "خدمة",
+    "domainSearchSection.business": "أعمال",
+    "domainSearchSection.media": "إعلام",
+    "domainSearchSection.shopping": "تسوق",
+    "domainSearchSection.more": "المزيد",
+    "domainSearchSection.domainImageAlt": "صورة توضيحية للنطاق",
+    "namoorSection.title": "شركة النامور",
     "partnersSection.mainTitle": "شركاء النجاح",
     "partnersSection.rightBackgroundAlt": "خلفية يمين SVG",
     "partnersSection.leftBackgroundAlt": "خلفية يسار SVG",
     "partnersSection.sucuriName": "SUCURI",
-    "partnersSection.sucuriDescription": "نحن نقدم خدمات الحماية المتقدمة للمواقع الإلكترونية من خلال تقنيات متطورة تضمن الأمان الكامل. نقدم حلول شاملة لحماية المواقع من الهجمات الإلكترونية والبرمجيات الخبيثة. فريقنا المتخصص يعمل على مدار الساعة لضمان استمرارية عمل موقعك بأمان تام.",
+    "partnersSection.sucuriDescription":
+      "نحن نقدم خدمات الحماية المتقدمة للمواقع الإلكترونية من خلال تقنيات متطورة تضمن الأمان الكامل. نقدم حلول شاملة لحماية المواقع من الهجمات الإلكترونية والبرمجيات الخبيثة. فريقنا المتخصص يعمل على مدار الساعة لضمان استمرارية عمل موقعك بأمان تام.",
     "partnersSection.sucuriLogoAlt": "شعار SUCURI",
     "partnersSection.softaculousName": "Softaculous",
-    "partnersSection.softaculousDescription": "منصة متكاملة لإدارة التطبيقات والبرمجيات بسهولة تامة. نوفر مكتبة شاملة من التطبيقات الجاهزة للتثبيت بنقرة واحدة. حلولنا تساعد في تبسيط عملية إدارة المواقع والتطبيقات المختلفة بكفاءة عالية ومرونة كبيرة.",
+    "partnersSection.softaculousDescription":
+      "منصة متكاملة لإدارة التطبيقات والبرمجيات بسهولة تامة. نوفر مكتبة شاملة من التطبيقات الجاهزة للتثبيت بنقرة واحدة. حلولنا تساعد في تبسيط عملية إدارة المواقع والتطبيقات المختلفة بكفاءة عالية ومرونة كبيرة.",
     "partnersSection.softaculousLogoAlt": "شعار Softaculous",
     "partnersSection.linuxName": "Linux",
-    "partnersSection.linuxDescription": "نظام تشغيل مفتوح المصدر يوفر استقرارًا وأمانًا عاليين. نقدم حلول استضافة متقدمة باستخدام أنظمة لينكس المختلفة. فريقنا المتخصص يضمن الأداء الأمثل والاستقرار الكامل لجميع الخدمات المقدمة.",
+    "partnersSection.linuxDescription":
+      "نظام تشغيل مفتوح المصدر يوفر استقرارًا وأمانًا عاليين. نقدم حلول استضافة متقدمة باستخدام أنظمة لينكس المختلفة. فريقنا المتخصص يضمن الأداء الأمثل والاستقرار الكامل لجميع الخدمات المقدمة.",
     "partnersSection.linuxLogoAlt": "شعار Linux",
     "paymentSection.description":
       "ادفع بالطريقة التي تناسبك واستمتع بتجربة دفع سهلة وسلسة",
@@ -2682,17 +2800,83 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
+    "domainFeatures.mainTitle": "Why Buy Domains from Namoor?",
+    "domainFeatures.lockTitle": "Domain Locking",
+    "domainFeatures.lockDescription":
+      "Lock your domain to prevent unauthorized transfers of your domain names.",
+    "domainFeatures.renewalTitle": "Great Renewal Rates",
+    "domainFeatures.renewalDescription":
+      "When it’s time to renew your domain, you’ll never worry about breaking the bank.",
+    "domainFeatures.autoRenewalTitle": "Auto-Renewal",
+    "domainFeatures.autoRenewalDescription":
+      "Never lose your domain (even if you forget) thanks to our auto-renewal option.",
+    "domainFeatures.managementTitle": "Easy Management",
+    "domainFeatures.managementDescription":
+      "Manage your domain with an easy-to-use control panel and dashboard.",
+    "domainFeatures.privacyTitle": "Whois Privacy Protection",
+    "domainFeatures.privacyDescription":
+      "Need some privacy? We’ll protect your personal information from the WHOIS database for a small fee.",
+    "domainFeatures.pricingTitle": "Low Prices & Huge Selection",
+    "domainFeatures.pricingDescription":
+      "Register your domain at a low price and choose from a wide range of extensions.",
+    "domainPricingTable.title1": "Explore the Possibilities",
+    "domainPricingTable.title2": "From Our Domain List",
+    "domainPricingTable.domain": "Domain",
+    "domainPricingTable.registration": "Registration",
+    "domainPricingTable.renewal": "Renewal",
+    "domainPricingTable.transfer": "Transfer",
+    "domainPricingTable.protection": "Identity Protection",
+    "domainPricingTable.searchPlaceholder": "Search...",
+    "domainPricingTable.noResults": 'No results for "{searchTerm}"',
+    "domainPricingTable.previous": "Previous",
+    "domainPricingTable.next": "Next",
+    "domainPricingTable.currencySymbol": "$",
+    "domainInfographic.titlePart1": "Things to Remember",
+    "domainInfographic.titlePart2": "Before Buying Domains",
+    "domainInfographic.section1Title": "Keep It Simple",
+    "domainInfographic.section1Description":
+      "Don’t complicate things. A domain name that’s easy to remember is always the best choice.",
+    "domainInfographic.section2Title": "Act Now",
+    "domainInfographic.section2Description":
+      "Stay true to your brand. Be distinctive but choose a domain that your audience will recognize.",
+    "domainInfographic.section3Title": "Avoid Dashes",
+    "domainInfographic.section3Description":
+      "Just because the internet is technical doesn’t mean your domain name has to be.",
+    "priceDomains.backgroundAlt": "Decorative background pattern",
+    "priceDomains.title": "Choose from the most popular domain extensions",
+    "priceDomains.domainName": "Domain Name",
+    "priceDomains.price": "$6.49/year",
+    "priceDomains.originalPrice": "Instead of $14.98/year",
+    "priceDomains.domainAriaLabel": "Domain name {tld}",
+    "domainSearchSection.title": "Search and Buy a Domain",
+    "domainSearchSection.description":
+      "Get the domain you’ve been looking for.",
+    "domainSearchSection.searchPlaceholder": "Type here to search",
+    "domainSearchSection.searchButton": "Search",
+    "domainSearchSection.popular": "Popular",
+    "domainSearchSection.geographic": "Geographic",
+    "domainSearchSection.technology": "Technology",
+    "domainSearchSection.service": "Service",
+    "domainSearchSection.business": "Business",
+    "domainSearchSection.media": "Media",
+    "domainSearchSection.shopping": "Shopping",
+    "domainSearchSection.more": "More",
+    "domainSearchSection.domainImageAlt": "Domain Illustration",
+    "namoorSection.title": "Namoor Company",
     "partnersSection.mainTitle": "Success Partners",
     "partnersSection.rightBackgroundAlt": "Right Background SVG",
     "partnersSection.leftBackgroundAlt": "Left Background SVG",
     "partnersSection.sucuriName": "SUCURI",
-    "partnersSection.sucuriDescription": "We provide advanced website protection services through cutting-edge technologies that ensure complete security. We offer comprehensive solutions to protect websites from cyberattacks and malware. Our dedicated team works around the clock to ensure your website operates with total security.",
+    "partnersSection.sucuriDescription":
+      "We provide advanced website protection services through cutting-edge technologies that ensure complete security. We offer comprehensive solutions to protect websites from cyberattacks and malware. Our dedicated team works around the clock to ensure your website operates with total security.",
     "partnersSection.sucuriLogoAlt": "SUCURI Logo",
     "partnersSection.softaculousName": "Softaculous",
-    "partnersSection.softaculousDescription": "A comprehensive platform for managing applications and software with ease. We provide a complete library of applications ready for one-click installation. Our solutions help simplify the management of websites and various applications with high efficiency and great flexibility.",
+    "partnersSection.softaculousDescription":
+      "A comprehensive platform for managing applications and software with ease. We provide a complete library of applications ready for one-click installation. Our solutions help simplify the management of websites and various applications with high efficiency and great flexibility.",
     "partnersSection.softaculousLogoAlt": "Softaculous Logo",
     "partnersSection.linuxName": "Linux",
-    "partnersSection.linuxDescription": "An open-source operating system offering high stability and security. We provide advanced hosting solutions using various Linux systems. Our specialized team ensures optimal performance and complete stability for all provided services.",
+    "partnersSection.linuxDescription":
+      "An open-source operating system offering high stability and security. We provide advanced hosting solutions using various Linux systems. Our specialized team ensures optimal performance and complete stability for all provided services.",
     "partnersSection.linuxLogoAlt": "Linux Logo",
     "paymentSection.description":
       "Pay in the way that suits you and enjoy an easy and smooth payment experience",
@@ -4193,17 +4377,83 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
+    "domainFeatures.mainTitle": "Pourquoi acheter des domaines chez Namoor ?",
+    "domainFeatures.lockTitle": "Verrouillage de domaine",
+    "domainFeatures.lockDescription":
+      "Verrouillez votre domaine pour empêcher les transferts non autorisés de vos noms de domaine.",
+    "domainFeatures.renewalTitle": "Excellents taux de renouvellement",
+    "domainFeatures.renewalDescription":
+      "Quand vient le moment de renouveler votre domaine, vous n’aurez jamais à craindre de vous ruiner.",
+    "domainFeatures.autoRenewalTitle": "Renouvellement automatique",
+    "domainFeatures.autoRenewalDescription":
+      "Ne perdez jamais votre domaine (même si vous oubliez) grâce à notre option de renouvellement automatique.",
+    "domainFeatures.managementTitle": "Gestion facile",
+    "domainFeatures.managementDescription":
+      "Gérez votre domaine avec un panneau de contrôle et un tableau de bord faciles à utiliser.",
+    "domainFeatures.privacyTitle": "Protection de la confidentialité Whois",
+    "domainFeatures.privacyDescription":
+      "Besoin de confidentialité ? Nous protégerons vos informations personnelles dans la base de données WHOIS pour une petite somme.",
+    "domainFeatures.pricingTitle": "Prix bas et vaste sélection",
+    "domainFeatures.pricingDescription":
+      "Enregistrez votre domaine à un prix bas et choisissez parmi une large gamme d’extensions.",
+    "domainPricingTable.title1": "Explorez les possibilités",
+    "domainPricingTable.title2": "Depuis notre liste de domaines",
+    "domainPricingTable.domain": "Domaine",
+    "domainPricingTable.registration": "Enregistrement",
+    "domainPricingTable.renewal": "Renouvellement",
+    "domainPricingTable.transfer": "Transfert",
+    "domainPricingTable.protection": "Protection de l’identité",
+    "domainPricingTable.searchPlaceholder": "Rechercher...",
+    "domainPricingTable.noResults": 'Aucun résultat pour "{searchTerm}"',
+    "domainPricingTable.previous": "Précédent",
+    "domainPricingTable.next": "Suivant",
+    "domainPricingTable.currencySymbol": "€",
+    "domainInfographic.titlePart1": "Choses à retenir",
+    "domainInfographic.titlePart2": "Avant d’acheter des domaines",
+    "domainInfographic.section1Title": "Restez simple",
+    "domainInfographic.section1Description":
+      "Ne compliquez pas les choses. Un nom de domaine facile à retenir est toujours le meilleur choix.",
+    "domainInfographic.section2Title": "Agissez maintenant",
+    "domainInfographic.section2Description":
+      "Restez fidèle à votre marque. Soyez distinctif mais choisissez un domaine que votre public reconnaîtra.",
+    "domainInfographic.section3Title": "Évitez les tirets",
+    "domainInfographic.section3Description":
+      "Ce n’est pas parce que l’internet est technique que votre nom de domaine doit l’être.",
+    "priceDomains.backgroundAlt": "Motif décoratif de fond",
+    "priceDomains.title":
+      "Choisissez parmi les extensions de domaine les plus populaires",
+    "priceDomains.domainName": "Nom de domaine",
+    "priceDomains.price": "6,49 €/an",
+    "priceDomains.originalPrice": "Au lieu de 14,98 €/an",
+    "priceDomains.domainAriaLabel": "Nom de domaine {tld}",
+    "domainSearchSection.title": "Recherchez et achetez un domaine",
+    "domainSearchSection.description": "Obtenez le domaine que vous cherchiez.",
+    "domainSearchSection.searchPlaceholder": "Tapez ici pour rechercher",
+    "domainSearchSection.searchButton": "Rechercher",
+    "domainSearchSection.popular": "Populaire",
+    "domainSearchSection.geographic": "Géographique",
+    "domainSearchSection.technology": "Technologie",
+    "domainSearchSection.service": "Service",
+    "domainSearchSection.business": "Affaires",
+    "domainSearchSection.media": "Médias",
+    "domainSearchSection.shopping": "Shopping",
+    "domainSearchSection.more": "Plus",
+    "domainSearchSection.domainImageAlt": "Illustration de domaine",
+    "namoorSection.title": "Entreprise Namoor",
     "partnersSection.mainTitle": "Partenaires de succès",
     "partnersSection.rightBackgroundAlt": "Fond SVG droit",
     "partnersSection.leftBackgroundAlt": "Fond SVG gauche",
     "partnersSection.sucuriName": "SUCURI",
-    "partnersSection.sucuriDescription": "Nous proposons des services de protection de sites web avancés grâce à des technologies de pointe garantissant une sécurité totale. Nous offrons des solutions complètes pour protéger les sites contre les cyberattaques et les logiciels malveillants. Notre équipe dédiée travaille 24/7 pour assurer le fonctionnement sécurisé de votre site.",
+    "partnersSection.sucuriDescription":
+      "Nous proposons des services de protection de sites web avancés grâce à des technologies de pointe garantissant une sécurité totale. Nous offrons des solutions complètes pour protéger les sites contre les cyberattaques et les logiciels malveillants. Notre équipe dédiée travaille 24/7 pour assurer le fonctionnement sécurisé de votre site.",
     "partnersSection.sucuriLogoAlt": "Logo SUCURI",
     "partnersSection.softaculousName": "Softaculous",
-    "partnersSection.softaculousDescription": "Une plateforme complète pour gérer les applications et logiciels en toute simplicité. Nous fournissons une bibliothèque complète d’applications prêtes à être installées en un clic. Nos solutions simplifient la gestion des sites web et des applications diverses avec une grande efficacité et flexibilité.",
+    "partnersSection.softaculousDescription":
+      "Une plateforme complète pour gérer les applications et logiciels en toute simplicité. Nous fournissons une bibliothèque complète d’applications prêtes à être installées en un clic. Nos solutions simplifient la gestion des sites web et des applications diverses avec une grande efficacité et flexibilité.",
     "partnersSection.softaculousLogoAlt": "Logo Softaculous",
     "partnersSection.linuxName": "Linux",
-    "partnersSection.linuxDescription": "Un système d’exploitation open-source offrant une grande stabilité et sécurité. Nous proposons des solutions d’hébergement avancées utilisant divers systèmes Linux. Notre équipe spécialisée garantit des performances optimales et une stabilité totale pour tous les services fournis.",
+    "partnersSection.linuxDescription":
+      "Un système d’exploitation open-source offrant une grande stabilité et sécurité. Nous proposons des solutions d’hébergement avancées utilisant divers systèmes Linux. Notre équipe spécialisée garantit des performances optimales et une stabilité totale pour tous les services fournis.",
     "partnersSection.linuxLogoAlt": "Logo Linux",
     "paymentSection.description":
       "Payez de la manière qui vous convient et profitez d’une expérience de paiement facile et fluide",
@@ -5789,17 +6039,84 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
+    "domainFeatures.mainTitle": "Warum Domains bei Namoor kaufen?",
+    "domainFeatures.lockTitle": "Domain-Sperre",
+    "domainFeatures.lockDescription":
+      "Sperren Sie Ihre Domain, um unbefugte Übertragungen Ihrer Domainnamen zu verhindern.",
+    "domainFeatures.renewalTitle": "Tolle Verlängerungsraten",
+    "domainFeatures.renewalDescription":
+      "Wenn es Zeit ist, Ihre Domain zu verlängern, müssen Sie sich keine Sorgen machen, die Bank zu sprengen.",
+    "domainFeatures.autoRenewalTitle": "Automatische Verlängerung",
+    "domainFeatures.autoRenewalDescription":
+      "Verlieren Sie nie Ihre Domain (selbst wenn Sie es vergessen) dank unserer Option für automatische Verlängerung.",
+    "domainFeatures.managementTitle": "Einfache Verwaltung",
+    "domainFeatures.managementDescription":
+      "Verwalten Sie Ihre Domain mit einem benutzerfreundlichen Bedienfeld und Dashboard.",
+    "domainFeatures.privacyTitle": "Whois-Datenschutz",
+    "domainFeatures.privacyDescription":
+      "Brauchen Sie Privatsphäre? Wir schützen Ihre persönlichen Daten in der WHOIS-Datenbank für eine geringe Gebühr.",
+    "domainFeatures.pricingTitle": "Niedrige Preise & riesige Auswahl",
+    "domainFeatures.pricingDescription":
+      "Registrieren Sie Ihre Domain zu einem niedrigen Preis und wählen Sie aus einer breiten Palette von Erweiterungen.",
+    "domainPricingTable.title1": "Entdecken Sie die Möglichkeiten",
+    "domainPricingTable.title2": "Aus unserer Domain-Liste",
+    "domainPricingTable.domain": "Domain",
+    "domainPricingTable.registration": "Registrierung",
+    "domainPricingTable.renewal": "Verlängerung",
+    "domainPricingTable.transfer": "Transfer",
+    "domainPricingTable.protection": "Identitätsschutz",
+    "domainPricingTable.searchPlaceholder": "Suchen...",
+    "domainPricingTable.noResults": 'Keine Ergebnisse für "{searchTerm}"',
+    "domainPricingTable.previous": "Vorherige",
+    "domainPricingTable.next": "Nächste",
+    "domainPricingTable.currencySymbol": "€",
+    "domainInfographic.titlePart1": "Dinge, die man beachten sollte",
+    "domainInfographic.titlePart2": "Vor dem Kauf von Domains",
+    "domainInfographic.section1Title": "Einfach halten",
+    "domainInfographic.section1Description":
+      "Machen Sie es nicht kompliziert. Ein Domainname, der leicht zu merken ist, ist immer die beste Wahl.",
+    "domainInfographic.section2Title": "Jetzt handeln",
+    "domainInfographic.section2Description":
+      "Bleiben Sie Ihrer Marke treu. Seien Sie einzigartig, aber wählen Sie eine Domain, die Ihr Publikum erkennt.",
+    "domainInfographic.section3Title": "Bindestriche vermeiden",
+    "domainInfographic.section3Description":
+      "Nur weil das Internet technisch ist, muss Ihr Domainname es nicht sein.",
+    "priceDomains.backgroundAlt": "Dekoratives Hintergrundmuster",
+    "priceDomains.title":
+      "Wählen Sie aus den beliebtesten Domain-Erweiterungen",
+    "priceDomains.domainName": "Domainname",
+    "priceDomains.price": "6,49 €/Jahr",
+    "priceDomains.originalPrice": "Statt 14,98 €/Jahr",
+    "priceDomains.domainAriaLabel": "Domainname {tld}",
+    "domainSearchSection.title": "Domain suchen und kaufen",
+    "domainSearchSection.description":
+      "Holen Sie sich die Domain, die Sie gesucht haben.",
+    "domainSearchSection.searchPlaceholder": "Hier tippen, um zu suchen",
+    "domainSearchSection.searchButton": "Suchen",
+    "domainSearchSection.popular": "Beliebt",
+    "domainSearchSection.geographic": "Geografisch",
+    "domainSearchSection.technology": "Technologie",
+    "domainSearchSection.service": "Dienstleistung",
+    "domainSearchSection.business": "Geschäft",
+    "domainSearchSection.media": "Medien",
+    "domainSearchSection.shopping": "Einkaufen",
+    "domainSearchSection.more": "Mehr",
+    "domainSearchSection.domainImageAlt": "Domain-Illustration",
+    "namoorSection.title": "Namoor Unternehmen",
     "partnersSection.mainTitle": "Erfolgspartner",
     "partnersSection.rightBackgroundAlt": "Rechter SVG-Hintergrund",
     "partnersSection.leftBackgroundAlt": "Linker SVG-Hintergrund",
     "partnersSection.sucuriName": "SUCURI",
-    "partnersSection.sucuriDescription": "Wir bieten fortschrittliche Website-Schutzdienste durch modernste Technologien, die vollständige Sicherheit gewährleisten. Wir bieten umfassende Lösungen zum Schutz von Websites vor Cyberangriffen und Malware. Unser engagiertes Team arbeitet rund um die Uhr, um den sicheren Betrieb Ihrer Website zu gewährleisten.",
+    "partnersSection.sucuriDescription":
+      "Wir bieten fortschrittliche Website-Schutzdienste durch modernste Technologien, die vollständige Sicherheit gewährleisten. Wir bieten umfassende Lösungen zum Schutz von Websites vor Cyberangriffen und Malware. Unser engagiertes Team arbeitet rund um die Uhr, um den sicheren Betrieb Ihrer Website zu gewährleisten.",
     "partnersSection.sucuriLogoAlt": "SUCURI-Logo",
     "partnersSection.softaculousName": "Softaculous",
-    "partnersSection.softaculousDescription": "Eine umfassende Plattform zur einfachen Verwaltung von Anwendungen und Software. Wir bieten eine vollständige Bibliothek von Anwendungen, die mit einem Klick installiert werden können. Unsere Lösungen vereinfachen die Verwaltung von Websites und verschiedenen Anwendungen mit hoher Effizienz und großer Flexibilität.",
+    "partnersSection.softaculousDescription":
+      "Eine umfassende Plattform zur einfachen Verwaltung von Anwendungen und Software. Wir bieten eine vollständige Bibliothek von Anwendungen, die mit einem Klick installiert werden können. Unsere Lösungen vereinfachen die Verwaltung von Websites und verschiedenen Anwendungen mit hoher Effizienz und großer Flexibilität.",
     "partnersSection.softaculousLogoAlt": "Softaculous-Logo",
     "partnersSection.linuxName": "Linux",
-    "partnersSection.linuxDescription": "Ein Open-Source-Betriebssystem, das hohe Stabilität und Sicherheit bietet. Wir bieten fortschrittliche Hosting-Lösungen mit verschiedenen Linux-Systemen. Unser spezialisiertes Team sorgt für optimale Leistung und vollständige Stabilität für alle bereitgestellten Dienste.",
+    "partnersSection.linuxDescription":
+      "Ein Open-Source-Betriebssystem, das hohe Stabilität und Sicherheit bietet. Wir bieten fortschrittliche Hosting-Lösungen mit verschiedenen Linux-Systemen. Unser spezialisiertes Team sorgt für optimale Leistung und vollständige Stabilität für alle bereitgestellten Dienste.",
     "partnersSection.linuxLogoAlt": "Linux-Logo",
     "paymentSection.description":
       "Zahlen Sie auf die Weise, die Ihnen passt, und genießen Sie ein einfaches und reibungsloses Zahlungserlebnis",
@@ -7361,17 +7678,82 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
+    "domainFeatures.mainTitle": "Neden Namoor’dan Alan Adı Satın Almalısınız?",
+    "domainFeatures.lockTitle": "Alan Adı Kilitleme",
+    "domainFeatures.lockDescription":
+      "Alan adınızı kilitleyerek yetkisiz alan adı transferlerini önleyin.",
+    "domainFeatures.renewalTitle": "Harika Yenileme Oranları",
+    "domainFeatures.renewalDescription":
+      "Alan adınızı yenileme zamanı geldiğinde, bankayı kırma konusunda asla endişelenmeyeceksiniz.",
+    "domainFeatures.autoRenewalTitle": "Otomatik Yenileme",
+    "domainFeatures.autoRenewalDescription":
+      "Otomatik yenileme seçeneğimiz sayesinde (unutursanız bile) alan adınızı asla kaybetmezsiniz.",
+    "domainFeatures.managementTitle": "Kolay Yönetim",
+    "domainFeatures.managementDescription":
+      "Alan adınızı kullanıcı dostu bir kontrol paneli ve gösterge tablosu ile yönetin.",
+    "domainFeatures.privacyTitle": "Whois Gizlilik Koruması",
+    "domainFeatures.privacyDescription":
+      "Biraz gizliliğe mi ihtiyacınız var? WHOIS veritabanındaki kişisel bilgilerinizi küçük bir ücret karşılığında koruruz.",
+    "domainFeatures.pricingTitle": "Düşük Fiyatlar & Geniş Seçim",
+    "domainFeatures.pricingDescription":
+      "Alan adınızı düşük bir fiyata kaydedin ve geniş bir uzantı yelpazesinden seçim yapın.",
+    "domainPricingTable.title1": "Olanakları Keşfedin",
+    "domainPricingTable.title2": "Alan Adı Listemizden",
+    "domainPricingTable.domain": "Alan Adı",
+    "domainPricingTable.registration": "Kayıt",
+    "domainPricingTable.renewal": "Yenileme",
+    "domainPricingTable.transfer": "Transfer",
+    "domainPricingTable.protection": "Kimlik Koruması",
+    "domainPricingTable.searchPlaceholder": "Ara...",
+    "domainPricingTable.noResults": '"{searchTerm}" için sonuç bulunamadı',
+    "domainPricingTable.previous": "Önceki",
+    "domainPricingTable.next": "Sonraki",
+    "domainPricingTable.currencySymbol": "TL ",
+    "domainInfographic.titlePart1": "Hatırlanması Gerekenler",
+    "domainInfographic.titlePart2": "Alan Adı Satın Almadan Önce",
+    "domainInfographic.section1Title": "Basit Tutun",
+    "domainInfographic.section1Description":
+      "İşleri karmaşık hale getirmeyin. Hatırlaması kolay bir alan adı her zaman en iyi seçimdir.",
+    "domainInfographic.section2Title": "Şimdi Harekete Geçin",
+    "domainInfographic.section2Description":
+      "Markanıza sadık kalın. Farklı olun ama kitlenizin tanıyacağı bir alan adı seçin.",
+    "domainInfographic.section3Title": "Tirelerden Kaçının",
+    "domainInfographic.section3Description":
+      "İnternet teknik olduğu için alan adınızın da teknik olması gerekmez.",
+    "priceDomains.backgroundAlt": "Dekoratif arka plan deseni",
+    "priceDomains.title": "En popüler alan adı uzantılarından seçin",
+    "priceDomains.domainName": "Alan Adı",
+    "priceDomains.price": "6,49 TL/yıl",
+    "priceDomains.originalPrice": "14,98 TL/yıl yerine",
+    "priceDomains.domainAriaLabel": "Alan adı {tld}",
+    "domainSearchSection.title": "Alan Adı Ara ve Satın Al",
+    "domainSearchSection.description": "Aradığınız alan adını edinin.",
+    "domainSearchSection.searchPlaceholder": "Aramak için buraya yazın",
+    "domainSearchSection.searchButton": "Ara",
+    "domainSearchSection.popular": "Popüler",
+    "domainSearchSection.geographic": "Coğrafi",
+    "domainSearchSection.technology": "Teknoloji",
+    "domainSearchSection.service": "Hizmet",
+    "domainSearchSection.business": "İş",
+    "domainSearchSection.media": "Medya",
+    "domainSearchSection.shopping": "Alışveriş",
+    "domainSearchSection.more": "Daha Fazla",
+    "domainSearchSection.domainImageAlt": "Alan Adı İllüstrasyonu",
+    "namoorSection.title": "Namoor Şirketi",
     "partnersSection.mainTitle": "Başarı Ortakları",
     "partnersSection.rightBackgroundAlt": "Sağ SVG Arka Plan",
     "partnersSection.leftBackgroundAlt": "Sol SVG Arka Plan",
     "partnersSection.sucuriName": "SUCURI",
-    "partnersSection.sucuriDescription": "Web siteleri için gelişmiş koruma hizmetleri sunuyoruz ve tam güvenlik sağlayan son teknoloji çözümler kullanıyoruz. Siber saldırılara ve kötü amaçlı yazılımlara karşı kapsamlı çözümler sunuyoruz. Özel ekibimiz, web sitenizin tamamen güvenli bir şekilde çalışmasını sağlamak için 7/24 çalışır.",
+    "partnersSection.sucuriDescription":
+      "Web siteleri için gelişmiş koruma hizmetleri sunuyoruz ve tam güvenlik sağlayan son teknoloji çözümler kullanıyoruz. Siber saldırılara ve kötü amaçlı yazılımlara karşı kapsamlı çözümler sunuyoruz. Özel ekibimiz, web sitenizin tamamen güvenli bir şekilde çalışmasını sağlamak için 7/24 çalışır.",
     "partnersSection.sucuriLogoAlt": "SUCURI Logosu",
     "partnersSection.softaculousName": "Softaculous",
-    "partnersSection.softaculousDescription": "Uygulamaları ve yazılımları kolayca yönetmek için kapsamlı bir platform. Tek tıkla kuruluma hazır kapsamlı bir uygulama kütüphanesi sunuyoruz. Çözümlerimiz, web siteleri ve çeşitli uygulamaların yönetimini yüksek verimlilik ve büyük esneklikle basitleştirir.",
+    "partnersSection.softaculousDescription":
+      "Uygulamaları ve yazılımları kolayca yönetmek için kapsamlı bir platform. Tek tıkla kuruluma hazır kapsamlı bir uygulama kütüphanesi sunuyoruz. Çözümlerimiz, web siteleri ve çeşitli uygulamaların yönetimini yüksek verimlilik ve büyük esneklikle basitleştirir.",
     "partnersSection.softaculousLogoAlt": "Softaculous Logosu",
     "partnersSection.linuxName": "Linux",
-    "partnersSection.linuxDescription": "Yüksek stabilite ve güvenlik sunan açık kaynaklı bir işletim sistemi. Çeşitli Linux sistemlerini kullanarak gelişmiş barındırma çözümleri sunuyoruz. Uzman ekibimiz, tüm sağlanan hizmetler için optimum performans ve tam stabilite sağlar.",
+    "partnersSection.linuxDescription":
+      "Yüksek stabilite ve güvenlik sunan açık kaynaklı bir işletim sistemi. Çeşitli Linux sistemlerini kullanarak gelişmiş barındırma çözümleri sunuyoruz. Uzman ekibimiz, tüm sağlanan hizmetler için optimum performans ve tam stabilite sağlar.",
     "partnersSection.linuxLogoAlt": "Linux Logosu",
     "paymentSection.description":
       "Size uygun olan şekilde ödeme yapın ve kolay ve sorunsuz bir ödeme deneyimi yaşayın",

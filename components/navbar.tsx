@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import { useState, useRef, useEffect, type ReactElement } from "react";
 import { useLanguage } from "../contexts/language-context";
 
@@ -9,13 +9,13 @@ interface LanguageOption {
   value: Language;
   label: string;
   flag: ReactElement;
-  countryCode?: string; 
+  countryCode?: string;
 }
 
-export default function LanguageSelector() {
+function LanguageSelector() {
   const { language, setLanguage, isRTL } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState("saudi"); 
+  const [selectedCountry, setSelectedCountry] = useState("saudi");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages: LanguageOption[] = [
@@ -401,3 +401,5 @@ export default function LanguageSelector() {
     </div>
   );
 }
+
+export default React.memo(LanguageSelector);

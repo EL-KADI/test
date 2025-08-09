@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import { useLanguage } from "../../contexts/language-context";
+import Image from "next/image";
 
 export default function IndividualLicenses() {
   const { t } = useLanguage();
@@ -86,7 +87,10 @@ export default function IndividualLicenses() {
                   className="bg-white rounded-xl shadow-lg hover:shadow-xl py-6 px-4 flex items-center justify-between gap-4 flex-col transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-100"
                 >
                   <div className="w-full h-20 flex items-center justify-center mb-4">
-                    <img
+                    <Image
+                      width={150}
+                      height={150}
+                      loading="lazy"
                       src={license.image}
                       alt={license.alt}
                       className="max-h-16 max-w-full object-contain"

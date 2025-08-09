@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useLanguage } from '../../contexts/language-context';
+import Image from "next/image";
 
 const PaymentMethodsSection = () => {
   const { t, isRTL } = useLanguage();
@@ -45,7 +46,7 @@ const PaymentMethodsSection = () => {
             key={index}
             className="bg-white mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex gap-4 shadow-light items-start w-64 transition hover:scale-105 flex-col justify-between"
           >
-            <img className="h-36 mx-auto p-4 " src={method.image} alt={method.alt} />
+            <Image width={350} height={350} loading="lazy" className="h-36 mx-auto p-4 " src={method.image} alt={method.alt} />
             <div className="relative ">
               <h1 className={`my-6 text-xl font-semibold ${isRTL ? 'text-right' : 'text-left'}`}>
                 {method.title}

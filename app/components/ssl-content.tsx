@@ -12,14 +12,14 @@ export default function SslContent() {
         alt={t("sslContent.rightBackgroundAlt")}
         src="/right-blocks-with-icons.svg"
         width={393}
-        height={636}
+        height={636}  loading="lazy"
       />
       <Image
         className="absolute left-0 -top-40 -z-10"
         alt={t("sslContent.leftBackgroundAlt")}
         src="/left-blocks-with-icons.svg"
         width={393}
-        height={636}
+        height={636}  loading="lazy"
       />
       <div className="container lg:mt-32 mt-16 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <div>

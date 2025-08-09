@@ -54,7 +54,7 @@ export default function FeaturesSectionFour() {
               key={index}
               className="bg-white rounded-lg p-6 flex items-center justify-center gap-4 flex-col shadow-md transition hover:scale-105 hover:shadow-lg"
             >
-             <Image src={feature.image} alt={feature.alt} width={parseInt(feature.width)} height={parseInt(feature.width)} />
+             <Image  loading="lazy" src={feature.image} alt={feature.alt} width={parseInt(feature.width)} height={parseInt(feature.width)} />
               <h2 className="text-center  text-base font-medium text-gray-700">{feature.title}</h2>
             </div>
           ))}

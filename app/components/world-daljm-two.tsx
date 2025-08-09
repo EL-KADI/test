@@ -25,7 +25,7 @@ export default function WorldDaljmTwo() {
           alt={t('geoRegions.illustrationAlt')}
           src="/world-daljm-two.svg"
           width={400}
-          height={400}
+          height={400}  loading="lazy"
         />
       </div>
     </div>

@@ -57,14 +57,14 @@ export default function DashboardSection() {
       height: 300,
     },
     {
-      src: "/dashboard-services.png",
+      src: "/dashboard-services.webp",
       alt: "services",
       titleKey: "dashboard.servicesManagement",
       width: 500,
       height: 300,
     },
     {
-      src: "/checkout-and-review-dashboard.png",
+      src: "/checkout-and-review-dashboard.webp",
       alt: "checkout",
       titleKey: "dashboard.checkoutProcess",
       width: 500,
@@ -170,7 +170,7 @@ export default function DashboardSection() {
                     alt={t(image.titleKey as any)}
                     src={image.src || "/placeholder.svg"}
                     width={image.width}
-                    height={image.height}
+                    height={image.height}  loading="lazy"
                   />
                 </div>
               </div>

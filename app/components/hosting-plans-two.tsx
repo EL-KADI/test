@@ -22,7 +22,7 @@ export default function HostingPlansTwo() {
         height={636}
         className="absolute right-0"
         style={{ color: "transparent" }}
-        src={RightImg}
+        src={RightImg}  loading="lazy"
       />
       <Image
         alt="leftImg"
@@ -30,7 +30,7 @@ export default function HostingPlansTwo() {
         height={636}
         className="absolute left-0"
         style={{ color: "transparent" }}
-        src={LeftImg}
+        src={LeftImg}  loading="lazy"
       />
       <div className="container mx-auto relative  max-w-6xl">
         <h1 className="text-4xl  font-bold text-[#2b1f51] text-center mb-16">

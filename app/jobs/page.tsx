@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/language-context";
 
 import JobsSection from "../components/jobs-section";
 import BenefitsSection from "../components/benefits-section";
+import Image from "next/image";
 export default function Jobs() {
   const { t, isRTL } = useLanguage();
   const styles = `
@@ -57,10 +58,13 @@ export default function Jobs() {
             <Navigation />
           </div>
           <div className="w-full h-auto mx-auto">
-            <img
-              className="w-full  h-[50vh] lg:h-[80vh] mx-auto"
-              src="/contbg.png"
+            <Image
+              className="w-full custom-media-cont h-[50vh] lg:h-[75vh] mx-auto"
+              src="/contbg.webp"
               alt="bg"
+              loading="lazy"
+              width={80}
+               height={60}
             />
           </div>
         </div>
@@ -73,14 +77,14 @@ export default function Jobs() {
         
         >
           <h1
-            className={`lg:text-4xl text-xl mb-6 lg:translate-y-24 text-white ${
+            className={`lg:text-4xl  text-xl mb-6 lg:translate-y-24 text-white ${
               isRTL ? "text-right" : "text-left"
             }`}
           >
             {t("joinUsSection.title")}
           </h1>
           <p
-            className={`text-white max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-2xl lg:text-base  lg:translate-y-24 ${
+            className={`text-white custom-media max-w-xs sm:max-w-sm lg:max-w-lg xl:max-w-2xl lg:text-base  lg:translate-y-24 ${
               isRTL ? "text-right text-sm" : "text-left text-xs"
             }`}
           >
@@ -88,7 +92,7 @@ export default function Jobs() {
           </p>
           <div className="bg-white  absolute hover:bg-transparent lg:translate-y-24 transition duration-200 hover:text-white hover:border-2 hover:border-white text-[#092346] rounded-md px-12 py-2 w-fit mx-auto cursor-pointer font-bold mt-4">
             <p
-              className={`text-sm lg:text-base ${
+              className={`text-sm lg:text-base custom-media ${
                 isRTL ? "text-right left-[55%] sm:left-[65%] md:left-[70%] lg:left-[75%]" : " text-left"
               }`}
             >

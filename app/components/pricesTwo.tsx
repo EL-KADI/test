@@ -68,14 +68,14 @@ export default function PricingTwoSection() {
         alt={t("pricingSection.rightBlocksAlt")}
         src="/Rbg.svg"
         width={400}
-        height={400}
+        height={400}  loading="lazy"
       />
       <Image
         className="absolute left-0 -top-52 -z-10"
         alt={t("pricingSection.leftBlocksAlt")}
         src="/Lbg.svg"
         width={400}
-        height={400}
+        height={400}  loading="lazy"
       />
       <div className="container mx-auto px-4  max-w-sm  sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl">
         <h1 className="lg:text-4xl text-xl lg:mb-16 mb-7 text-center font-bold">

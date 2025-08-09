@@ -18,7 +18,8 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
-                  src="/img_dic1_1.png"
+                loading="lazy"
+                  src="/img_dic1_1.webp"
                   alt={t("trustCustomer.docCenterAlt")}
                   width={147}
                   height={158}
@@ -30,6 +31,7 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
+                loading="lazy"
                   src="/img_governmentofnationalaccord01_1.svg"
                   alt={t("trustCustomer.financialCommitteeAlt")}
                   width={142}
@@ -42,6 +44,7 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
+                loading="lazy"
                   src="/img_socialsecurityfund_1.svg"
                   alt={t("trustCustomer.socialSecurityAlt")}
                   width={164}
@@ -54,6 +57,7 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
+                loading="lazy"
                   src="/img_socialsecurityfund_1.svg"
                   alt={t("trustCustomer.socialSecurityAlt")}
                   width={164}
@@ -69,6 +73,7 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
+                loading="lazy"
                   src="/img_governmentofnationalaccord01_1.svg"
                   alt={t("trustCustomer.commercialRegistryAlt")}
                   width={142}
@@ -81,7 +86,8 @@ export default function TrustCustomer() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
-                  src="/img_logods1trans350px_1.png"
+                loading="lazy"
+                  src="/img_logods1trans350px_1.webp"
                   alt={t("trustCustomer.zatAlSawariAlt")}
                   width={152}
                   height={188}

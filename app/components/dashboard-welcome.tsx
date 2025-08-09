@@ -13,7 +13,7 @@ const DashboardWelcome = () => {
       <p className="mt-8 text-center ">
         {t('dashboardWelcome.description')}
       </p>
-      <Image className="mx-auto w-1/2" alt={t('dashboardWelcome.imageAlt')} src="/DashboardWelcome.svg" width={500} height={500} />
+      <Image  loading="lazy" className="mx-auto w-1/2" alt={t('dashboardWelcome.imageAlt')} src="/DashboardWelcome.svg" width={500} height={500} />
     </div>
   );
 };

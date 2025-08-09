@@ -10,6 +10,7 @@ export default function WhoisTool() {
   
       <div className="grid lg:grid-cols-2 grid-cols-1 items-center justify-between gap-8 mt-32 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <Image
+        loading="lazy"
           className="w-5/6 me-auto"
           alt={t("whoisTool.groupImageAlt")}
           src="/Group1.svg"
@@ -32,6 +33,7 @@ export default function WhoisTool() {
             </p>
           </div>
           <Image
+          loading="lazy"
             className="w-5/6 ms-auto"
             alt={t("whoisTool.sslWhoisImageAlt")}
             src="/ssl-whois.svg"

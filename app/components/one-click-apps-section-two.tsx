@@ -1,5 +1,5 @@
 import { useLanguage } from '../../contexts/language-context';
-
+import Image from "next/image";
 const OneClickAppsSectionTwo = () => {
   const { t, isRTL } = useLanguage();
 
@@ -37,13 +37,13 @@ const OneClickAppsSectionTwo = () => {
           <div className="grid grid-cols-2 gap-8 mt-10">
             {appFeatures.map((feature, index) => (
               <div key={index} className="flex items-center gap-2">
-                <img src={feature.image} alt={feature.alt} />
+                <Image width={20} height={20} loading="lazy"  src={feature.image} alt={feature.alt} />
                 <p>{feature.title}</p>
               </div>
             ))}
           </div>
         </div>
-        <img alt={t('oneClickApps.illustrationAlt')} src="click.svg" />
+        <Image width={600} height={600} loading="lazy" alt={t('oneClickApps.illustrationAlt')} src="/click.svg" />
       </div>
     </div>
   );

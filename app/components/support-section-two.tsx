@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../contexts/language-context';
+import Image from 'next/image';
 
 const SupportSectionTwo = () => {
   const { t, isRTL } = useLanguage();
@@ -9,16 +10,17 @@ const SupportSectionTwo = () => {
       title: t('supportSectionTwo.helpCenter'),
       image: '/HelpCenterIcon.svg',
       alt: t('supportSectionTwo.helpCenterAlt'),
+      width: 75,
     },
     {
       title: t('supportSectionTwo.serverStatus'),
       image: '/STATUS.svg',
-      alt: t('supportSectionTwo.serverStatusAlt'),
+      alt: t('supportSectionTwo.serverStatusAlt'), width: 100,
     },
     {
       title: t('supportSectionTwo.subscriberServices'),
       image: '/subscribers.svg',
-      alt: t('supportSectionTwo.subscriberServicesAlt'),
+      alt: t('supportSectionTwo.subscriberServicesAlt'), width: 75,
     },
   ];
 
@@ -51,7 +53,7 @@ const SupportSectionTwo = () => {
             key={index}
             className="bg-white rounded-lg p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105"
           >
-            <img src={item.image} alt={item.alt} />
+            <Image width={item.width} height={item.width} loading="lazy" src={item.image} alt={item.alt} />
             <h1 className="text-center text-xs">{item.title}</h1>
           </div>
         ))}
@@ -74,7 +76,7 @@ const SupportSectionTwo = () => {
               key={index}
               className={`flex flex-col justify-center items-center gap-4 ${index < 2 && !isRTL ? 'lg:border-r-2 border-black border-opacity-50' : index < 2 && isRTL ? 'lg:border-l-2 border-black border-opacity-50' : ''}`}
             >
-              <img width="50px" alt={info.alt} src={info.image} />
+              <Image width={50} height={50} loading="lazy" alt={info.alt} src={info.image} />
               <p className="text-xl font-bold">{info.title}</p>
               <p>{info.value}</p>
             </div>

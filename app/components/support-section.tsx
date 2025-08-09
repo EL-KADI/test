@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function SupportSection() {
@@ -47,7 +48,7 @@ export default function SupportSection() {
       <div className="grid lg:grid-cols-3 grid-cols-2 lg:gap-y-12 gap-4 mt-12">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center flex-col justify-center gap-4 text-center">
-            <img src={feature.image} alt={feature.alt} />
+            <Image  width={27} height={27} loading="lazy" src={feature.image} alt={feature.alt} />
             <h1 className="font-bold">{feature.title}</h1>
           </div>
         ))}

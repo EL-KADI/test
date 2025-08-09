@@ -13,14 +13,14 @@ export default function CTA() {
           src="/section-block-right.svg"
           alt={t("cta.sectionBlockRightAlt")}
           width={200}
-          height={200}
+          height={200}  loading="lazy"
         />
         <Image
           className="absolute left-0 bottom-0"
           src="/section-block-left.svg"
           alt={t("cta.sectionBlockLeftAlt")}
           width={180}
-          height={180}
+          height={180}  loading="lazy"
         />
         <div className="relative -z-0">
           <h1 className="font-bold text-2xl">{t("cta.title")}</h1>

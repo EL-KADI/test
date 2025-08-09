@@ -60,7 +60,7 @@ export default function FeaturesSectionFive() {
                       alt={feature.imageAlt}
                       width={45}
                       height={39}
-                      className="w-10 h-10 object-contain"
+                      className="w-10 h-10 object-contain"  loading="lazy"
                     />
                   </div>
                   <div className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

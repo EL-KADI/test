@@ -36,7 +36,7 @@ export default function BusinessNeedsSectionTwo() {
               height={636}
               className="absolute right-0 -top-44 -z-0"
               style={{ color: "transparent" }}
-              src="/rightImg.svg"
+              src="/rightImg.svg" loading="lazy"
             />
             <Image
               alt="leftImg"
@@ -44,8 +44,8 @@ export default function BusinessNeedsSectionTwo() {
               height={636}
               className="absolute left-0 -top-44 -z-0"
               style={{ color: "transparent" }}
-              src="/leftImg.svg"
-            />
+              src="/leftImg.svg" loading="lazy"
+            /> 
             <div className=" max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto relative z-0">
       <h1 className="lg:text-4xl text-[#2b1f51] text-xl text-center mb-16">
         {t("businessNeeds.title")}
@@ -62,7 +62,7 @@ export default function BusinessNeedsSectionTwo() {
                 src={feature.image}
                 alt={feature.alt}
                      width={feature.width}
-                  height={feature.width}
+                  height={feature.width} loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{feature.title}</h1>

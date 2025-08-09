@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function KeyFeaturesSection() {
@@ -49,7 +50,7 @@ export default function KeyFeaturesSection() {
               key={index}
               className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105"
             >
-              <img src={feature.image} alt={feature.alt} />
+              <Image width={75} height={75} loading='lazy' src={feature.image} alt={feature.alt} />
               <h1 className="text-center text-xs">{feature.title}</h1>
             </div>
           ))}

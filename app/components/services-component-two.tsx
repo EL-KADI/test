@@ -36,11 +36,11 @@ export default function ServicesComponent() {
               className="bg-white rounded-lg px-6 py-6 flex items-start shadow-[0_0_20px_0_rgba(0,0,0,0.08)] flex-col gap-4 justify-between transition hover:scale-105"
             >
               <Image
-                className="relative before:absolute before:w-16 before:h-2 before:bg-black before:bottom-0 before:left-0"
+                className="relative"
                 src={service.image}
                 alt={service.alt}
                 width={60}
-                height={60}
+                height={60}  loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{service.title}</h1>

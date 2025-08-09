@@ -23,6 +23,7 @@ const Imglist = () => {
           <div key={index} className={partner.className}>
             <Image
               alt={partner.alt}
+              loading="lazy"
               src={partner.src}
               className="w-full h-auto"
               width={0}

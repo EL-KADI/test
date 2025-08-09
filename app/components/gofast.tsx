@@ -15,7 +15,7 @@ export default function GoFast() {
               src="/improve.svg"
               alt={t("goFast.cdnIconAlt")}
               width={64}
-              height={64}
+              height={64}  loading="lazy"
             />
             <div className="absolute bottom-0 left-0 w-16 h-2"></div>
           </div>
@@ -27,7 +27,7 @@ export default function GoFast() {
         {/* Card 2: DDoS Mitigation */}
         <div className="bg-white rounded-lg px-6 py-6 flex flex-col gap-y-6 transition hover:scale-105 shadow-[0_0_20px_0_rgba(0,0,0,0.08)]">
           <div className="relative pb-2">
-            <Image src="/ddos.svg" alt={t("goFast.ddosIconAlt")} width={64} height={64} />
+            <Image  loading="lazy" src="/ddos.svg" alt={t("goFast.ddosIconAlt")} width={64} height={64} />
             <div className="absolute bottom-0 left-0 w-16 h-2"></div>
           </div>
           <div>
@@ -38,7 +38,7 @@ export default function GoFast() {
         {/* Card 3: Protection from Hacking and Malware */}
         <div className="bg-white rounded-lg px-6 py-6 flex flex-col gap-y-6 transition hover:scale-105 shadow-[0_0_20px_0_rgba(0,0,0,0.08)]">
           <div className="relative pb-2">
-            <Image src="/protection.svg" alt={t("goFast.malwareIconAlt")} width={54} height={54} />
+            <Image  loading="lazy" src="/protection.svg" alt={t("goFast.malwareIconAlt")} width={54} height={54} />
             <div className="absolute bottom-0 left-0 w-16 h-21"></div>
           </div>
           <div>

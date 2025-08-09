@@ -33,6 +33,7 @@ export default function ServicesComponent() {
         src="/Rbg.svg"
         width={393}
         height={636}
+        loading="lazy"
       />
       <Image
         className="absolute left-0 -top-[150px] -z-10"
@@ -40,8 +41,11 @@ export default function ServicesComponent() {
         src="/Lbg.svg"
         width={393}
         height={636}
+        loading="lazy"
       />
-      <h1 className="lg:text-4xl text-xl mb-20 text-center">{t("services.titletwo")}</h1>
+      <h1 className="lg:text-4xl text-xl mb-20 text-center">
+        {t("services.titletwo")}
+      </h1>
       <div className="container max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
           {services.map((service, index) => (
@@ -53,8 +57,9 @@ export default function ServicesComponent() {
                 className="relative before:absolute before:w-16 before:h-2 before:bg-black before:bottom-0 before:left-0"
                 src={service.image}
                 alt={service.alt}
-                width={60}
-                height={60}
+                width={55}
+                height={55}
+                loading="lazy"
               />
               <div>
                 <h1 className="mb-6 text-xl">{service.title}</h1>

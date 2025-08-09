@@ -20,7 +20,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.performanceAlt")}
                   width={75}
                   height={65}
-                  className={`w-[60px]  ${isRTL ? "ms-auto " : "me-auto"}`}
+                  className={`w-[60px]  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
@@ -33,7 +33,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.ddosProtectionAlt")}
                   width={75}
                   height={74}
-                 className={`w-[65px]  ${isRTL ? "ms-auto " : "me-auto"}`}
+                 className={`w-[65px]  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
@@ -46,7 +46,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.securityAlt")}
                   width={77}
                   height={56}
-                   className={`w-12  ${isRTL ? "ms-auto " : "me-auto"}`}
+                   className={`w-12  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>
@@ -61,7 +61,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.visitorsAlt")}
                   width={75}
                   height={36}
-                  className={`w-12 h-[75px]  ${isRTL ? "ms-auto " : "me-auto"}`}
+                  className={`w-12 h-[75px]  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.cdnPerformance")}</h3>
@@ -74,7 +74,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.easeOfUseAlt")}
                   width={74}
                   height={78}
-                   className={`w-18 h-18  ${isRTL ? "ms-auto " : "me-auto"}`}
+                   className={`w-18 h-18  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.ddosMitigation")}</h3>
@@ -87,7 +87,7 @@ export default function OurEdge() {
                   alt={t("ourEdge.growthAlt")}
                   width={88}
                   height={65}
-                  className={`w-[54px]  ${isRTL ? "ms-auto " : "me-auto"}`}
+                  className={`w-[54px]  ${isRTL ? "ms-auto " : "me-auto"}`}  loading="lazy"
                 />
               </div>
               <h3 dir={isRTL ? "rtl" : "ltr"} className={`lg:text-lg text-base font-semibold mb-4  ${isRTL ? "text-right" : "text-left"}`}>{t("ourEdge.securityProtection")}</h3>

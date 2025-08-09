@@ -35,7 +35,7 @@ export default function OneClickAppsSection() {
           src="/click-B1og.svg"
           width={500}
           height={400}
-          className="w-full"
+          className="w-full"  loading="lazy"
         />
       </div>
     </div>

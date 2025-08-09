@@ -12,7 +12,7 @@ export default function CallToActionSection() {
           alt={t("callToAction.settingsAlt")}
           src="/ls-suite-cta.svg"
           width={500}
-          height={500}
+          height={500} loading="lazy"
         />
         <div className="relative z-10 lg:text-start lg:p-16 text-center lg:w-1/2 w-full">
           <h1 className="font-bold text-2xl">{t("callToAction.title")}</h1>

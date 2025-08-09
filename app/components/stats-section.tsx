@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useLanguage } from '../../contexts/language-context';
 
 const StatsSection = () => {
@@ -45,7 +46,7 @@ const StatsSection = () => {
             className="bg-white rounded-lg px-6 pt-4 pb-8 gap-4 shadow-light flex flex-col transition hover:scale-105 shadow-[0_0_20px_0_rgba(0,0,0,0.08)]"
           >
             <div className="flex items-center gap-4">
-              <img src={stat.image} alt={stat.alt} />
+              <Image width={30} height={30} loading="lazy" src={stat.image} alt={stat.alt} />
               <h1 className={isRTL ? 'text-right' : 'text-left'}>{stat.title}</h1>
             </div>
             <h1 className="lg:text-4xl text-2xl font-semibold text-center">{stat.value}</h1>

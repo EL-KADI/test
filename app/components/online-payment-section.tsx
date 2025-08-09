@@ -1,5 +1,5 @@
 import { useLanguage } from '../../contexts/language-context';
-
+import Image from "next/image";
 const OnlinePaymentSection = () => {
   const { t, isRTL } = useLanguage();
 
@@ -32,7 +32,7 @@ const OnlinePaymentSection = () => {
             key={index}
             className="bg-white mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 gap-4 shadow-light items-start w-64 transition hover:scale-105 flex flex-col justify-between"
           >
-            <img className="h-full mx-auto p-4" src={method.image} alt={method.alt} />
+            <Image width={350} height={350} loading="lazy"  className="h-full mx-auto p-4" src={method.image} alt={method.alt} />
           </div>
         ))}
       </div>

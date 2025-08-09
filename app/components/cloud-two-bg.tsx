@@ -10,7 +10,7 @@ export default function CloudTwoBg() {
         src="/cloudtwo.svg"
         alt={t("services.backgroundDecorationAlt")}
         width={1920}
-        height={1080}
+        height={1080} loading="lazy"
       />
     </div>
   );

@@ -23,9 +23,25 @@ import DomainStatsSD from "../components/sd/domain-stats-sd";
 import DomainStatsEG from "../components/eg/domain-stats-eg";
 import DomainStatsAE from "../components/ae/domain-stats-ae";
 import DomainStatsTR from "../components/tr/domain-stats-tr";
+import { useRef, useState,useEffect } from "react";
 
 export default function LocalDomains() {
   const { t, selectedCountry } = useLanguage();
+    const [showSVG, setShowSVG] = useState(false);
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setShowSVG(true); 
+          observer.disconnect();
+        }
+      });
+    });
+    if (svgRef.current) observer.observe(svgRef.current);
+    return () => observer.disconnect();
+  }, []);
   const renderCountrySpecificRects = () => {
     switch (selectedCountry) {
       case "egypt":
@@ -129,12 +145,16 @@ export default function LocalDomains() {
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />
-        <div className="block">
+            <div className="block">
           <div className="bg-[#092346]">
             <Navigation />
           </div>
-          <div className="w-full h-auto mx-auto">
-            {renderCountrySpecificRects()}
+          <div ref={svgRef} className="w-full h-auto mx-auto">
+               {showSVG ? renderCountrySpecificRects() : (
+  <div  className="svg-placeholder">
+    {/* Placeholder */}
+  </div>
+)}
           </div>
         </div>
         <div className="absolute top-16 left-1/2 text-center transform -translate-x-1/2 mt-10 w-full px-6">

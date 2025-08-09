@@ -6,6 +6,7 @@ import { useLanguage } from "../contexts/language-context";
 import Link from "next/link";
 import LanguageSelectorTwo from "./language-selector-two";
 import Image from "next/image";
+import React from "react";
 
 const Footer = () => {
   const { t, isRTL } = useLanguage();
@@ -20,6 +21,7 @@ const Footer = () => {
           {/* First Column */}
           <div className="flex flex-col items-center text-center">
             <Image
+              loading="lazy"
               src="/logoFooter.svg"
               alt="Logo"
               width={100}
@@ -37,7 +39,9 @@ const Footer = () => {
             </p>
             <div
               className={`flex space-x-4  justify-center mt-8   ${
-                isRTL ? "space-x-reverse 2xl:translate-x-9 lg:-translate-x-9" : "2xl:-translate-x-5 lg:translate-x-9"
+                isRTL
+                  ? "space-x-reverse 2xl:translate-x-9 lg:-translate-x-9"
+                  : "2xl:-translate-x-5 lg:translate-x-9"
               }`}
             >
               <Facebook className="w-10 h-10 text-white bg-[#A5A5A5] rounded-sm p-1 hover:bg-[#4267B2] duration-300 cursor-pointer" />
@@ -55,18 +59,30 @@ const Footer = () => {
               {t("footer.company")}
             </h3>
             <ul className="text-[#878787] flex flex-col gap-y-2 text-base">
-              <li className="hover:text-black/70  duration-200 cursor-pointer">
-                {t("footer.aboutUs")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.jobs")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.contactUs")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.mediaCenter")}
-              </li>
+              <Link href={"/about"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer">
+                  {t("footer.aboutUs")}
+                </li>
+              </Link>
+              <Link href={"/jobs"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.jobs")}
+                </li>{" "}
+              </Link>
+              <Link href={"/contact"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.contactUs")}
+                </li>{" "}
+              </Link>
+              <Link href={"/blog"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.mediaCenter")}
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -85,12 +101,18 @@ const Footer = () => {
               <li className="hover:text-black/70  duration-200 cursor-pointer ">
                 {t("footer.vps")}
               </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.serverSupport")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.whois")}
-              </li>
+              <Link href={"/server-management"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.serverSupport")}
+                </li>
+              </Link>
+              <Link href={"/whois"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.whois")}
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -100,18 +122,30 @@ const Footer = () => {
               {t("footer.technology")}
             </h3>
             <ul className="text-[#878787] flex flex-col gap-y-2 text-base">
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.speed")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.security")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.controlPanel")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.backups")}
-              </li>
+              <Link href={"/speed"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.speed")}
+                </li>
+              </Link>
+              <Link href={"/security"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.security")}
+                </li>
+              </Link>
+              <Link href={"/static-dashboard"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.controlPanel")}
+                </li>
+              </Link>
+              <Link href={"/backups"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.backups")}
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -124,15 +158,24 @@ const Footer = () => {
               <li className="hover:text-black/70  duration-200 cursor-pointer ">
                 {t("footer.privacy")}
               </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.paymentMethods")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.sslCertificates")}
-              </li>
-              <li className="hover:text-black/70  duration-200 cursor-pointer ">
-                {t("footer.partners")}
-              </li>
+              <Link href={"/payment"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.paymentMethods")}
+                </li>
+              </Link>
+              <Link href={"/ssl"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.sslCertificates")}
+                </li>
+              </Link>
+              <Link href={"/partners"}>
+                {" "}
+                <li className="hover:text-black/70  duration-200 cursor-pointer ">
+                  {t("footer.partners")}
+                </li>
+              </Link>
             </ul>
           </div>
 
@@ -157,23 +200,22 @@ const Footer = () => {
               +966551234567
             </Button>
             <div className=" lg:grid lg:grid-cols-1  flex  max-w-xs    py-0">
-  
-                  <Image
-
-                    src="payments-compny.webp"
-                    alt="visa, mastercard, paypal, cib, vodafone, mada"
-                      width={250}
-              height={250}
-                    className=" my-4 max-w-44 lg:max-w-full md:translate-x-1 lg:translate-x-0 "
-                  />
-         
+              <Image
+                loading="lazy"
+                src="payments-compny.webp"
+                alt="visa, mastercard, paypal, cib, vodafone, mada"
+                width={250}
+                height={250}
+                className=" my-4 max-w-44 lg:max-w-full md:translate-x-1 lg:translate-x-0 "
+              />
             </div>
             <div className="bg-[#F36C34] py-0 px-0 rounded-lg flex justify-center items-center lg:w-[75%] w-1/2">
               <Image
+                loading="lazy"
                 src="/Cpanel.webp"
                 alt="cPanel"
-                  width={40}
-              height={40}
+                width={40}
+                height={40}
                 className="lg:w-full w-9/12  rounded-lg object-cover"
               />
             </div>
@@ -215,4 +257,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default React.memo(Footer);

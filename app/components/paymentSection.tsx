@@ -22,7 +22,7 @@ export default function PaymentsSection() {
             <Image
               className="relative z-0"
               src={paymentimage || "/placeholder.svg"}
-              alt={t("payment.title")}
+              alt={t("payment.title")}  loading="lazy"
             />
             {/* Text */}
             <h1 className="relative z-0  text-black">
@@ -31,14 +31,14 @@ export default function PaymentsSection() {
             {/* Decorative SVG - Bottom Right */}
             <Image
               className="absolute -z-10 right-0 bottom-0"
-              alt="bg"
-              src={btr || "/placeholder.svg"}
+              alt= {t("domainRegistrationSA.backgroundAlt")}
+              src={btr || "/placeholder.svg"}  loading="lazy"
             />
             {/* Decorative SVG - Top Left */}
             <Image
               className="absolute -z-10  left-0 top-0"
-              alt="bg"
-              src={topleft || "/placeholder.svg"}
+              alt= {t("domainRegistrationSA.backgroundAlt")}
+              src={topleft || "/placeholder.svg"}  loading="lazy"
             />
           </div>
         </section>

@@ -37,12 +37,18 @@ export default function WhyChooseTigers() {
 
   return (
     <div className="relative mt-40 mb-16">
-      <img
+      <Image
+              width={500}
+              height={500}
+              loading="lazy"
         className="absolute right-0 -z-10 -top-[150px]"
         alt="Right Background"
         src="/Rbg.svg"
       />
-      <img
+      <Image
+              width={500}
+              height={500}
+              loading="lazy"
         className="absolute left-0 -z-10 -top-[150px]"
         alt="Left Background"
         src="/Lbg.svg"
@@ -57,8 +63,11 @@ export default function WhyChooseTigers() {
               key={feature.id}
               className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.08)] px-6 py-6 flex items-start gap-4 shadow-light flex-col gap-y-6 transition hover:scale-105"
             >
-              <img
-                className="relative"
+              <Image
+                   width={80}
+                height={80}
+                loading="lazy"
+                className="relative w-20 h-20"
                 src={feature.image}
                 alt={feature.imageAlt}
               />

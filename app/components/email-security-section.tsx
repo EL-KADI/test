@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function EmailSecuritySection() {
@@ -28,7 +29,9 @@ export default function EmailSecuritySection() {
 
   return (
     <div className="relative md:mt-96 mt-48">
-      <img
+      <Image
+      width={1920}  loading="lazy"
+      height={1080}
         className="absolute md:-top-96 -top-48 -z-10 left-0"
         alt={t("emailSecurity.backgroundAlt")}
         src="/StrongBg.svg"
@@ -41,7 +44,10 @@ export default function EmailSecuritySection() {
         <div className="grid lg:grid-cols-2 md:grid-cols-2 md:justify-items-center grid-cols-1 gap-4 gap-y-8 my-12">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-2 ms-8 md:ms-0">
-              <img src={feature.image} alt={feature.alt} />
+              <Image
+              height={22}  loading="lazy"
+              width={22}
+               src={feature.image} alt={feature.alt} />
               <p>{feature.description}</p>
             </div>
           ))}

@@ -43,7 +43,7 @@ const BenefitsSection = () => {
           >
             <Image src={benefit.image} alt={benefit.alt} width={40} height={40} />
             <h1 className={`text-center text-xs ${isRTL ? 'text-right' : 'text-left'}`}>
-              {benefit.title}
+              {benefit.title} loading="lazy"
             </h1>
           </div>
         ))}

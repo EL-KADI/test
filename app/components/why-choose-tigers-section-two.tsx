@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function WhyChooseTigersSectionTwo() {
@@ -32,26 +33,37 @@ export default function WhyChooseTigersSectionTwo() {
 
   return (
     <div className="relative mt-0">
-      <img
+      <Image
+        width={500}
+        height={500}
+        loading="lazy"
         className="absolute right-0 -z-0 -top-[150px]"
         alt={t("whyChooseTigers.backgroundRightAlt")}
         src="Rbg.svg"
       />
-      <img
+      <Image
+        width={500}
+        height={500}
+        loading="lazy"
         className="absolute left-0 -z-0 -top-[150px]"
         alt={t("whyChooseTigers.backgroundLeftAlt")}
         src="Lbg.svg"
       />
       <div className="container max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto -z-0 relative">
-        <h1 className="lg:text-4xl text-xl mb-6 text-center">{t("whyChooseTigers.title")}</h1>
+        <h1 className="lg:text-4xl text-xl mb-6 text-center">
+          {t("whyChooseTigers.title")}
+        </h1>
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
               className="bg-white -z-0 rounded-lg px-6 py-6 flex items-start gap-4 shadow-[0_0_20px_0_rgba(0,0,0,0.08)] flex-col gap-y-6 transition hover:scale-105"
             >
-              <img
-                className="relative -z-0 before:absolute before:w-16 before:h-2 before:bg-black before:bottom-0 before:left-0"
+              <Image
+                className="relative -z-0 w-20 h-20"
+                width={80}
+                height={80}
+                loading="lazy"
                 src={feature.image}
                 alt={feature.alt}
               />

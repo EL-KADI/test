@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useLanguage } from "../../contexts/language-context";
 
 export default function DistributorBasicNeed() {
@@ -7,15 +8,19 @@ export default function DistributorBasicNeed() {
     <div className="container my-32 max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
       <div  className="relative bg-[#333c5e] bg-opacity-90 py-16 text-white">
         {/* Settings image - left side */}
-        <img
+        <Image
+        loading="lazy"
           className={`absolute bottom-0 opacity-40 lg:opacity-100 ${isRTL ? "left-0" : " right-0"}`}
           alt={t("distributorBasicNeed.settingsIllustrationAlt")}
           src="/settings.svg"
+        width={300}
+        height={300}  
+     
         />
 
         {/* Plus icon - right side */}
         <div className={`absolute top-0 opacity-40 lg:opacity-100 ${isRTL ? "right-0" : " left-0"}`}>
-          <svg width="107" height="119" viewBox="0 0 107 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg  width="107" height="119" viewBox="0 0 107 119" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clipPath="url(#clip0_9_85705)">
               <path
                 d="M106.424 106.576H93.7238V118.986H84.3048V106.576H71.6758V97.6756H84.3048V85.2656H93.7218V97.6756H106.422L106.424 106.576Z"

@@ -67,7 +67,7 @@ export default function SomeFeature() {
                 alt={feature.alt}
                 width={64}
                 height={64}
-                className="w-16 h-16 mb-4"
+                className="w-16 h-16 mb-4"  loading="lazy"
               />
               <p className="text-lg font-medium text-[#2a2a96]">
                 {feature.title}

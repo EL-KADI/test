@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useLanguage } from '../../contexts/language-context';
 
 const TraditionalPaymentSection = () => {
@@ -9,18 +10,19 @@ const TraditionalPaymentSection = () => {
       description: t('traditionalPaymentSection.cdnDescription'),
       image: 'card.svg',
       alt: t('traditionalPaymentSection.cdnAlt'),
+      width:85,
     },
     {
       title: t('traditionalPaymentSection.ddosTitle'),
       description: t('traditionalPaymentSection.ddosDescription'),
       image: 'transfer.svg',
-      alt: t('traditionalPaymentSection.ddosAlt'),
+      alt: t('traditionalPaymentSection.ddosAlt'),  width:100,
     },
     {
       title: t('traditionalPaymentSection.securityTitle'),
       description: t('traditionalPaymentSection.securityDescription'),
       image: 'cash.svg',
-      alt: t('traditionalPaymentSection.securityAlt'),
+      alt: t('traditionalPaymentSection.securityAlt'),  width:100,
     },
   ];
 
@@ -34,10 +36,13 @@ const TraditionalPaymentSection = () => {
           {paymentMethods.map((method, index) => (
             <div
               key={index}
-              className="bg-white mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start shadow-light flex-col gap-4 justify-between transition hover:scale-105"
+              className="bg-white mx-auto shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start shadow-light flex-col gap-4 transition hover:scale-105"
             >
-              <img
-                className="mx-auto p-4"
+              <Image
+              width={method.width}
+              height={method.width}
+              loading="lazy"
+                className="mx-auto p-4 h-24"
                 src={method.image}
                 alt={method.alt}
               />

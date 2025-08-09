@@ -7,7 +7,7 @@ export default function DomainRegistrationSA() {
 
   return (
     <div  dir={isRTL ? "rtl" : "ltr"} className="relative mt-32 text-black">
-      <Image
+      <Image loading="lazy"
         className="absolute -top-20 left-0 w-full -z-10"
         src="/two-layers-sa.svg"
         alt={t("domainRegistrationSA.backgroundAlt")}
@@ -15,7 +15,7 @@ export default function DomainRegistrationSA() {
         height={400}
       />
       <div className="container max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
-        <Image
+        <Image loading="lazy"
           className="mx-auto"
           src="/number-1.svg"
           alt={t("domainRegistrationSA.numberOneAlt")}
@@ -29,7 +29,7 @@ export default function DomainRegistrationSA() {
           {t("domainRegistrationSA.description")}
         </p>
         <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light lg:w-1/4 md:w-1/2 w-full mx-auto mt-12 transition hover:scale-105">
-          <Image
+          <Image loading="lazy"
             src="/sa-circle.svg"
             alt={t("domainRegistrationSA.saCircleAlt")}
             width={50}
@@ -42,7 +42,7 @@ export default function DomainRegistrationSA() {
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 mt-12">
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -54,7 +54,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -66,7 +66,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -78,7 +78,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -90,7 +90,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -102,7 +102,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -114,7 +114,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}
@@ -126,7 +126,7 @@ export default function DomainRegistrationSA() {
             </div>
           </div>
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light transition hover:scale-105">
-            <Image
+            <Image loading="lazy"
               src="/world.svg"
               alt={t("domainRegistrationSA.worldIconAlt")}
               width={50}

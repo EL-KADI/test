@@ -34,14 +34,14 @@ export default function CloudInfrastructureSection() {
         alt={t("cloudInfrastructure.backgroundAlt")}
         src="RightCloudBg.svg"
         width={300}
-        height={300}
+        height={300} loading="lazy"
       />
       <Image
         className="absolute w-[15%] top-0 left-0 -z-10"
         alt={t("cloudInfrastructure.backgroundAlt")}
         src="/LeftCloudBg.svg"
         width={300}
-        height={300}
+        height={300} loading="lazy"
       />
       <div className="container max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <div className="text-center">
@@ -53,7 +53,7 @@ export default function CloudInfrastructureSection() {
         <div className="mt-16 grid lg:grid-cols-4 grid-cols-2 gap-8 lg:gap-0">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-2 justify-center flex-col">
-              <Image src={feature.image} alt={feature.alt} width={48} height={48} />
+              <Image src={feature.image} alt={feature.alt} width={48} height={48} loading="lazy" />
               <h1 className="font-bold">{feature.title}</h1>
             </div>
           ))}

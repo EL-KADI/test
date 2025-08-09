@@ -13,6 +13,7 @@ const WhoisToolSectionTwo = () => {
           src="/WhoisToolSectionTwo.svg"
              width={500}
           height={500}
+          loading="lazy"
         />
         <div className="grid-flow-dense">
           <h1 className={`text-3xl font-semibold ${isRTL ? 'text-right' : 'text-left'}`}>
