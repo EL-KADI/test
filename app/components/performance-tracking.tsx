@@ -13,12 +13,12 @@ const PerformanceTracking = () => {
       <Image width={300}
         height={300} loading='lazy' className={`absolute -bottom-20 ${isRTL ? 'right-0' : 'right-0'} z-20`}
         alt={t('performanceTracking.mobileAlt')}
-        src="/mobile.svg" 
+        src="/mobile.avif" 
       />
       <Image width={100}
         height={100} loading='lazy' className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} z-10 w-full`}
         alt={t('performanceTracking.backgroundAlt')}
-        src="/Layer-Two.svg"
+        src="/Layer-Two.webp"
       />
       <Image width={100}
         height={100} loading='lazy' className={`absolute bottom-0 ${isRTL ? 'right-0' : 'left-0'} -z-0`}

@@ -91,7 +91,7 @@ export default function PricingThreeSection() {
                 <div className="text-start mt-4">
                   {plan.features.map((feature, featureIndex) => (
                     <h1 key={featureIndex} className="mt-4">
-                      <strong>{feature.split(" ")[0]}</strong>{" "}
+                      <strong>{feature.split(" ")[0]}</strong>
                       {feature.substring(feature.indexOf(" ") + 1)}
                     </h1>
                   ))}

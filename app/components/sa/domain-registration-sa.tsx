@@ -9,7 +9,7 @@ export default function DomainRegistrationSA() {
     <div  dir={isRTL ? "rtl" : "ltr"} className="relative mt-32 text-black">
       <Image loading="lazy"
         className="absolute -top-20 left-0 w-full -z-10"
-        src="/two-layers-sa.svg"
+        src="/two-layers-sa.webp"
         alt={t("domainRegistrationSA.backgroundAlt")}
         width={1200}
         height={400}

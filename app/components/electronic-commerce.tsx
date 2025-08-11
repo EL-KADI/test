@@ -10,7 +10,7 @@ export default function ElectronicCommerce() {
     {
       name: t('ecommerceSection.cyclosName'),
       description: t('ecommerceSection.cyclosDescription'),
-      logoQuery: "/Cyclos 4 Pro.svg",
+      logoQuery: "/Cyclos 4 Pro.webp",
       link: "/platforms/cyclos",
       alt: t('ecommerceSection.cyclosLogoAlt'),
     },

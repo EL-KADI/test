@@ -34,7 +34,7 @@ export default function EmailSecuritySection() {
       height={1080}
         className="absolute md:-top-96 -top-48 -z-10 left-0"
         alt={t("emailSecurity.backgroundAlt")}
-        src="/StrongBg.svg"
+        src="/StrongBg.webp"
       />
       <div className="text-center">
         <h2 className="font-bold text-4xl">{t("emailSecurity.title")}</h2>

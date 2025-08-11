@@ -9,25 +9,25 @@ const PaymentMethodsSection = () => {
     {
       title: t('paymentMethodsSection.bankakTitle'),
       description: t('paymentMethodsSection.bankakDescription'),
-      image: '/bankak.svg',
+      image: '/bankak.webp',
       alt: t('paymentMethodsSection.bankakAlt'),
     },
     {
       title: t('paymentMethodsSection.ibanTitle'),
       description: t('paymentMethodsSection.ibanDescription'),
-      image: '/lban.svg',
+      image: '/lban.webp',
       alt: t('paymentMethodsSection.ibanAlt'),
     },
     {
       title: t('paymentMethodsSection.instantTitle'),
       description: t('paymentMethodsSection.instantDescription'),
-      image: '/faory.svg',
+      image: '/faory.webp',
       alt: t('paymentMethodsSection.instantAlt'),
     },
     {
       title: t('paymentMethodsSection.oowCashTitle'),
       description: t('paymentMethodsSection.oowCashDescription'),
-      image: '/oowCash.svg',
+      image: '/oowCash.webp',
       alt: t('paymentMethodsSection.oowCashAlt'),
     },
   ];

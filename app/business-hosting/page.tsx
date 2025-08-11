@@ -11,6 +11,7 @@ import MainFeaturesSection from "../components/main-features-section";
 import TrustCustomer from "../components/trust-customer";
 import { useEffect, useRef, useState } from "react";
 import BusinessHostingSvg from "../components/all-svg/business-hosting-svg";
+import SEOBusinessHosting from "@/components/seo/SEOBusinessHosting";
 export default function BusinessHosting() {
   const { t } = useLanguage();
      const [showSVG, setShowSVG] = useState(false);
@@ -68,6 +69,7 @@ export default function BusinessHosting() {
 
   return (
     <>
+    <SEOBusinessHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

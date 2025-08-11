@@ -12,6 +12,7 @@ import BgSection from "../components/bg-section";
 import NISTComplianceSection from "../components/nist";
 import SharedHostingSvg from "../components/all-svg/shared-hosting-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOSharedHosting from "@/components/seo/SEOSharedHosting";
 export default function SharedHosting() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -69,6 +70,7 @@ export default function SharedHosting() {
 
   return (
     <>
+    <SEOSharedHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

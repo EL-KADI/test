@@ -8,6 +8,7 @@ import Footer from "../../components/footer";
 import { useLanguage } from "../../contexts/language-context";
 import PartnersSvg from "../components/all-svg/partners-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOPartners from "@/components/seo/SEOPartners";
 
 export default function Partners() {
   const { t } = useLanguage();
@@ -67,6 +68,7 @@ export default function Partners() {
 
   return (
     <>
+    <SEOPartners/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

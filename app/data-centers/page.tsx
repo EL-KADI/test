@@ -8,6 +8,7 @@ import AnimatedOnLoad from "../../components/animated-on-load";
 import AnimatedOnScroll from "../../components/animated-on-scroll";
 import { useEffect, useRef, useState } from "react";
 import DataCentersSvg from "../components/all-svg/data-centers-svg";
+import SEODataCenters from "@/components/seo/SEODataCenters";
 
 
 export default function DataCenters() {
@@ -29,6 +30,7 @@ export default function DataCenters() {
     }, []);
   return (
     <>
+    <SEODataCenters/>
       <Header />
       <div className="relative text-white w-full">
         <div className="block ">

@@ -66,14 +66,14 @@ export default function PricingSection() {
       <Image
         className="absolute right-0 -top-52 -z-10"
         alt={t("pricingSection.rightBlocksAlt")}
-        src="/right-blocks-with-icons.svg"
+        src="/right-blocks-with-icons.avif"
         width={400}
         height={400}  loading="lazy"
       />
       <Image
         className="absolute left-0 -top-52 -z-10"
         alt={t("pricingSection.leftBlocksAlt")}
-        src="/left-blocks-with-icons.svg"
+        src="/left-blocks-with-icons.avif"
         width={400}
         height={400}  loading="lazy"
       />
@@ -105,7 +105,7 @@ export default function PricingSection() {
                 <div className="text-start mt-4">
                   {plan.features.map((feature, featureIndex) => (
                     <h1 key={featureIndex} className="mt-4">
-                      <strong>{feature.split(" ")[0]}</strong>{" "}
+                      <strong>{feature.split(" ")[0]}</strong>
                       {feature.substring(feature.indexOf(" ") + 1)}
                     </h1>
                   ))}

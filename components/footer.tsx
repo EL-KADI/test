@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="flex flex-col items-center text-center">
             <Image
               loading="lazy"
-              src="/logoFooter.svg"
+              src="/logoFooter.webp"
               alt="Logo"
               width={100}
               height={100}
@@ -60,25 +60,25 @@ const Footer = () => {
             </h3>
             <ul className="text-[#878787] flex flex-col gap-y-2 text-base">
               <Link href={"/about"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer">
                   {t("footer.aboutUs")}
                 </li>
               </Link>
               <Link href={"/jobs"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.jobs")}
-                </li>{" "}
+                </li>
               </Link>
               <Link href={"/contact"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.contactUs")}
-                </li>{" "}
+                </li>
               </Link>
               <Link href={"/blog"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.mediaCenter")}
                 </li>
@@ -102,13 +102,13 @@ const Footer = () => {
                 {t("footer.vps")}
               </li>
               <Link href={"/server-management"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.serverSupport")}
                 </li>
               </Link>
               <Link href={"/whois"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.whois")}
                 </li>
@@ -123,25 +123,25 @@ const Footer = () => {
             </h3>
             <ul className="text-[#878787] flex flex-col gap-y-2 text-base">
               <Link href={"/speed"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.speed")}
                 </li>
               </Link>
               <Link href={"/security"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.security")}
                 </li>
               </Link>
               <Link href={"/static-dashboard"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.controlPanel")}
                 </li>
               </Link>
               <Link href={"/backups"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.backups")}
                 </li>
@@ -159,19 +159,19 @@ const Footer = () => {
                 {t("footer.privacy")}
               </li>
               <Link href={"/payment"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.paymentMethods")}
                 </li>
               </Link>
               <Link href={"/ssl"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.sslCertificates")}
                 </li>
               </Link>
               <Link href={"/partners"}>
-                {" "}
+               
                 <li className="hover:text-black/70  duration-200 cursor-pointer ">
                   {t("footer.partners")}
                 </li>
@@ -202,7 +202,7 @@ const Footer = () => {
             <div className=" lg:grid lg:grid-cols-1  flex  max-w-xs    py-0">
               <Image
                 loading="lazy"
-                src="payments-compny.webp"
+                src="/payments-compny.webp"
                 alt="visa, mastercard, paypal, cib, vodafone, mada"
                 width={250}
                 height={250}

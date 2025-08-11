@@ -8,20 +8,20 @@ const TraditionalPaymentSection = () => {
     {
       title: t('traditionalPaymentSection.cdnTitle'),
       description: t('traditionalPaymentSection.cdnDescription'),
-      image: 'card.svg',
+      image: '/card.svg',
       alt: t('traditionalPaymentSection.cdnAlt'),
       width:85,
     },
     {
       title: t('traditionalPaymentSection.ddosTitle'),
       description: t('traditionalPaymentSection.ddosDescription'),
-      image: 'transfer.svg',
+      image: '/transfer.svg',
       alt: t('traditionalPaymentSection.ddosAlt'),  width:100,
     },
     {
       title: t('traditionalPaymentSection.securityTitle'),
       description: t('traditionalPaymentSection.securityDescription'),
-      image: 'cash.svg',
+      image: '/cash.svg',
       alt: t('traditionalPaymentSection.securityAlt'),  width:100,
     },
   ];

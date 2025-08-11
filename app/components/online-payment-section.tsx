@@ -5,7 +5,7 @@ const OnlinePaymentSection = () => {
 
   const paymentMethods = [
     {
-      image: '/americanExpress.svg',
+      image: '/americanExpress.webp',
       alt: t('onlinePaymentSection.americanExpressAlt'),
     },
     {
@@ -13,7 +13,7 @@ const OnlinePaymentSection = () => {
       alt: t('onlinePaymentSection.visaAlt'),
     },
     {
-      image: '/masterCard.svg',
+      image: '/masterCard.webp',
       alt: t('onlinePaymentSection.masterCardAlt'),
     },
   ];

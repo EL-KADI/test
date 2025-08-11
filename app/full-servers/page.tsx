@@ -12,6 +12,7 @@ import WorldDaljmTwo from "../components/world-daljm-two";
 import SomeFeature from "../components/some-feature";
 import FullServersSvg from "../components/all-svg/full-servers-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOFullServers from "@/components/seo/SEOFullServers";
 export default function FullServers() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ export default function FullServers() {
 
   return (
     <>
+    <SEOFullServers/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />
@@ -103,7 +105,7 @@ export default function FullServers() {
         <HostingPlansThree />
         <FeatureSectionFullserver />
         <div className="-mt-16">
-          {" "}
+      
           <FeaturesSectionFullServerTwo />
         </div>
         <NISTComplianceSection />

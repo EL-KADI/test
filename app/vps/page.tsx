@@ -14,6 +14,7 @@ import { useLanguage } from "../../contexts/language-context";
 import FeaturesSectionTen from "../components/features-SectionTen";
 import VpsSvg from "../components/all-svg/vps-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOVpsServers from "@/components/seo/SEOVpsServers";
 export default function Vps() {
       const [showSVG, setShowSVG] = useState(false);
   const svgRef = useRef(null);
@@ -80,6 +81,7 @@ export default function Vps() {
 
   return (
     <>
+    <SEOVpsServers/>
     <Header />
          <div className="relative text-white w-full hero">
            <style dangerouslySetInnerHTML={{ __html: styles }} />

@@ -11,6 +11,7 @@ import WhoisToolSectionTwo from "../components/whois-tool-section-two";
 import KeyBenefitsSection from "../components/key-benefits-section";
 import SecuritySvg from "../components/all-svg/security-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOSecurity from "@/components/seo/SEOSecurity";
 export default function Security() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -76,6 +77,7 @@ export default function Security() {
 
   return (
     <>
+    <SEOSecurity/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

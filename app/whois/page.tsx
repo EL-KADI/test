@@ -9,6 +9,7 @@ import WhoisTool from "../components/whois-tool";
 import KeyFeaturesSection from "../components/key-features-section";
 import WhoisSvg from "../components/all-svg/whois-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOWhois from "@/components/seo/SEOWhois";
 export default function Whois() {
   const { t,isRTL } = useLanguage();
       const [showSVG, setShowSVG] = useState(false);
@@ -74,6 +75,7 @@ export default function Whois() {
 
   return (
     <>
+    <SEOWhois/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

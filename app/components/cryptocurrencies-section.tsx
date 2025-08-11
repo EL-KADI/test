@@ -14,7 +14,7 @@ const CryptocurrenciesSection = () => {
       alt: t('cryptocurrenciesSection.binanceAlt'),
     },
     {
-      image: '/Bitcoin.svg',
+      image: '/Bitcoin.webp',
       alt: t('cryptocurrenciesSection.bitcoinAlt'),
     },
     {

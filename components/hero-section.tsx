@@ -11,23 +11,24 @@ export default function HeroSection() {
   return (
     <>
       <div
-        className="bg-[#092346] h-screen  overflow-hidden relative"
+        className="bg-[#092346] h-screen overflow-hidden  relative"
         dir={isRTL ? "rtl" : "ltr"}
       >
+             <div className="w-full  ">
+          <HeroSvg />
+        </div>
         {/* Main Content - positioned above background */}
         <div className="bg-[#092346]">
           <NavigationBar />
         </div>
 
-        <div className="w-full  py-10">
-          <HeroSvg />
-        </div>
+   
 
         <AnimatedOnLoad
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className={`text-center -z-0 max-w-4xl mx-auto px-4 relative  -mt-10 ${
+          className={`text-center -z-0 max-w-4xl mx-auto px-4 relative mt-28 ${
             isRTL ? "text-center" : "text-left"
           }`}
         >
@@ -69,6 +70,7 @@ export default function HeroSection() {
               <Image
                 src="/Certificates.webp"
                 alt="Certificates"
+                 priority
                 width={573}
                 height={353}
               />

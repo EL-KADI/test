@@ -30,7 +30,7 @@ const JobsSection = () => {
             loading="lazy"
             alt={t("jobsSection.lampImageAlt")}
             className="mx-auto justify-center"
-            src="/lamp.svg"
+            src="/lamp.webp"
           />
           <div
             className={`flex flex-col justify-center items-start ${

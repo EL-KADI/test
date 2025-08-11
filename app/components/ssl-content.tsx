@@ -10,14 +10,14 @@ export default function SslContent() {
       <Image
         className="absolute right-0 -top-40 -z-10"
         alt={t("sslContent.rightBackgroundAlt")}
-        src="/right-blocks-with-icons.svg"
+        src="/right-blocks-with-icons.avif"
         width={393}
         height={636}  loading="lazy"
       />
       <Image
         className="absolute left-0 -top-40 -z-10"
         alt={t("sslContent.leftBackgroundAlt")}
-        src="/left-blocks-with-icons.svg"
+        src="/left-blocks-with-icons.avif"
         width={393}
         height={636}  loading="lazy"
       />

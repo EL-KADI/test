@@ -12,7 +12,7 @@ const WhoisComponent = () => {
         </p>
       </div>
       <div className={`order-1  lg:order-2 w-5/6 h-64 bg-contain bg-no-repeat bg-center ms-auto ${isRTL ? "lg:translate-x-20 xl:translate-x-24" : "lg:-translate-x-20 xl:-translate-x-24 scale-x-[-1]"}`}
-        style={{ backgroundImage: "url('/WhoisBg.svg')" }}
+        style={{ backgroundImage: "url('/WhoisBg.webp')" }}
       ></div>
     </div>
   );

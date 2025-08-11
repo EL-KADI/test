@@ -62,7 +62,8 @@ export default function FeaturesSectionCommerce() {
         height={400}
         className="absolute lg:-top-60 -top-20 sm:-top-20 md:-top-28 -z-10 w-full object-cover"
         alt={t("featuresSectionThree.rightImageAlt")}
-        src="/big-blocks.svg"   loading="lazy"
+        src="/big-blocks.svg"  
+         loading="lazy"
       />
       <h1 className="lg:text-4xl font-bold md:font-normal text-3xl mb-6 text-center">
         {t("featuresSectionThree.title")}

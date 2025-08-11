@@ -19,9 +19,15 @@ const AnimatedOnLoad = ({
   className = "",
 }: AnimatedOnLoadProps) => {
   return (
-    <motion.div initial={initial} animate={animate} transition={transition} className={className}>
-      {children}
-    </motion.div>
+<motion.div
+  initial={initial}
+  animate={animate}
+  transition={transition}
+  className={`${className} will-change-transform`}
+>
+  {children}
+</motion.div>
+
   )
 }
 

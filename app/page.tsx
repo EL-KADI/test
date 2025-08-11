@@ -1,5 +1,4 @@
 "use client";
-
 import Header from "../components/header";
 import HeroSection from "../components/hero-section";
 import ServicesSection from "../components/services-section";
@@ -11,13 +10,14 @@ import PartnersSection from "../components/partners-section";
 import CustomerReviews from "../components/customer-reviews";
 import Footer from "../components/footer";
 import { useLanguage } from "../contexts/language-context";
+import HomeSEO from "@/components/seo/HomeSEO";
 
-export default function VultrArabicWebsite() {
+export default function NomoarHosting() {
   const { isRTL } = useLanguage();
 
   return (
     <div className="min-h-screen text-white" dir={isRTL ? "rtl" : "ltr"}>
-      {/* Top Header */}
+      <HomeSEO /> 
       <div className="lg:block hidden">
         <Header />
       </div>

@@ -10,7 +10,7 @@ const WhoisToolSection = () => {
         <Image
           className={`w-5/6 ${isRTL ? 'lg:ms-auto' : 'lg:me-auto'} mx-auto`}
           alt={t('whoisToolSection.imageAlt')}
-          src="/security-img.svg"
+          src="/security-img.webp"
           width={500}
           height={500}
           loading="lazy"

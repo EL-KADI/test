@@ -13,6 +13,7 @@ import ServicesComponentTwo from "../components/services-component-two";
 import ContactSection from "../components/contact-section";
 import { useEffect, useRef, useState } from "react";
 import AboutSvg from "../components/all-svg/about-svg";
+import SEOAbout from "@/components/seo/SEOAbout";
 
 export default function About() {
   const { t } = useLanguage();
@@ -34,6 +35,7 @@ export default function About() {
   
   return (
     <>
+    <SEOAbout/>
       <Header />
       <div className="relative text-white w-full">
         <div className="block ">
@@ -72,8 +74,8 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }} 
       >
-        {" "}
-        <NomoarCompany />{" "}
+        
+        <NomoarCompany />
       </AnimatedOnScroll>
       <AnimatedOnScroll
         initial={{ opacity: 0, y: 100 }}
@@ -81,8 +83,8 @@ export default function About() {
         transition={{ duration: 1, ease: "easeOut" }}
      
       >
-        {" "}
-        <AchievementsSection />{" "}
+        
+        <AchievementsSection />
       </AnimatedOnScroll>
       <AnimatedOnScroll
         initial={{ opacity: 0, y: 100 }}

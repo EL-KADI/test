@@ -69,6 +69,7 @@ export default function CustomerReviewsSection() {
                     src={HelpCenterIcon || "/placeholder.svg"}
                     alt={t("customer.helpCenter")}
                     className="w-20 h-20 object-contain"
+                     loading="lazy"
                   />
                 </div>
                 <p className="text-center text-sm font-medium text-black">
@@ -86,6 +87,7 @@ export default function CustomerReviewsSection() {
                     src={Jobs || "/placeholder.svg"}
                     alt={t("customer.jobs")}
                     className="w-20 h-20 object-contain"
+                     loading="lazy"
                   />
                 </div>
                 <p className="text-center text-sm font-medium text-black">
@@ -100,6 +102,7 @@ export default function CustomerReviewsSection() {
                     src={Subscriber || "/placeholder.svg"}
                     alt={t("customer.subscriberServices")}
                     className="w-20 h-20 object-contain"
+                     loading="lazy"
                   />
                 </div>
                 <p className="text-center text-sm font-medium text-black">
@@ -117,6 +120,7 @@ export default function CustomerReviewsSection() {
                     src={DataCenters || "/placeholder.svg"}
                     alt={t("customer.dataCenters")}
                     className="w-20 h-20 object-contain"
+                     loading="lazy"
                   />
                 </div>
                 <p className="text-center text-sm font-medium text-black">

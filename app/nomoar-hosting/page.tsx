@@ -12,6 +12,7 @@ import WhyChooseTigersSectionTwo from "../components/why-choose-tigers-section-t
 import TrustCustomer from "../components/trust-customer";
 import { useEffect, useRef, useState } from "react";
 import NomoarHostingSvg from "../components/all-svg/nomoar-hosting-svg";
+import SEONomoarCloud from "@/components/seo/SEONomoarCloud";
 
 export default function NomoarHosting() {
   const { t } = useLanguage();
@@ -69,6 +70,7 @@ export default function NomoarHosting() {
 
   return (
     <>
+    <SEONomoarCloud/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

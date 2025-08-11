@@ -8,6 +8,7 @@ import { useLanguage } from "@/contexts/language-context";
 import JobsSection from "../components/jobs-section";
 import BenefitsSection from "../components/benefits-section";
 import Image from "next/image";
+import SEOJobs from "@/components/seo/SEOJobs";
 export default function Jobs() {
   const { t, isRTL } = useLanguage();
   const styles = `
@@ -50,6 +51,7 @@ export default function Jobs() {
 
   return (
     <>
+    <SEOJobs/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

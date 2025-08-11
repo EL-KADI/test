@@ -10,6 +10,7 @@ import MailHostingSvg from "../components/all-svg/mail-hosting-svg";
 import IndividualLicenses from "../components/individual-licenses";
 import FeaturesSectionFive from "../components/featuresSectionFive";
 import WhyChooseTigers from "../components/why-choose-tigers";
+import SEOServerLicenses from "@/components/seo/SEOServerLicenses";
 export default function serverLicenses() {
   const { t } = useLanguage();
    const [showSVG, setShowSVG] = useState(false);
@@ -67,6 +68,7 @@ export default function serverLicenses() {
 
   return (
     <>
+    <SEOServerLicenses/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

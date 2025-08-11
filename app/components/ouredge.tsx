@@ -57,7 +57,7 @@ export default function OurEdge() {
             <Card className="text-center p-8">
               <div className="mb-6">
                 <Image
-                  src="/img_visitorsicon_1.svg"
+                  src="/img_visitorsicon_1.webp"
                   alt={t("ourEdge.visitorsAlt")}
                   width={75}
                   height={36}

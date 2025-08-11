@@ -6,6 +6,7 @@ import Footer from "../../components/footer";
 import { useLanguage } from "@/contexts/language-context";
 import { useEffect, useRef, useState } from "react";
 import BlogSvg from "../components/all-svg/blog-svg";
+import SEOBlog from "@/components/seo/SEOBlog";
 
 export default function Blog() {
   const { t } = useLanguage();
@@ -26,6 +27,7 @@ export default function Blog() {
     }, []);
   return (
     <>
+    <SEOBlog/>
       <Header />
       <div className="relative text-white w-full">
         <div className="block ">

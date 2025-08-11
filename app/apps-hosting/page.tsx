@@ -12,6 +12,7 @@ import ElectronicCommerce from "../components/electronic-commerce";
 import FeaturesSectionCommerce from "../components/feature-section-commerce";
 import { useEffect, useRef, useState } from "react";
 import AppsHostingSvg from "../components/all-svg/apps-hosting-svg";
+import SEOAppHosting from "@/components/seo/SEOAppHosting";
 export default function AppsHosting() {
 const { t } = useLanguage();
   const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ const { t } = useLanguage();
 
   return (
     <>
+    <SEOAppHosting/>
       <Header />
       <div className="relative text-white w-full">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

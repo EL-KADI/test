@@ -10,6 +10,7 @@ import FeaturesSectionSix from "../components/featuresSectionSix";
 import { useLanguage } from "../../contexts/language-context";
 import { useEffect, useRef, useState } from "react";
 import BackupsSvg from "../components/all-svg/backups-svg";
+import SEOBackups from "@/components/seo/SEOBackups";
 export default function Backups() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -68,6 +69,7 @@ export default function Backups() {
 
   return (
     <>
+    <SEOBackups/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

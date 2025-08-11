@@ -12,7 +12,7 @@ export default function Bouquets() {
       <Image
         className="absolute right-0 -top-52 -z-10"
         alt="Right Bg"
-        src="Rbg.svg"
+        src="/Rbg.svg"
         width={500}
         height={500} loading="lazy"
       />
@@ -20,7 +20,7 @@ export default function Bouquets() {
       <Image
         className="absolute left-0 -top-52 -z-10"
         alt="Left Bg"
-        src="Lbg.svg"
+        src="/Lbg.svg"
         width={500}
         height={500} loading="lazy"
       />

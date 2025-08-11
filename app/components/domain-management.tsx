@@ -28,7 +28,7 @@ const DomainManagement = () => {
             isRTL ? "lg:-translate-x-56" : "lg:translate-x-56"
           } mx-auto w-2/3`}
           alt={t("domainManagement.imageAlt")}
-          src="/DomainManagement.svg"
+          src="/DashboardOverview.webp"
           loading="lazy"
         />
       </div>

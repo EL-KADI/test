@@ -36,7 +36,7 @@ export default function WhoisTool() {
           loading="lazy"
             className="w-5/6 ms-auto"
             alt={t("whoisTool.sslWhoisImageAlt")}
-            src="/ssl-whois.svg"
+            src="/ssl-whois.webp"
             width={500}
             height={300}
           />

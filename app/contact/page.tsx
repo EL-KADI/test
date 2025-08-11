@@ -10,6 +10,7 @@ import ContactForm from "../components/contact-form";
 import Questions from "../components/questions";
 import { useEffect, useRef, useState } from "react";
 import ContactSvg from "../components/all-svg/contact-svg";
+import SEOContact from "@/components/seo/SEOContact";
 
 
 export default function Contact() {
@@ -31,6 +32,7 @@ export default function Contact() {
   }, []);
   return (
     <>
+    <SEOContact/>
       <Header />
       <div className="relative text-white w-full">
         <div className="block ">

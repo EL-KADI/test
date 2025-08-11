@@ -23,7 +23,7 @@ export default function WorldDaljmTwo() {
         <Image
           className={`lg:absolute bottom-0 ${isRTL ? 'lg:right-0' : 'lg:left-0'}`}
           alt={t('geoRegions.illustrationAlt')}
-          src="/world-daljm-two.svg"
+          src="/world-daljm-two.webp"
           width={400}
           height={400}  loading="lazy"
         />

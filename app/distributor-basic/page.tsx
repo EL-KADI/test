@@ -13,6 +13,7 @@ import OneClickAppsSectionTwo from "../components/one-click-apps-section-two";
 import FeaturesSectionEleven from "../components/features-section-eleven";
 import DistributorSvg from "../components/all-svg/distributor-svg";
 import { useEffect, useRef, useState } from "react";
+import SEODistributorsHosting from "@/components/seo/SEODistributorsHosting";
 export default function DistributorBasic() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -69,6 +70,7 @@ export default function DistributorBasic() {
 
   return (
     <>
+    <SEODistributorsHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

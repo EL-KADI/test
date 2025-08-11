@@ -9,6 +9,7 @@ import Footer from "../../components/footer";
 import { useLanguage } from "../../contexts/language-context";
 import { useEffect, useRef, useState } from "react";
 import CloudflareSvg from "../components/all-svg/cloudflare-svg";
+import SEOCloudflare from "@/components/seo/SEOCloudflare";
 export default function FullServers() {
   const { t } = useLanguage();
      const [showSVG, setShowSVG] = useState(false);
@@ -67,6 +68,7 @@ export default function FullServers() {
 
   return (
     <>
+    <SEOCloudflare/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

@@ -14,7 +14,7 @@ const TechStack = () => {
     },
     {
       title: t('techStack.laravelTitle'),
-      image: '/Laravel.svg%201-BC6tyiE6.svg',
+      image: '/Laravel.webp',
       alt: t('techStack.laravelAlt'),width: 100,
     },
     {
@@ -39,7 +39,7 @@ const TechStack = () => {
     },
     {
       title: t('techStack.whmcsTitle'),
-      image: '/whmcs-logo%202-D6A94U71.svg',
+      image: '/whmcs-logo.webp',
       alt: t('techStack.whmcsAlt'),width: 170,
     },
   ];

@@ -22,7 +22,7 @@ const KeyBenefitsSection = () => {
     },
     {
       title: t('keyBenefitsSection.supportTitle'),
-      image: '/laptop.svg',
+      image: '/laptop.webp',
       alt: t('keyBenefitsSection.supportAlt'),
     },
     {

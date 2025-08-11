@@ -24,6 +24,36 @@ type TranslationKeys =
   | "domainInfographic.titlePart1"
   | "domainInfographic.titlePart2"
   | "domainFeatures.mainTitle"
+  | "brandGuidelines.headerTitle"
+  | "brandGuidelines.headerDescription"
+  | "brandGuidelines.logoTitle"
+  | "brandGuidelines.logoDescription"
+  | "brandGuidelines.logoAlt"
+  | "brandGuidelines.logoSizesTitle"
+  | "brandGuidelines.logoSizesDescription"
+  | "brandGuidelines.logoSizesAlt"
+  | "brandGuidelines.typographyTitle"
+  | "brandGuidelines.typographyDescription"
+  | "brandGuidelines.typographyFontName"
+  | "brandGuidelines.downloadsTitle"
+  | "brandGuidelines.downloadItem4Title"
+  | "brandGuidelines.downloadsDescription"
+  | "brandGuidelines.downloadItem1Alt"
+  | "brandGuidelines.downloadItem1Title"
+  | "brandGuidelines.downloadItem2Alt"
+  | "brandGuidelines.downloadItem2Title"
+  | "brandGuidelines.downloadItem3Alt"
+  | "brandGuidelines.downloadItem3Title"
+  | "brandGuidelines.downloadItem4Alt"
+  | "brandGuidelines.downloadPDF"
+  | "brandGuidelines.downloadSVG"
+  | "brandGuidelines.downloadPNG"
+  | "brandGuidelines.identityTitle"
+  | "brandGuidelines.identityCard1Title"
+  | "brandGuidelines.identityCard1Alt"
+  | "brandGuidelines.identityCard2Title"
+  | "brandGuidelines.identityCard2Alt"
+  | "brandGuidelines.identityBottomAlt"
   | "domainFeatures.lockTitle"
   | "domainFeatures.lockDescription"
   | "domainFeatures.renewalTitle"
@@ -195,6 +225,9 @@ type TranslationKeys =
   | "choosePlan.siteSeal"
   | "choosePlan.dynamic"
   | "choosePlan.orderNow"
+  | "notFound.title"
+  | "notFound.description"
+  | "notFound.backToHome"
   | "websiteSecurity.title"
   | "websiteSecurity.description"
   | "websiteSecurity.securityImageAlt"
@@ -943,6 +976,9 @@ type TranslationKeys =
   | "trustCustomer.docCenterAlt"
   | "trustCustomer.financialCommitteeAlt"
   | "trustCustomer.socialSecurityAlt"
+  | "brandGuidelines.colorPaletteTitle"
+  | "brandGuidelines.colorPaletteDescription"
+  | "brandGuidelines.colorCodesTitle"
   | "trustCustomer.commercialRegistryAlt"
   | "trustCustomer.zatAlSawariAlt"
   | "serverLicenses.title"
@@ -1269,6 +1305,52 @@ type Translations = Record<TranslationKeys, string>;
 
 const translations: Record<Language, Translations> = {
   arabic: {
+    "notFound.title": "الصفحة غير موجودة",
+    "notFound.description":
+      "عذرًا، الصفحة التي تبحث عنها غير متوفرة أو ربما تم نقلها.",
+    "notFound.backToHome": "العودة إلى الصفحة الرئيسية",
+    "brandGuidelines.colorPaletteTitle": "ألوان النمور",
+    "brandGuidelines.colorPaletteDescription":
+      "استخدمنا في التعبير عن هوية محجوز ثلاث ألوان: الأبيض والفيروزي والأسود، وهي ألوان لها طابع رسمي يليق بخدمات الاستضافة والدعم، حيث يرمز اللون الفيروزي إلى سهولة التعامل، والأبيض للدلالة على البساطة، والأسود للدلالة على الجدية، وتم دمجهم في ثلاث طرق كالتالي:",
+    "brandGuidelines.colorCodesTitle": "هنا الكود الخاص بكل لون :",
+    "brandGuidelines.headerTitle": "إرشادات البراند",
+    "brandGuidelines.headerDescription":
+      "دليل لعرض الشعار والألوان وأكوادها وهويتها بشكل واضح ومنظم",
+    "brandGuidelines.logoTitle": "الشعار",
+    "brandGuidelines.logoDescription":
+      'يتميز رمز محجوز بالجمع بين هوية ورؤية الشركة. جاءت فكرته من تداخل كلا من حرفي الـ "p" والـ "z" وعند دمج الحرفين معًا تكونت علامة الـ "ما" لا نهاية والتي تعبر عن رؤية الشركة في الخدمة والدعم المتواصل.',
+    "brandGuidelines.logoAlt": "شعارين مدمجين",
+    "brandGuidelines.logoSizesTitle": "حجم الشعار",
+    "brandGuidelines.logoSizesDescription":
+      "صمم الشعار في أحجام مختلفة كي يناسب أي بيئة إستخدام",
+    "brandGuidelines.logoSizesAlt": "الشعار بأحجام مختلفة",
+    "brandGuidelines.typographyTitle": "تايبوجرافي النمور",
+    "brandGuidelines.typographyDescription":
+      'استخدمنا خط "Cairo" للنصوص الإنجليزية و العربية نظرًا لبساطتها وسهولة قرائتها.',
+    "brandGuidelines.typographyFontName": "C a i r o",
+    "brandGuidelines.downloadsTitle": "التحميلات",
+    "brandGuidelines.downloadsDescription":
+      "وفرنا كافة العناصر التي يمكن أن تحتاج إليها عندما تستخدم اسم محجوز في أي تصميم، بدءًا من الشعار وانتهاءً بالمواد الدعائية التي يمكن أن تستخدمها في أي حدث أو مؤتمر.",
+    "brandGuidelines.downloadItem1Alt": "شعار دائري أزرق داكن",
+    "brandGuidelines.downloadItem1Title": "شعار النمور",
+    "brandGuidelines.downloadItem2Alt": "شعار دائري أزرق داكن",
+    "brandGuidelines.downloadItem2Title": "شركة النمور",
+    "brandGuidelines.downloadItem3Alt":
+      "شعار دائري أزرق داكن على خلفية زرقاء فاتحة",
+    "brandGuidelines.downloadItem3Title": "شركة النمور",
+    "brandGuidelines.downloadItem4Alt": "شعار دائري أزرق داكن",
+    "brandGuidelines.downloadItem4Title": "شعار النمور الثانوي",
+    "brandGuidelines.downloadPDF": "pdf",
+    "brandGuidelines.downloadSVG": "svg",
+    "brandGuidelines.downloadPNG": "png",
+    "brandGuidelines.identityTitle":
+      "وهذه هي الهوية الخاصة بمحجوز نعرضها لكم بأكثر من شكل.",
+    "brandGuidelines.identityCard1Title": "شركة النمور",
+    "brandGuidelines.identityCard1Alt": "شعار مع نص عربي",
+    "brandGuidelines.identityCard2Title": "شركة النمور",
+    "brandGuidelines.identityCard2Alt": "شعار مع نص عربي",
+    "brandGuidelines.identityBottomAlt":
+      "شعارين دائريين، واحد على خلفية رمادية فاتحة وواحد على خلفية بيضاء",
     "domainFeatures.mainTitle": "لماذا تشتري النطاقات من النامور؟",
     "domainFeatures.lockTitle": "قفل النطاق",
     "domainFeatures.lockDescription":
@@ -2800,6 +2882,53 @@ const translations: Record<Language, Translations> = {
   },
 
   english: {
+    "notFound.title": "Page Not Found",
+    "notFound.description":
+      "Sorry, the page you are looking for is not available or may have been moved.",
+    "notFound.backToHome": "Back to Homepage",
+    "brandGuidelines.colorPaletteTitle": "Namoor Colors",
+    "brandGuidelines.colorPaletteDescription":
+      "We used three colors to express Mahjooz’s identity: white, turquoise, and black. These colors have a formal tone suitable for hosting and support services, where turquoise symbolizes ease of use, white signifies simplicity, and black denotes seriousness, combined in three ways as follows:",
+    "brandGuidelines.colorCodesTitle": "Here are the codes for each color:",
+    "brandGuidelines.headerTitle": "Brand Guidelines",
+    "brandGuidelines.headerDescription":
+      "A guide to clearly and systematically display the logo, colors, codes, and identity",
+    "brandGuidelines.logoTitle": "Logo",
+    "brandGuidelines.logoDescription":
+      'The Namoor logo combines the company’s identity and vision. Its concept comes from the overlap of the letters "p" and "z", which when merged form the infinite "ma" symbol, reflecting the company’s vision of continuous service and support.',
+    "brandGuidelines.logoAlt": "Combined Logos",
+    "brandGuidelines.logoSizesTitle": "Logo Sizes",
+    "brandGuidelines.logoSizesDescription":
+      "The logo is designed in various sizes to suit any usage environment.",
+    "brandGuidelines.logoSizesAlt": "Logo in Various Sizes",
+    "brandGuidelines.typographyTitle": "Namoor Typography",
+    "brandGuidelines.typographyDescription":
+      'We used the "Cairo" font for English and Arabic texts due to its simplicity and readability.',
+    "brandGuidelines.typographyFontName": "C a i r o",
+    "brandGuidelines.downloadsTitle": "Downloads",
+    "brandGuidelines.downloadsDescription":
+      "We’ve provided all the elements you might need when using the Namoor name in any design, from the logo to promotional materials for events or conferences.",
+    "brandGuidelines.downloadItem1Alt": "Dark Blue Circular Logo",
+    "brandGuidelines.downloadItem1Title": "Namoor Logo",
+    "brandGuidelines.downloadItem2Alt": "Dark Blue Circular Logo",
+    "brandGuidelines.downloadItem2Title": "Namoor Company",
+    "brandGuidelines.downloadItem3Alt":
+      "Dark Blue Circular Logo on Light Blue Background",
+    "brandGuidelines.downloadItem3Title": "Namoor Company",
+    "brandGuidelines.downloadItem4Alt": "Dark Blue Circular Logo",
+    "brandGuidelines.downloadItem4Title": "Namoor Secondary Logo",
+    "brandGuidelines.downloadPDF": "PDF",
+    "brandGuidelines.downloadSVG": "SVG",
+    "brandGuidelines.downloadPNG": "PNG",
+    "brandGuidelines.identityTitle":
+      "This is the Namoor identity, presented in multiple forms.",
+    "brandGuidelines.identityCard1Title": "Namoor Company",
+    "brandGuidelines.identityCard1Alt": "Logo with Arabic Text",
+    "brandGuidelines.identityCard2Title": "Namoor Company",
+    "brandGuidelines.identityCard2Alt": "Logo with Arabic Text",
+    "brandGuidelines.identityBottomAlt":
+      "Two circular logos, one on a light gray background and one on a white background",
+
     "domainFeatures.mainTitle": "Why Buy Domains from Namoor?",
     "domainFeatures.lockTitle": "Domain Locking",
     "domainFeatures.lockDescription":
@@ -4377,6 +4506,53 @@ const translations: Record<Language, Translations> = {
   },
 
   french: {
+    "notFound.title": "Page Non Trouvée",
+    "notFound.description":
+      "Désolé, la page que vous recherchez n'est pas disponible ou a peut-être été déplacée.",
+    "notFound.backToHome": "Retour à la page d'accueil",
+    "brandGuidelines.colorPaletteTitle": "Couleurs Namoor",
+    "brandGuidelines.colorPaletteDescription":
+      "Nous avons utilisé trois couleurs pour exprimer l’identité de Mahjooz : le blanc, le turquoise et le noir. Ces couleurs ont un ton formel adapté aux services d’hébergement et de support, où le turquoise symbolise la facilité d’utilisation, le blanc représente la simplicité, et le noir indique le sérieux, combinés de trois manières comme suit :",
+    "brandGuidelines.colorCodesTitle": "Voici les codes pour chaque couleur :",
+    "brandGuidelines.headerTitle": "Directives de la marque",
+    "brandGuidelines.headerDescription":
+      "Un guide pour afficher clairement et systématiquement le logo, les couleurs, les codes et l’identité",
+    "brandGuidelines.logoTitle": "Logo",
+    "brandGuidelines.logoDescription":
+      "Le logo Namoor combine l’identité et la vision de l’entreprise. Son concept provient du chevauchement des lettres « p » et « z », qui, une fois fusionnées, forment le symbole infini « ma », reflétant la vision de l’entreprise de service et de soutien continus.",
+    "brandGuidelines.logoAlt": "Logos combinés",
+    "brandGuidelines.logoSizesTitle": "Tailles du logo",
+    "brandGuidelines.logoSizesDescription":
+      "Le logo est conçu dans différentes tailles pour convenir à tout environnement d’utilisation.",
+    "brandGuidelines.logoSizesAlt": "Logo en différentes tailles",
+    "brandGuidelines.typographyTitle": "Typographie Namoor",
+    "brandGuidelines.typographyDescription":
+      "Nous avons utilisé la police « Cairo » pour les textes en anglais et en arabe en raison de sa simplicité et de sa lisibilité.",
+    "brandGuidelines.typographyFontName": "C a i r o",
+    "brandGuidelines.downloadsTitle": "Téléchargements",
+    "brandGuidelines.downloadsDescription":
+      "Nous avons fourni tous les éléments dont vous pourriez avoir besoin lorsque vous utilisez le nom Namoor dans n’importe quel design, du logo aux matériaux promotionnels pour des événements ou des conférences.",
+    "brandGuidelines.downloadItem1Alt": "Logo circulaire bleu foncé",
+    "brandGuidelines.downloadItem1Title": "Logo Namoor",
+    "brandGuidelines.downloadItem2Alt": "Logo circulaire bleu foncé",
+    "brandGuidelines.downloadItem2Title": "Entreprise Namoor",
+    "brandGuidelines.downloadItem3Alt":
+      "Logo circulaire bleu foncé sur fond bleu clair",
+    "brandGuidelines.downloadItem3Title": "Entreprise Namoor",
+    "brandGuidelines.downloadItem4Alt": "Logo circulaire bleu foncé",
+    "brandGuidelines.downloadItem4Title": "Logo secondaire Namoor",
+    "brandGuidelines.downloadPDF": "PDF",
+    "brandGuidelines.downloadSVG": "SVG",
+    "brandGuidelines.downloadPNG": "PNG",
+    "brandGuidelines.identityTitle":
+      "Voici l’identité de Namoor, présentée sous plusieurs formes.",
+    "brandGuidelines.identityCard1Title": "Entreprise Namoor",
+    "brandGuidelines.identityCard1Alt": "Logo avec texte arabe",
+    "brandGuidelines.identityCard2Title": "Entreprise Namoor",
+    "brandGuidelines.identityCard2Alt": "Logo avec texte arabe",
+    "brandGuidelines.identityBottomAlt":
+      "Deux logos circulaires, l’un sur un fond gris clair et l’autre sur un fond blanc",
+
     "domainFeatures.mainTitle": "Pourquoi acheter des domaines chez Namoor ?",
     "domainFeatures.lockTitle": "Verrouillage de domaine",
     "domainFeatures.lockDescription":
@@ -6039,6 +6215,53 @@ const translations: Record<Language, Translations> = {
   },
 
   german: {
+    "notFound.title": "Seite Nicht Gefunden",
+    "notFound.description":
+      "Entschuldigung, die von Ihnen gesuchte Seite ist nicht verfügbar oder wurde möglicherweise verschoben.",
+    "notFound.backToHome": "Zurück zur Startseite",
+    "brandGuidelines.colorPaletteTitle": "Namoor-Farben",
+    "brandGuidelines.colorPaletteDescription":
+      "Wir haben drei Farben verwendet, um die Identität von Mahjooz auszudrücken: Weiß, Türkis und Schwarz. Diese Farben haben einen formellen Ton, der für Hosting- und Supportdienste geeignet ist, wobei Türkis für Benutzerfreundlichkeit steht, Weiß für Einfachheit und Schwarz für Seriosität, kombiniert auf drei Arten wie folgt:",
+    "brandGuidelines.colorCodesTitle": "Hier sind die Codes für jede Farbe:",
+    "brandGuidelines.headerTitle": "Markenrichtlinien",
+    "brandGuidelines.headerDescription":
+      "Ein Leitfaden zur klaren und systematischen Darstellung des Logos, der Farben, Codes und der Identität",
+    "brandGuidelines.logoTitle": "Logo",
+    "brandGuidelines.logoDescription":
+      "Das Namoor-Logo kombiniert die Identität und Vision des Unternehmens. Das Konzept stammt aus der Überlagerung der Buchstaben „p“ und „z“, die zusammen das unendliche „ma“-Symbol bilden, das die Vision des Unternehmens für kontinuierlichen Service und Support widerspiegelt.",
+    "brandGuidelines.logoAlt": "Kombinierte Logos",
+    "brandGuidelines.logoSizesTitle": "Logo-Größen",
+    "brandGuidelines.logoSizesDescription":
+      "Das Logo wurde in verschiedenen Größen gestaltet, um jeder Nutzungsumgebung gerecht zu werden.",
+    "brandGuidelines.logoSizesAlt": "Logo in verschiedenen Größen",
+    "brandGuidelines.typographyTitle": "Namoor-Typografie",
+    "brandGuidelines.typographyDescription":
+      "Wir haben die Schriftart „Cairo“ für englische und arabische Texte verwendet, aufgrund ihrer Einfachheit und Lesbarkeit.",
+    "brandGuidelines.typographyFontName": "C a i r o",
+    "brandGuidelines.downloadsTitle": "Downloads",
+    "brandGuidelines.downloadsDescription":
+      "Wir haben alle Elemente bereitgestellt, die Sie benötigen könnten, wenn Sie den Namen Namoor in einem Design verwenden, vom Logo bis hin zu Werbematerialien für Veranstaltungen oder Konferenzen.",
+    "brandGuidelines.downloadItem1Alt": "Dunkelblaues rundes Logo",
+    "brandGuidelines.downloadItem1Title": "Namoor-Logo",
+    "brandGuidelines.downloadItem2Alt": "Dunkelblaues rundes Logo",
+    "brandGuidelines.downloadItem2Title": "Namoor-Unternehmen",
+    "brandGuidelines.downloadItem3Alt":
+      "Dunkelblaues rundes Logo auf hellblauem Hintergrund",
+    "brandGuidelines.downloadItem3Title": "Namoor-Unternehmen",
+    "brandGuidelines.downloadItem4Alt": "Dunkelblaues rundes Logo",
+    "brandGuidelines.downloadItem4Title": "Namoor-Sekundärlogo",
+    "brandGuidelines.downloadPDF": "PDF",
+    "brandGuidelines.downloadSVG": "SVG",
+    "brandGuidelines.downloadPNG": "PNG",
+    "brandGuidelines.identityTitle":
+      "Dies ist die Identität von Namoor, präsentiert in mehreren Formen.",
+    "brandGuidelines.identityCard1Title": "Namoor-Unternehmen",
+    "brandGuidelines.identityCard1Alt": "Logo mit arabischem Text",
+    "brandGuidelines.identityCard2Title": "Namoor-Unternehmen",
+    "brandGuidelines.identityCard2Alt": "Logo mit arabischem Text",
+    "brandGuidelines.identityBottomAlt":
+      "Zwei runde Logos, eines auf hellgrauem und eines auf weißem Hintergrund",
+
     "domainFeatures.mainTitle": "Warum Domains bei Namoor kaufen?",
     "domainFeatures.lockTitle": "Domain-Sperre",
     "domainFeatures.lockDescription":
@@ -7678,6 +7901,52 @@ const translations: Record<Language, Translations> = {
   },
 
   turkish: {
+    "notFound.title": "Sayfa Bulunamadı",
+    "notFound.description":
+      "Üzgünüz, aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "notFound.backToHome": "Anasayfaya Geri Dön",
+    "brandGuidelines.colorPaletteTitle": "Namoor Renkleri",
+    "brandGuidelines.colorPaletteDescription":
+      "Mahjooz’un kimliğini ifade etmek için üç renk kullandık: beyaz, turkuaz ve siyah. Bu renkler, barındırma ve destek hizmetlerine uygun resmi bir tona sahiptir; turkuaz kullanım kolaylığını, beyaz sadeliği ve siyah ciddiyeti temsil eder ve şu şekilde üç farklı yolla birleştirilmiştir:",
+    "brandGuidelines.colorCodesTitle": "İşte her rengin kodu:",
+    "brandGuidelines.headerTitle": "Marka Kılavuzu",
+    "brandGuidelines.headerDescription":
+      "Logoyu, renkleri, kodları ve kimliği açık ve sistematik bir şekilde sergilemek için bir rehber",
+    "brandGuidelines.logoTitle": "Logo",
+    "brandGuidelines.logoDescription":
+      'Namoor logosu, şirketin kimliği ve vizyonunu birleştirir. Konsepti, "p" ve "z" harflerinin kesişiminden gelir; bu harfler birleştiğinde, şirketin sürekli hizmet ve destek vizyonunu yansıtan sonsuz "ma" sembolünü oluşturur.',
+    "brandGuidelines.logoAlt": "Birleştirilmiş Logolar",
+    "brandGuidelines.logoSizesTitle": "Logo Boyutları",
+    "brandGuidelines.logoSizesDescription":
+      "Logo, her kullanım ortamına uygun olacak şekilde farklı boyutlarda tasarlandı.",
+    "brandGuidelines.logoSizesAlt": "Çeşitli Boyutlarda Logo",
+    "brandGuidelines.typographyTitle": "Namoor Tipografisi",
+    "brandGuidelines.typographyDescription":
+      'İngilizce ve Arapça metinler için, sadeliği ve okunabilirliği nedeniyle "Cairo" yazı tipini kullandık.',
+    "brandGuidelines.typographyFontName": "C a i r o",
+    "brandGuidelines.downloadsTitle": "İndirmeler",
+    "brandGuidelines.downloadsDescription":
+      "Namoor adını herhangi bir tasarımda kullanırken ihtiyacınız olabilecek tüm unsurları sağladık, logodan etkinlikler veya konferanslar için tanıtım materyallerine kadar.",
+    "brandGuidelines.downloadItem1Alt": "Koyu Mavi Yuvarlak Logo",
+    "brandGuidelines.downloadItem1Title": "Namoor Logosu",
+    "brandGuidelines.downloadItem2Alt": "Koyu Mavi Yuvarlak Logo",
+    "brandGuidelines.downloadItem2Title": "Namoor Şirketi",
+    "brandGuidelines.downloadItem3Alt":
+      "Açık Mavi Arka Planda Koyu Mavi Yuvarlak Logo",
+    "brandGuidelines.downloadItem3Title": "Namoor Şirketi",
+    "brandGuidelines.downloadItem4Alt": "Koyu Mavi Yuvarlak Logo",
+    "brandGuidelines.downloadItem4Title": "Namoor İkincil Logosu",
+    "brandGuidelines.downloadPDF": "PDF",
+    "brandGuidelines.downloadSVG": "SVG",
+    "brandGuidelines.downloadPNG": "PNG",
+    "brandGuidelines.identityTitle":
+      "İşte Namoor’un kimliği, birden fazla şekilde sunuluyor.",
+    "brandGuidelines.identityCard1Title": "Namoor Şirketi",
+    "brandGuidelines.identityCard1Alt": "Arapça metinli logo",
+    "brandGuidelines.identityCard2Title": "Namoor Şirketi",
+    "brandGuidelines.identityCard2Alt": "Arapça metinli logo",
+    "brandGuidelines.identityBottomAlt":
+      "İki yuvarlak logo, biri açık gri arka planda ve biri beyaz arka planda",
     "domainFeatures.mainTitle": "Neden Namoor’dan Alan Adı Satın Almalısınız?",
     "domainFeatures.lockTitle": "Alan Adı Kilitleme",
     "domainFeatures.lockDescription":

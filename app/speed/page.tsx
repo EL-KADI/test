@@ -10,6 +10,7 @@ import BackgroundSectionSpeed from "../components/background-section-speed";
 import OurEdge from "../components/ouredge";
 import SpeedSvg from "../components/all-svg/speed-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOSpeed from "@/components/seo/SEOSpeed";
 export default function Speed() {
   const { t } = useLanguage();
       const [showSVG, setShowSVG] = useState(false);
@@ -75,6 +76,7 @@ export default function Speed() {
 
   return (
     <>
+    <SEOSpeed/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

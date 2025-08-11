@@ -13,6 +13,7 @@ import OurEdge from "../components/ouredge";
 import FeaturesSectionTen from "../components/features-SectionTen";
 import ProgramersHostingSvg from "../components/all-svg/programers-hosting-svg";
 import { useEffect, useRef, useState } from "react";
+import SEODevHosting from "@/components/seo/SEODevHosting";
 export default function ProgramersHosting() {
   const { t } = useLanguage();
    const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ export default function ProgramersHosting() {
 
   return (
     <>
+    <SEODevHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

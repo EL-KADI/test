@@ -18,7 +18,7 @@ export default function SSLSection() {
       alt: t("sslSection.seoRankingAlt"),
     },
     {
-      image: "/browser-friendly.svg",
+      image: "/browser-friendly.webp",
       title: t("sslSection.browserCompatibility"),
       description: t("sslSection.browserCompatibilityDesc"),
       alt: t("sslSection.browserCompatibilityAlt"),

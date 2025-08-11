@@ -4,7 +4,7 @@ import Image from 'next/image'; // Assuming Next.js Image component, adjust if u
 const DomainRegistrationEG = () => {
   return (
     <div dir="rtl" className="relative mt-32 text-black">
-      <Image loading="lazy" className="absolute -top-20 left-0 w-full -z-10" src="/two-layers-eg.svg" alt="Background Image" width={1200} height={400} /> {/* Adjust width and height as needed */}
+      <Image loading="lazy" className="absolute -top-20 left-0 w-full -z-10" src="/two-layers-eg.webp" alt="Background Image" width={1200} height={400} /> {/* Adjust width and height as needed */}
       <div className="container max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         <Image loading="lazy" className="mx-auto" src="/number-1.svg" alt="Number 1 Register Image" width={200} height={200} /> {/* Adjust width and height as needed */}
         <h1 className="lg:text-4xl text-xl mb-6 text-center mt-8 ">احصل على اسم نطاق eg. من المسجل رقم #1</h1>

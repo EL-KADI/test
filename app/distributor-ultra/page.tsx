@@ -13,6 +13,7 @@ import OneClickAppsSectionTwo from "../components/one-click-apps-section-two";
 import FeaturesSectionEleven from "../components/features-section-eleven";
 import DistributorSvg from "../components/all-svg/distributor-svg";
 import { useEffect, useRef, useState } from "react";
+import SEODistributorUltra from "@/components/seo/SEODistributorUltra";
 export default function DistributorUltra() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ export default function DistributorUltra() {
 
   return (
     <>
+    <SEODistributorUltra/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

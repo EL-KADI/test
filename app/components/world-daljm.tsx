@@ -20,7 +20,7 @@ export default function WorldDaljm() {
               }`}
       
           alt={t("worldDaljm.worldIllustrationAlt")}
-          src="/world-DaLjm.svg"
+          src="/world-DaLjm.webp"
         />
       </div>
     </div>

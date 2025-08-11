@@ -14,6 +14,7 @@ import WebsiteBuilderSection from "../components/website-builder-section";
 import FeaturesSectionNine from "../components/features-SectionNine";
 import { useEffect, useRef, useState } from "react";
 import WordpressHostingSvg from "../components/all-svg/wordpress-hosting-svg";
+import SEOWordPressHosting from "@/components/seo/SEOWordPressHosting";
 export default function WordPressHosting() {
   const { t } = useLanguage();
       const [showSVG, setShowSVG] = useState(false);
@@ -71,6 +72,7 @@ export default function WordPressHosting() {
 
   return (
     <>
+    <SEOWordPressHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

@@ -32,7 +32,7 @@ export default function CloudInfrastructureSection() {
       <Image
         className="absolute w-[15%] top-0 right-0 -z-10"
         alt={t("cloudInfrastructure.backgroundAlt")}
-        src="RightCloudBg.svg"
+        src="/RightCloudBg.svg"
         width={300}
         height={300} loading="lazy"
       />

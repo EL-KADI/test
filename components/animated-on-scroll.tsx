@@ -13,7 +13,7 @@ interface AnimatedOnScrollProps {
 
 const AnimatedOnScroll = ({
   children,
-  initial = { opacity: 0, y: 100 },
+  initial = { opacity: 0, y: 50 },
   whileInView = { opacity: 1, y: 0 },
   transition = { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
   once = true,

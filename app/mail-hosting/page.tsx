@@ -14,6 +14,7 @@ import KeyFeaturesSection from "../components/key-features-section";
 import CallToActionSection from "../components/call-to-action-section";
 import { useEffect, useRef, useState } from "react";
 import MailHostingSvg from "../components/all-svg/mail-hosting-svg";
+import SEOEmailHosting from "@/components/seo/SEOEmailHosting";
 export default function MailHosting() {
   const { t } = useLanguage();
    const [showSVG, setShowSVG] = useState(false);
@@ -71,6 +72,7 @@ export default function MailHosting() {
 
   return (
     <>
+    <SEOEmailHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

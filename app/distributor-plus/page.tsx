@@ -15,6 +15,7 @@ import FeaturesSectionEleven from "../components/features-section-eleven";
 
 // استدعاء الـ SVG كـ Component
 import DistributorSVG from "../components/all-svg/distributor-svg";
+import SEODistributorPlus from "@/components/seo/SEODistributorPlus";
 
 export default function DistributorPlus() {
   const { t } = useLanguage();
@@ -69,6 +70,7 @@ export default function DistributorPlus() {
 
   return (
     <>
+    <SEODistributorPlus/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

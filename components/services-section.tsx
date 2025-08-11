@@ -61,6 +61,7 @@ const { t, isRTL } = useLanguage();
           src="/Rbg.svg"
           width={400}
           height={400}
+          loading="lazy"
         />
         <Image
           className="absolute -top-52 left-0 -z-10"
@@ -68,6 +69,7 @@ const { t, isRTL } = useLanguage();
           src="/Lbg.svg"
           width={400}
           height={400}
+           loading="lazy"
         />
 
         {/* Services Grid */}
@@ -85,6 +87,7 @@ const { t, isRTL } = useLanguage();
                     src={service.image}
                     width={300}
                     height={300}
+                     loading="lazy"
                     className="object-contain"
                     style={{
                       width: "auto",
@@ -108,7 +111,7 @@ const { t, isRTL } = useLanguage();
 
                   <div className="mt-8 mx-auto">
                     <div className="bg-[#2B1F51] hover:bg-transparent transition hover:text-primary text-base hover:border-2 hover:border-[#2B1F51] text-white rounded-md text-center py-3 mx-auto cursor-pointer max-w-[16rem]">
-                      <p>{t("servicesCards.startingPrice")}</p>{" "}
+                      <p>{t("servicesCards.startingPrice")}</p>
                     </div>
                   </div>
                 </div>

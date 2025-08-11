@@ -13,6 +13,7 @@ import MainFeaturesSection from "../components/main-features-section";
 import BgSectionTwo from "../components/bg-section-two";
 import WindowsHostingSvg from "../components/all-svg/windows-hosting-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOWindowsHosting from "@/components/seo/SEOWindowsHosting";
 
 export default function WindowsHosting() {
   const { t } = useLanguage();
@@ -72,6 +73,7 @@ export default function WindowsHosting() {
 
   return (
     <>
+    <SEOWindowsHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />
@@ -107,7 +109,7 @@ export default function WindowsHosting() {
       <BgSectionTwo />
 
       <div className="lg:-mt-96 -mt-72">
-        {" "}
+      
         <MainFeaturesSection />
         <TrustCustomer />
         <Questions />

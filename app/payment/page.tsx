@@ -11,6 +11,7 @@ import CryptocurrenciesSection from "../components/cryptocurrencies-section";
 import TraditionalPaymentSection from "../components/traditional-payment-section";
 import PaymentSvg from "../components/all-svg/payment-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOPayment from "@/components/seo/SEOPayment";
 export default function Payment() {
   const { t } = useLanguage();
    const [showSVG, setShowSVG] = useState(false);
@@ -76,6 +77,7 @@ export default function Payment() {
 
   return (
     <>
+    <SEOPayment/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

@@ -24,6 +24,7 @@ import DomainStatsEG from "../components/eg/domain-stats-eg";
 import DomainStatsAE from "../components/ae/domain-stats-ae";
 import DomainStatsTR from "../components/tr/domain-stats-tr";
 import { useRef, useState,useEffect } from "react";
+import SEOLocalDomains from "@/components/seo/SEOLocalDomains";
 
 export default function LocalDomains() {
   const { t, selectedCountry } = useLanguage();
@@ -142,6 +143,7 @@ export default function LocalDomains() {
 
   return (
     <>
+    <SEOLocalDomains/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

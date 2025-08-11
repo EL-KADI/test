@@ -54,14 +54,14 @@ export default function PartnersSection() {
       <div className="grid mx-8 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-12 mt-12 mb-32">
         <MiniCard img="/AMD Epyc.svg" name="AMD Epyc" />
         <MiniCard img="/cloudflare.svg" name="Cloudflare" />
-        <MiniCard img="/MemCached.svg" name="MemCached" />
-        <MiniCard img="/Imunify36.svg" name="Imunify36" />
-        <MiniCard img="/MailChannel.svg" name="MailChannel" />
+        <MiniCard img="/MemCached.webp" name="MemCached" />
+        <MiniCard img="/jet-logo.webp" name="Imunify36" />
+        <MiniCard img="/MailChannel.webp" name="MailChannel" />
         <MiniCard img="/softaculous.svg" name="Softaculous" />
-        <MiniCard img="/JetBackup.svg" name="JetBackup" />
-        <MiniCard img="/MariaDB.svg" name="MariaDB" />
+        <MiniCard img="/JetBackup.webp" name="JetBackup" />
+        <MiniCard img="/MariaDB.webp" name="MariaDB" />
         <MiniCard img="/QUIC.cloud.svg" name="QUIC.cloud" />
-        <MiniCard img="/LiteSpeed.svg" name="LiteSpeed" />
+        <MiniCard img="/LiteSpeed.webp" name="LiteSpeed" />
       </div>
     </div>
   );

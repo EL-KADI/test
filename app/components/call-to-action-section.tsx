@@ -10,7 +10,7 @@ export default function CallToActionSection() {
         <Image
           className="absolute lg:rtl:-left-12 lg:ltr:-right-12 lg:bottom-0 inset-0 opacity-10 lg:opacity-100 lg:inset-auto"
           alt={t("callToAction.settingsAlt")}
-          src="/ls-suite-cta.svg"
+          src="/ls-suite-cta.webp"
           width={500}
           height={500} loading="lazy"
         />

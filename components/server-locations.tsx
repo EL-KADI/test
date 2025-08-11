@@ -13,7 +13,7 @@ import tr from "../public/tr-circle.svg";
 import us from "../public/us-circle.svg";
 import de from "../public/de-circle.svg";
 import sa from "../public/sa-circle.svg";
-import korea from "../public/korea.svg";
+import korea from "../public/korea.webp";
 import sd from "../public/sd-circle.svg";
 import fi from "../public/fi-circle.svg";
 import it from "../public/it-circle.svg";

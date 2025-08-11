@@ -12,6 +12,7 @@ import FeaturesSection from "../components/featuresSection";
 import CTA from "../components/cta";
 import { useEffect, useRef, useState } from "react";
 import CloudHostingSvg from "../components/all-svg/cloud-hosting-svg";
+import SEOCloudServers from "@/components/seo/SEOCloudServers";
 export default function CloudServers() {
   const { t } = useLanguage();
      const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ export default function CloudServers() {
 
   return (
     <>
+    <SEOCloudServers/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

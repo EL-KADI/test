@@ -12,6 +12,7 @@ import FeaturesSection from "../components/featuresSection";
 import CTA from "../components/cta";
 import CloudHostingSvg from "../components/all-svg/cloud-hosting-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOCloudHosting from "@/components/seo/SEOCloudHosting";
 export default function CloudHosting() {
   const { t } = useLanguage();
     const [showSVG, setShowSVG] = useState(false);
@@ -70,6 +71,7 @@ export default function CloudHosting() {
 
   return (
     <>
+    <SEOCloudHosting/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />
@@ -100,7 +102,7 @@ export default function CloudHosting() {
       <HostingPlansTwo />
       <div className="translate-y-32">
         <h2 className="text-center text-black text-4xl">
-          {" "}
+          
           {t("featuresSectionSix.title")}
         </h2>
       </div>

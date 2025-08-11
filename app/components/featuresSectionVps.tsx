@@ -45,10 +45,10 @@ export default function FeaturesSection() {
             <Image src="/Microsoft.svg" alt={t("featuresSection.microsoftAlt")} width={120}  loading="lazy" height={80} className="w-60" />
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.08)] p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105">
-            <Image src="/Cloudlinux.svg" alt={t("featuresSection.cloudLinuxAlt")} width={120}  loading="lazy" height={80} className="w-60" />
+            <Image src="/Cloudlinux.webp" alt={t("featuresSection.cloudLinuxAlt")} width={120}  loading="lazy" height={80} className="w-60" />
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.08)] p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105">
-            <Image src="/ISP Manager.svg" alt={t("featuresSection.ispManagerAlt")} width={120}  loading="lazy" height={80} className="w-52" />
+            <Image src="/ISP Manager.webp" alt={t("featuresSection.ispManagerAlt")} width={120}  loading="lazy" height={80} className="w-52" />
           </div>
         </div>
       </div>

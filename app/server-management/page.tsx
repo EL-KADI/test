@@ -10,6 +10,7 @@ import FeaturesSectionFour from "../components/featuresSectionFour";
 import { useLanguage } from "../../contexts/language-context";
 import ServerManagementSvg from "../components/all-svg/server-management-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOManageServers from "@/components/seo/SEOManageServers";
 
 export default function ServerManagement() {
   const { t } = useLanguage();
@@ -69,6 +70,7 @@ export default function ServerManagement() {
 
   return (
     <>
+    <SEOManageServers/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

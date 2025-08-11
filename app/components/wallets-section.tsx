@@ -8,19 +8,19 @@ const WalletsSection = () => {
     {
       title: t('walletsSection.sdadTitle'),
       description: t('walletsSection.sdadDescription'),
-      image: '/sdad.svg',
+      image: '/sdad.webp',
       alt: t('walletsSection.sdadAlt'),
     },
     {
       title: t('walletsSection.paypalTitle'),
       description: t('walletsSection.paypalDescription'),
-      image: '/paypal.svg',
+      image: '/paypal.webp',
       alt: t('walletsSection.paypalAlt'),
     },
     {
       title: t('walletsSection.vodafoneTitle'),
       description: t('walletsSection.vodafoneDescription'),
-      image: '/vodafon.svg',
+      image: '/vodafon.webp',
       alt: t('walletsSection.vodafoneAlt'),
     },
     {

@@ -13,6 +13,7 @@ export default function BeyondProtection() {
         src="/big-blocks.svg"
         width={1393}
         height={836}
+         loading="lazy"
       />
       <div className="mb-16">
         <h1 className="lg:text-4xl text-xl mb-6 text-center text-primary font-bold">
@@ -38,7 +39,7 @@ export default function BeyondProtection() {
           <div className="bg-white shadow-[0_0_20px_0_rgba(0,0,0,0.08)] rounded-lg px-6 py-6 flex items-start gap-4 shadow-light flex-col justify-between transition hover:scale-105">
             <Image
               className="relative before:absolute before:w-16"
-              src="/browser-friendly.svg"
+              src="/browser-friendly.webp"
               alt={t("beyondProtection.browserFriendlyAlt")}
               width={80}
               height={80}

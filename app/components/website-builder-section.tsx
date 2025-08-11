@@ -9,14 +9,14 @@ export default function WebsiteBuilderSection() {
       number: 1,
       title: t("websiteBuilder.chooseTemplate"),
       description: t("websiteBuilder.chooseTemplateDesc"),
-      image: "/card-Ceto.svg",
+      image: "/card-Ceto.webp",
       alt: t("websiteBuilder.websiteBuilderAlt"),
     },
     {
       number: 2,
       title: t("websiteBuilder.chooseTemplate"),
       description: t("websiteBuilder.chooseTemplateDesc"),
-      image: "/image-selector.svg",
+      image: "/image-selector.webp",
       alt: t("websiteBuilder.chooseTemplateAlt"),
     },
     {

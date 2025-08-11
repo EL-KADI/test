@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
-import Logo from "../public/logo.svg";
+import Logo from "../public/logo.webp";
 import LanguageSelector from "./language-selector";
 import React from "react";
 interface NavigationBarProps {
@@ -141,6 +141,8 @@ function NavigationBar({
             className="lg:w-[7.2vw] w-[120px] lg:-translate-y-1 2xl:-translate-y-2"
             src={Logo || "/placeholder.svg"}
             alt="Logo Vultr"
+            width={120}
+            height={120}
           />
         </div>
       </div>
@@ -153,16 +155,16 @@ function NavigationBar({
             : "bg-opacity-0 opacity-0 pointer-events-none"
         }`}
       >
-        <div  
+        <div
           className={`fixed ${
             isRTL ? "right-0" : "left-0"
           } top-0 h-full w-[26rem] relative !z-[1200] bg-white shadow-lg overflow-y-auto transform transition-transform duration-300 ease-out ${
-  isMobileMenuOpen
-    ? "translate-x-0"
-    : isRTL
-    ? "translate-x-full"
-    : "-translate-x-full"
-} ${isRTL ? "rtl-scroll" : ""}`}
+            isMobileMenuOpen
+              ? "translate-x-0"
+              : isRTL
+              ? "translate-x-full"
+              : "-translate-x-full"
+          } ${isRTL ? "rtl-scroll" : ""}`}
         >
           {/* Header */}
           <div
@@ -228,11 +230,13 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div  dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
-                      
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
                       <Link
                         href="/shared-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -269,19 +273,19 @@ function NavigationBar({
                           {t("hosting.wordpress.desc")}
                         </p>
                       </Link>
-                     <Link
+                      <Link
                         href="/apps-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                        {t('softaculousSection.title')}
+                          {t("softaculousSection.title")}
                         </h4>
                         <p className="text-xs text-gray-600">
-                       {t('softaculousSection.description')}
+                          {t("softaculousSection.description")}
                         </p>
                       </Link>
-           
+
                       <Link
                         href="/mail-hosting"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -342,7 +346,6 @@ function NavigationBar({
                           {t("hosting.windows.description")}
                         </p>
                       </Link>
-                 
                     </div>
                   </div>
                 </div>
@@ -374,10 +377,13 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
                       <Link
                         href="/distributor-basic"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -457,83 +463,86 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                        <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
-                          <Link
-                            href="/vps"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.vps")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.vps.desc")}
-                            </p>
-                          </Link>
-                          <Link
-                            href="/cloud-servers"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.cloud")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.cloud.desc")}
-                            </p>
-                          </Link>
-                          <Link
-                            href="/full-servers"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.dedicated")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.dedicated.desc")}
-                            </p>
-                          </Link>
-                          <Link
-                            href="/server-licenses"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.licenses")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.licenses.desc")}
-                            </p>
-                          </Link>
-                          <Link
-                            href="/server-management"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.support")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.support.desc")}
-                            </p>
-                          </Link>
-                          <Link
-                            href="/backups"
-                            className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <h4 className="font-semibold text-sm text-gray-800 mb-1">
-                              {t("servers.backup")}
-                            </h4>
-                            <p className="text-xs text-gray-600">
-                              {t("servers.backup.desc")}
-                            </p>
-                          </Link>
-                        </div>
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
+                      <Link
+                        href="/vps"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.vps")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.vps.desc")}
+                        </p>
+                      </Link>
+                      <Link
+                        href="/cloud-servers"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.cloud")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.cloud.desc")}
+                        </p>
+                      </Link>
+                      <Link
+                        href="/full-servers"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.dedicated")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.dedicated.desc")}
+                        </p>
+                      </Link>
+                      <Link
+                        href="/server-licenses"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.licenses")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.licenses.desc")}
+                        </p>
+                      </Link>
+                      <Link
+                        href="/server-management"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.support")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.support.desc")}
+                        </p>
+                      </Link>
+                      <Link
+                        href="/backups"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                          {t("servers.backup")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          {t("servers.backup.desc")}
+                        </p>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -564,10 +573,13 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
                       <Link
                         href="/domains"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -671,10 +683,13 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
                       <Link
                         href="/about"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -748,6 +763,18 @@ function NavigationBar({
                         </p>
                       </Link>
                       <Link
+                        href="/brand-guidelines"
+                        className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <h4 className="font-semibold text-sm text-gray-800 mb-1">
+                           {t("brandGuidelines.headerTitle")}
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                        {t("brandGuidelines.headerDescription")}
+                        </p>
+                      </Link>
+                      <Link
                         href="/partners"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
                         onClick={() => setIsMobileMenuOpen(false)}
@@ -755,7 +782,9 @@ function NavigationBar({
                         <h4 className="font-semibold text-sm text-gray-800 mb-1">
                           {t("footer.partners")}
                         </h4>
-                   <p className="text-xs text-gray-600">{t("paymentSection.description")}</p>
+                        <p className="text-xs text-gray-600">
+                          {t("paymentSection.description")}
+                        </p>
                       </Link>
                     </div>
                   </div>
@@ -788,10 +817,13 @@ function NavigationBar({
                 >
                   <div
                     className={`pb-3 space-y-3 z-50 relative ${
-                       isRTL ? "pr-4  text-right" : " text-left"
+                      isRTL ? "pr-4  text-right" : " text-left"
                     }`}
                   >
-                    <div dir={isRTL ? "rtl" : "ltr"} className="grid grid-cols-2 gap-3">
+                    <div
+                      dir={isRTL ? "rtl" : "ltr"}
+                      className="grid grid-cols-2 gap-3"
+                    >
                       <Link
                         href="/security"
                         className="p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 transform hover:scale-105 block"
@@ -873,112 +905,110 @@ function NavigationBar({
         </div>
       </div>
 
+      <div className="relative flex items-center justify-center z-50">
+        {/* Desktop Dropdown Menus */}
+        {/* Hosting Dropdown Menu */}
+        {isHostingDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 "
+            onMouseEnter={() => setIsHostingDropdownOpen(true)}
+            onMouseLeave={() => setIsHostingDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto ">
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/shared-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.shared")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.shared.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/cloud-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.cloud")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.cloud.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/wordpress-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.wordpress")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.wordpress.desc")}
+                    </p>
+                  </div>
+                </Link>
 
-        <div className="relative flex items-center justify-center z-50">
-
-          {/* Desktop Dropdown Menus */}
-          {/* Hosting Dropdown Menu */}
-          {isHostingDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50 "
-              onMouseEnter={() => setIsHostingDropdownOpen(true)}
-              onMouseLeave={() => setIsHostingDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto ">
-                <div className="grid grid-cols-3 gap-6">
-                  <Link
-                    href="/shared-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.shared")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.shared.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/cloud-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.cloud")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.cloud.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/wordpress-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.wordpress")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.wordpress.desc")}
-                      </p>
-                    </div>
-                  </Link>
-          
-                  <Link
-                    href="/apps-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                         {t('softaculousSection.title')}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                       {t('softaculousSection.description')}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/programers-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.developer")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.developer.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/mail-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.email")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.email.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/business-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.business")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("hosting.business.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                    {/* <Link
+                <Link
+                  href="/apps-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("softaculousSection.title")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("softaculousSection.description")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/programers-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.developer")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.developer.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/mail-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.email")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.email.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/business-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.business")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.business.desc")}
+                    </p>
+                  </div>
+                </Link>
+                {/* <Link
                         href="/programers-hosting"
                         className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
                       >
@@ -993,489 +1023,507 @@ function NavigationBar({
                           </p>
                         </div>
                       </Link> */}
-                  <Link
-                      href="/nomoar-hosting"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("hosting.tamoor")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
+                <Link
+                  href="/nomoar-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.tamoor")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
                       {t("hosting.tamoor.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/windows-hosting"
-                        className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                      >
-                        <div
-                          className={`${isRTL ? "text-right" : "text-left"}`}
-                        >
-                          <h3 className="font-bold text-lg mb-2 text-gray-900">
-                           {t("hosting.windows")}
-                          </h3>
-                          <p className="text-gray-600 leading-relaxed text-sm">
-                            {t("hosting.windows.description")}
-                          </p>
-                        </div>
-                      </Link>
-                </div>
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/windows-hosting"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("hosting.windows")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("hosting.windows.description")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Reseller Dropdown Menu */}
-          {isResellerDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
-              onMouseEnter={() => setIsResellerDropdownOpen(true)}
-              onMouseLeave={() => setIsResellerDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <Link
-                    href="/distributor-basic"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("reseller.basic")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("reseller.basic.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/distributor-plus"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("reseller.plus")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("reseller.plus.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/distributor-ultra"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("reseller.ultra")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("reseller.ultra.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/distributors-program"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("reseller.program")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("reseller.program.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+        {/* Reseller Dropdown Menu */}
+        {isResellerDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+            onMouseEnter={() => setIsResellerDropdownOpen(true)}
+            onMouseLeave={() => setIsResellerDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-4xl w-full mx-8">
+              <div className="grid grid-cols-2 gap-6">
+                <Link
+                  href="/distributor-basic"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("reseller.basic")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("reseller.basic.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/distributor-plus"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("reseller.plus")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("reseller.plus.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/distributor-ultra"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("reseller.ultra")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("reseller.ultra.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/distributors-program"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("reseller.program")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("reseller.program.desc")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Servers Dropdown Menu */}
-          {isServersDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
-              onMouseEnter={() => setIsServersDropdownOpen(true)}
-              onMouseLeave={() => setIsServersDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
-                <div className="grid grid-cols-3 gap-6">
-                  <Link
-                    href="/vps"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.vps")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.vps.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/cloud-servers"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.cloud")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.cloud.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/full-servers"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.dedicated")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.dedicated.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/server-licenses"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.licenses")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.licenses.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/server-management"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.support")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.support.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/backups"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("servers.backup")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("servers.backup.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+        {/* Servers Dropdown Menu */}
+        {isServersDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+            onMouseEnter={() => setIsServersDropdownOpen(true)}
+            onMouseLeave={() => setIsServersDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/vps"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.vps")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.vps.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/cloud-servers"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.cloud")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.cloud.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/full-servers"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.dedicated")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.dedicated.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/server-licenses"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.licenses")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.licenses.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/server-management"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.support")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.support.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/backups"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("servers.backup")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("servers.backup.desc")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Domains Dropdown Menu */}
-          {isDomainsDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
-              onMouseEnter={() => setIsDomainsDropdownOpen(true)}
-              onMouseLeave={() => setIsDomainsDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
-                <div className="grid grid-cols-3 gap-6">
-                  <Link
-                    href="/domains"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.register")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.register.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/local-domains"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.local")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.local.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/domains/transfer"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.transfer")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.transfer.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/cloudflare"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.cloudflare")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.cloudflare.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/ssl"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.ssl")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.ssl.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/whois"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("domains.whois")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("domains.whois.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+        {/* Domains Dropdown Menu */}
+        {isDomainsDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+            onMouseEnter={() => setIsDomainsDropdownOpen(true)}
+            onMouseLeave={() => setIsDomainsDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/domains"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.register")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.register.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/local-domains"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.local")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.local.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/domains/transfer"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.transfer")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.transfer.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/cloudflare"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.cloudflare")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.cloudflare.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/ssl"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.ssl")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.ssl.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/whois"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("domains.whois")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("domains.whois.desc")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Company Dropdown Menu */}
-          {isCompanyDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
-              onMouseEnter={() => setIsCompanyDropdownOpen(true)}
-              onMouseLeave={() => setIsCompanyDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
-                <div className="grid grid-cols-3 gap-6">
-                  <Link
-                    href="/about"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.about")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.about.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.contact")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.contact.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/jobs"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.jobs")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.jobs.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.news")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.news.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/distributors-program"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.reseller")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.reseller.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/payment"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("company.payment")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("company.payment.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/partners"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("footer.partners")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                       {t("paymentSection.description")}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+        {/* Company Dropdown Menu */}
+        {isCompanyDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+            onMouseEnter={() => setIsCompanyDropdownOpen(true)}
+            onMouseLeave={() => setIsCompanyDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/about"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.about")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.about.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/contact"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.contact")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.contact.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/jobs"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.jobs")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.jobs.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/blog"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.news")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.news.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/distributors-program"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.reseller")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.reseller.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/payment"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("company.payment")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("company.payment.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/brand-guidelines"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3
+                      className={`font-bold text-lg mb-2 text-gray-900 ${
+                        isRTL ? "text-right" : "text-left"
+                      }`}
+                    >
+                       {t("brandGuidelines.headerTitle")}
+                    </h3>
+                    <p
+                      className={`text-gray-600 leading-relaxed text-sm ${
+                        isRTL ? "text-right" : "text-left"
+                      }`}
+                    >
+                    {t("brandGuidelines.headerDescription")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/partners"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("footer.partners")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("paymentSection.description")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Technology Dropdown Menu */}
-          {isTechnologyDropdownOpen && (
-            <div
-              className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
-              onMouseEnter={() => setIsTechnologyDropdownOpen(true)}
-              onMouseLeave={() => setIsTechnologyDropdownOpen(false)}
-            >
-              <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
-                <div className="grid grid-cols-3 gap-6">
-                  <Link
-                    href="/security"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.security")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.security.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/speed"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.speed")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.speed.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/static-dashboard"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.control")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.control.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/data-centers"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.datacenter")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.datacenter.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/technology/status"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.status")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.status.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                  <Link
-                    href="/backups"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className={`${isRTL ? "text-right" : "text-left"}`}>
-                      <h3 className="font-bold text-lg mb-2 text-gray-900">
-                        {t("tech.backup")}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed text-sm">
-                        {t("tech.backup.desc")}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+        {/* Technology Dropdown Menu */}
+        {isTechnologyDropdownOpen && (
+          <div
+            className="absolute top-0 left-1/2 transform -translate-x-1/2 z-50"
+            onMouseEnter={() => setIsTechnologyDropdownOpen(true)}
+            onMouseLeave={() => setIsTechnologyDropdownOpen(false)}
+          >
+            <div className="bg-white backdrop-blur-sm rounded-2xl shadow-2xl p-8 max-w-6xl  w-screen mx-auto">
+              <div className="grid grid-cols-3 gap-6">
+                <Link
+                  href="/security"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.security")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.security.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/speed"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.speed")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.speed.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/static-dashboard"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.control")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.control.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/data-centers"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.datacenter")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.datacenter.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/technology/status"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.status")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.status.desc")}
+                    </p>
+                  </div>
+                </Link>
+                <Link
+                  href="/backups"
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all duration-200 cursor-pointer"
+                >
+                  <div className={`${isRTL ? "text-right" : "text-left"}`}>
+                    <h3 className="font-bold text-lg mb-2 text-gray-900">
+                      {t("tech.backup")}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {t("tech.backup.desc")}
+                    </p>
+                  </div>
+                </Link>
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {/* Center Content */}
-        </div>
-   
+        {/* Center Content */}
+      </div>
     </div>
   );
 }

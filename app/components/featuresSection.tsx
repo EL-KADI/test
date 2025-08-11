@@ -10,8 +10,9 @@ export default function FeaturesSection() {
         src="/big-blocks.svg"
         alt={t("featuresSection.backgroundDecorationAlt")}
         width={800}
-        height={400}
-        className="absolute -top-60 -z-10 w-full object-cover"  loading="lazy"
+        height={400}  
+        className="absolute -top-60 -z-10 w-full object-cover"  
+        loading="lazy"
       />
       <div className="mb-16">
         <h1 className="lg:text-4xl text-xl mb-6 text-center" dir="rtl">
@@ -45,10 +46,10 @@ export default function FeaturesSection() {
             <Image  loading="lazy" src="/Microsoft.svg" alt={t("featuresSection.microsoftAlt")} width={120} height={80} className="w-60" />
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.08)] p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105">
-            <Image  loading="lazy" src="/Cloudlinux.svg" alt={t("featuresSection.cloudLinuxAlt")} width={120} height={80} className="w-60" />
+            <Image  loading="lazy" src="/Cloudlinux.webp" alt={t("featuresSection.cloudLinuxAlt")} width={120} height={80} className="w-60" />
           </div>
           <div className="bg-white rounded-lg shadow-[0_0_20px_0_rgba(0,0,0,0.08)] p-4 flex items-center justify-center gap-4 flex-col shadow-light transition hover:scale-105">
-            <Image  loading="lazy" src="/ISP Manager.svg" alt={t("featuresSection.ispManagerAlt")} width={120} height={80} className="w-52" />
+            <Image  loading="lazy" src="/ISP Manager.webp" alt={t("featuresSection.ispManagerAlt")} width={120} height={80} className="w-52" />
           </div>
         </div>
       </div>

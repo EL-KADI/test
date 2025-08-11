@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input"
 import Image from "next/image";
 import DomainPricingTable from "../components/domain-pricing-table";
 import DomainFeatures from "../components/domain-features";
+import SEODomains from "@/components/seo/SEODomains";
 export default function Domains() {
   const { t, isRTL } = useLanguage();
   const categories = [
@@ -28,6 +29,7 @@ export default function Domains() {
 
   return (
     <>
+    <SEODomains/>
       <Header />
   <div className=" bg-[#092346] relative z-50"><Navigation /></div>    
    <div className="min-h-screen bg-[#092346] relative overflow-hidden" dir={isRTL ? "rtl" : "ltr"}>
@@ -79,7 +81,7 @@ export default function Domains() {
                 width={600}
                 height={600}
                 loading="lazy"
-                src="/bg-domain.svg"
+                src="/bg-domain.avif"
                 alt={t("domainSearchSection.domainImageAlt")}
                 className="w-full mt-20 object-contain"
               />
@@ -92,7 +94,7 @@ export default function Domains() {
       <div
         className="lg:hidden absolute inset-0 translate-y-[27.5rem] bg-bottom bg-contain bg-no-repeat"
         style={{
-          backgroundImage: "url('/bg-domain.svg')",
+          backgroundImage: "url('/bg-domain.avif')",
         }}
       ></div>
     </div>

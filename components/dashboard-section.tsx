@@ -51,7 +51,7 @@ export default function DashboardSection() {
 
   const images = [
     {
-      src: "/DashboardLS.svg",
+      src: "/DashboardLS.webp",
       alt: "dashboard",
       titleKey: "dashboard.mainDashboard",
       width: 500,
@@ -153,6 +153,7 @@ export default function DashboardSection() {
                     src={image.src || "/placeholder.svg"}
                     width={image.width}
                     height={image.height}
+                     loading="lazy"
                   />
                 </div>
               </div>

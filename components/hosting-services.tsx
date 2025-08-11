@@ -76,6 +76,7 @@ export default function CloudServicesSection() {
           src="/Lbg.svg"
           width={400}
           height={400}
+           loading="lazy"
         />
         <Image
           className={`absolute ${
@@ -85,6 +86,7 @@ export default function CloudServicesSection() {
           src="/Rbg.svg"
            width={400}
           height={400}
+           loading="lazy"
         />
         <div className="container mx-auto px-4">
           {/* Main Heading */}
@@ -152,6 +154,7 @@ export default function CloudServicesSection() {
                       className="w-full h-full object-contain"
                       width={200}
                       height={200}
+                       loading="lazy"
                     />
                   </div>
                   <div>

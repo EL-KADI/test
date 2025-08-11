@@ -32,7 +32,7 @@ export default function TrustCustomer() {
               <div className="mb-6">
                 <Image
                 loading="lazy"
-                  src="/img_governmentofnationalaccord01_1.svg"
+                  src="/img_governmentofnationalaccord01_1.webp"
                   alt={t("trustCustomer.financialCommitteeAlt")}
                   width={142}
                   height={142}
@@ -45,7 +45,7 @@ export default function TrustCustomer() {
               <div className="mb-6">
                 <Image
                 loading="lazy"
-                  src="/img_socialsecurityfund_1.svg"
+                  src="/img_socialsecurityfund_1.webp"
                   alt={t("trustCustomer.socialSecurityAlt")}
                   width={164}
                   height={164}
@@ -58,7 +58,7 @@ export default function TrustCustomer() {
               <div className="mb-6">
                 <Image
                 loading="lazy"
-                  src="/img_socialsecurityfund_1.svg"
+                  src="/img_socialsecurityfund_1.webp"
                   alt={t("trustCustomer.socialSecurityAlt")}
                   width={164}
                   height={164}
@@ -74,7 +74,7 @@ export default function TrustCustomer() {
               <div className="mb-6">
                 <Image
                 loading="lazy"
-                  src="/img_governmentofnationalaccord01_1.svg"
+                  src="/img_governmentofnationalaccord01_1.webp"
                   alt={t("trustCustomer.commercialRegistryAlt")}
                   width={142}
                   height={142}

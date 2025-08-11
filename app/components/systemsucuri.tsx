@@ -7,7 +7,7 @@ export function SystemSucuri() {
   const platforms = [
     { name: t("systemSucuri.platform.phpbb"), image: "/Phpbb.svg", alt: t("systemSucuri.platform.phpbbAlt") },
     { name: t("systemSucuri.platform.joomla"), image: "/Joomla.svg", alt: t("systemSucuri.platform.joomlaAlt") },
-    { name: t("systemSucuri.platform.drupal"), image: "/Drupal.svg", alt: t("systemSucuri.platform.drupalAlt") },
+    { name: t("systemSucuri.platform.drupal"), image: "/Drupal.webp", alt: t("systemSucuri.platform.drupalAlt") },
     { name: t("systemSucuri.platform.magento"), image: "/Magento.svg", alt: t("systemSucuri.platform.magentoAlt") },
     { name: t("systemSucuri.platform.wordpress"), image: "/Wordpress.svg", alt: t("systemSucuri.platform.wordpressAlt") },
   ];

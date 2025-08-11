@@ -8,9 +8,11 @@ import TechStack from "../components/tech-stack";
 import Questions from "../components/questions";
 import Footer from "../../components/footer";
 import KeyFeaturesTwo from "../components/key-features-two";
+import SEODashboard from "@/components/seo/SEODashboard";
 const StaticDashboard = () => {
   return (
     <>
+    <SEODashboard/>
     <Header />
          <div className="bg-[#2B1F51]  mb-20 ">
            <div className="translate-y-2"><Navigation /></div>     

@@ -11,6 +11,7 @@ import WebsiteSecurity from "../components/website-security";
 import BeyondProtection from "../components/beyond-protection";
 import SslSvg from "../components/all-svg/ssl-svg";
 import { useEffect, useRef, useState } from "react";
+import SEOSSL from "@/components/seo/SEOSSL";
 export default function FullServers() {
   const { t } = useLanguage();
       const [showSVG, setShowSVG] = useState(false);
@@ -67,6 +68,7 @@ export default function FullServers() {
 
   return (
     <>
+    <SEOSSL/>
       <Header />
       <div className="relative text-white w-full hero">
         <style dangerouslySetInnerHTML={{ __html: styles }} />

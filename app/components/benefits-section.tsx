@@ -22,7 +22,7 @@ const BenefitsSection = () => {
     },
     {
       title: t('benefitsSection.insuranceTitle'),
-      image: '/heart.svg',
+      image: '/heart.webp',
       alt: t('benefitsSection.insuranceAlt'),
     },
   ];
